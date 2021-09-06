@@ -46,20 +46,20 @@ useEffect(() =>{
 
             <li className='nav-item'>
                 <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
-                    Profile
+                   Employees
                 </Link>
             </li>
 
             <li className='nav-item'>
                 <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
-                    About Company
+                    Inventory
                 </Link>
             </li>
 
         
  
             </ul>
-            {button && <Button buttonStyle = 'btn--outline'> SIGN UP</Button>}
+            
              </div>
             
              </nav>   
