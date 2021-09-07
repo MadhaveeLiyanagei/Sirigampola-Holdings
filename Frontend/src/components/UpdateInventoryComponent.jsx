@@ -8,7 +8,7 @@ class UpdateInventoryComponent extends Component {
 
         this.state = {
 
-            inventoryID: this.props.match.params.id,
+            inventoryID: this.props.match.params.inventoryID,
 
             productID: '',
             productName: '',
@@ -30,14 +30,13 @@ class UpdateInventoryComponent extends Component {
        InventoryService.getInventoryByID(this.state.inventoryID).then((res) =>{
 
         let inventory = res.data;
-        this.setState({
-            productID: inventory.productID,
+        this.setState({ productID: inventory.productID,
             productName: inventory.productName,
             quantity: inventory.quantity,
             reOrder: inventory.reOrder,
             costPrice: inventory.costPrice
 
-        })
+        });
        });
 
     }

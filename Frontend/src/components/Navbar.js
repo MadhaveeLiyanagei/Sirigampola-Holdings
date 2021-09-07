@@ -45,13 +45,13 @@ useEffect(() =>{
             </li>
 
             <li className='nav-item'>
-                <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
+                <Link to='/employees' className='nav-links' onClick={closeMobileMenu}>
                    Employees
                 </Link>
             </li>
 
             <li className='nav-item'>
-                <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
+                <Link to='/inventory' className='nav-links' onClick={closeMobileMenu}>
                     Inventory
                 </Link>
             </li>
