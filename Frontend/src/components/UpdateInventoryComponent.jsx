@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import InventoryService from '../services/InventoryService';
 
-class CreateInventoryComponent extends Component {
+class UpdateInventoryComponent extends Component {
 
     constructor(props){
         super(props)
 
         this.state = {
+
+            inventoryID: this.props.match.params.id,
 
             productID: '',
             productName: '',
@@ -21,17 +23,33 @@ class CreateInventoryComponent extends Component {
         this.changeQuantityHandler = this.changeQuantityHandler.bind(this);
         this.changeReOrderHandler = this.changeReOrderHandler.bind(this);
         this.changeCostPriceHandler = this.changeCostPriceHandler.bind(this);
-        this.saveInventory = this.saveInventory.bind(this);
+        this.updateInventory = this.updateInventory.bind(this);
     }
 
-    saveInventory = (e)=>{
+    componentDidMount(){
+       InventoryService.getInventoryByID(this.state.inventoryID).then((res) =>{
+
+        let inventory = res.data;
+        this.setState({
+            productID: inventory.productID,
+            productName: inventory.productName,
+            quantity: inventory.quantity,
+            reOrder: inventory.reOrder,
+            costPrice: inventory.costPrice
+
+        })
+       });
+
+    }
+
+    updateInventory = (e)=>{
         e.preventDefault();
 
         let inventory = {productID: this.state.productID, productName: this.state.productName, quantity: this.state.quantity, reOrder: this.state.reOrder, costPrice: this.state.costPrice};
         console.log('inventory => ' + JSON.stringify(inventory));
 
-        InventoryService.createInventory(inventory).then(res =>{
-                this.props.history.push('/inventory');
+        InventoryService.updateInventory(inventory, this.state.inventoryID).then(res => {
+               this.props.history.push('/inventory');
         });
     }
 
@@ -65,7 +83,7 @@ class CreateInventoryComponent extends Component {
                 <div className = "container">
                     <div className="row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
-                             <h3 className="text-center">Add Inventory</h3>
+                             <h3 className="text-center">Update Inventory</h3>
                                <div className = "card-body">
                                    <form>
                                         <div className="form-group">
@@ -93,7 +111,7 @@ class CreateInventoryComponent extends Component {
                                             <input placeholder="Cost Price" name="costPrice" className="form-control" value={this.state.costPrice} onChange={this.changeCostPriceHandler}/>
                                         </div>
 
-                                        <button className="btn btn-success" onClick={this.saveInventory}>Save</button>
+                                        <button className="btn btn-success" onClick={this.updateInventory}>Update</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                      </form>
                                 </div>
@@ -105,4 +123,4 @@ class CreateInventoryComponent extends Component {
     }
 }
 
-export default CreateInventoryComponent;
+export default UpdateInventoryComponent;

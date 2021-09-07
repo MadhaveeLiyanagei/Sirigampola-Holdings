@@ -12,6 +12,11 @@ class ListInventoryComponent extends Component {
         }
 
         this.addInventory = this.addInventory.bind(this);
+        this.editInventory = this.editInventory.bind(this);
+    }
+
+    editInventory(inventoryID){
+        this.props.history.push(`/update-inventory/${inventoryID}`);
 
     }
 
@@ -60,6 +65,10 @@ class ListInventoryComponent extends Component {
                                       <td>{inventory.quantity}</td>
                                       <td>{inventory.reOrder}</td>
                                       <td>{inventory.costPrice}</td>
+                                      <td>
+                                          <button onClick = { () => this.editInventory(inventory.inventoryID)} className= "btn btn-info">Update</button>
+                                      </td>
+                                     
                                   </tr>
                               )
                           }
