@@ -1,17 +1,19 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import AdminNavbar from './components/AdminNavbar';
 import { BrowserRouter  as Router, Switch, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './App.css';
-import Home from './pages/Home';
+import AdminHome from './pages/AdminHome';
+import ListEmployeeComponent from './components/ListEmployeeComponent';
 
 function App() {
   return (
     <>
     <Router>
-      <Navbar/>
+      <AdminNavbar/>
       <Switch>
-        <Route path = '/' exact component = {Home} /> 
+        <Route path = '/' exact component = {AdminHome} />
+        <Route path = '/Employee'component = {ListEmployeeComponent} /> 
       </Switch>
       </Router>
     </>
