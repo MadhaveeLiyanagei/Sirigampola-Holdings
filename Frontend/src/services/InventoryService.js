@@ -20,6 +20,10 @@ class InventoryService{
        return axios.put(INVENTORY_API_BASE_URL + '/'+ inventoryID, inventory);
 
     }
+
+    deleteInventory(inventoryID){
+        return axios.delete(INVENTORY_API_BASE_URL + '/' + inventoryID);
+    }
 }
 
 export default new InventoryService()

@@ -13,11 +13,22 @@ class ListInventoryComponent extends Component {
 
         this.addInventory = this.addInventory.bind(this);
         this.editInventory = this.editInventory.bind(this);
+        this.deleteInventory = this.deleteInventory.bind(this);
+    }
+
+    viewInventory(inventoryID){
+      this.props.history.push(`/view-inventory/${inventoryID}`);
     }
 
     editInventory(inventoryID){
         this.props.history.push(`/update-inventory/${inventoryID}`);
+    }
 
+    deleteInventory(inventoryID){
+        //rest api
+        InventoryService.deleteInventory(inventoryID).then(res =>{
+            this.setState({inventory: this.state.inventory.filter(inventory => inventory.inventoryID !== inventoryID)});
+        });
     }
 
     componentDidMount(){
@@ -43,7 +54,6 @@ class ListInventoryComponent extends Component {
 
                       <thead>
                         <tr>
-                          <th>Inventory ID</th>
                           <th>Product ID</th>
                           <th>Product Name</th>
                           <th>Quantity</th>
@@ -59,7 +69,6 @@ class ListInventoryComponent extends Component {
                               this.state.inventory.map(
                                   inventory =>
                                   <tr key = {inventory.inventoryID}>
-                                      <td>{inventory.inventoryID}</td>
                                       <td>{inventory.productID}</td>
                                       <td>{inventory.productName}</td>
                                       <td>{inventory.quantity}</td>
@@ -68,6 +77,13 @@ class ListInventoryComponent extends Component {
                                       <td>
                                           <button onClick = { () => this.editInventory(inventory.inventoryID)} className= "btn btn-info">Update</button>
                                       </td>
+                                      <td>
+                                          <button onClick = { () => this.deleteInventory(inventory.inventoryID)} className= "btn btn-danger">Delete</button>
+                                      </td>
+                                      <td>
+                                          <button onClick = { () => this.viewInventory(inventory.inventoryID)} className= "btn btn-info">View</button>
+                                      </td>
+                                      
                                      
                                   </tr>
                               )

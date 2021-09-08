@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import ListInventoryComponent from './components/ListInventoryComponent';
 import CreateInventoryComponent from './components/CreateInventoryComponent';
 import UpdateInventoryComponent from './components/UpdateInventoryComponent';
+import ViewInventoryComponent from './components/ViewInventoryComponent';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path = "/" exact component = {ListInventoryComponent}></Route>
             <Route path = "/inventory" component = {ListInventoryComponent}></Route>
             <Route path = "/add-inventory" component = {CreateInventoryComponent}></Route>
+            <Route path = "/view-inventory/:inventoryID" component = {ViewInventoryComponent}></Route>
             <Route path = "/update-inventory/:inventoryID" component = {UpdateInventoryComponent}></Route> 
        
       </Switch>
