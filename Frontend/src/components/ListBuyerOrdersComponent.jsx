@@ -29,8 +29,6 @@ class ListBuyerOrdersComponent extends Component {
         this.props.history.push(`/checkout/${id}`);
     }
 
-    
-    
     componentDidMount(){
         BuyerOrdersService.getBuyerOrders().then((res) => {
             this.setState({BuyerOrders: res.data});
