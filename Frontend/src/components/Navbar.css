@@ -24,7 +24,7 @@
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
   }
@@ -54,7 +54,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 0.3rem 1rem;
+    padding: 0rem 1rem;
     height: 100%;
   }
   
