@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+/*Create request order*/
 class CreateRequestOrderComponent extends Component {
 
     constructor(props){

@@ -70,4 +70,5 @@ class ViewInventoryComponent extends Component {
     }
 }
 
+
 export default ViewInventoryComponent;

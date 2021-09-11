@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RequestOrderService from '../services/RequestOrderService';
 
+/*List request order*/
 class ListRequestOrderComponent extends Component {
    
     constructor(props){
