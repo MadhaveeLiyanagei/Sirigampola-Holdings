@@ -38,7 +38,7 @@ class CreateInventoryComponent extends Component {
     }
 
    notify(){
-       toast.warn('Product added to the inevntory successfully!', {position: toast.POSITION.TOP_CENTER})
+       toast.warn('Product added to the inventory successfully!', {position: toast.POSITION.TOP_CENTER})
    }
 
    notify1(){
