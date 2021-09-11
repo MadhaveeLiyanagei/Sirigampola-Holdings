@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import InventoryService from '../services/InventoryService';
+
 
 class CreateInventoryComponent extends Component {
 
@@ -14,7 +15,16 @@ class CreateInventoryComponent extends Component {
             reOrder: '',
             costPrice: '',
 
+            productIDError:'',
+            productNameError:'',
+            quantityError:'',
+            reOrderError:'',
+            costPriceError:'',
+
+
         }
+       
+
 
         this.changeProductIDHandler = this.changeProductIDHandler.bind(this);
         this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
@@ -24,15 +34,52 @@ class CreateInventoryComponent extends Component {
         this.saveInventory = this.saveInventory.bind(this);
     }
 
+   
+    validate = () =>{
+        let productIDError = '';
+        let productNameError = '';
+        let quantityError = '';
+        let reOrderError = '';
+        let costPriceError='';
+
+        if(!this.state.productID){
+            productIDError="Product ID is required";
+        }
+        if(!this.state.productName){
+            productNameError="Product Name is required";
+        }
+        if(!this.state.quantity){
+            quantityError="Quantity is required";
+        }
+        if(!this.state.reOrder){
+            reOrderError="Re-Order level is required";
+        }
+        if(!this.state.costPrice){
+            costPriceError="Cost Price is required";
+        }
+        if(productIDError||productNameError||quantityError||reOrderError||costPriceError){
+            this.setState({productIDError, productNameError, quantityError, reOrderError, costPriceError});
+            return false;
+        }
+
+        return true;
+
+    }
+
     saveInventory = (e)=>{
         e.preventDefault();
 
         let inventory = {productID: this.state.productID, productName: this.state.productName, quantity: this.state.quantity, reOrder: this.state.reOrder, costPrice: this.state.costPrice};
+
+        const isValid = this.validate();
+        if(isValid){
         console.log('inventory => ' + JSON.stringify(inventory));
 
         InventoryService.createInventory(inventory).then(res =>{
                 this.props.history.push('/inventory');
         });
+    }
+        
     }
 
     changeProductIDHandler = (event) =>{
@@ -59,6 +106,8 @@ class CreateInventoryComponent extends Component {
         this.props.history.push('/inventory');
      }
 
+
+
     render() {
         return (
             <div>
@@ -71,26 +120,31 @@ class CreateInventoryComponent extends Component {
                                         <div className="form-group">
                                             <label>Product ID: </label>
                                             <input placeholder="Product ID" name="productID" className="form-control" value={this.state.productID} onChange={this.changeProductIDHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.productIDError} </div>
                                         </div>
 
                                         <div className="form-group">
                                             <label>Product Name: </label>
                                             <input placeholder="Product Name" name="productName" className="form-control" value={this.state.productName} onChange={this.changeProductNameHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.productNameError} </div>
                                         </div>
 
                                         <div className="form-group">
                                             <label>Quantity: </label>
                                             <input placeholder="Quantity" name="quantity" className="form-control" value={this.state.quantity} onChange={this.changeQuantityHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.quantityError} </div>
                                         </div>
 
                                         <div className="form-group">
                                             <label>Re-Order Level: </label>
                                             <input placeholder="Re-Order Level" name="reOrder" className="form-control" value={this.state.reOrder} onChange={this.changeReOrderHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.reOrderError} </div>
                                         </div>
 
                                         <div className="form-group">
                                             <label>Cost Price: </label>
                                             <input placeholder="Cost Price" name="costPrice" className="form-control" value={this.state.costPrice} onChange={this.changeCostPriceHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.costPriceError} </div>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.saveInventory}>Save</button>

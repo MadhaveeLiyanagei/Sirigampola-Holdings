@@ -9,6 +9,7 @@ class ListInventoryComponent extends Component {
         this.state = {
 
             inventory: []
+
         }
 
         this.addInventory = this.addInventory.bind(this);
@@ -31,6 +32,8 @@ class ListInventoryComponent extends Component {
         });
     }
 
+
+
     componentDidMount(){
        InventoryService.getInventory().then((res) => {
              this.setState({ inventory : res.data});
@@ -43,12 +46,14 @@ class ListInventoryComponent extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <h2 className="text-center">Inventory</h2>
                 <div className = "row">
                     <button className = "btn btn-primary" onClick={this.addInventory}>Add Inventory</button>
                 </div>
+                    <br></br>
                  <div className = "row">
                    <table className="table table-striped table bordered">
 
@@ -59,6 +64,7 @@ class ListInventoryComponent extends Component {
                           <th>Quantity</th>
                           <th>Re-Order Level</th>
                           <th>Cost Price</th>
+                          <th></th>
                           <th></th>
                           <th></th>
                         </tr>
