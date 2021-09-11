@@ -1,6 +1,9 @@
 import React, { Component} from 'react';
 import InventoryService from '../services/InventoryService';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 
 class CreateInventoryComponent extends Component {
 
@@ -34,7 +37,20 @@ class CreateInventoryComponent extends Component {
         this.saveInventory = this.saveInventory.bind(this);
     }
 
-   
+   notify(){
+       toast.warn('Product added to the inevntory successfully!', {position: toast.POSITION.TOP_CENTER})
+   }
+
+   notify1(){
+       toast.error('Product was not added to the inventory!', {position: toast.POSITION.TOP_CENTER})
+   }
+
+   warning(){
+
+    if(this.state.quantity == this.state.reOrder || this.state.quantity < this.state.reOrder){
+        toast.warn('Item is below or equal to the re-order level!', {position: toast.POSITION.TOP_CENTER})
+    }
+   }
     validate = () =>{
         let productIDError = '';
         let productNameError = '';
@@ -76,6 +92,8 @@ class CreateInventoryComponent extends Component {
         console.log('inventory => ' + JSON.stringify(inventory));
 
         InventoryService.createInventory(inventory).then(res =>{
+                this.notify();
+                this.warning();
                 this.props.history.push('/inventory');
         });
     }
@@ -103,6 +121,7 @@ class CreateInventoryComponent extends Component {
      }
 
      cancel(){
+         this.notify1();
         this.props.history.push('/inventory');
      }
 

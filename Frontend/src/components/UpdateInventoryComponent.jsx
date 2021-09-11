@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import InventoryService from '../services/InventoryService';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
+toast.configure()
+
 
 class UpdateInventoryComponent extends Component {
 
@@ -31,6 +36,22 @@ class UpdateInventoryComponent extends Component {
         this.changeCostPriceHandler = this.changeCostPriceHandler.bind(this);
         this.updateInventory = this.updateInventory.bind(this);
     }
+
+    notify(){
+        toast.warn('Updated successfully!', {position: toast.POSITION.TOP_CENTER})
+    }
+ 
+    notify1(){
+        toast.error('updation cancelled', {position: toast.POSITION.TOP_CENTER})
+    }
+ 
+    warning(){
+ 
+     if(this.state.quantity == this.state.reOrder || this.state.quantity < this.state.reOrder){
+         toast.warn('Item is below or equal to the re-order level!', {position: toast.POSITION.TOP_CENTER})
+     }
+    }
+
     validate = () =>{
         let productIDError = '';
         let productNameError = '';
@@ -87,6 +108,8 @@ class UpdateInventoryComponent extends Component {
 
 
         InventoryService.updateInventory(inventory, this.state.inventoryID).then(res => {
+                this.notify();
+                this.warning();
                this.props.history.push('/inventory');
         });
     }
@@ -113,6 +136,7 @@ class UpdateInventoryComponent extends Component {
      }
 
      cancel(){
+        this.notify1();
         this.props.history.push('/inventory');
      }
 
