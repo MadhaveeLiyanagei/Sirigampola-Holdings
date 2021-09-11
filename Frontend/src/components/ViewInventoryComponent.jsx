@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import InventoryService from '../services/InventoryService';
 
 
+/*View all the details of a single record*/
+
 class ViewInventoryComponent extends Component {
 
     constructor(props){
