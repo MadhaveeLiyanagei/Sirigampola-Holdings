@@ -7,21 +7,34 @@ import './App.css';
 import AdminHome from './pages/AdminHome';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import Footer from './components/Footer';
+import CreateEmployeeComponent from './components/CreateEmployeeComponent';
+import ListEmployeeLeavesComponent from './components/ListEmployeeLeavesComponent';
+import CreateEmployeeLeavesComponent from './components/CreateEmployeeLeavesComponent';
+import UpdateEmployeeLeavesComponent from './components/UpdateEmployeeLeavesComponent';
+import ViewEmployeeLeavesComponent from './components/ViewEmployeeLeavesComponent';
 
 function App() {
   return (
 
     <div>
-      <>
+     
         <Router>
           <AdminNavbar/>
-          <Switch>
-            <Route path = '/' exact component = {AdminHome} />
-            <Route path = '/Employee'component = {ListEmployeeComponent} /> 
-          </Switch>
-          <Footer/>
+            <div className = "container">
+              <Switch>
+                <Route path = '/' exact component = {AdminHome} />
+                <Route path = '/Employee'component = {ListEmployeeComponent} /> 
+                <Route path = '/add-employee'component = {CreateEmployeeComponent} /> 
+                <Route path = '/employeeLeaves'component = {ListEmployeeLeavesComponent} /> 
+                <Route path = '/add-employeeLeaves'component = {CreateEmployeeLeavesComponent} /> 
+                <Route path = '/update-employeeLeaves/:leaveNumber'component = {UpdateEmployeeLeavesComponent} />
+                <Route path = '/view-employeeLeaves/:leaveNumber'component = {ViewEmployeeLeavesComponent} />
+
+              </Switch>
+            </div>
+            <Footer/>
         </Router>
-      </>
+      
     </div>
     
   );
