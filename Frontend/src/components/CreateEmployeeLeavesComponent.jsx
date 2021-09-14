@@ -3,6 +3,7 @@ import EmployeeLeavesService from '../services/EmployeeLeavesService';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 export default class CreateEmployeeLeavesComponent extends Component {
     constructor(props){
         super(props)
@@ -12,6 +13,11 @@ export default class CreateEmployeeLeavesComponent extends Component {
             employeeID: '',
             date: '',
             reason: '',
+
+
+            employeeIDError: '',
+            dateError: '',
+            reasonError: '',
             
         }
 
@@ -22,26 +28,52 @@ export default class CreateEmployeeLeavesComponent extends Component {
     }
 
     notify(){
-        toast.warn('Leave requested!', {position: toast.POSITION.TOP_CENTER})
+        toast.warn('Updated successfully!', {position: toast.POSITION.TOP_CENTER})
     }
  
     notify1(){
-        toast.error('Leave request cancelled!', {position: toast.POSITION.TOP_CENTER})
+        toast.error('updation cancelled', {position: toast.POSITION.TOP_CENTER})
     }
+    validate = () =>{
+    
 
+        let employeeIDError = '';
+        let dateError = '';
+        let reasonError = '';
+
+        if(!this.state.employeeID){
+            employeeIDError="Employee ID is required";
+        }
+        if(!this.state.date){
+            dateError="Date is required";
+        }
+        if(!this.state.reason){
+            reasonError="A reason is required";
+        }
+
+        if(employeeIDError||dateError||reasonError){
+            this.setState({employeeIDError, dateError, reasonError});
+            return false;
+        }
+
+        return true;
+
+    }
 
     saveEmployeeLeaves = (e)=>{
         e.preventDefault();
 
         let employeeLeaves = {employeeID: this.state.employeeID, date: this.state.date, reason: this.state.reason};
 
-       
+        const isValid = this.validate();
+        if(isValid){
         console.log('employeeLeaves => ' + JSON.stringify(employeeLeaves));
 
         EmployeeLeavesService.createEmployeeLeaves(employeeLeaves).then(res =>{
                 this.notify();
                 this.props.history.push('/');
         });
+      }
         
     }
 
@@ -58,7 +90,7 @@ export default class CreateEmployeeLeavesComponent extends Component {
      }
 
      cancel(){
-         this.notify1();
+         this.notify();
          this.props.history.push('/');
      }
 
@@ -76,19 +108,22 @@ export default class CreateEmployeeLeavesComponent extends Component {
                                         <div className="form-group">
                                             <label>Employee ID: </label>
                                             <input placeholder="Employee ID" name="employeeID" className="form-control" value={this.state.employeeID} onChange={this.changeEmployeeIDHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.employeeIDError} </div>
                                             
                                         </div>
 
                                         <div className="form-group">
                                             <label>Date: </label>
                                             <input placeholder="Date" name="date" className="form-control" value={this.state.date} onChange={this.changeDateHandler}/>
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.dateError} </div>
                                             
                                         </div>
 
                                         <div className="form-group">
                                             <label>Reason: </label>
                                             <input placeholder="Reason" name="reason" className="form-control" value={this.state.reason} onChange={this.changeReasonHandler}/>
-                                            
+                                            <div style={{fontSize: 12, color:"red"}}>{this.state.reasonError} </div>
+                
                                         </div>
 
 

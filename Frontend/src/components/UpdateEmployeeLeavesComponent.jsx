@@ -17,17 +17,31 @@ class UpdateEmployeeLeavesComponent extends Component {
             date: '',
             reason: '',
             status: '',
+            isInEditMode : true
 
 
         }
         
-        this.changeEmployeeIDHandler = this.changeEmployeeIDHandler.bind(this);
         this.changeAdminIDHandler = this.changeAdminIDHandler.bind(this);
-        this.changeDateHandler = this.changeDateHandler.bind(this);
-        this.changeReasonHandler = this.changeReasonHandler.bind(this);
         this.changeStatusHandler = this.changeStatusHandler.bind(this);
         this.updateEmployeeLeaves = this.updateEmployeeLeaves.bind(this);
     }
+
+    notify(){
+        toast.warn('Updated successfully!', {position: toast.POSITION.TOP_CENTER})
+    }
+ 
+    notify1(){
+        toast.error('Updation cancelled!', {position: toast.POSITION.TOP_CENTER})
+    }
+
+
+    changeEditMode = () =>{
+        this.setState({
+             isInEditMode: !this.state.isInEditMode
+        });
+    }
+
 
     componentDidMount(){
        EmployeeLeavesService.getEmployeeLeavesByLeaveNumber(this.state.leaveNumber).then((res) =>{
@@ -53,26 +67,17 @@ class UpdateEmployeeLeavesComponent extends Component {
 
 
         EmployeeLeavesService.updateEmployeeLeaves(employeeLeaves, this.state.leaveNumber).then(res => {
-                this.notify();
+               this.notify();
                this.props.history.push('/employeeLeaves');
         });
-}
+  }
 
-    changeEmployeeIDHandler = (event) =>{
-       this.setState({employeeID: event.target.value});
-    }
     
     changeAdminIDHandler = (event) =>{
         this.setState({adminID: event.target.value});
      }
 
-     changeDateHandler = (event) =>{
-        this.setState({date: event.target.value});
-     }
-
-     changeReasonHandler = (event) =>{
-        this.setState({reason: event.target.value});
-     }
+    
 
      changeStatusHandler = (event) =>{
         this.setState({status: event.target.value});
@@ -94,7 +99,7 @@ class UpdateEmployeeLeavesComponent extends Component {
                                    <form>
                                         <div className="form-group">
                                             <label>Employee ID: </label>
-                                            <input placeholder="Employee ID" name="employeeID" className="form-control" value={this.state.employeeID} onChange={this.changeEmployeeIDHandler}/>  
+                                            <input placeholder="Employee ID" name="employeeID" className="form-control" value={this.state.employeeID} onChange={this.isInEditMode}/>  
                                         </div>
 
                                         <div className="form-group">
@@ -105,13 +110,13 @@ class UpdateEmployeeLeavesComponent extends Component {
 
                                         <div className="form-group">
                                             <label>Date: </label>
-                                            <input placeholder="Date" name="date" className="form-control" value={this.state.date} onChange={this.changeDateHandler}/>
+                                            <input placeholder="Date" name="date" className="form-control" value={this.state.date} onChange={this.isInEditMode}/>
                                             
                                         </div>
 
                                         <div className="form-group">
                                             <label>Reason: </label>
-                                            <input placeholder="Reason" name="reason" className="form-control" value={this.state.reason} onChange={this.changeReasonHandler}/>
+                                            <input placeholder="Reason" name="reason" className="form-control" value={this.state.reason} onChange={this.isInEditMode}/>
                                             
                                         </div>
 

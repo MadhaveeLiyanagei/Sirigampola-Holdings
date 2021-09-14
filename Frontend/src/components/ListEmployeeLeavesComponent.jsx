@@ -62,13 +62,13 @@ export default class ListEmployeeLeavesComponent extends Component {
                                             <td>{employeeLeaves.reason}</td>
                                             <td>{employeeLeaves.status}</td>
                                             <td>
-                                          <button onClick = { () => this.editEmployeeLeaves(employeeLeaves.leaveNumber)} className= "btn btn-info">Update</button>
+                                          <button onClick = { () => this.editEmployeeLeaves(employeeLeaves.leaveNumber)} className= "button-up">Update</button>
                                            </td>
                                            <td>
-                                          <button onClick = { () => this.deleteEmployeeLeaves(employeeLeaves.leaveNumber)} className= "btn btn-danger">Delete</button>
+                                          <button onClick = { () => this.deleteEmployeeLeaves(employeeLeaves.leaveNumber)} className= "button-dele">Delete</button>
                                           </td>
                                           <td>
-                                          <button onClick = { () => this.viewEmployeeLeaves(employeeLeaves.leaveNumber)} className= "btn btn-info">View</button>
+                                          <button onClick = { () => this.viewEmployeeLeaves(employeeLeaves.leaveNumber)} className= "button-view ">View</button>
                                          </td>
                                         </tr>
                                     )

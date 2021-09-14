@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
+import Esb from './Esb';
 
 class ListEmployeeComponent extends Component {
     constructor(props){
@@ -26,15 +27,19 @@ class ListEmployeeComponent extends Component {
 
     render() {
         return (
+            
+        
             <div>
+                <div>
+                    <Esb/>
+                </div>
                 <h2 className="text-center">Employees List</h2><br/><br/>
+               
                 <div className = "row">
+                   
                     <button className = "btn-btn-primary" onClick={this.ViewEmployeeLeaves}>Employee Leaves</button>
                 </div>
-                
-                
-                
-                
+                                
                 <div className = "row">
                     <center>
                     <table className = "table table-striped table-bordered">
@@ -64,6 +69,7 @@ class ListEmployeeComponent extends Component {
 
                 </div>
             </div>
+            
         )
     }
 }
