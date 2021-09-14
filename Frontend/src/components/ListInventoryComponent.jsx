@@ -26,7 +26,6 @@ class ListInventoryComponent extends Component {
     }
 
     deleteInventory(inventoryID){
-        //rest api
         InventoryService.deleteInventory(inventoryID).then(res =>{
             this.setState({inventory: this.state.inventory.filter(inventory => inventory.inventoryID !== inventoryID)});
         });

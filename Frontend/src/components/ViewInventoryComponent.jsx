@@ -25,11 +25,6 @@ class ViewInventoryComponent extends Component {
         });
     }
 
-    addRequestOrder(){
-        this.props.history.push('/add-requestOrder');
-    }
-
-
     render() {
         return (
             <div>
@@ -66,7 +61,6 @@ class ViewInventoryComponent extends Component {
                             <div>{this.state.inventory.costPrice}</div>
                         </div>
                     </div>
-                    <button className = "btn btn-primary" onClick={this.addRequestOrder}>Request an Order</button>
                 </div>
             </div>
         );

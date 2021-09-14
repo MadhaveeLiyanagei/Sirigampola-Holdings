@@ -9,8 +9,7 @@ import ListInventoryComponent from './components/ListInventoryComponent';
 import CreateInventoryComponent from './components/CreateInventoryComponent';
 import UpdateInventoryComponent from './components/UpdateInventoryComponent';
 import ViewInventoryComponent from './components/ViewInventoryComponent';
-import ListRequestOrderComponent from './components/ListRequestOrderComponent';
-import CreateRequestOrderComponent from './components/CreateRequestOrderComponent';
+
 
 function App() {
   return (
@@ -25,8 +24,6 @@ function App() {
             <Route path = "/add-inventory" component = {CreateInventoryComponent}></Route>
             <Route path = "/view-inventory/:inventoryID" component = {ViewInventoryComponent}></Route>
             <Route path = "/update-inventory/:inventoryID" component = {UpdateInventoryComponent}></Route> 
-            <Route path = "/requestOrder" component = {ListRequestOrderComponent}></Route>
-            <Route path = "/add-requestOrder" component = {CreateRequestOrderComponent}></Route>
       </Switch>
       </div>
       <Footer/>
