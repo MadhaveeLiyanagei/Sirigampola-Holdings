@@ -3,6 +3,7 @@ import AdminNavbar from './components/AdminNavbar';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './App.css';
+//import './AdminEmployeeSideBar.css';
 //import {BrowserRouter as Router, Route, Switch}from 'react-router-dom';
 import AdminHome from './pages/AdminHome';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
@@ -16,6 +17,8 @@ import ListNoticesComponent from './components/ListNoticesComponent';
 import CreateNoticesComponent from './components/CreateNoticesComponent';
 import UpdateNoticeComponent from './components/UpdateNoticeComponent';
 import ViewNoticesComponent from './components/ViewNoticesComponent';
+import AdminEmployeeSideBar from './components/AdminEmployeeSideBar';
+
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
      
         <Router>
           <AdminNavbar/>
+  
             <div className = "container">
               <Switch>
                 <Route path = '/' exact component = {AdminHome} />

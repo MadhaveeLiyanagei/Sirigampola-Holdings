@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NoticesService from '../services/NoticesService';
+import AdminEmployeeSideBar from './AdminEmployeeSideBar'
 
 
 /*View all the details of a single record*/
@@ -28,15 +29,14 @@ class ViewNoticesComponent extends Component {
     render() {
         return (
             <div>
+                 <>
+                <AdminEmployeeSideBar/>
+                </>
+    
                 <br></br>
                 <div className = "card col-md-6 offset-md-3">
                     <h3 className="text-center"> View Notices Details</h3>
-                    <div className ="card-body">
-                        <div className="row">
-                            <label><b>Notice ID:</b> </label>
-                            <div>{this.state.adNotices.id}</div>
-                        </div> 
-                        <br></br>
+                    <div className ="card-body">               
                         <br></br>
                         <div className="row">
                             <label><b>Date: </b></label>

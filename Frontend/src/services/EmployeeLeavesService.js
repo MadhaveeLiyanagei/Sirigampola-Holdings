@@ -23,7 +23,6 @@ class EmployeeLeavesService{
     deleteEmployeeLeaves(leaveNumber){
         return axios.delete(EMPLOYEE_LEAVES_API_BASE_URL + '/' + leaveNumber);
     }
-
 }
 
 export default new EmployeeLeavesService()

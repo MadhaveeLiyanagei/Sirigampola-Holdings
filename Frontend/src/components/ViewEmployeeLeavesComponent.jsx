@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeLeavesService from '../services/EmployeeLeavesService';
+import AdminEmployeeSideBar from './AdminEmployeeSideBar'
 
 
 /*View all the details of a single record*/
@@ -28,6 +29,10 @@ class ViewEmployeeLeavesComponent extends Component {
     render() {
         return (
             <div>
+                 <>
+                <AdminEmployeeSideBar/>
+                </>
+    
                 <br></br>
                 <div className = "card col-md-6 offset-md-3">
                     <h3 className="text-center"> View Employee leave Details</h3>

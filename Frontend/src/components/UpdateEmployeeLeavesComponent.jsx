@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import EmployeeLeavesService from '../services/EmployeeLeavesService';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import AdminEmployeeSideBar from './AdminEmployeeSideBar'
 
 
 class UpdateEmployeeLeavesComponent extends Component {
@@ -91,6 +92,10 @@ class UpdateEmployeeLeavesComponent extends Component {
     render() {
         return (
             <div>
+                 <>
+                <AdminEmployeeSideBar/>
+                </>
+    
                 <div className = "container">
                     <div className="row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">

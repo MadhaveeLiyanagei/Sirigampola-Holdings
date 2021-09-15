@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeLeavesService from '../services/EmployeeLeavesService';
+import AdminEmployeeSideBar from './AdminEmployeeSideBar'
 
 export default class ListEmployeeLeavesComponent extends Component {
    constructor(props){
@@ -34,6 +35,10 @@ export default class ListEmployeeLeavesComponent extends Component {
     render() {
         return (
             <div>
+                 <>
+                <AdminEmployeeSideBar/>
+                </>
+    
                  <h2 className="text-center"> Employee Leaves</h2>
                  <div className = "row">
                     <center>

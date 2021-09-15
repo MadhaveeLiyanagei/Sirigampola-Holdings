@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NoticesService from '../services/NoticesService';
+import AdminEmployeeSideBar from './AdminEmployeeSideBar'
 
 
 class UpdateNoticeComponent extends Component { 
@@ -42,6 +43,10 @@ class UpdateNoticeComponent extends Component {
     render() {
         return (
             <div>
+                 <>
+                <AdminEmployeeSideBar/>
+                </>
+    
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3">

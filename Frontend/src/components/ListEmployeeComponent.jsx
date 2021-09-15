@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
-import Esb from './Esb';
+import AdminEmployeeSideBar from './AdminEmployeeSideBar'
 
 class ListEmployeeComponent extends Component {
     constructor(props){
@@ -10,7 +10,6 @@ class ListEmployeeComponent extends Component {
             employees: []
 
         }
-        this.ViewEmployeeLeaves = this.ViewEmployeeLeaves.bind(this);
     }
 
     componentDidMount(){
@@ -19,30 +18,20 @@ class ListEmployeeComponent extends Component {
         });
     }
 
-    ViewEmployeeLeaves(){
-
-        this.props.history.push('/employeeLeaves');
-
-    }
+    
 
     render() {
+
         return (
-            
         
-            <div>
-                <div>
-                    <Esb/>
-                </div>
+            <div className="column">
+                
                 <h2 className="text-center">Employees List</h2><br/><br/>
-               
-                <div className = "row">
-                   
-                    <button className = "btn-btn-primary" onClick={this.ViewEmployeeLeaves}>Employee Leaves</button>
-                </div>
-                                
+                
+    
                 <div className = "row">
                     <center>
-                    <table className = "table table-striped table-bordered">
+                    <table className = "table table-striped table-bordered" >
                         <thead>
                             <tr>
                                 <th><center>Employee First Name</center></th>
