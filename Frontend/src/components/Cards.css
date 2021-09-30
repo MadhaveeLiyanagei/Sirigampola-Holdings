@@ -1,3 +1,4 @@
+/*
 .cards {
     padding: 4rem;
     background: #fff;
@@ -18,17 +19,17 @@
   
   .cards__wrapper {
     position: relative;
-    margin: 50px 0 45px;
+    margin: 100px 0 100px;
   }
   
   .cards__items {
-    margin-bottom: 24px;
+    margin-bottom: 100px;
   }
   
   .cards__item {
     display: flex;
     flex: 1;
-    margin: 0 1rem;
+    margin: 0 3rem;
     border-radius: 10px;
   }
   
@@ -116,4 +117,275 @@
       margin-bottom: 2rem;
     }
   }
+  */
+
   
+.destination{
+	margin: 0;
+	padding: 0;
+	font-family: poppins;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-height: 100vh;
+	color: #fff;
+}
+  
+.containerCard{
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between; 
+
+}
+
+.cardM{
+	position: relative;
+	left: 0%;
+	width:300px;
+	height:370px;
+	transition: 0.3s ease-out;
+	box-shadow: 0 3px 15px rgba(0,0,0,0.7);
+	background: black;
+  
+
+}
+
+.cardM .imgboxM
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.cardM .imgboxM img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	display: block;
+	transition: 0.5;
+}
+
+.cardM .contentM{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 50%;
+	background: black;
+	transition: all 0.5s cubic-bezier(.48, -0.28,0.41,1.4);
+	overflow: hidden;
+	box-sizing: border-box;
+
+
+}
+
+.cardM:hover .contentM{
+	width:100%;
+	height:100%;
+	left: 0;
+	bottom: 0;
+	padding: 10px;
+}
+
+.contentM p{
+	
+	margin: 10px 0 0;
+	padding: 5em 0em;
+	transform: translateY(1em);
+	line-height: 1.3em;
+	transition: 0.3s;
+	text-align: justify;
+	opacity: 0;
+	color: #000000;
+}
+
+.cardM:hover .contentM p
+{
+	transform: translateY(0);
+	opacity: 1;
+
+}
+
+h2{
+	text-align: center;
+}
+.cardM:hover
+{
+	box-shadow: 0 0 5em rgba(0, 0, 0, 0.4);
+}
+
+.containerForm{
+  margin-top: 5%;
+  margin-bottom: 5% ;
+  
+}
+
+/*
+
+.title{
+	color: white;
+}
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  display: inline;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+
+li a:hover:not(.active){
+	
+  background-color: #111;
+
+}
+img{
+
+	padding: 50;
+
+
+}
+
+.btn1{
+	background: #33B7FF;
+	text-align: center;
+	color: white;
+	padding: 12px;
+	border-radius: 25px;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: space-around;
+	width: 100px;
+	height: 37px;
+	margin: 0 30px;
+	border: none;
+	
+  	position: absolute;
+  	top: 6%;
+  	left: 80%;
+  
+}
+.btn2{
+	background: #808080;
+	text-align: center;
+	color: white;
+	padding: 12px;
+	border-radius: 25px;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: space-around;
+	width: 100px;
+	height: 37px;
+	margin: 0 10px;
+	border: none;
+	
+   position: absolute;
+   top: 6%;
+  left: 90%
+ 
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 3px 5px;
+  position: relative;
+  top: -110px;
+  left: 70px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.copyright{
+	color: white;
+	position: relative;
+}
+.logo{
+
+	vertical-align: top;
+}
+
+.sidebar{
+	height: 100%;
+	width: 160px;
+	position: fixed;
+	z-index: 1;
+	top: 150px;
+	left: 0;
+	background-color: transparent;
+	overflow-x: hidden;
+	padding-top: 16px;
+}
+.sidebar a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+}
+
+.sidebar a:hover {
+	color: #111;
+}
+
+
+.card3 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  background-color: black;
+  align-items: right;
+  text-align: center;
+}
+
+.acontainer{
+	margin-top: 0%;
+	margin-right: 0px; 
+}*/

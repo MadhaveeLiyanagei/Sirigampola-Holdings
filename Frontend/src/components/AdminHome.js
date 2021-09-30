@@ -4,12 +4,10 @@ import HeroSection from '../components/HeroSection'
 import Footer from '../components/Footer'
 import Cards from '../components/Cards';
 
-function Home(){
+function AdminHome(){
     return(
         <>
             <HeroSection/>
-            <br></br>
-            <br></br>
             <Cards/>
             <Footer/>
 
@@ -18,4 +16,4 @@ function Home(){
     );
 }
  
-export default Home;
+export default AdminHome;
