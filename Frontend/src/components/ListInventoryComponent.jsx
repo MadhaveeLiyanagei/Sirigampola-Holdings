@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import InventoryService from '../services/InventoryService';
+import SoloAlert from 'soloalert'
+
 
 class ListInventoryComponent extends Component {
 
@@ -8,7 +10,8 @@ class ListInventoryComponent extends Component {
 
         this.state = {
 
-            inventory: []
+            inventory: [],
+            searchId:''
 
         }
 
@@ -25,11 +28,68 @@ class ListInventoryComponent extends Component {
         this.props.history.push(`/update-inventory/${inventoryID}`);
     }
 
+    
+
     deleteInventory(inventoryID){
-        InventoryService.deleteInventory(inventoryID).then(res =>{
-            this.setState({inventory: this.state.inventory.filter(inventory => inventory.inventoryID !== inventoryID)});
-        });
-    }
+
+        SoloAlert.confirm({
+
+            title: "Confirm Delete",
+            body: "Are you sure",
+            theme: "dark",
+            useTransparency: true,
+            onOk: async function () {
+
+                try {
+                    InventoryService.deleteInventory(inventoryID)
+                   await this.setState({
+                        inventory: this.state.inventory.filter(inventory => inventory.inventoryID !== inventoryID)
+                    });
+
+
+                    SoloAlert.alert({
+                        title: "Welcome!",
+                        body: "Deletion successful",
+                        icon: "success",
+                        theme: "dark",
+                        useTransparency: true,
+                        onOk: function () {
+                            window.location = "/inventory"
+                        },
+
+                    });
+
+                } catch (err) {
+                    SoloAlert.alert({
+                        title: "Welcome!",
+                        body: "Deletion successful",
+                        icon: "success",
+                        theme: "dark",
+                        useTransparency: true,
+                        onOk: function () {
+                            window.location = "/inventory"
+                        },
+
+                    });
+                }
+            },
+            onCancel: function () {
+                SoloAlert.alert({
+                    title: "Oops!",
+                    body: "You canceled delete request",
+                    icon: "warning",
+                    theme: "dark",
+                    useTransparency: true,
+                    onOk: function () {
+
+                    },
+
+                });
+            },
+
+        })
+
+}
 
 
 
@@ -44,13 +104,31 @@ class ListInventoryComponent extends Component {
         this.props.history.push('/add-inventory');
     }
 
+    searchInventorybyName(event){
+
+        this.setState({ searchId: event.target.value.substr(0,20)});
+      }
+
     render() {
+
+        let filterProductName = this.state.inventory.filter((
+
+            inventory)=>{
+
+                return inventory.productName.toLowerCase().indexOf(this.state.searchId.toLowerCase())!==-1;
+
+            }
+        );
 
         return (
             <div>
                 <h2 className="text-center">Inventory</h2>
                 <div className = "row">
-                    <button className = "btn btn-primary" onClick={this.addInventory}>Add Inventory</button>
+
+                <div className = "form-group col-md-4">
+                      <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Product Name" value={this.state.searchId} onChange={this.searchInventorybyName.bind(this)}/>
+                 </div>
+                    <button className = "button" onClick={this.addInventory}>Add Inventory</button>
                 </div>
                     <br></br>
                  <div className = "row">
@@ -71,8 +149,10 @@ class ListInventoryComponent extends Component {
 
                       <tbody>
                           {
-                              this.state.inventory.map(
-                                  inventory =>
+                              filterProductName.map(
+                                inventory=>
+                              //this.state.inventory.map(
+                                  //inventory =>
                                   <tr key = {inventory.inventoryID}>
                                       <td>{inventory.productID}</td>
                                       <td>{inventory.productName}</td>
@@ -80,13 +160,13 @@ class ListInventoryComponent extends Component {
                                       <td>{inventory.reOrder}</td>
                                       <td>{inventory.costPrice}</td>
                                       <td>
-                                          <button onClick = { () => this.editInventory(inventory.inventoryID)} className= "btn btn-info">Update</button>
+                                          <button onClick = { () => this.editInventory(inventory.inventoryID)} className= "button-up">Update</button>
                                       </td>
                                       <td>
-                                          <button onClick = { () => this.deleteInventory(inventory.inventoryID)} className= "btn btn-danger">Delete</button>
+                                          <button onClick = { () => this.deleteInventory(inventory.inventoryID)} className= "button-dele">Delete</button>
                                       </td>
                                       <td>
-                                          <button onClick = { () => this.viewInventory(inventory.inventoryID)} className= "btn btn-info">View</button>
+                                          <button onClick = { () => this.viewInventory(inventory.inventoryID)} className= "button-view">View</button>
                                       </td>
                                       
                                      
@@ -97,8 +177,7 @@ class ListInventoryComponent extends Component {
 
                     </table>
                  </div>
-
-
+                
             </div>
         );
     }

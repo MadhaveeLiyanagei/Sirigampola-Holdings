@@ -38,7 +38,7 @@ class UpdateInventoryComponent extends Component {
     }
 
     notify(){
-        toast.warn('Updated successfully!', {position: toast.POSITION.TOP_CENTER})
+        toast.success('Updated successfully!', {position: toast.POSITION.TOP_CENTER})
     }
  
     notify1(){

@@ -3,6 +3,7 @@ import InventoryService from '../services/InventoryService';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
+
 toast.configure()
 
 class CreateInventoryComponent extends Component {
@@ -38,7 +39,7 @@ class CreateInventoryComponent extends Component {
     }
 
    notify(){
-       toast.warn('Product added to the inventory successfully!', {position: toast.POSITION.TOP_CENTER})
+       toast.success('Product added to the inventory successfully!', {position: toast.POSITION.TOP_CENTER})
    }
 
    notify1(){
@@ -171,6 +172,7 @@ class CreateInventoryComponent extends Component {
                                      </form>
                                 </div>
                         </div>
+                       
                     </div>
                 </div>
             </div>

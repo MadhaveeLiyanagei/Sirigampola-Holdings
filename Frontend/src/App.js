@@ -9,7 +9,11 @@ import ListInventoryComponent from './components/ListInventoryComponent';
 import CreateInventoryComponent from './components/CreateInventoryComponent';
 import UpdateInventoryComponent from './components/UpdateInventoryComponent';
 import ViewInventoryComponent from './components/ViewInventoryComponent';
-
+import ListProductComponent from './components/ListProductComponent';
+import CreateProductComponent from './components/CreateProductComponent';
+import UpdateProductComponent from './components/UpdateProductComponent';
+import ViewProductComponent from './components/ViewProductComponent';
+import InventoryReport from './components/InventroyReport';
 
 function App() {
   return (
@@ -23,7 +27,12 @@ function App() {
             <Route path = "/inventory" component = {ListInventoryComponent}></Route>
             <Route path = "/add-inventory" component = {CreateInventoryComponent}></Route>
             <Route path = "/view-inventory/:inventoryID" component = {ViewInventoryComponent}></Route>
-            <Route path = "/update-inventory/:inventoryID" component = {UpdateInventoryComponent}></Route> 
+            <Route path = "/update-inventory/:inventoryID" component = {UpdateInventoryComponent}></Route>
+            <Route path = "/product" component = {ListProductComponent}></Route>
+            <Route path = "/add-product" component = {CreateProductComponent}></Route>  
+            <Route path = "/update-product/:productID" component = {UpdateProductComponent}></Route>
+            <Route path = "/inventoryreport" component = {InventoryReport}></Route>
+            
       </Switch>
       </div>
       <Footer/>
@@ -31,5 +40,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
