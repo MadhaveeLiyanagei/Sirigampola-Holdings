@@ -1,7 +1,6 @@
 .button {
     background-color: #2eafc6;
     border: none;
-   
     padding: 16px 32px;
     text-align: center;
     font-size: 16px;
@@ -19,7 +18,7 @@
 
 
   .button-up {
-    background-color: #1b9a49;
+    background-color: #07b60f;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -40,7 +39,7 @@
 
   
   .button-view {
-    background-color: #c2a814;
+    background-color: #ffc400;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -57,6 +56,12 @@
 
   
   .button-view:hover {opacity: 2}
+
+  .react-pdf__Page__canvas_Single_ViewI {
+    margin: 0 auto;
+    width: 75% !important;
+    height: 100% !important;
+  }
 
   
   .button-dele {
@@ -144,3 +149,115 @@
   background-color: #f02669;
 }
 
+.invntry_tbl_header{
+  width: 100%;
+}
+
+.buttonShana1 {
+  background-color: #2eafc6;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.buttonShana1:hover {background-color: #406eee;
+  color: rgb(255, 255, 255);
+}
+
+.buttonShana2 {
+  background-color: #ff9090;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.buttonShana2:hover {background-color: #f84d69;
+  color: white;
+}
+
+.btn_green{
+    background-color: #365afa;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn_green:hover{
+  background-color: #3f29be;
+}
+
+.btn_red{
+  background-color: #fa3660;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  width: 90%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn_red:hover{
+  background-color: #8a0421;
+}
+
+.bgclr{
+  background-color: #ccc5c7;
+}
+
+.txtclr{
+  color: rgb(7, 6, 6);
+}
+
+.tabletxtclr{
+  color: rgb(46, 46, 46);
+  border: 1px;
+}
+
+.buttonNotice{
+  background-color: #9346f8;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttonNotice:hover {background-color: #62316e;
+  color: white;
+}

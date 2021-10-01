@@ -98,6 +98,9 @@ import SoloAlert from 'soloalert'
 
 
     render() {
+        var tableStyle = {
+            "border": "0.5px solid black"
+         };
         return (
             <div>                
                 <div className="row">
@@ -105,19 +108,18 @@ import SoloAlert from 'soloalert'
                     <AdminEmployeeSideBar/>
                     </>
                     <h2 className="text-center"><br></br><br></br><u>Notices List</u><br></br><br></br></h2>
-                    <button className="button" onClick={this.addNotice}><b>Add Notice</b></button>
+                    <button className="buttonNotice" onClick={this.addNotice}><b>Add Notice</b></button>
                 </div>
                 
                 <div className="row">
                 <center><br></br>
-                    <table className="table table-striped table-bordered">
+                    <table className="tabletxtclr" style={tableStyle}>
                         <thead>
-                            <tr>
-                                
-                                <th>Notice</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-                                <th>View</th> 
+                            <tr style={tableStyle}>
+                                <th><center><h5>Notice</h5></center></th>
+                                <th><center><h5>Update</h5></center></th>
+                                <th><center><h5>Delete</h5></center></th>
+                                <th><center><h5>View</h5></center></th> 
                             </tr>
                             </thead>
 
@@ -126,7 +128,7 @@ import SoloAlert from 'soloalert'
                                     this.state.adNotices.map(
                                         adNotices => 
                                         <tr key = {adNotices.id}>
-                                            <td>{adNotices.content}</td>
+                                            <td style={tableStyle}>{adNotices.content}</td>
                                             <td>
                                                 <button onClick={() => this.editNotices(adNotices.id)}className="button-up">Update</button>
                                             </td>
@@ -140,7 +142,7 @@ import SoloAlert from 'soloalert'
                                     )
                                 }
                             </tbody>
-                    </table>
+                    </table><br></br>
                     </center>
                 </div>
             </div>

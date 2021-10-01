@@ -33,7 +33,7 @@
     margin-left: 0.5rem;
     font-size: 1.8rem;
   }
-  
+
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -48,7 +48,7 @@
   .nav-item {
     height: 80px;
   }
-  
+
   .nav-links {
     color: #fff;
     display: flex;
@@ -59,8 +59,10 @@
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid #fff;
+    border-bottom: 4px solid rgb(255, 166, 0);
     transition: all 0.2s ease-out;
+    color: rgb(255, 166, 0);
+
   }
   
   .fa-bars {
@@ -119,6 +121,15 @@
       left: 0;
       transform: translate(25%, 50%);
     }
+
+    .navbar-logo:hover {
+      background-color: rgb(255, 166, 0);
+      color: rgb(255, 166, 0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(25%, 50%);
+    }
   
     .menu-icon {
       display: block;
@@ -156,4 +167,3 @@
       transition: 250ms;
     }
   }
-  

@@ -107,7 +107,6 @@ export default class ListEmployeeLeavesComponent extends Component {
           <>
             <AdminEmployeeSideBar />
           </>
-          
 
           <table className="srchbr">
             <br></br>
@@ -203,12 +202,11 @@ export default class ListEmployeeLeavesComponent extends Component {
                     </td>
                   </tr>
                 ))}
-
               </tbody>
             </table>
             <>
-            <ParticleBackground />
-          </>
+              <ParticleBackground />
+            </>
           </center>
         </div>
       </div>
