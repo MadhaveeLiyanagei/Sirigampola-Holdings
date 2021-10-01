@@ -6,7 +6,7 @@ import DeliveryService from '../services/DeliveryService';
 
 //Delivery delivery
 
-class UpdateDeliveryComponent extends Component {
+class AddCourierDeliveryComponent extends Component {
     constructor(props) {
         super(props)
 
@@ -34,9 +34,11 @@ class UpdateDeliveryComponent extends Component {
     componentDidMount(){
         DeliveryService.getDeliveryById(this.state.id).then( (res) =>{
             let delivery  = res.data;
-            this.setState({order_name: delivery.order_name,
+            this.setState({
+                order_name: delivery.order_name,
                 order_address: delivery.order_address,
                 order_phone_number: delivery.order_phone_number,
+                order_courier_name: delivery.order_courier_name,
                
             
             });
@@ -86,33 +88,15 @@ class UpdateDeliveryComponent extends Component {
                           <center> <h3 > Update Courier Services </h3> </center>
                                 <div className = "card-body">
                                     <form>
-                                    <div className = "form-group">
-                                            <label> Courier Service Name: </label>
-                                            <br></br>
-                                            <input placeholder="Courier Name" name="name" className="form-control" 
-                                                value={this.state.order_name} onChange={this.changeNameHandler}/>
-                                        </div>
-
-                                    <div className = "form-group">
-                                            <label> Address             : </label>
-                                            <br></br>
-                                            <input placeholder="Address" name="address" className="form-control" 
-                                                value={this.state.order_address} onChange={this.changeAddressHandler}/>
-                                        </div>    
-                                       
-                                        <div className = "form-group">
-                                            <label> Phone Number        : </label> 
-                                            <br></br>
-                                            <input placeholder="Phone Number" name="phone_number" className="form-control" 
-                                                value={this.state.order_phone_number} onChange={this.changePhoneHandler}/>
-                                        </div>    
-                                       
+                                    
                                         <div className = "form-group">
                                             <label> Courier       : </label> 
                                             <br></br>
-                                            <input placeholder="Phone Number" name="phone_number" className="form-control" 
+                                            <input placeholder="Courier name" name="courier name" className="form-control" 
                                                 value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
                                         </div>   
+
+                                       
                                   
                                             <br></br>
 
@@ -134,4 +118,4 @@ class UpdateDeliveryComponent extends Component {
 
 
 
-export default UpdateDeliveryComponent
+export default AddCourierDeliveryComponent

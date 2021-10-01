@@ -28,6 +28,10 @@ class DeliveryService{
         return axios.delete(DELIVERY_API_BASE_URL  + '/' + deliveryId);
     }
 
+    updateCourierDelivery(delivery, deliveryId){
+        return axios.put(DELIVERY_API_BASE_URL  + '/' + deliveryId, delivery);
+    }
+
 
 
 }

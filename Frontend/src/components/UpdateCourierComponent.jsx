@@ -64,6 +64,7 @@ class UpdateCourierComponent extends Component {
         changeEmailHandler= (event) => {
             this.setState({email: event.target.value})
         }
+        
 
         cancel(){
             this.props.history.push('/courier');

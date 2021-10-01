@@ -9,8 +9,7 @@ import SoloAlert from 'soloalert'
         super(props)
 
         this.state = {
-                delivery: [],
-                searchId : ''
+                delivery: []
 
         }
     this.addDelivery = this.addDelivery.bind(this);
@@ -91,7 +90,10 @@ import SoloAlert from 'soloalert'
         this.props.history.push(`/update-delivery/${id}`);
 
     }
+    courierDelivery(id){
+        this.props.history.push(`/courier-delivery/${id}`);
 
+    }
 
     componentDidMount(){
         DeliveryService.getDelivery().then((res)=>{
@@ -104,21 +106,9 @@ import SoloAlert from 'soloalert'
         this.props.history.push('/add-delivery');
     }
 
-    searchDeliveryByName(event){
-
-        this.setState({ searchId: event.target.value.substr(0,20)});
-      }
             
 
     render() {
-        let filterDeliveryName = this.state.delivery.filter((
-
-            delivery)=>{
-
-                return  delivery.order_name.toLowerCase().indexOf(this.state.searchId.toLowerCase())!==-1;
-
-            }
-        );
         return (
             <div>
     <center>
@@ -126,12 +116,9 @@ import SoloAlert from 'soloalert'
             <h2 className = "text-center" >Delivery Management</h2>
     </center>
             <div className = "row">
-
                 <button className="button" onClick={this.addDelivery}>Add Delivery</button>
 
-                <div className = "form-group col-md-4">
-                      <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Delivery Name" value={this.state.searchId} onChange={this.searchDeliveryByName.bind(this)}/>
-            </div>
+                
                 
                 <table className = "table table-striped table-bordered">
 
@@ -141,7 +128,8 @@ import SoloAlert from 'soloalert'
                                 <th style={{width: "10%"}}>Order Name</th>
                                 <th style={{width: "15%"}}>Address</th>
                                 <th style={{width: "10%"}}>Phone Number</th>
-                                <th style={{width: "10%"}}>Courier</th>
+                                <th style={{width: "10%"}}>courier </th>
+                                <th style={{width: "10%"}}>Search</th>
                                 <th style={{width: "20%"}}>delete update</th>
                                 <th style={{width: "15%"}}>Report</th>
                                 <th style={{width: "15%"}}>Done</th>
@@ -152,16 +140,15 @@ import SoloAlert from 'soloalert'
 
                     <tbody>
                         {
-                            filterDeliveryName.map(
-                                delivery=>
-                           // this.state.delivery.map(
-                              // delivery =>
+                            this.state.delivery.map(
+                               delivery =>
                                <tr key = {delivery.id}>
                                     <td>{ delivery.id}</td>
                                     <td >{ delivery.order_name}</td> 
                                     <td>{ delivery.order_address}</td>
                                     <td>{ delivery.order_phone_number}</td>
-                                    <tb> </tb>
+                                    <td>{ delivery.order_courier_name}</td>
+                                    <tb> <button onClick={ () => this.courierDelivery(delivery.id)} className="button-search">Courier </button></tb>
                                     <td>
                                     <button onClick={ () => this.editDelivery(delivery.id)} className="button-up">Update </button>
                                     <button style={{marginLeft: "10px"}} onClick={ () => this.deleteDelivery(delivery.id)} className="button-dele">Delete </button>   

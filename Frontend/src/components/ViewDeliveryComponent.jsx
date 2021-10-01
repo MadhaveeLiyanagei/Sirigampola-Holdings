@@ -47,6 +47,12 @@ class ViewDeliveryComponent extends Component {
                             <label><b>Phone Number:</b>  </label>
                             <div> { this.state.delivery.order_phone_number}</div>
                         </div>
+                        <br></br>
+                        <div className = "row">
+                            <label><b>Courier Name:</b>  </label>
+                            <div> { this.state.delivery.order_courier_name}</div>
+                        </div>
+                       
                        
                              
                     </div>
