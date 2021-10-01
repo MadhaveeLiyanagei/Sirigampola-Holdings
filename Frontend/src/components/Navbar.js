@@ -29,36 +29,37 @@ useEffect(() =>{
             <Link to="/" className="navbar-logo" onClick = {closeMobileMenu}>
                 SIRIGAMPOLA HOLDINGS <i className="fab fa-typo3"></i>  
             </Link>
+
             <div className = 'menu-icon' onClick= {handleClick}>
             <i className = {click ? 'fas fa-times' : 'fas fa-bars'}/>
             </div>
+
             <ul className ={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                    Products
-                </Link>
-            </li>
-            <li className='nav-item'>
-                <Link to='/createorder' className='nav-links' onClick={closeMobileMenu}>
-                    Orders
-                </Link>
-            </li>
+                <li className='nav-item'>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                        Products
+                    </Link>
+                </li>
 
-            <li className='nav-item'>
-                <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
-                    Profile
-                </Link>
-            </li>
+                <li className='nav-item'>
+                    <Link to='/createorder' className='nav-links' onClick={closeMobileMenu}>
+                        Orders
+                    </Link>
+                </li>
 
-            <li className='nav-item'>
-                <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
-                    About Company
-                </Link>
-            </li>
+                <li className='nav-item'>
+                    <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
+                        Profile
+                    </Link>
+                </li>
 
-        
- 
+                <li className='nav-item'>
+                    <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
+                        About
+                    </Link>
+                </li>
             </ul>
+            
             {button && <Button buttonStyle = 'btn--outline'> SIGN UP</Button>}
              </div>
             

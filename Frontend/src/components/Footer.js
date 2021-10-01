@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <div className='footer-container'>
+    <div className='footer-container' style={{marginTop: "80px" }}>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
           Join the Adventure newsletter to receive our best vacation deals

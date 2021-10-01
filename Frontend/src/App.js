@@ -9,8 +9,11 @@ import AddOrderComponent from './components/AddOrderComponent';
 import UpdateOrderComponent from './components/UpdateOrderComponent';
 import ViewOrderComponent from './components/ViewOrderComponent';
 import HeaderComponent from './components/HeaderComponent';
+import SupplierOrderReport from './components/SupplierOrderReport';
+import Footer from './components/Footer';
 
 function App() {
+
   return (
 
     <div>
@@ -24,8 +27,10 @@ function App() {
                 <Route path = "/add-order" component = {AddOrderComponent} ></Route>
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
+                <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
               </Switch>
             </div>
+            <Footer/>
       </Router>
     </div>
 

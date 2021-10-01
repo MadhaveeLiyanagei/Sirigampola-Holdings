@@ -13,6 +13,7 @@ class ViewOrderComponent extends Component {
         }
     } 
 
+
     componentDidMount()
     {
          CreateOrderService.getOrderById(this.state.id).then( res => {
