@@ -9,7 +9,8 @@ import SoloAlert from 'soloalert'
                     super(props)
 
                     this.state = {
-                            courier: []
+                            courier: [],
+                            searchId : ''
 
                     }
                 this.addCourier = this.addCourier.bind(this);
@@ -102,17 +103,33 @@ import SoloAlert from 'soloalert'
                 addCourier(){
                     this.props.history.push('/add-courier');
                 }
-        
 
+                 searchCourierByName(event){
+
+                    this.setState({ searchId: event.target.value.substr(0,20)});
+                  }
     render() {
+
+
+        let filterCourierName = this.state.courier.filter((
+
+            courier)=>{
+
+                return  courier.name.toLowerCase().indexOf(this.state.searchId.toLowerCase())!==-1;
+
+            }
+        );
         return (
 
             
             <div>
-    <center>
+               <center>
 
             <h2 className = "text-center" >Courier Services</h2>
-    </center>
+            </center>
+            <div className = "form-group col-md-4">
+                      <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Courier Name" value={this.state.searchId} onChange={this.searchCourierByName.bind(this)}/>
+            </div>
             <div className = "row">
                 <button className="button" onClick={this.addCourier}> Add Courier service</button>
 
@@ -134,8 +151,10 @@ import SoloAlert from 'soloalert'
 
                     <tbody>
                         {
-                            this.state.courier.map(
-                               courier =>
+                             filterCourierName.map(
+                                courier=>
+                            //this.state.courier.map(
+                               //courier =>
                                <tr key = {courier.id}>
                                     <td>{courier.id}</td>
                                     <td >{courier.name}</td> 
