@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import CourierService from '../services/CourierService';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 class CreateCourierComponent extends Component {
@@ -12,7 +14,13 @@ class CreateCourierComponent extends Component {
             name: '',
             address: '',
             phone_number: '',
-            email:''
+            email:'',
+
+
+            nameError: '',
+            addressError: '',
+            phone_numberError: '',
+            emailError:'',
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
@@ -21,15 +29,85 @@ class CreateCourierComponent extends Component {
 
         }
 
+        notify(){
+            toast.success('added successfully!', {position: toast.POSITION.TOP_CENTER})
+        }
+     
+        notify1(){
+            toast.error('adding cancelled', {position: toast.POSITION.TOP_CENTER})
+        }
+
+        validate = () =>{
+
+            let nameError='';
+            let addressError = '';
+            let phone_numberError = '';
+            let emailError ='';
+           
+    
+            if(!this.state.name){
+    
+                nameError = "Please fill out this field";
+    
+            }
+    
+            if(!this.state.address){
+    
+                addressError = "Please fill out this field";
+    
+            }
+    
+            if(!this.state.phone_number){
+    
+                phone_numberError = "Please fill out this field";
+    
+            }
+    
+            if(!this.state.email){
+    
+                emailError = "Please fill out this field";
+    
+            }
+    
+          
+    
+            if(nameError || addressError || phone_numberError || emailError ){
+    
+                this.setState({nameError,addressError,phone_numberError,emailError});
+    
+                return false;
+    
+            }
+    
+    
+    
+            return true;
+    
+     
+    
+        }
+
+
        SaveCourier = (e) => {
             e.preventDefault();
             let courier = {name: this.state.name, address: this.state.address, phone_number: this.state.phone_number, email: this.state.email};
+
+            const isValid = this.validate();
+            if(isValid){
             console.log('courier => ' + JSON.stringify(courier));
 
 
             CourierService.createCourier(courier).then(res =>{
                 this.props.history.push('/courier');
             });
+
+
+        }
+
+            
+            
+
+
        }
 
         changeNameHandler= (event) => {
@@ -67,6 +145,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Courier Name" name="name" className="form-control" 
                                                 value={this.state.name} onChange={this.changeNameHandler}/>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.nameError} </div>
                                         </div>
 
                                     <div className = "form-group">
@@ -74,6 +153,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Address" name="address" className="form-control" 
                                                 value={this.state.address} onChange={this.changeAddressHandler}/>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.addressError} </div>
                                         </div>    
                                        
                                         <div className = "form-group">
@@ -81,6 +161,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Phone Number" name="phone_number" className="form-control" 
                                                 value={this.state.phone_number} onChange={this.changePhoneHandler}/>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.phone_numberError} </div>
                                         </div>    
                                        
                                         <div className = "form-group">
@@ -88,6 +169,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Email Address" name="email" className="form-control" 
                                                 value={this.state.email} onChange={this.changeEmailHandler}/>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.emailError} </div>
                                         </div>    
 
 

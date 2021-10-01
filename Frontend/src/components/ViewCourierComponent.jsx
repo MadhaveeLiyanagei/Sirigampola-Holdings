@@ -7,7 +7,7 @@ class ViewCourierComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-            courier: {}
+            courier: []
         }
     }
 
@@ -25,22 +25,22 @@ class ViewCourierComponent extends Component {
                     <h3 className = "text-center"> View CourierDetails</h3>
                     <div className = "card-body">
                         <div className = "row">
-                            <label> Courier Service Name: </label>
+                            <label> <b>Courier Service Name:</b> </label>
                             <div> { this.state.courier.name }</div>
                         </div>
                         <br></br>
                         <div className = "row">
-                            <label> Address: </label>
+                            <label> <b>Address:</b> </label>
                             <div> { this.state.courier.address }</div>
                         </div>
                         <br></br>
                         <div className = "row">
-                            <label> Phone Number: </label>
+                            <label><b>Phone Number:</b>  </label>
                             <div> { this.state.courier.phone_number }</div>
                         </div>
                         <br></br>
                         <div className = "row">
-                            <label> Email Address: </label>
+                            <label> <b>Email Address:</b> </label>
                             <div> { this.state.courier.email }</div>
                         </div>           
                     </div>

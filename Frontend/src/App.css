@@ -34,8 +34,15 @@
 
   }
 
-  
   .button-up:hover {opacity: 2}
+
+  .react-pdf__Page__canvas_Single_ViewI {
+    margin: 0 auto;
+    width: 75% !important;
+    height: 100% !important;
+  }
+
+  
 
 
   
@@ -100,3 +107,44 @@
   .button-update:hover {opacity: 2}
 
 
+
+  .button-search{
+    background-color: #1b549a;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  
+  .button-search:hover {opacity: 2}
+
+.react-pdf__Page__canvas_d {
+    margin: 0 auto;
+    width: 65% !important;
+    height: 100% !important;
+  }
+
+  .button-report {
+    background-color: #2600ff;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }

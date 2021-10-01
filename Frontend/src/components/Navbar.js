@@ -26,7 +26,7 @@ useEffect(() =>{
          <nav className="navbar">
          <div className='navbar-container'>
             
-            <Link to="/" className="navbar-logo" onClick = {closeMobileMenu}>
+            <Link to="/home" className="navbar-logo" onClick = {closeMobileMenu}>
                 SIRIGAMPOLA HOLDINGS <i className="fab fa-typo3"></i>  
             </Link>
             <div className = 'menu-icon' onClick= {handleClick}>
@@ -39,13 +39,13 @@ useEffect(() =>{
                 </Link>
             </li>
             <li className='nav-item'>
-                <Link to='/orders' className='nav-links' onClick={closeMobileMenu}>
-                    Orders
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                Courier
                 </Link>
             </li>
 
             <li className='nav-item'>
-                <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
+                <Link to='/delivery' className='nav-links' onClick={closeMobileMenu}>
                     Profile
                 </Link>
             </li>

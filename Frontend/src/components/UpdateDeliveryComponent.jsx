@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
-import CourierService from '../services/CourierService';
+
+import DeliveryService from '../services/DeliveryService';
 
 
-class UpdateCourierComponent extends Component {
+
+//Delivery delivery
+
+class UpdateDeliveryComponent extends Component {
     constructor(props) {
         super(props)
 
            this.state ={
 
             id: this.props.match.params.id,
-            name: '',
-            address: '',
-            phone_number: '',
-            email:''
+            order_name: '',
+            order_address: '',
+            order_phone_number: ''
+           
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
-           this.updateCourier =this.updateCourier.bind(this);
+           this.changePhoneHandler = this.changePhoneHandler.bind(this);
+           this.updateDelivery =this.updateDelivery.bind(this);
 
         }
 
@@ -25,48 +30,44 @@ class UpdateCourierComponent extends Component {
 
         
     componentDidMount(){
-        CourierService.getCourierById(this.state.id).then( (res) =>{
-            let courier = res.data;
-            this.setState({name: courier.name,
-                address: courier.address,
-                phone_number : courier.phone_number,
-                email : courier.email
+        DeliveryService.getDeliveryById(this.state.id).then( (res) =>{
+            let delivery  = res.data;
+            this.setState({order_name: delivery.order_name,
+                order_address: delivery.order_address,
+                order_phone_number: delivery.order_phone_number,
+               
             
             });
         });
-    
-    
+        
                       }
 
-       updateCourier = (e) => {
-            e.preventDefault();
-            let courier = {name: this.state.name, address: this.state.address, phone_number: this.state.phone_number, email: this.state.email};
-            console.log('courier => ' + JSON.stringify(courier));
-            console.log('id => ' + JSON.stringify(this.state.id));
-            CourierService.updateCourier(courier, this.state.id).then( res => {
-            this.props.history.push('/courier');
-            });
-
+                      updateDelivery = (e) => {
+                        e.preventDefault();
+                        let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number};
+                        console.log('delivery => ' + JSON.stringify(delivery));
+                        console.log('id => ' + JSON.stringify(this.state.id));
+                        DeliveryService.updateDelivery (delivery, this.state.id).then( res => {
+                        this.props.history.push('/delivery');
+                        });
+            
             
        }
 
         changeNameHandler= (event) => {
-            this.setState({name: event.target.value})
+            this.setState({order_name: event.target.value})
         }
 
         changeAddressHandler= (event) => {
-            this.setState({address: event.target.value})
+            this.setState({ order_address: event.target.value})
         }
         changePhoneHandler= (event) => {
-            this.setState({phone_number: event.target.value})
+            this.setState({ order_phone_number: event.target.value})
         }
 
-        changeEmailHandler= (event) => {
-            this.setState({email: event.target.value})
-        }
-
+       
         cancel(){
-            this.props.history.push('/courier');
+            this.props.history.push('/delivery');
         }
         
 
@@ -84,32 +85,27 @@ class UpdateCourierComponent extends Component {
                                             <label> Courier Service Name: </label>
                                             <br></br>
                                             <input placeholder="Courier Name" name="name" className="form-control" 
-                                                value={this.state.name} onChange={this.changeNameHandler}/>
+                                                value={this.state.order_name} onChange={this.changeNameHandler}/>
                                         </div>
 
                                     <div className = "form-group">
                                             <label> Address             : </label>
                                             <br></br>
                                             <input placeholder="Address" name="address" className="form-control" 
-                                                value={this.state.address} onChange={this.changeAddressHandler}/>
+                                                value={this.state.order_address} onChange={this.changeAddressHandler}/>
                                         </div>    
                                        
                                         <div className = "form-group">
                                             <label> Phone Number        : </label> 
                                             <br></br>
                                             <input placeholder="Phone Number" name="phone_number" className="form-control" 
-                                                value={this.state.phone_number} onChange={this.changePhoneHandler}/>
+                                                value={this.state.order_phone_number} onChange={this.changePhoneHandler}/>
                                         </div>    
                                        
-                                        <div className = "form-group">
-                                            <label>Email Address        : </label>
-                                            <br></br>
-                                            <input placeholder="Email Address" name="email" className="form-control" 
-                                                value={this.state.email} onChange={this.changeEmailHandler}/>
-                                        </div>    
+                                  
                                             <br></br>
 
-                                        <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateCourier}>Update</button>
+                                        <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateDelivery}>Update</button>
                                         <button style={{marginLeft: "10px"}} className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
                                        
                                     </form>
@@ -121,10 +117,10 @@ class UpdateCourierComponent extends Component {
         )
             
     }
-    }
+}
 
 
 
 
 
-export default UpdateCourierComponent
+export default UpdateDeliveryComponent

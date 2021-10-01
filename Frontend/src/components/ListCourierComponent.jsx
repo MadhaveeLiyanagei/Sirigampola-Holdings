@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import CourierService from '../services/CourierService';
+import SoloAlert from 'soloalert'
 
 
  class ListCourierComponent extends Component {
@@ -17,16 +18,68 @@ import CourierService from '../services/CourierService';
                
                     
                 }
+              
 
                 deleteCourier(id){
-                    CourierService.deleteCourier(id).then( res => {
-                        this.setState({courier: this.state.courier.filter(courier => courier.id !== id)}
 
-                    
-                        );
-                    
-                    });
-                }
+                    SoloAlert.confirm({
+            
+                        title: "Confirm Delete",
+                        body: "Are you sure",
+                        theme: "dark",
+                        useTransparency: true,
+                        onOk: async function () {
+            
+                            try {
+                                CourierService.deleteCourier(id)
+                               await this.setState({
+                                    courier: this.state.courier.filter(courier => courier.id !== id)
+                                });
+            
+            
+                                SoloAlert.alert({
+                                    title: "Welcome!",
+                                    body: "Deletion is successful",
+                                    icon: "success",
+                                    theme: "dark",
+                                    useTransparency: true,
+                                    onOk: function () {
+                                        window.location = "/courier"
+                                    },
+            
+                                });
+            
+                            } catch (err) {
+                                SoloAlert.alert({
+                                    title: "Welcome!",
+                                    body: "Deletion is successful",
+                                    icon: "success",
+                                    theme: "dark",
+                                    useTransparency: true,
+                                    onOk: function () {
+                                        window.location = "/courier"
+                                    },
+            
+                                });
+                            }
+                        },
+                        onCancel: function () {
+                            SoloAlert.alert({
+                                title: "Oops!",
+                                body: "You canceled delete request",
+                                icon: "warning",
+                                theme: "dark",
+                                useTransparency: true,
+                                onOk: function () {
+            
+                                },
+            
+                            });
+                        },
+            
+                    })
+            
+            }
                 
                 
                 viewCourier(id){
@@ -49,9 +102,12 @@ import CourierService from '../services/CourierService';
                 addCourier(){
                     this.props.history.push('/add-courier');
                 }
+        
 
     render() {
         return (
+
+            
             <div>
     <center>
 
@@ -66,12 +122,12 @@ import CourierService from '../services/CourierService';
 
                     <thead>
                         <tr>
-                                <th >Courier Id</th> 
-                                <th>Courier Name</th>
-                                <th>Address</th>
-                                <th>Phone Number</th>
-                                <th>Email Address</th>
-                                <th> Actions</th>
+                                <th style={{width: "5%"}}>Courier Id</th> 
+                                <th style={{width: "10%"}}>Courier Name</th>
+                                <th style={{width: "25%"}}>Address</th>
+                                <th style={{width: "10%"}}>Phone Number</th>
+                                <th style={{width: "20%"}}>Email Address</th>
+                                <th style={{width: "30%"}}> Actions</th>
 
                         </tr>
                     </thead>
