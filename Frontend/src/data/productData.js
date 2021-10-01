@@ -46,11 +46,11 @@ const product_card = [
 
     {
         id: 6,
-        product_name: 'Canon EOS 4000D DSLR Camera',
+        product_name: 'Nikon D500 DSLR Camera',
         description:'SKU #101862S1',
-        price: 98500,
+        price: 198500,
         currency: "Rs",
-        thumb: "./images/ProductImages/Canon EOS 4000D DSLR Camera.png"
+        thumb: "./images/ProductImages/Nikon D500 DSLR Camera.png"
     }
     
 

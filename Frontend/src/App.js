@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter  as Router, Switch, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './App.css';
+import './App.scss';
 import Home from './pages/Home';
 import ListCreateOrder from './components/ListCreateOrder';
 import AddOrderComponent from './components/AddOrderComponent';
@@ -29,8 +30,11 @@ function App() {
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
                 <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
-                <Route path = "/product-home" component = {mainContent} ></Route>
               </Switch>
+            </div>
+
+            <div className="container_products">
+            <Route path = "/product-home" component = {mainContent} ></Route>
             </div>
             <Footer/>
       </Router>
