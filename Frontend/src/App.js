@@ -33,7 +33,7 @@ function App() {
               </Switch>
             </div>
 
-            <div className="container_products">
+            <div className="product_container">
             <Route path = "/product-home" component = {mainContent} ></Route>
             </div>
             <Footer/>
