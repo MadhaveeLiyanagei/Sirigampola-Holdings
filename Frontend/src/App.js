@@ -11,6 +11,7 @@ import ViewOrderComponent from './components/ViewOrderComponent';
 import HeaderComponent from './components/HeaderComponent';
 import SupplierOrderReport from './components/SupplierOrderReport';
 import Footer from './components/Footer';
+import mainContent from './components/mainContent';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
                 <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
+                <Route path = "/product-home" component = {mainContent} ></Route>
               </Switch>
             </div>
             <Footer/>
