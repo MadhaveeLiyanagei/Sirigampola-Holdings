@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NoticesService from '../services/NoticesService'
 import AdminEmployeeSideBar from './AdminEmployeeSideBar'
+import SoloAlert from 'soloalert'
 
  class ListNoticesComponent extends Component {
     constructor(props){
@@ -9,7 +10,7 @@ import AdminEmployeeSideBar from './AdminEmployeeSideBar'
         this.state={
                 adNotices: [],
 
-                deleteConfirmation: ''
+                
         }
         this.addNotice= this.addNotice.bind(this);
         this.editNotices=this.editNotices.bind(this);
@@ -17,12 +18,65 @@ import AdminEmployeeSideBar from './AdminEmployeeSideBar'
     }
         
     deleteNotices(id){
-        NoticesService.deleteNotice(id).then( res => {
-            this.setState({adNotices: this.state.adNotices.filter(adNotices => adNotices.id !== id)});
-        });
-    }
 
-    
+        SoloAlert.confirm({
+
+            title: "Confirm Delete",
+            body: "Are you sure",
+            theme: "dark",
+            useTransparency: true,
+            onOk: async function () {
+
+                try {
+                    NoticesService.deleteNotice(id)
+                   await this.setState({
+                        adNotices: this.state.adNotices.filter(adNotices => adNotices.id !== id)
+                    });
+
+
+                    SoloAlert.alert({
+                        title: "Welcome!",
+                        body: "Deletion successful",
+                        icon: "success",
+                        theme: "dark",
+                        useTransparency: true,
+                        onOk: function () {
+                            window.location = "/adNotices"
+                        },
+
+                    });
+
+                } catch (err) {
+                    SoloAlert.alert({
+                        title: "Welcome!",
+                        body: "Deletion successful",
+                        icon: "success",
+                        theme: "dark",
+                        useTransparency: true,
+                        onOk: function () {
+                            window.location = "/adNotices"
+                        },
+
+                    });
+                }
+            },
+            onCancel: function () {
+                SoloAlert.alert({
+                    title: "Oops!",
+                    body: "You canceled delete request",
+                    icon: "warning",
+                    theme: "dark",
+                    useTransparency: true,
+                    onOk: function () {
+
+                    },
+
+                });
+            },
+
+        })
+
+}
 
     editNotices(id){
         this.props.history.push(`/update-adNotices/${id}`);
@@ -41,18 +95,21 @@ import AdminEmployeeSideBar from './AdminEmployeeSideBar'
         this.props.history.push('/add-adNotices');
     }
 
+
+
     render() {
         return (
-            <div>
-                 <>
-                <AdminEmployeeSideBar/>
-                </>
-    
-                <h2 className="text-center">Notices List</h2>
+            <div>                
                 <div className="row">
-                    <button className="btn btn-primary" onClick={this.addNotice}>Add Notice</button>
+                    <>
+                    <AdminEmployeeSideBar/>
+                    </>
+                    <h2 className="text-center"><br></br><br></br><u>Notices List</u><br></br><br></br></h2>
+                    <button className="button" onClick={this.addNotice}><b>Add Notice</b></button>
                 </div>
+                
                 <div className="row">
+                <center><br></br>
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -71,19 +128,20 @@ import AdminEmployeeSideBar from './AdminEmployeeSideBar'
                                         <tr key = {adNotices.id}>
                                             <td>{adNotices.content}</td>
                                             <td>
-                                                <button onClick={() => this.editNotices(adNotices.id)}className="btn btn-info">Update</button>
+                                                <button onClick={() => this.editNotices(adNotices.id)}className="button-up">Update</button>
                                             </td>
                                             <td>
-                                               <button onClick = {() => this.deleteNotices(adNotices.id)} className= "btn btn-danger">Delete</button>
+                                               <button onClick = {() => this.deleteNotices(adNotices.id)} className= "button-dele">Delete</button>
                                             </td>
                                             <td>
-                                          <button onClick = {() => this.viewNotices(adNotices.id)} className= "btn btn-info">View</button>
+                                          <button onClick = {() => this.viewNotices(adNotices.id)} className= "button-view">View</button>
                                          </td>
                                         </tr>
                                     )
                                 }
                             </tbody>
                     </table>
+                    </center>
                 </div>
             </div>
         )

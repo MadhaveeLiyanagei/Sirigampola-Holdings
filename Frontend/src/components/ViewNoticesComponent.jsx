@@ -28,14 +28,14 @@ class ViewNoticesComponent extends Component {
 
     render() {
         return (
-            <div>
-                 <>
+            <div>    
+                <div className="row"><>
                 <AdminEmployeeSideBar/>
                 </>
-    
+                </div>
                 <br></br>
                 <div className = "card col-md-6 offset-md-3">
-                    <h3 className="text-center"> View Notices Details</h3>
+                    <h3 className="text-center"><u> View Notices Details</u></h3>
                     <div className ="card-body">               
                         <br></br>
                         <div className="row">
@@ -46,7 +46,7 @@ class ViewNoticesComponent extends Component {
                         <br></br>
                         
                     </div>
-                </div>
+                </div><br></br>
             </div>
         );
     }

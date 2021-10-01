@@ -24,7 +24,7 @@
     color: white;
     padding: 16px 32px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     opacity: 0.6;
     transition: 0.3s;
@@ -45,7 +45,7 @@
     color: white;
     padding: 16px 32px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     opacity: 0.6;
     transition: 0.3s;
@@ -65,7 +65,7 @@
     color: white;
     padding: 16px 32px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     opacity: 0.6;
     transition: 0.3s;
@@ -86,7 +86,7 @@
     color: rgb(0, 0, 0);
     padding: 16px 32px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     opacity: -1;
     transition: 0.5s;
@@ -96,7 +96,51 @@
 
   }
 
+  .button-report {
+    background-color: #2600ff;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
   
   .button-update:hover {opacity: 2}
 
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  width: 61% !important;
+  height: 100% !important;
+}
+
+.react-pdf__Page__canvas_Single_View {
+  margin: 0 auto;
+  width: 65% !important;
+  height: 100% !important;
+}
+
+.srchbr{
+  margin-left: 62%;
+}
+
+.tblclm{
+  width: 80px;
+}
+
+.back{
+  height: 100%;
+  width: 100%;
+}
+
+.hero-btns{
+  background-color: #f02669;
+}
 

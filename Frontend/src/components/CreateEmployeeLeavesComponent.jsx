@@ -28,11 +28,11 @@ export default class CreateEmployeeLeavesComponent extends Component {
     }
 
     notify(){
-        toast.warn('Updated successfully!', {position: toast.POSITION.TOP_CENTER})
+        toast.success('Leave successfully added!', {position: toast.POSITION.TOP_CENTER})
     }
  
     notify1(){
-        toast.error('updation cancelled', {position: toast.POSITION.TOP_CENTER})
+        toast.error('Request for leave cancelled!', {position: toast.POSITION.TOP_CENTER})
     }
     validate = () =>{
     
@@ -102,29 +102,29 @@ export default class CreateEmployeeLeavesComponent extends Component {
                 <div className = "container">
                     <div className="row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
-                             <h3 className="text-center">Employee Leave Form</h3>
+                             <h3 className="text-center"><br></br><u><b>Employee Leave Form</b></u></h3>
                                <div className = "card-body">
                                    <form>
-                                        <div className="form-group">
-                                            <label>Employee ID: </label>
+                                        <div className="form-group"><br></br>
+                                            <label><b>Employee ID: </b></label>
                                             <input placeholder="Employee ID" name="employeeID" className="form-control" value={this.state.employeeID} onChange={this.changeEmployeeIDHandler}/>
                                             <div style={{fontSize: 12, color:"red"}}>{this.state.employeeIDError} </div>
                                             
                                         </div>
 
-                                        <div className="form-group">
-                                            <label>Date: </label>
+                                        <div className="form-group"><br></br>
+                                            <label><b>Date: </b></label>
                                             <input placeholder="Date" name="date" className="form-control" value={this.state.date} onChange={this.changeDateHandler}/>
                                             <div style={{fontSize: 12, color:"red"}}>{this.state.dateError} </div>
                                             
                                         </div>
 
-                                        <div className="form-group">
-                                            <label>Reason: </label>
+                                        <div className="form-group"><br></br>
+                                            <label><b>Reason: </b></label>
                                             <input placeholder="Reason" name="reason" className="form-control" value={this.state.reason} onChange={this.changeReasonHandler}/>
                                             <div style={{fontSize: 12, color:"red"}}>{this.state.reasonError} </div>
                 
-                                        </div>
+                                        </div><br></br>
 
 
                                         <button className="btn btn-success" onClick={this.saveEmployeeLeaves}>Save</button>

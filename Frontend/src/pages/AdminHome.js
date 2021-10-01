@@ -8,8 +8,8 @@ function AdminHome(){
     return(
         <>
             <HeroSection/>
-            <Cards/>
-            <Footer/>
+           
+          
 
         </>
 

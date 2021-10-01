@@ -22,8 +22,6 @@ class NoticesService{
 
      
     deleteNotice(id){
-        //window.alert("Are you sure you want to delete the notice?");
-        window.confirm("Are you sure you want to delete the notice?");
         return axios.delete(NOTICES_API_BASE_URL + '/'+ id);
 
     }

@@ -1,30 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import {AdminSideBarData} from './AdminSideBarData'
-import './AdminEmployeeSideBar.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { AdminSideBarData } from "./AdminSideBarData";
+import "./AdminEmployeeSideBar.css";
 
 
 function AdminEmployeeSideBar() {
-    return (
-        <div className="AdminEmployeeSideBar">
-            <ul className="AdminEmployeeSideBarList">
-            {AdminSideBarData.map((val, key)=>{
-                return(
-                <li 
-                    key={key}
-                    className="row"
-                    id={window.location.pathname == val.link ? "active" : ""}
-                    onClick={() => {
-                        window.location.pathname = val.link;
-                    }}
-                >
-                    <div id="icon">{val.icon}</div><div id="title">{val.title}</div>
-                </li>
-                );
-                })}
-            </ul>
-        </div>
-    );
+  return (
+
+    
+    <div class="topnav">
+      <NavLink to="/Employee" activeClassName="active">
+        Employees
+      </NavLink>
+
+      <NavLink to="/adNotices" activeClassName="active">
+        Notices
+      </NavLink>
+
+      <NavLink to="/employeeLeaves" activeClassName="active">
+        Leaves
+      </NavLink>
+
+      <a href="https://mysliit-my.sharepoint.com/:x:/g/personal/it20252304_my_sliit_lk/Ee5Ofp5ZrJpPuSHHEKK8aXoBzzNGakeqhjr_xXXoFWmvzg?e=4sPaEV">
+        Attendance
+      </a>
+      
+      <a href="https://mysliit-my.sharepoint.com/:x:/g/personal/it20252304_my_sliit_lk/EZESOUBugetKhawZxjaDSTgBLNQPqbJKnM2Z5g1_rlKkyQ?e=B6Feir">
+        Payroll
+      </a>
+    </div>
+  );
 }
 
-export default AdminEmployeeSideBar
+export default AdminEmployeeSideBar;
