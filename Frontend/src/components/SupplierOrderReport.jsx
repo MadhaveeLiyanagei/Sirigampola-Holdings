@@ -14,6 +14,11 @@ class SupplierOrderReport extends Component {
         }
     }
 
+    goBack()
+    {
+        this.props.history.push('/createorder');
+    }
+
     componentDidMount()
     {
         CreateOrderService.getOrders().then((res) => {
@@ -29,6 +34,13 @@ class SupplierOrderReport extends Component {
             <div>
             <div className="Post" ref={ref}>
 
+            <div className="container">
+                <div className = "row" style={{width: "100px"}}>
+                    <button className="btn btn-primary" onClick={this.goBack}> BACK </button>
+                    <i class="bi bi-arrow-return-left"></i>
+                </div>
+            </div>
+
             <div>
                 <br/>
                 <h2 className="text-center">MONTHLY REPORT</h2>
@@ -43,7 +55,6 @@ class SupplierOrderReport extends Component {
                                 <th style={{ textAlign: "center" }}> Product Name </th>
                                 <th style={{ textAlign: "center" }}> Product Price </th>
                                 <th style={{ textAlign: "center" }}> Quantity </th>
-                                <th style={{ textAlign: "center" }}> Actions </th>
                             </tr>
                         </thead>
 
@@ -58,11 +69,6 @@ class SupplierOrderReport extends Component {
                                         <td>{order.productName}</td>
                                         <td>{order.productPrice}</td>
                                         <td>{order.quantity}</td>
-                                        <td>
-                                            <button style={{marginLeft: "85px"}} onClick = { () => this.editOrder(order.id)} className="btn btn-info"> Update </button>
-                                            <button style={{marginLeft: "20px"}} onClick = { () => this.deleteOrder(order.id)} className="btn btn-danger"> Delete </button>
-                                            <button style={{marginLeft: "20px"}} onClick = { () => this.viewOrder(order.id)} className="btn btn-warning"> View </button>
-                                        </td>
                                     </tr>
 
                                 )
