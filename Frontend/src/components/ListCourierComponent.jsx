@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import CourierService from '../services/CourierService';
 import SoloAlert from 'soloalert'
-
+import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
  class ListCourierComponent extends Component {
                 constructor(props){
@@ -123,6 +123,7 @@ import SoloAlert from 'soloalert'
 
             
             <div>
+                <><CourierDeliveryNavbar/></>
                <center>
 
             <h2 className = "text-center" >Courier Services</h2>
@@ -139,12 +140,12 @@ import SoloAlert from 'soloalert'
 
                     <thead>
                         <tr>
-                                <th style={{width: "5%"}}>Courier Id</th> 
-                                <th style={{width: "10%"}}>Courier Name</th>
-                                <th style={{width: "25%"}}>Address</th>
-                                <th style={{width: "10%"}}>Phone Number</th>
-                                <th style={{width: "20%"}}>Email Address</th>
-                                <th style={{width: "30%"}}> Actions</th>
+                                <th style={{width: "5%"}}><center>Courier Id</center></th> 
+                                <th style={{width: "10%"}}><center>Courier Name</center></th>
+                                <th style={{width: "25%"}}><center>Address</center></th>
+                                <th style={{width: "10%"}}><center>Phone Number</center></th>
+                                <th style={{width: "20%"}}><center>Email Address</center></th>
+                                <th style={{width: "30%"}}><center> Actions</center></th>
 
                         </tr>
                     </thead>

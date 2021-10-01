@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import DeliveryService from '../services/DeliveryService';
+import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
 
 
@@ -81,6 +82,7 @@ class AddCourierDeliveryComponent extends Component {
     render() {
         return (
             <div>
+                 <><CourierDeliveryNavbar/></>
                 <br></br>
                    <div className = "container">
                         <div className = "row">

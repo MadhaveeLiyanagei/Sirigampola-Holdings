@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import DeliveryService from '../services/DeliveryService'
 import SoloAlert from 'soloalert'
+import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
 
  class ListDeliveryComponent extends Component {
@@ -9,7 +10,8 @@ import SoloAlert from 'soloalert'
         super(props)
 
         this.state = {
-                delivery: []
+                delivery: [],
+                searchId : ''
 
         }
     this.addDelivery = this.addDelivery.bind(this);
@@ -79,6 +81,8 @@ import SoloAlert from 'soloalert'
 
         })
 
+        
+
 }
     
     
@@ -106,19 +110,29 @@ import SoloAlert from 'soloalert'
         this.props.history.push('/add-delivery');
     }
 
+ 
             
 
     render() {
+
+       
+
         return (
+
+            
+
+
             <div>
+                 <><CourierDeliveryNavbar/></>
     <center>
 
             <h2 className = "text-center" >Delivery Management</h2>
     </center>
+    
             <div className = "row">
                 <button className="button" onClick={this.addDelivery}>Add Delivery</button>
 
-                
+               
                 
                 <table className = "table table-striped table-bordered">
 
@@ -140,32 +154,39 @@ import SoloAlert from 'soloalert'
 
                     <tbody>
                         {
-                            this.state.delivery.map(
-                               delivery =>
+
+                           
+                          this.state.delivery.map(
+                            delivery =>
                                <tr key = {delivery.id}>
                                     <td>{ delivery.id}</td>
                                     <td >{ delivery.order_name}</td> 
                                     <td>{ delivery.order_address}</td>
                                     <td>{ delivery.order_phone_number}</td>
                                     <td>{ delivery.order_courier_name}</td>
-                                    <tb> <button onClick={ () => this.courierDelivery(delivery.id)} className="button-search">Courier </button></tb>
+                                    <td> <button onClick={ () => this.courierDelivery(delivery.id)} className="button-search">Courier </button></td>
                                     <td>
                                     <button onClick={ () => this.editDelivery(delivery.id)} className="button-up">Update </button>
                                     <button style={{marginLeft: "10px"}} onClick={ () => this.deleteDelivery(delivery.id)} className="button-dele">Delete </button>   
                                     </td>
-                                    <tb>
+                                    <td>
                                     <button style={{marginLeft: "10px"}} onClick={ () => this.viewDelivery(delivery.id)} className="button-view">Report </button>
-                                    </tb>  
+                                    </td>  
                                </tr> 
                             )
-                        }
+
+
+                            }
+                                          
+    
+                    
                     </tbody>
                 </table>
             </div>
         </div>
         )
   
-  
+                    
   
         }
     
