@@ -21,6 +21,7 @@ import EmployeeReport from './components/EmployeeReport';
 import SupplierReport from './components/SupplierReport';
 import Login from './components/Login/Login';
 import AdminHome from './pages/AdminHome';
+import Register from './components/Register';
 
 
 
@@ -36,6 +37,8 @@ function App() {
         <Route path = '/' exact component = {Login} />
         <Route path = '/Home'  component = {Home} />
         <Route path = '/AdminHome'  component = {AdminHome} />  
+
+        <Route path = '/Register'  component = {Register} />  
 
 
         <Route path = '/profile'  component = {ListBuyerComponent}/>
