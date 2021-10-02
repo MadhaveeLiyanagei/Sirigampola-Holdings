@@ -99,7 +99,7 @@ class ListBuyerComponent extends Component {
             })
 
          }
-           
+         //add buyer  
          addBuyer(){
              this.props.history.push('/add-buyer/_add');
          }
