@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 import DeliveryService from '../services/DeliveryService';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 
 
@@ -28,7 +32,16 @@ class UpdateCourierDeliveryComponent extends Component {
 
 
         }
-
+        notify() {
+            toast.success("Updated successfully!", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          }
+        
+          notify1() {
+            toast.error("update cancelled", { position: toast.POSITION.TOP_CENTER });
+          }
+        
 
 
 
@@ -53,6 +66,7 @@ class UpdateCourierDeliveryComponent extends Component {
                         console.log('delivery => ' + JSON.stringify(delivery));
                         console.log('id => ' + JSON.stringify(this.state.id));
                         DeliveryService.updateDelivery (delivery, this.state.id).then( res => {
+                            this.notify();
                         this.props.history.push('/delivery');
                         });
 
@@ -75,6 +89,7 @@ class UpdateCourierDeliveryComponent extends Component {
 
 
         cancel(){
+            this.notify1();
             this.props.history.push('/delivery');
         }
 
