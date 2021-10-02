@@ -92,6 +92,9 @@ class Login extends Component {
                     <Form.Group>
                         <Link to="forgotpassword" style={{textDecoration:"none"}}><p style={{marginTop:10, color:"red"}}>Forgot password ?</p></Link>
                     </Form.Group>
+                    <Form.Group>
+                        <Link to="Register" style={{textDecoration:"none"}}><p style={{marginTop:10, color:"blue"}}> Don't have an account ?</p></Link>
+                    </Form.Group>
                 </Form>
             </div>
                 <br></br>
