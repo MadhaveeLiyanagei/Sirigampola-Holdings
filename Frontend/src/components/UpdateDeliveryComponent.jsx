@@ -6,7 +6,7 @@ import DeliveryService from '../services/DeliveryService';
 
 //Delivery delivery
 
-class UpdateDeliveryComponent extends Component {
+class UpdateCourierDeliveryComponent extends Component {
     constructor(props) {
         super(props)
 
@@ -17,33 +17,34 @@ class UpdateDeliveryComponent extends Component {
             order_address: '',
             order_phone_number: '',
             order_courier_name:''
-           
+
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
            this.changePhoneHandler = this.changePhoneHandler.bind(this);
-           this.changeCourierHandler = this.changeCourierHandler.bind(this);
+           this.changeCourierHandler= this.changeCourierHandler.bind(this);
            this.updateDelivery =this.updateDelivery.bind(this);
-           
+
 
         }
 
 
 
-        
+
     componentDidMount(){
         DeliveryService.getDeliveryById(this.state.id).then( (res) =>{
             let delivery  = res.data;
-            this.setState({order_name: delivery.order_name,
+            this.setState({
+                order_name: delivery.order_name,
                 order_address: delivery.order_address,
                 order_phone_number: delivery.order_phone_number,
                 order_courier_name: delivery.order_courier_name,
-               
-            
+
+
             });
         });
-        
+
                       }
 
                       updateDelivery = (e) => {
@@ -54,8 +55,8 @@ class UpdateDeliveryComponent extends Component {
                         DeliveryService.updateDelivery (delivery, this.state.id).then( res => {
                         this.props.history.push('/delivery');
                         });
-            
-            
+
+
        }
 
         changeNameHandler= (event) => {
@@ -72,11 +73,11 @@ class UpdateDeliveryComponent extends Component {
             this.setState({ order_courier_name: event.target.value})
         }
 
-       
+
         cancel(){
             this.props.history.push('/delivery');
         }
-        
+
 
     render() {
         return (
@@ -112,15 +113,17 @@ class UpdateDeliveryComponent extends Component {
                                         <div className = "form-group">
                                             <label> Courier       : </label> 
                                             <br></br>
-                                            <input placeholder="Courier Name" name="Courier_name" className="form-control" 
+                                            <input placeholder="Courier name" name="courier name" className="form-control" 
                                                 value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
                                         </div>   
-                                  
+
+
+
                                             <br></br>
 
                                         <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateDelivery}>Update</button>
                                         <button style={{marginLeft: "10px"}} className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
-                                       
+
                                     </form>
             </div>
                      </div>      
@@ -128,7 +131,7 @@ class UpdateDeliveryComponent extends Component {
                             </div>
                                  </div>
         )
-            
+
     }
 }
 
@@ -136,4 +139,4 @@ class UpdateDeliveryComponent extends Component {
 
 
 
-export default UpdateDeliveryComponent
+export default UpdateCourierDeliveryComponent

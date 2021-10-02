@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import DeliveryService from '../services/DeliveryService';
-import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
 
 
@@ -18,20 +17,20 @@ class AddCourierDeliveryComponent extends Component {
             order_address: '',
             order_phone_number: '',
             order_courier_name:''
-           
+
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
            this.changePhoneHandler = this.changePhoneHandler.bind(this);
            this.updateDelivery =this.updateDelivery.bind(this);
-           
+
 
         }
 
 
 
-        
+
     componentDidMount(){
         DeliveryService.getDeliveryById(this.state.id).then( (res) =>{
             let delivery  = res.data;
@@ -40,11 +39,11 @@ class AddCourierDeliveryComponent extends Component {
                 order_address: delivery.order_address,
                 order_phone_number: delivery.order_phone_number,
                 order_courier_name: delivery.order_courier_name,
-               
-            
+
+
             });
         });
-        
+
                       }
 
                       updateDelivery = (e) => {
@@ -55,8 +54,8 @@ class AddCourierDeliveryComponent extends Component {
                         DeliveryService.updateDelivery (delivery, this.state.id).then( res => {
                         this.props.history.push('/delivery');
                         });
-            
-            
+
+
        }
 
         changeNameHandler= (event) => {
@@ -73,16 +72,15 @@ class AddCourierDeliveryComponent extends Component {
             this.setState({ order_courier_name: event.target.value})
         }
 
-       
+
         cancel(){
             this.props.history.push('/delivery');
         }
-        
+
 
     render() {
         return (
             <div>
-                 <><CourierDeliveryNavbar/></>
                 <br></br>
                    <div className = "container">
                         <div className = "row">
@@ -90,7 +88,7 @@ class AddCourierDeliveryComponent extends Component {
                           <center> <h3 > Update Courier Services </h3> </center>
                                 <div className = "card-body">
                                     <form>
-                                    
+
                                         <div className = "form-group">
                                             <label> Courier       : </label> 
                                             <br></br>
@@ -98,13 +96,13 @@ class AddCourierDeliveryComponent extends Component {
                                                 value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
                                         </div>   
 
-                                       
-                                  
+
+
                                             <br></br>
 
                                         <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateDelivery}>Update</button>
                                         <button style={{marginLeft: "10px"}} className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
-                                       
+
                                     </form>
             </div>
                      </div>      
@@ -112,7 +110,7 @@ class AddCourierDeliveryComponent extends Component {
                             </div>
                                  </div>
         )
-            
+
     }
 }
 

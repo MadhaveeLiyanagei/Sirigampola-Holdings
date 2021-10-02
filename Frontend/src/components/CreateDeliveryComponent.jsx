@@ -14,21 +14,21 @@ class CreateDeliveryComponent extends Component {
             order_name: '',
             order_address: '',
             order_phone_number: '',
-            order_courier_name: '',
+            order_courier_name:'',
            
 
 
             order_nameError: '',
             order_addressError: '',
             order_phone_numberError: '',
-            order_courier_name:'',
+            order_courier_nameError:'',
             
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
            this.changePhoneHandler =this.changePhoneHandler.bind(this);
-           this.changeCourierHandler =this.changeCourierHandler.bind(this);
+           
            this.SaveDelivery =this.SaveDelivery.bind(this);
 
         }
