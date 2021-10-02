@@ -19,7 +19,6 @@ import Sidebar from './components/Sidebar';
 import AdminHome from './components/AdminHome';
 
 
-
 function App() {
 
   const {productItems}= data;
