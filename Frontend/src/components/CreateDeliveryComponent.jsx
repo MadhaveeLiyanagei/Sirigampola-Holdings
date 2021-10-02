@@ -48,7 +48,7 @@ class CreateDeliveryComponent extends Component {
             let order_nameError='';
             let order_addressError = '';
             let order_phone_numberError = '';
-            let order_courier_nameError='';
+           
            
            
     
@@ -70,18 +70,14 @@ class CreateDeliveryComponent extends Component {
     
             }
 
-            if(!this.state.order_courier_name){
-    
-                order_courier_nameError = "Please fill out this field";
-    
-            }
+           
     
            
           
     
-            if(order_nameError || order_addressError || order_phone_numberError || order_courier_nameError  ){
+            if(order_nameError || order_addressError || order_phone_numberError  ){
     
-                this.setState({order_nameError,order_addressError,order_phone_numberError,order_courier_nameError});
+                this.setState({order_nameError,order_addressError,order_phone_numberError});
     
                 return false;
     
@@ -98,7 +94,7 @@ class CreateDeliveryComponent extends Component {
 
        SaveDelivery = (e) => {
             e.preventDefault();
-            let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number,order_courier_name: this.state.order_courier_name};
+            let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number};
 
             const isValid = this.validate();
             if(isValid){
@@ -129,10 +125,7 @@ class CreateDeliveryComponent extends Component {
         changePhoneHandler= (event) => {
             this.setState({order_phone_number: event.target.value})
         }
-        changeCourierHandler= (event) => {
-            this.setState({order_courier_name: event.target.value})
-        }
-
+       
 
         cancel(){
             this.notify1();
@@ -174,14 +167,7 @@ class CreateDeliveryComponent extends Component {
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.order_phone_numberError} </div>
                                         </div>    
                                      
-                                        <div className = "form-group">
-                                            <label> Courier Name        : </label> 
-                                            <br></br>
-                                            <input placeholder="Courier Name" name="courier_name" className="form-control" 
-                                                value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
-                                                <div style={{fontSize: 12, color:"red"}}>{this.state.order_courier_nameError} </div>
-                                        </div>    
-                                        
+                                   
 
                                         <button className="btn btn-success" onClick={this.SaveDelivery}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>

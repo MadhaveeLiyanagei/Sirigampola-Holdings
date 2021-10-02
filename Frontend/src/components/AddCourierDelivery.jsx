@@ -100,7 +100,7 @@ class AddCourierDeliveryComponent extends Component {
 
                                             <br></br>
 
-                                        <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateDelivery}>Update</button>
+                                        <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateDelivery}>Add</button>
                                         <button style={{marginLeft: "10px"}} className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
 
                                     </form>
