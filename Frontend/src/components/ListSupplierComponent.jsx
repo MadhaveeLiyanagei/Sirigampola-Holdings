@@ -83,13 +83,13 @@ class ListSupplierComponent extends Component {
              
            
         
-
+             //view supplier page
          viewSupplier(supplierid){
              this.props.history.push(`/view-supplier/${supplierid}`);
          }
          
 
-
+           //update supplier
         editSupplier(supplierid){
             this.props.history.push(`/add-supplier/${supplierid}`);
 
