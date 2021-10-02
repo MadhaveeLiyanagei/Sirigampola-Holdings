@@ -33,11 +33,27 @@ class UpdateOrderComponent extends Component {
      //validation start----------------------------------------------------------------------------------------------------------------------------------------
 
      notify(){
-        toast.warn('Order Updated Successfully!', {position: toast.POSITION.TOP_CENTER})
+        toast.info('Order Updated Successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
     }
  
     notifyCancel(){
-        toast.error('Order Canceled Successfully!', {position: toast.POSITION.TOP_CENTER})
+        toast.error('Order Canceled Successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
     }
  
     
@@ -119,7 +135,7 @@ class UpdateOrderComponent extends Component {
     render() {
         return (
             <div>
-                
+                <div className = "row" style={{marginTop:"100px" }}></div>
                 <div className = "container" >
                     <div className = "row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
@@ -162,6 +178,8 @@ class UpdateOrderComponent extends Component {
                         </div>
                     </div>
                 </div>
+
+                <div className = "row" style={{marginBottom:"200px" }}></div>
                 
             </div>
         );

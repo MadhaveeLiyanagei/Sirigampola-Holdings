@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CreateOrderService from '../services/CreateOrderService';
-
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class ListCreateOrder extends Component {
 
@@ -15,6 +16,19 @@ class ListCreateOrder extends Component {
         this.addOrder = this.addOrder.bind(this);
         this.editOrder = this.editOrder.bind(this);
         this.deleteOrder = this.deleteOrder.bind(this);
+    }
+
+    //toast message
+    notify(){
+        toast.error('Order Deleted Successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
     }
 
     generateOrderReport(){
@@ -32,6 +46,7 @@ class ListCreateOrder extends Component {
     deleteOrder(id)
     {
         CreateOrderService.deleteOrder(id).then( res => {
+            this.notify();
             this.setState({createorder: this.state.createorder.filter(order => order.id !== id)});
 
         });
@@ -127,7 +142,7 @@ class ListCreateOrder extends Component {
 
                     </table>
                         <div className="container">
-                            <div className = "row" style={{marginLeft: "1050px",marginTop: "10px" }}>
+                            <div className = "row" style={{marginLeft: "1050px",marginTop: "10px", marginBottom:"100px" }}>
                                 <button className="btn btn-secondary"  onClick={() => this.generateOrderReport()}> Generate Report </button>
                             </div>
                         </div>
