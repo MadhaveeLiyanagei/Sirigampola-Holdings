@@ -84,8 +84,9 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: rgb(90, 92, 89);
+  opacity: 0.9;
+  color: rgb(185, 185, 185);
 }
 
 /* Add a color to the active/current link */

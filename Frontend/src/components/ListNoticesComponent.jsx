@@ -100,7 +100,7 @@ class ListNoticesComponent extends Component {
             <br></br>
             <br></br>
           </h2>
-          <button className="buttonNotice" onClick={this.addNotice}>
+          <button className="buttonNotice1" onClick={this.addNotice}>
             <b>Add Notice</b>
           </button>
         </div>

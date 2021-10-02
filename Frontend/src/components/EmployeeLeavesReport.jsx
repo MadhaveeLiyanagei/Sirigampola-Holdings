@@ -21,6 +21,7 @@ export default class ListEmployeeLeavesComponent extends Component {
   }
 
   render() {
+
     var tableStyle = {
       border: "0.5px solid black",
     };
@@ -32,9 +33,6 @@ export default class ListEmployeeLeavesComponent extends Component {
           </>
         </div>
         <div className="react-pdf__Page__canvas_Single_View3">
-            <div style={{ backgroundImage: "url(../images/back.jpg)" }}>
-              Hello World
-
           <div className="Post" ref={ref}>
             <div>
               <div>
@@ -104,7 +102,8 @@ export default class ListEmployeeLeavesComponent extends Component {
               </button>
             )}
           </Pdf>
-        </div></div>
+          
+        </div>
       </>
     );
   }

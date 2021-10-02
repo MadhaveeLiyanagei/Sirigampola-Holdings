@@ -159,7 +159,7 @@
 }
 
 .srchbr {
-  margin-left: 62%;
+  margin-left: 0%;
 }
 
 .tblclm {
@@ -289,6 +289,25 @@
 }
 
 .buttonNotice:hover {
+  opacity: 2;
+  color: white;
+}
+
+.buttongen1 {
+  background-color: #2eafc6;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttongen1:hover {
   opacity: 2;
   color: white;
 }

@@ -110,7 +110,6 @@ export default class ListEmployeeLeavesComponent extends Component {
           <>
             <AdminEmployeeSideBar />
           </>
-
           <table className="srchbr">
             <br></br>
             <tbody>
@@ -130,11 +129,14 @@ export default class ListEmployeeLeavesComponent extends Component {
             </tbody>
           </table>
 
-          <h2 className="text-center"><br></br>
-            <u>Employee Leaves</u><br></br><br></br>
+          <h2 className="text-center">
+            <br></br>
+            <u>Employee Leaves</u>
+            <br></br>
+            <br></br>
           </h2>
-          
-          <button className="button" onClick={this.generateLeavesReport}>
+
+          <button className="buttongen1" onClick={this.generateLeavesReport}>
             <b>Generate Report</b>
           </button>
           <center>
@@ -143,28 +145,44 @@ export default class ListEmployeeLeavesComponent extends Component {
               <thead>
                 <tr style={tableStyle}>
                   <th>
-                    <center><h5>Employee ID</h5></center>
+                    <center>
+                      <h5>Employee ID</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>Admin ID</h5></center>
+                    <center>
+                      <h5>Admin ID</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>Date</h5></center>
+                    <center>
+                      <h5>Date</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>Reason</h5></center>
+                    <center>
+                      <h5>Reason</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>Status</h5></center>
+                    <center>
+                      <h5>Status</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>Update</h5></center>
+                    <center>
+                      <h5>Update</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>Delete</h5></center>
+                    <center>
+                      <h5>Delete</h5>
+                    </center>
                   </th>
                   <th>
-                    <center><h5>View</h5></center>
+                    <center>
+                      <h5>View</h5>
+                    </center>
                   </th>
                 </tr>
               </thead>
@@ -174,11 +192,21 @@ export default class ListEmployeeLeavesComponent extends Component {
                   //this.state.employeeLeaves.map(
                   //employeeLeaves =>
                   <tr key={employeeLeaves.leaveNumber}>
-                    <td style={tableStyle}><center>{employeeLeaves.employeeID}</center></td>
-                    <td style={tableStyle}><center>{employeeLeaves.adminID}</center></td>
-                    <td style={tableStyle}><center>{employeeLeaves.date}</center></td>
-                    <td style={tableStyle}><center>{employeeLeaves.reason}</center></td>
-                    <td style={tableStyle}><center>{employeeLeaves.status}</center></td>
+                    <td style={tableStyle}>
+                      <center>{employeeLeaves.employeeID}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{employeeLeaves.adminID}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{employeeLeaves.date}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{employeeLeaves.reason}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{employeeLeaves.status}</center>
+                    </td>
                     <td>
                       <button
                         onClick={() =>
@@ -186,7 +214,7 @@ export default class ListEmployeeLeavesComponent extends Component {
                         }
                         className="button-up"
                       >
-                       <b> Update</b>
+                        <b> Update</b>
                       </button>
                     </td>
                     <td>
@@ -196,7 +224,7 @@ export default class ListEmployeeLeavesComponent extends Component {
                         }
                         className="button-dele"
                       >
-                       <b> Delete</b>
+                        <b> Delete</b>
                       </button>
                     </td>
                     <td>
@@ -206,13 +234,14 @@ export default class ListEmployeeLeavesComponent extends Component {
                         }
                         className="button-view "
                       >
-                       <b> View</b>
+                        <b> View</b>
                       </button>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table><br></br>
+            </table>
+            <br></br>
           </center>
         </div>
       </div>
