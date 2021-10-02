@@ -82,13 +82,13 @@ class ListEmployeeComponent extends Component {
          }
              
            
-        
+        //view employee
 
          viewEmployee(employeeid){
              this.props.history.push(`/view-employee/${employeeid}`);
          }
          
-
+            //edit employee
         editEmployee(employeeid){
             this.props.history.push(`/add-employee/${employeeid}`);
 
@@ -101,7 +101,7 @@ class ListEmployeeComponent extends Component {
             })
 
          }
-
+          //add employee
          addEmployee(){
             this.props.history.push('/add-employee/_add');
         }
