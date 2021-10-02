@@ -32,7 +32,7 @@ class BuyerOrderReport extends Component {
             <div className>
                 <div className="container">
                     
-                <h2 className="text-center">Buyer Orders</h2>        
+                <h2 className="text-center">Monthly Orders Report</h2>        
                 <br></br>
                 <div className="row">
                 <center>

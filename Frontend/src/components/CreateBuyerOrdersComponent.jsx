@@ -4,7 +4,6 @@ import {toast} from 'react-toastify';
 import SoloAlert from 'soloalert'
 import 'react-toastify/dist/ReactToastify.css';
 
-
 toast.configure()
 class CreateBuyerOrdersComponent extends Component {
     constructor(props){
@@ -25,7 +24,6 @@ class CreateBuyerOrdersComponent extends Component {
             dateError:'',
 
     }
-
         this.changeUserNameHandler = this.changeUserNameHandler.bind(this);
         this.changeEmailHandler = this.changeEmailHandler.bind(this);
         this.changeAddressHandler = this.changeAddressHandler.bind(this);
@@ -48,11 +46,9 @@ class CreateBuyerOrdersComponent extends Component {
                     contact: BuyerOrders.contact,
                     date: BuyerOrders.date
                 });
+
         });
-
-        }
-
-        
+        }   
     }
 
     notify(){
@@ -160,7 +156,6 @@ class CreateBuyerOrdersComponent extends Component {
      
             <div>
             {
-                  
                 this.getTitle()
             }
                 <div className = "containerForm"  >

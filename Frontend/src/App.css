@@ -114,3 +114,16 @@
   }
   
   .button-update:hover {opacity: 2}
+
+  .setFontSizeOne {
+    font-Size: 15px; 
+  }
+  .setFontSizeTwo {
+    font-Size: 20px; 
+  }
+  .setFontSizeThree {
+    font-Size: 25px; 
+  }
+  .setFontSizeFour {
+    font-Size: 30px;
+  }

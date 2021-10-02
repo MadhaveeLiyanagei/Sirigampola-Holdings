@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import BuyerOrdersService from '../services/BuyerOrdersService'
 
+
 class ViewBuyerOrderComponent extends Component {
-
-
-
     constructor(props) {
         super(props)
 
@@ -16,8 +14,6 @@ class ViewBuyerOrderComponent extends Component {
         }
     }
 
-
-
     componentDidMount() {
         BuyerOrdersService.getBuyerOrdersById(this.state.id).then(res => {
             this.setState({ BuyerOrders: res.data })
@@ -28,12 +24,12 @@ class ViewBuyerOrderComponent extends Component {
     render() {
         return (
             <div>
-                <div className="card col-md-6 offset-md-3">
+                <div className="card col-md-6 offset-md-3" >
                     <h3 className="text-center">View Delivery Details</h3>
-                    <div className="card-body">
-                        <div className="row">
-                            <label>UserName :{this.state.BuyerOrders.username} </label> 
-                            
+                    <div className="card-body" style={{background:" rgb(197, 207, 209)"} }>
+                        <center>
+                        <div className="row" style={{marginTop:40}}>
+                            <label className="setFontSizeThree" >UserName :{this.state.BuyerOrders.username} </label> 
                         </div>
 
                         {/* <div className = "row">
@@ -52,21 +48,22 @@ class ViewBuyerOrderComponent extends Component {
                         </div>*/}
 
                         <div className="row">
-                            <label>Address :{this.state.BuyerOrders.address}</label>                           
+                            <label className="setFontSizeThree" >Address :{this.state.BuyerOrders.address}</label>                           
                         </div>
 
                         <div className="row">
-                            <label>Email :{this.state.BuyerOrders.email}</label>
+                            <label className="setFontSizeThree">Email :{this.state.BuyerOrders.email}</label>
                         </div>
 
                         <div className="row">
-                            <label>Contact :{this.state.BuyerOrders.contact}</label>                          
+                            <label className="setFontSizeThree">Contact :{this.state.BuyerOrders.contact}</label>                          
                         </div>
 
                         <div className="row">
-                            <label>Date :{this.state.BuyerOrders.date}</label>
+                            <label className="setFontSizeThree">Date :{this.state.BuyerOrders.date}</label>
                             
                         </div>
+                        </center>
 
                     </div>
                 </div>

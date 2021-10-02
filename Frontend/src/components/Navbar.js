@@ -2,9 +2,7 @@ import React, {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import './Navbar.css';
-//import AuthenticationService from './Authentication/AuthenticationService';
-
-
+import AuthenticationService from './Authentication/AuthenticationService';
 
 function Navbar({cartItems}) {
     const [click,setClick]=useState(false);
@@ -25,28 +23,7 @@ useEffect(() =>{
 
     window.addEventListener('resize', showButton);
 
-    //const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
-    //const loggedUserRole = AuthenticationService.loggedUserRole();
 
-    //let loggedAsAdmin = false;
-    //let loggedAsSupplier = false;
-    //let loggedAsBuyer = false;
-    //let loggedAsEmployee = false;
-
-    //if(loggedUserRole != null && loggedUserRole === 'Admin'){
-    //   loggedAsAdmin = true;
-    //}
-    //if(loggedUserRole != null && loggedUserRole === 'Supplier'){
-    //    loggedAsSupplier = true;
-    //}
-    //if(loggedUserRole != null && loggedUserRole === 'Buyer'){
-    //   loggedAsBuyer = true;
-    //}
-
-    //if(loggedUserRole != null && loggedUserRole === 'Employee'){
-     //   loggedAsEmployee = true;
-    //}
-    
     
     return (
        
@@ -85,7 +62,7 @@ useEffect(() =>{
                 <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>
                     <i className = "fas fa-shopping-cart"/>
                     <span className ="cart-length">
-                        {cartItems.length ===0 ? "" : cartItems.length}
+                        {cartItems.length === 0 ? "" : cartItems.length}
                     </span>
                 </Link>
             </li>

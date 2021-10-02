@@ -33,7 +33,12 @@ class Login extends Component {
                     if(response.data != null){
                         if(this.state.password === response.data.password){
                             AuthenticationService.successfulLogin(response.data.userId, 'Name', response.data.role)
-                            this.props.history.push("/")
+                            if(response.data.role ==='Admin'){
+                                this.props.history.push("/AdminHome")
+                            }else if(response.data.role ==='Buyer'){
+                                this.props.history.push("/Home")
+                            }
+                            
                             this.setState({showSuccessMsg: true})
                             this.setState({hasLoginFailed: false})
                         }
@@ -87,6 +92,10 @@ class Login extends Component {
                     <Form.Group>
                         <Link to="forgotpassword" style={{textDecoration:"none"}}><p style={{marginTop:10, color:"red"}}>Forgot password ?</p></Link>
                     </Form.Group>
+
+                    <Form.Group>
+                        <Link to="Register" style={{textDecoration:"none"}}><p style={{marginTop:10, color:"blue"}}>Don't have an account ?</p></Link>
+                    </Form.Group>
                 </Form>
             </div>
                 <br></br>
@@ -94,6 +103,7 @@ class Login extends Component {
                 <br></br>
             </Container>
          );
+
     }
 }
  

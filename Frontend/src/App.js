@@ -15,6 +15,9 @@ import ViewBuyerOrderComponent from './components/ViewBuyerOrderComponent';
 import Login from './components/Login/Login';
 import Footer from './components/Footer';
 import BuyerOrderReport from './components/BuyerOrderReport';
+import Sidebar from './components/Sidebar';
+import AdminHome from './components/AdminHome';
+
 
 
 function App() {
@@ -58,12 +61,15 @@ function App() {
     <>
    
     <Router>
+
       <Navbar cartItems={cartItems}/>
-    
-      
+
       <Switch>
-        {/*<Route path = '/' exact component = {auth} />*/}
-        <Route path = '/' exact component = {Home} /> 
+      {/*<Route path = '/' exact component = {Sidebar} />*/}
+      {/*  <Route path = '/' exact component = {auth} />*/}
+        <Route path = '/' exact component = {Login} />
+        <Route path = "/Home" exact component = {Home} />
+        <Route path = "/AdminHome" exact component = {AdminHome} />
         <Route path = "/buyerordersreport" component = {BuyerOrderReport}></Route>
         {/*<Route path = '/login' exact component = {Login} /> */}
         <Route path = "/Orders" component = {ListBuyerOrdersComponent}></Route>
@@ -77,9 +83,9 @@ function App() {
         cartItems= {cartItems} 
         handleAddProduct = {handleAddProduct}
         handleRemoveProduct= {handleRemoveProduct}
-        handleCartClearance = {handleCartClearance}
+       handleCartClearance = {handleCartClearance}
         
-        />
+       />
       </Switch>
       <Footer/>
       </Router>

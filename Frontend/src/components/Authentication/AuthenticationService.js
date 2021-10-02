@@ -18,7 +18,7 @@ class AthenticationService {
         return true;
     }
 
-    loggedUserId(){
+    loggedUserId0(){
         let id = sessionStorage.getItem('authenticatedUserId');
         if (id === null) return '';
         return id;
@@ -37,5 +37,6 @@ class AthenticationService {
     }
 
 }
+
  
 export default new AthenticationService();

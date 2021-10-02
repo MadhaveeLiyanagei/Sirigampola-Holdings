@@ -102,6 +102,10 @@ class ListBuyerOrdersComponent extends Component {
 
     }
 
+    generateReport(){
+        this.props.history.push('/buyerordersreport');
+    }
+
   
     searchBuyerName(event){
         this.setState({ searchId: event.target.value.substr(0,
@@ -166,6 +170,8 @@ class ListBuyerOrdersComponent extends Component {
                             }
                         </tbody>
                     </table>
+                     
+                    <button onClick={() => this.generateReport()} className ="button-report"  > Generate Report</button>
                 </div>
                 </div>
             </div>
