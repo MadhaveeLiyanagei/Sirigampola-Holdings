@@ -23,6 +23,7 @@ class UpdateDeliveryComponent extends Component {
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
            this.changePhoneHandler = this.changePhoneHandler.bind(this);
+           this.changeCourierHandler = this.changeCourierHandler.bind(this);
            this.updateDelivery =this.updateDelivery.bind(this);
            
 
@@ -37,6 +38,7 @@ class UpdateDeliveryComponent extends Component {
             this.setState({order_name: delivery.order_name,
                 order_address: delivery.order_address,
                 order_phone_number: delivery.order_phone_number,
+                order_courier_name: delivery.order_courier_name,
                
             
             });
@@ -110,7 +112,7 @@ class UpdateDeliveryComponent extends Component {
                                         <div className = "form-group">
                                             <label> Courier       : </label> 
                                             <br></br>
-                                            <input placeholder="Phone Number" name="phone_number" className="form-control" 
+                                            <input placeholder="Courier Name" name="Courier_name" className="form-control" 
                                                 value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
                                         </div>   
                                   

@@ -14,28 +14,33 @@ class CreateDeliveryComponent extends Component {
             order_name: '',
             order_address: '',
             order_phone_number: '',
+            order_courier_name: '',
            
 
 
             order_nameError: '',
             order_addressError: '',
             order_phone_numberError: '',
+            order_courier_name:'',
             
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
            this.changePhoneHandler =this.changePhoneHandler.bind(this);
+           this.changeCourierHandler =this.changeCourierHandler.bind(this);
            this.SaveDelivery =this.SaveDelivery.bind(this);
 
         }
 
         notify(){
-            toast.success('added successfully!', {position: toast.POSITION.TOP_CENTER})
+            toast.success('added successfully!', {
+                position: toast.POSITION.TOP_CENTER})
         }
      
         notify1(){
-            toast.error('adding cancelled', {position: toast.POSITION.TOP_CENTER})
+            toast.error('adding cancelled', {
+                position: toast.POSITION.TOP_CENTER})
         }
 
         validate = () =>{
@@ -43,6 +48,7 @@ class CreateDeliveryComponent extends Component {
             let order_nameError='';
             let order_addressError = '';
             let order_phone_numberError = '';
+            let order_courier_nameError='';
            
            
     
@@ -63,13 +69,19 @@ class CreateDeliveryComponent extends Component {
                 order_phone_numberError = "Please fill out this field";
     
             }
+
+            if(!this.state.order_courier_name){
+    
+                order_courier_nameError = "Please fill out this field";
+    
+            }
     
            
           
     
-            if(order_nameError || order_addressError || order_phone_numberError  ){
+            if(order_nameError || order_addressError || order_phone_numberError || order_courier_nameError  ){
     
-                this.setState({order_nameError,order_addressError,order_phone_numberError});
+                this.setState({order_nameError,order_addressError,order_phone_numberError,order_courier_nameError});
     
                 return false;
     
@@ -86,7 +98,7 @@ class CreateDeliveryComponent extends Component {
 
        SaveDelivery = (e) => {
             e.preventDefault();
-            let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number};
+            let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number,order_courier_name: this.state.order_courier_name};
 
             const isValid = this.validate();
             if(isValid){
@@ -94,6 +106,7 @@ class CreateDeliveryComponent extends Component {
 
 
             DeliveryService.createDelivery(delivery).then(res =>{
+                this.notify();
                 this.props.history.push('/delivery');
             });
 
@@ -116,9 +129,13 @@ class CreateDeliveryComponent extends Component {
         changePhoneHandler= (event) => {
             this.setState({order_phone_number: event.target.value})
         }
+        changeCourierHandler= (event) => {
+            this.setState({order_courier_name: event.target.value})
+        }
 
 
         cancel(){
+            this.notify1();
             this.props.history.push('/delivery');
         }
         
@@ -134,7 +151,7 @@ class CreateDeliveryComponent extends Component {
                                 <div className = "card-body">
                                     <form>
                                     <div className = "form-group">
-                                            <label> Delivery Service Name: </label>
+                                            <label> Delivery  Name: </label>
                                             <br></br>
                                             <input placeholder="Delivery Name" name="order_name" className="form-control" 
                                                 value={this.state.order_name} onChange={this.changeNameHandler}/>
@@ -156,31 +173,19 @@ class CreateDeliveryComponent extends Component {
                                                 value={this.state.order_phone_number} onChange={this.changePhoneHandler}/>
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.order_phone_numberError} </div>
                                         </div>    
+                                     
+                                        <div className = "form-group">
+                                            <label> Courier Name        : </label> 
+                                            <br></br>
+                                            <input placeholder="Courier Name" name="courier_name" className="form-control" 
+                                                value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.order_courier_nameError} </div>
+                                        </div>    
+                                        
 
-                                        <table className="invntry_tbl_header">
-                    <tbody>
-                      <th>
-                        <center>
-                          <button
-                            className="btn_green"
-                            onClick={this.SaveDelivery}
-                          >
-                            Save
-                          </button>
-                        </center>
-                      </th>
-                      <th>
-                        <center>
-                          <button
-                            className="btn_red"
-                            onClick={this.cancel.bind(this)}
-                          >
-                            Cancel
-                          </button>
-                        </center>
-                      </th>
-                    </tbody>
-                  </table>
+                                        <button className="btn btn-success" onClick={this.SaveDelivery}>Save</button>
+                                        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
+                                       
                                     </form>
             </div>
 
