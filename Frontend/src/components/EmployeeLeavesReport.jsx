@@ -21,14 +21,19 @@ export default class ListEmployeeLeavesComponent extends Component {
   }
 
   render() {
+    var tableStyle = {
+      border: "0.5px solid black",
+    };
     return (
       <>
-        <div className="react-pdf__Page__canvas">
-          <div className="row">
-            <>
-              <AdminEmployeeSideBar />
-            </>
-          </div>
+        <div className="row">
+          <>
+            <AdminEmployeeSideBar />
+          </>
+        </div>
+        <div className="react-pdf__Page__canvas_Single_View3">
+            <div style={{ backgroundImage: "url(../images/back.jpg)" }}>
+              Hello World
 
           <div className="Post" ref={ref}>
             <div>
@@ -38,12 +43,14 @@ export default class ListEmployeeLeavesComponent extends Component {
                     <br></br>
                     <br></br>
                     <u>Employee Leaves</u>
+                    <br></br>
+                    <br></br>
                   </h2>
                   <center>
                     <br></br>
-                    <table className="table table-striped table-bordered">
+                    <table className="tabletxtclr" style={tableStyle}>
                       <thead>
-                        <tr>
+                        <tr style={tableStyle}>
                           <th>
                             <center>Employee ID</center>
                           </th>
@@ -65,19 +72,19 @@ export default class ListEmployeeLeavesComponent extends Component {
                       <tbody>
                         {this.state.employeeLeaves.map((employeeLeaves) => (
                           <tr key={employeeLeaves.leaveNumber}>
-                            <td>
+                            <td style={tableStyle}>
                               <center>{employeeLeaves.employeeID}</center>
                             </td>
-                            <td>
+                            <td style={tableStyle}>
                               <center>{employeeLeaves.adminID}</center>
                             </td>
-                            <td>
+                            <td style={tableStyle}>
                               <center>{employeeLeaves.date}</center>
                             </td>
-                            <td>
+                            <td style={tableStyle}>
                               <center>{employeeLeaves.reason}</center>
                             </td>
-                            <td>
+                            <td style={tableStyle}>
                               <center>{employeeLeaves.status}</center>
                             </td>
                           </tr>
@@ -91,13 +98,13 @@ export default class ListEmployeeLeavesComponent extends Component {
           </div>
           <Pdf targetRef={ref} filename="EmployeeLeaves.pdf">
             {({ toPdf }) => (
-              <button className="button-report" onClick={toPdf}>
+              <button className="button-report2" onClick={toPdf}>
                 {" "}
                 Generate Report
               </button>
             )}
           </Pdf>
-        </div>
+        </div></div>
       </>
     );
   }

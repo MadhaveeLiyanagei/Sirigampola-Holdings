@@ -28,13 +28,14 @@ import UpdateProductComponent from "./components/UpdateProductComponent";
 import ViewProductComponent from "./components/ViewProductComponent";
 import EmployeeLeavesReport from "./components/EmployeeLeavesReport";
 import ParticleBackground from "./ParticleBackground";
-import ProductReport from './components/ProductReport';
-import InventoryReport from './components/InventoryReport';
-
+import ProductReport from "./components/ProductReport";
+import InventoryReport from "./components/InventoryReport";
 
 function App() {
   return (
-    <div  className = "bgclr">
+    <div>
+             
+
       <Router>
         <AdminNavbar />
         <div className="container">
@@ -69,7 +70,7 @@ function App() {
               component={ViewNoticesComponent}
             />
             <Route path="/inventory" component={ListInventoryComponent}></Route>
-            <Route path = "/productreport" component = {ProductReport}></Route>
+            <Route path="/productreport" component={ProductReport}></Route>
             <Route
               path="/add-inventory"
               component={CreateInventoryComponent}
@@ -96,12 +97,12 @@ function App() {
               component={ViewProductComponent}
             ></Route>
             <Route path="/leavegen" component={EmployeeLeavesReport}></Route>
-            <Route path = "/inventoryreport" component = {InventoryReport}></Route>
+            <Route path="/inventoryreport" component={InventoryReport}></Route>
           </Switch>
         </div>
         <Footer />
       </Router>
-    </div>
+    </div>  
   );
 }
 

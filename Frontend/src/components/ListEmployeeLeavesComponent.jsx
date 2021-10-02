@@ -101,6 +101,9 @@ export default class ListEmployeeLeavesComponent extends Component {
       }
     );
 
+    var tableStyle = {
+      border: "0.5px solid black",
+    };
     return (
       <div>
         <div className="row">
@@ -127,36 +130,42 @@ export default class ListEmployeeLeavesComponent extends Component {
             </tbody>
           </table>
 
-          <h2 className="text-center">
-            <u>Employee Leaves</u>
+          <h2 className="text-center"><br></br>
+            <u>Employee Leaves</u><br></br><br></br>
           </h2>
-
+          
           <button className="button" onClick={this.generateLeavesReport}>
             <b>Generate Report</b>
           </button>
           <center>
             <br></br>
-            <table className="table table-striped table-bordered">
+            <table className="tabletxtclr" style={tableStyle}>
               <thead>
-                <tr>
+                <tr style={tableStyle}>
                   <th>
-                    <center>Employee ID</center>
+                    <center><h5>Employee ID</h5></center>
                   </th>
                   <th>
-                    <center>Admin ID</center>
+                    <center><h5>Admin ID</h5></center>
                   </th>
                   <th>
-                    <center>Date</center>
+                    <center><h5>Date</h5></center>
                   </th>
                   <th>
-                    <center>Reason</center>
+                    <center><h5>Reason</h5></center>
                   </th>
                   <th>
-                    <center>Status</center>
+                    <center><h5>Status</h5></center>
                   </th>
-                  <th>Update</th>
-                  <th>Delete</th>
-                  <th>View</th>
+                  <th>
+                    <center><h5>Update</h5></center>
+                  </th>
+                  <th>
+                    <center><h5>Delete</h5></center>
+                  </th>
+                  <th>
+                    <center><h5>View</h5></center>
+                  </th>
                 </tr>
               </thead>
 
@@ -165,11 +174,11 @@ export default class ListEmployeeLeavesComponent extends Component {
                   //this.state.employeeLeaves.map(
                   //employeeLeaves =>
                   <tr key={employeeLeaves.leaveNumber}>
-                    <td>{employeeLeaves.employeeID}</td>
-                    <td>{employeeLeaves.adminID}</td>
-                    <td>{employeeLeaves.date}</td>
-                    <td>{employeeLeaves.reason}</td>
-                    <td>{employeeLeaves.status}</td>
+                    <td style={tableStyle}><center>{employeeLeaves.employeeID}</center></td>
+                    <td style={tableStyle}><center>{employeeLeaves.adminID}</center></td>
+                    <td style={tableStyle}><center>{employeeLeaves.date}</center></td>
+                    <td style={tableStyle}><center>{employeeLeaves.reason}</center></td>
+                    <td style={tableStyle}><center>{employeeLeaves.status}</center></td>
                     <td>
                       <button
                         onClick={() =>
@@ -177,7 +186,7 @@ export default class ListEmployeeLeavesComponent extends Component {
                         }
                         className="button-up"
                       >
-                        Update
+                       <b> Update</b>
                       </button>
                     </td>
                     <td>
@@ -187,7 +196,7 @@ export default class ListEmployeeLeavesComponent extends Component {
                         }
                         className="button-dele"
                       >
-                        Delete
+                       <b> Delete</b>
                       </button>
                     </td>
                     <td>
@@ -197,16 +206,13 @@ export default class ListEmployeeLeavesComponent extends Component {
                         }
                         className="button-view "
                       >
-                        View
+                       <b> View</b>
                       </button>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table>
-            <>
-              <ParticleBackground />
-            </>
+            </table><br></br>
           </center>
         </div>
       </div>

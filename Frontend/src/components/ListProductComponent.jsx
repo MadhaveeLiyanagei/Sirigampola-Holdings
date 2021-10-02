@@ -100,23 +100,36 @@ class ListProductComponent extends Component {
 
     return (
       <div>
-        <h2 className="text-center">Products</h2>
-        <div className="row">
+<div className="row"><table className="srchbr">
+          <br></br>
+          <tbody>
+            <th className="tblclm">Search : </th>
+            <th>
+              <div className="form-group col-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  style={{ marginLeft: 0 }}
+                  placeholder="Enter Product Name"
+                  value={this.state.searchId}
+                  onChange={this.searchProductbyName.bind(this)}
+                />
+              </div>
+            </th>
+          </tbody>
+        </table></div>
+
+        <h2 className="text-center"><u>Products</u></h2>
+        <div className="row"> <br></br>
+        
           <button className="button" onClick={this.addProduct}>
             Add Product
-          </button>
+          </button> <br></br> <br></br>
         </div>
-        <div className="form-group col-md-4">
-          <input
-            type="text"
-            class="form-control"
-            style={{ marginLeft: 0 }}
-            placeholder="Enter Product Name"
-            value={this.state.searchId}
-            onChange={this.searchProductbyName.bind(this)}
-          />
-        </div>
-        <br></br>
+
+        
+
+       
         <div className="row">
           <table className="table table-striped table bordered">
             <thead>

@@ -113,7 +113,6 @@ class CreateNoticesComponent extends Component {
                           <button
                             className="btn_red"
                             onClick={this.cancel.bind(this)}
-                            style={{ marginLeft: "10px" }}
                           >
                             Cancel
                           </button>

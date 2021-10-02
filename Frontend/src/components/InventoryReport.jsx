@@ -22,31 +22,31 @@ class InventoryReport extends Component {
   render() {
     return (
       <>
+<div className="react-pdf__Page__canvas_Single_View3">
         <div className="Post" ref={ref}>
-          <div style={{ marginLeft: 20 }}>
-            <h2 style={{ marginLeft: 300 }}>Inventory</h2>
-
+          <div style={{ marginLeft: 20 }}><br></br><br></br>
+            <h2 style={{ marginLeft: 300 }}><u>Inventory</u></h2><br></br>
             <br></br>
             <div className="row">
               <table className="table table-striped table bordered">
                 <thead>
                   <tr>
-                    <th>Product ID</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                    <th>Re-Order Level</th>
-                    <th>Cost Price</th>
+                    <th><center>Product ID</center></th>
+                    <th><center>Product Name</center></th>
+                    <th><center>Quantity</center></th>
+                    <th><center>Re-Order Level</center></th>
+                    <th><center>Cost Price</center></th>
                   </tr>
                 </thead>
 
                 <tbody>
                   {this.state.inventory.map((inventory) => (
                     <tr key={inventory.inventoryID}>
-                      <td>{inventory.productID}</td>
-                      <td>{inventory.productName}</td>
-                      <td>{inventory.quantity}</td>
-                      <td>{inventory.reOrder}</td>
-                      <td>{inventory.costPrice}</td>
+                      <td><center>{inventory.productID}</center></td>
+                      <td><center>{inventory.productName}</center></td>
+                      <td><center>{inventory.quantity}</center></td>
+                      <td><center>{inventory.reOrder}</center></td>
+                      <td><center>{inventory.costPrice}</center></td>
                     </tr>
                   ))}
                 </tbody>
@@ -56,12 +56,13 @@ class InventoryReport extends Component {
         </div>
         <Pdf targetRef={ref} filename="InventoryReport.pdf">
           {({ toPdf }) => (
-            <button className="button-report" onClick={toPdf}>
+            <button className="button-report2" onClick={toPdf}>
               {" "}
               Generate Report
             </button>
           )}
         </Pdf>
+        </div>
       </>
     );
   }

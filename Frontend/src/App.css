@@ -1,124 +1,150 @@
 .button {
-    background-color: #2eafc6;
-    border: none;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .button:hover {background-color: #33963a;
-    color: white;
+  background-color: #2eafc6;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
+.button:hover {
+  background-color: #33963a;
+  color: white;
+}
 
-  .button-up {
-    background-color: #07b60f;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 18px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.button-up {
+  background-color: #07b60f;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  }
+.button-up:hover {
+  opacity: 2;
+  color: white;
+}
 
-  
-  .button-up:hover {opacity: 2}
+.button-view {
+  background-color: #ffc400;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
 
+.button-view:hover {
+  opacity: 2;
+  color: white;
+}
 
-  
-  .button-view {
-    background-color: #ffc400;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 18px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.button-dele {
+  background-color: #ff0000;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  }
+.button-dele:hover {
+  opacity: 2;
+  color: rgb(255, 255, 255);
+}
 
-  
-  .button-view:hover {opacity: 2}
+.react-pdf__Page__canvas_Single_View2 {
+  margin: 0 auto;
+  width: 65% !important;
+  height: 100% !important;
+}
 
-  .react-pdf__Page__canvas_Single_ViewI {
-    margin: 0 auto;
-    width: 75% !important;
-    height: 100% !important;
-  }
+.react-pdf__Page__canvas_Single_ViewI {
+  margin: 0 auto;
+  width: 75% !important;
+  height: 100% !important;
+}
 
-  
-  .button-dele {
-    background-color: #ff0000;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 18px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.react-pdf__Page__canvas_Single_View3 {
+  margin: 0 auto;
+  width: 61% !important;
+  height: 100% !important;
+}
 
-  }
+.button-report2 {
+  background-color: #2600ff;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 600px;
+}
 
-  
-  .button-dele:hover {opacity: 2}
+.button-update {
+  background-color: #0d802f;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: -1;
+  transition: 0.5s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
 
+.button-report {
+  background-color: #2600ff;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 1110px;
+}
 
-    
-  .button-update {
-    background-color: #0d802f;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 18px;
-    margin: 4px 2px;
-    opacity: -1;
-    transition: 0.5s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-
-  }
-
-  .button-report {
-    background-color: #2600ff;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-
-  }
-  
-  .button-update:hover {opacity: 2}
-
+.button-update:hover {
+  opacity: 2;
+}
 
 .react-pdf__Page__canvas {
   margin: 0 auto;
@@ -132,24 +158,24 @@
   height: 100% !important;
 }
 
-.srchbr{
+.srchbr {
   margin-left: 62%;
 }
 
-.tblclm{
+.tblclm {
   width: 80px;
 }
 
-.back{
+.back {
   height: 100%;
   width: 100%;
 }
 
-.hero-btns{
-  background-color: #f02669;
+.hero-btns {
+  background-color: #f39e00;
 }
 
-.invntry_tbl_header{
+.invntry_tbl_header {
   width: 100%;
 }
 
@@ -168,7 +194,8 @@
   width: 100%;
 }
 
-.buttonShana1:hover {background-color: #406eee;
+.buttonShana1:hover {
+  background-color: #406eee;
   color: rgb(255, 255, 255);
 }
 
@@ -187,31 +214,32 @@
   width: 100%;
 }
 
-.buttonShana2:hover {background-color: #f84d69;
+.buttonShana2:hover {
+  background-color: #f84d69;
   color: white;
 }
 
-.btn_green{
-    background-color: #365afa;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 18px;
-    margin: 4px 2px;
-    opacity: 0.9;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    width: 100%;
-    cursor: pointer;
+.btn_green {
+  background-color: #365afa;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
 }
 
-.btn_green:hover{
+.btn_green:hover {
   background-color: #3f29be;
 }
 
-.btn_red{
+.btn_red {
   background-color: #fa3660;
   border: none;
   color: white;
@@ -222,42 +250,92 @@
   opacity: 0.9;
   transition: 0.3s;
   display: inline-block;
-  width: 90%;
+  width: 100%;
   text-decoration: none;
   cursor: pointer;
 }
 
-.btn_red:hover{
+.btn_red:hover {
   background-color: #8a0421;
 }
 
-.bgclr{
-  background-color: #ccc5c7;
+.bgclr {
+  background-color: #e2ddd6;
+  width: 100%;
 }
 
-.txtclr{
+.txtclr {
   color: rgb(7, 6, 6);
 }
 
-.tabletxtclr{
+.tabletxtclr {
   color: rgb(46, 46, 46);
   border: 1px;
+  width: 100%;
 }
 
-.buttonNotice{
-  background-color: #9346f8;
-    border: none;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.buttonNotice {
+  background-color: #f84681;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.buttonNotice:hover {background-color: #62316e;
+.buttonNotice:hover {
+  opacity: 2;
   color: white;
+}
+
+.btnsignup {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #f8306c;
+  background-color: rgb(61, 61, 61);
+}
+
+.btnsignup:hover{
+  opacity: 3;
+  color: #e2ddd6;
+}
+
+.logo{
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+
+.btn_blue {
+  background-color: #0db31b;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn_blue:hover {
+  background-color: #2c7a31;
 }

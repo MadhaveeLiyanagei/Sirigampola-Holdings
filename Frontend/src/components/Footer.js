@@ -40,8 +40,8 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
+              <img class="logo" src="./images/shlogo.png" alt="" />
               SIRIGAMPOLA Holdings
-              <i class='fab fa-typo3' />
             </Link>
           </div>
           <small class='website-rights'>SIRIGAMPOLA HOLDINGS ©️ 2021</small>
@@ -51,8 +51,9 @@ function Footer() {
               to='/'
               target='_blank'
               aria-label='Facebook'
+            
             >
-              <i class='fab fa-facebook-f' />
+              <a href="https://www.facebook.com/SirigampolaHoldings"> <i class='fab fa-facebook-f' /> </a>
             </Link>
             <Link
               class='social-icon-link instagram'
@@ -60,7 +61,7 @@ function Footer() {
               target='_blank'
               aria-label='Instagram'
             >
-              <i class='fab fa-instagram' />
+             <a href="https://www.instagram.com/brave_apparels/"> <i class='fab fa-instagram' /></a>
             </Link>
             <Link
               class='social-icon-link youtube'
@@ -76,15 +77,7 @@ function Footer() {
               target='_blank'
               aria-label='Twitter'
             >
-              <i class='fab fa-twitter' />
-            </Link>
-            <Link
-              class='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='LinkedIn'
-            >
-              <i class='fab fa-linkedin' />
+              <a href="https://www.linkedin.com/company/braveapparels/"><i class='fab fa-linkedin' /></a>
             </Link>
           </div>
         </div>
