@@ -108,11 +108,25 @@ class UpdateCourierComponent extends Component {
                                             <input placeholder="Email Address" name="email" className="form-control" 
                                                 value={this.state.email} onChange={this.changeEmailHandler}/>
                                         </div>    
-                                            <br></br>
-
-                                        <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateCourier}>Update</button>
-                                        <button style={{marginLeft: "10px"}} className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
+                                        <br></br>
+                                            <table className="invntry_tbl_header">
+                    <tbody>
+                      <th>
+                        <center>
+                         
+                        <button  className="btn_red" onClick={this.updateCourier}>Update</button>
                                        
+                        </center>
+                      </th>
+                      <th>
+                        <center>
+                        <button  className="btn_green" onClick={this.cancel.bind(this)} >Cancel</button>
+
+                        </center>
+                      </th>
+                    </tbody>
+                  </table>
+
                                     </form>
             </div>
                      </div>      
@@ -123,6 +137,12 @@ class UpdateCourierComponent extends Component {
             
     }
     }
+
+
+    /*
+    <button  className="btn_red" onClick={this.updateCourier}>Update</button>
+                                        <button  className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
+                                       */
 
 
 
