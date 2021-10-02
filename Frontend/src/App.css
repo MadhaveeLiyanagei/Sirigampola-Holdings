@@ -190,7 +190,7 @@
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
-  width: 100%;
+  width: 80%;
   cursor: pointer;
 }
 
@@ -210,7 +210,7 @@
   opacity: 0.9;
   transition: 0.3s;
   display: inline-block;
-  width: 100%;
+  width: 90%;
   text-decoration: none;
   cursor: pointer;
 }

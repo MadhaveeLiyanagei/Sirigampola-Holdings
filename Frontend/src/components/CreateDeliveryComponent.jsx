@@ -167,10 +167,25 @@ class CreateDeliveryComponent extends Component {
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.order_phone_numberError} </div>
                                         </div>    
                                      
-                                   
+                        <br></br>
+                                            <table className="invntry_tbl_header">
+                    <tbody>
+                      <th>
+                        <center>
+                         
+                        <button className="btn_red" onClick={this.SaveDelivery}>Save</button>
+                                       
+                        </center>
+                      </th>
+                      <th>
+                        <center>
+                        <button className="btn_green" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
 
-                                        <button className="btn btn-success" onClick={this.SaveDelivery}>Save</button>
-                                        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
+                        </center>
+                      </th>
+                    </tbody>
+                  </table>
+
                                        
                                     </form>
             </div>

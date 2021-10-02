@@ -99,10 +99,23 @@ class AddCourierDeliveryComponent extends Component {
 
 
                                             <br></br>
+                    <table className="invntry_tbl_header">
+                    <tbody>
+                      <th>
+                        <center>
+                         
+                        <button style={{marginLeft: "10px"}} className="btn_red" onClick={this.updateDelivery}>Add</button>
+                                       
+                        </center>
+                      </th>
+                      <th>
+                        <center>
+                        <button  className="btn_green" onClick={this.cancel.bind(this)} >Cancel</button>
 
-                                        <button style={{marginLeft: "10px"}} className="btn btn-success" onClick={this.updateDelivery}>Add</button>
-                                        <button style={{marginLeft: "10px"}} className="btn btn-danger" onClick={this.cancel.bind(this)} >Cancel</button>
-
+                        </center>
+                      </th>
+                    </tbody>
+                  </table>
                                     </form>
             </div>
                      </div>      

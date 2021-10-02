@@ -139,13 +139,13 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
                     <thead>
                         <tr>
                                 <th style={{width: "5%"}}>Order Id</th> 
-                                <th style={{width: "10%"}}>Order Name</th>
-                                <th style={{width: "15%"}}>Address</th>
+                                <th style={{width: "20%"}}>Order Name</th>
+                                <th style={{width: "20%"}}>Address</th>
                                 <th style={{width: "10%"}}>Phone Number</th>
                                 <th style={{width: "10%"}}>courier </th>
                                 <th style={{width: "10%"}}>Search</th>
-                                <th style={{width: "20%"}}>delete update</th>
-                                <th style={{width: "15%"}}>Report</th>
+                                <th style={{width: "10%"}}>Update</th>
+                                <th style={{width: "10%"}}>Report</th>
                                 <th style={{width: "15%"}}>Done</th>
                               
 
@@ -167,11 +167,14 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
                                     <td> <button onClick={ () => this.courierDelivery(delivery.id)} className="button-search">Courier </button></td>
                                     <td>
                                     <button onClick={ () => this.editDelivery(delivery.id)} className="button-up">Update </button>
-                                    <button style={{marginLeft: "10px"}} onClick={ () => this.deleteDelivery(delivery.id)} className="button-dele">Delete </button>   
+                                       
                                     </td>
                                     <td>
                                     <button style={{marginLeft: "10px"}} onClick={ () => this.viewDelivery(delivery.id)} className="button-view">Report </button>
                                     </td>  
+                                    <td>
+                                    <button style={{marginLeft: "10px"}} onClick={ () => this.deleteDelivery(delivery.id)} className="button-dele">Delete </button>
+                                    </td>
                                </tr> 
                             )
 
