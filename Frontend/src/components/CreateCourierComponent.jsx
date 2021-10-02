@@ -3,7 +3,7 @@ import CourierService from '../services/CourierService';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
-
+toast.configure();
 class CreateCourierComponent extends Component {
     constructor(props) {
         super(props)
@@ -30,11 +30,13 @@ class CreateCourierComponent extends Component {
         }
 
         notify(){
-            toast.success('added successfully!', {position: toast.POSITION.TOP_CENTER})
+            toast.success('added successfully!', 
+            {position: toast.POSITION.TOP_CENTER})
         }
      
         notify1(){
-            toast.error('adding cancelled', {position: toast.POSITION.TOP_CENTER})
+            toast.error('adding cancelled', 
+            {position: toast.POSITION.TOP_CENTER})
         }
 
         validate = () =>{
@@ -98,6 +100,7 @@ class CreateCourierComponent extends Component {
 
 
             CourierService.createCourier(courier).then(res =>{
+                this.notify();
                 this.props.history.push('/courier');
             });
 
@@ -126,6 +129,7 @@ class CreateCourierComponent extends Component {
         }
 
         cancel(){
+            this.notify1();
             this.props.history.push('/courier');
         }
         
