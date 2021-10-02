@@ -148,3 +148,24 @@
     cursor: pointer;
 
   }
+
+
+  
+
+  .logos {
+    width:50px;
+    height: 50px;
+    margin: auto;
+    background: url('http://45.79.67.59/logo_thumb_bar.jpg');
+    background-size: cover;
+  
+  }
+  
+  @keyframes play {
+    100% { background-position: 500px; }
+  }
+  .logos:hover{
+    -webkit-animation: notexistent;
+      animation: notexistent;
+    animation: play 2.5s steps(5) infinite;
+  }
