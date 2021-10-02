@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import "./HeaderComponent.css"
 
 const HeaderComponent = () => {
+
     return (
-        <div></div>
+        <header className="header">
+        <div>
+            <h1>
+                
+            </h1>
+            
+        </div>
+        </header>
     )
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import product_card from '../data/productData';
 
 
-const MainContent = () => {
+const MainContent = ({ item }) => {
     console.log(product_card);
     const listItems = product_card.map((item) =>
         <div className="cardView" key={item.id}>
@@ -13,7 +13,12 @@ const MainContent = () => {
                 <h2>{item.product_name}</h2>
                 <p>{item.description}</p>
                 <p className="cardView_price">{item.price}<span>{item.currency}</span></p>
-                <div className="cardView_btn">checkout order</div>
+
+                //button 
+                <div>
+                    <button className="cardView_btn">checkout order</button>
+                </div>
+                
             </div>
         </div>
 

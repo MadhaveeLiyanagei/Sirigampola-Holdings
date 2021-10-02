@@ -48,16 +48,18 @@ useEffect(() =>{
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
-                        Profile
-                    </Link>
-                </li>
-
-                <li className='nav-item'>
                     <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
                         About
                     </Link>
                 </li>
+
+                <li className='nav-item'>
+                    <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>
+                    <i class="fas fa-list-ul"></i>
+                    </Link>
+                </li>
+
+                
             </ul>
             
             {button && <Button buttonStyle = 'btn--outline'> SIGN UP</Button>}
