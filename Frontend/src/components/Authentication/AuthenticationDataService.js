@@ -2,13 +2,13 @@ import axios from 'axios'
 
 
 
-class AuthenticationDataService{
+class AthenticationDataService{
 
 
 
-    getSupplier(supplierid){
+    getUser(userId){
 
-        return axios.get(`http://localhost:8070/api/v1/supplier/${supplierid}`);
+        return axios.get(`http://localhost:8070/api/v1/login/${userId}`);
 
     }
 
@@ -18,4 +18,4 @@ class AuthenticationDataService{
 
 
 
-export default new AuthenticationDataService();
+export default new AthenticationDataService();

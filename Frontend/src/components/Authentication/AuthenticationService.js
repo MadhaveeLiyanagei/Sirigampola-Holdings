@@ -1,42 +1,83 @@
-class AuthenticationService {
+class AthenticationService {
+
     
-    successfulLogin(supplierid, suppliername,supplieremail,supplierpassword){
-        sessionStorage.setItem('authenticatedSupplierId', supplierid);
-        sessionStorage.setItem('authenticatedSupplierName', suppliername);
-        sessionStorage.setItem('authenticatedSupplierMail', supplieremail);
+
+    successfulLogin(userId, name, role, password){
+
+        sessionStorage.setItem('authenticatedUserId', userId);
+
+        sessionStorage.setItem('authenticatedUserName', name);
+
+        sessionStorage.setItem('authenticatedUserRole', role);
+
     }
+
+
 
     logout(){
-        sessionStorage.removeItem('authenticatedSupplierId');
-        sessionStorage.removeItem('authenticatedSupplierName');
-        sessionStorage.removeItem('authenticatedSupplierMail');
+
+        sessionStorage.removeItem('authenticatedUserId');
+
+        sessionStorage.removeItem('authenticatedUserName');
+
+        sessionStorage.removeItem('authenticatedUserRole');
+
     }
 
-    isSupplierLoggedIn(){
-        let supplier = sessionStorage.getItem('authenticatedSupplierId');
-        if (supplier === null) return false;
+
+
+    isUserLoggedIn(){
+
+        let user = sessionStorage.getItem('authenticatedUserId');
+
+        if (user === null) return false;
+
         return true;
+
     }
 
-    loggedSupplierId(){
-        let supplierid = sessionStorage.getItem('authenticatedSupplierId');
-        if (supplierid === null) return '';
-        return supplierid;
+
+
+    loggedUserId(){
+
+        let id = sessionStorage.getItem('authenticatedUserId');
+
+        if (id === null) return '';
+
+        return id;
+
     }
 
-    loggedSupplierName(){
-        let suppliername = sessionStorage.getItem('authenticatedSupplierName');
-        if ( suppliername === null) return '';
-        return suppliername;
+
+
+    loggedUserName(){
+
+        let name = sessionStorage.getItem('authenticatedUserName');
+
+        if (name === null) return '';
+
+        return name;
+
     }
 
-    loggedSupplierMail() {
-        let supplieremail = sessionStorage.getItem('authenticatedSupplierMail');
-        if( supplieremail!= null) return supplieremail;
+
+
+    loggedUserRole() {
+
+        let role = sessionStorage.getItem('authenticatedUserRole');
+
+        if(role != null) return role;
+
         return null;
+
     }
+
+
 
 }
 
+
+
  
-export default new AuthenticationService();
+
+export default new AthenticationService();

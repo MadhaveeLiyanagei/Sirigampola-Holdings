@@ -20,6 +20,7 @@ import ViewSupplierComponent from './components/ViewSupplierComponent';
 import EmployeeReport from './components/EmployeeReport';
 import SupplierReport from './components/SupplierReport';
 import Login from './components/Login/Login';
+import AdminHome from './pages/AdminHome';
 
 
 
@@ -30,10 +31,13 @@ function App() {
     <>
     <Router>
       
-      <AdminNavbar/>
+     
       <Switch> 
         <Route path = '/' exact component = {Login} />
-        <Route path = '/Home'  component = {Home} /> 
+        <Route path = '/Home'  component = {Home} />
+        <Route path = '/AdminHome'  component = {AdminHome} />  
+
+
         <Route path = '/profile'  component = {ListBuyerComponent}/>
         <Route path = '/add-buyer/:id'  component = {CreateBuyerComponent}/>
         <Route path = '/view-buyer/:id'  component = {ViewBuyerComponent}/>

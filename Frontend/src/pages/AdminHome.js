@@ -3,12 +3,12 @@ import '../App.css'
 import HeroSection from '../components/HeroSection'
 import Footer from '../components/Footer'
 import Cards from '../components/Cards';
-import Navbar from '../components/Navbar';
+import AdminNavbar from '../components/AdminNavbar';
 
-function Home(){
+function AdminHome(){
     return(
         <>
-         <Navbar/>
+         <AdminNavbar/>
             <HeroSection/>
             <Cards/>
             <Footer/>
@@ -18,4 +18,4 @@ function Home(){
     );
 }
  
-export default Home;
+export default AdminHome;

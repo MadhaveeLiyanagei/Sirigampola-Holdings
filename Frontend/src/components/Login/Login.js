@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { Form, Button, Alert, Container } from 'react-bootstrap';
 import './Login.css'
 import { Link } from 'react-router-dom';
-import AuthenticationDataService from '../Authentication/AuthenticationDataService';
 import AuthenticationService from '../Authentication/AuthenticationService';
+import AthenticationDataService from '../Authentication/AuthenticationDataService';
 
 class Login extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            supplierid: this.props.match.params.supplierid,
-            supplierpassword: '',
+            userId: this.props.match.params.userId,
+            
+            password: '',
             hasLoginFailed: false,
             showSuccessMsg: false
         }
@@ -21,18 +22,23 @@ class Login extends Component {
 
     handleChange(event) {
         this.setState(
-            {[event.target.suppliername]:event.target.value}
+            {[event.target.name]:event.target.value}
         )
     }
 
     loginClicked() {
-        AuthenticationDataService.getSupplier(this.state.supplierid)
+        AthenticationDataService.getUser(this.state.userId)
             .then(
                 response => {
                     if(response.data != null){
-                        if(this.state.supplierpassword === response.data.supplierpassword){
-                            AuthenticationService.successfulLogin(response.data.supplierid, 'Name', response.data.supplieremail)
-                            this.props.history.push("/Home")
+                        if(this.state.password === response.data.password){
+                            AuthenticationService.successfulLogin(response.data.userId, 'Name', response.data.role)
+                            if(response.data.role ==='Admin'){
+                                this.props.history.push("/AdminHome")
+                            }else if(response.data.role ==='Buyer'||'Supplier'||'Employee'){
+                                this.props.history.push("/Home")
+                            }
+                            
                             this.setState({showSuccessMsg: true})
                             this.setState({hasLoginFailed: false})
                         }
@@ -67,12 +73,12 @@ class Login extends Component {
 
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>User ID</Form.Label>
-                        <Form.Control type="text" placeholder="User ID" name="userId" value={this.state.supplierid} onChange={this.handleChange} />
+                        <Form.Control type="text" placeholder="User ID" name="userId" value={this.state.userId} onChange={this.handleChange} />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" name="password" value={this.state.supplierpassword} onChange={this.handleChange} />
+                        <Form.Control type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange} />
                         <Form.Text className="text-muted">
                         We'll never share your passwords with anyone else.
                         </Form.Text>
