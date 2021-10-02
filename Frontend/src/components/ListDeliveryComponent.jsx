@@ -110,10 +110,28 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
         this.props.history.push('/add-delivery');
     }
 
- 
-            
+
+
+    
+    searchDeliveryByName(event){
+
+        this.setState({ searchId: event.target.value.substr(0,20)});
+      }
+
 
     render() {
+
+        let filterDeliveryName = this.state.delivery.filter((
+
+            delivery)=>{
+
+                return  delivery.order_name.toLowerCase().indexOf(this.state.searchId.toLowerCase())!==-1;
+
+            }
+        );
+        
+
+
 
        
 
@@ -128,7 +146,9 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
             <h2 className = "text-center" >Delivery Management</h2>
     </center>
-    
+    <div className = "form-group col-md-4">
+                      <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Delivery Name" value={this.state.searchId} onChange={this.searchDeliveryByName.bind(this)}/>
+            </div>
             <div className = "row">
                 <button className="button" onClick={this.addDelivery}>Add Delivery</button>
 
@@ -155,9 +175,12 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
                     <tbody>
                         {
 
+
+                        filterDeliveryName.map(
+                         delivery=>
                            
-                          this.state.delivery.map(
-                            delivery =>
+                          //this.state.delivery.map(
+                           // delivery =>
                                <tr key = {delivery.id}>
                                     <td>{ delivery.id}</td>
                                     <td >{ delivery.order_name}</td> 
