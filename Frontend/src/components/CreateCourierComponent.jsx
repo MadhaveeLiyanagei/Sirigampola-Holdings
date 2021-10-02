@@ -171,11 +171,28 @@ class CreateCourierComponent extends Component {
                                                 value={this.state.email} onChange={this.changeEmailHandler}/>
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.emailError} </div>
                                         </div>    
+                                        
 
-
-                                        <button className="btn btn-success" onClick={this.SaveCourier}>Save</button>
-                                        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
+                                        <br></br>
+                                            <table className="invntry_tbl_header">
+                    <tbody>
+                      <th>
+                        <center>
+                         
+                        <button className="btn_red" onClick={this.SaveCourier}>Save</button>
                                        
+                        </center>
+                      </th>
+                      <th>
+                        <center>
+                        <button className="btn_green" onClick={this.cancel.bind(this)}>Cancel</button>
+
+                        </center>
+                      </th>
+                    </tbody>
+                  </table>
+
+                                        
                                     </form>
             </div>
                      </div>      
@@ -192,3 +209,4 @@ class CreateCourierComponent extends Component {
 }
 
 export default CreateCourierComponent
+
