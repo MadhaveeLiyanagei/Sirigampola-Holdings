@@ -176,3 +176,49 @@
    width: 50px;
    height: 50px;
  }
+
+
+ .btn_green {
+  background-color: #365afa;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn_green:hover {
+  background-color: #3f29be;
+}
+
+
+.btn_red {
+  background-color: #fa3660;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn_red:hover {
+  background-color: #8a0421;
+}
+
+.invntry_tbl_header {
+  width: 100%;
+}
