@@ -18,6 +18,7 @@ class ListInventoryComponent extends Component {
         this.addInventory = this.addInventory.bind(this);
         this.editInventory = this.editInventory.bind(this);
         this.deleteInventory = this.deleteInventory.bind(this);
+        this.generateReport = this.generateReport.bind(this);
     }
 
     viewInventory(inventoryID){
@@ -103,6 +104,9 @@ class ListInventoryComponent extends Component {
     addInventory(){
         this.props.history.push('/add-inventory');
     }
+    generateReport(){
+        this.props.history.push('/inventoryreport');
+    }
 
     searchInventorybyName(event){
 
@@ -123,13 +127,29 @@ class ListInventoryComponent extends Component {
         return (
             <div>
                 <h2 className="text-center">Inventory</h2>
-                <div className = "row">
+               
 
                 <div className = "form-group col-md-4">
                       <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Product Name" value={this.state.searchId} onChange={this.searchInventorybyName.bind(this)}/>
                  </div>
-                    <button className = "button" onClick={this.addInventory}>Add Inventory</button>
-                </div>
+                 <table className="invntry_tbl_header">
+          <tbody>
+            <th>
+              <div>
+                <button className="buttonShana1" onClick={this.addInventory}>
+                  Add Inventory
+                </button>
+              </div>
+            </th>
+            <th>
+              <div>
+                <button className="buttonShana2" onClick={this.generateReport}>
+                 Generate Report
+                </button>
+              </div>
+            </th>
+          </tbody>
+        </table>
                     <br></br>
                  <div className = "row">
                    <table className="table table-striped table bordered">

@@ -11,7 +11,8 @@ class ListProductComponent extends Component {
         this.state = {
           
 
-            product: []
+            product: [],
+            searchId:''
 
         }
 
@@ -100,7 +101,21 @@ class ListProductComponent extends Component {
         this.props.history.push('/add-product');
     }
 
+    searchProductbyName(event){
+
+        this.setState({ searchId: event.target.value.substr(0,20)});
+      }
+
     render() {
+
+        let filterProductName = this.state.product.filter((
+
+            product)=>{
+
+                return product.productName.toLowerCase().indexOf(this.state.searchId.toLowerCase())!==-1;
+
+            }
+        );
 
         return (
             <div>
@@ -108,6 +123,9 @@ class ListProductComponent extends Component {
                 <div className = "row">
                     <button className = "button" onClick={this.addProduct}>Add Product</button>
                 </div>
+                <div className = "form-group col-md-4">
+                      <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Product Name" value={this.state.searchId} onChange={this.searchProductbyName.bind(this)}/>
+                 </div>
                     <br></br>
                  <div className = "row">
                    <table className="table table-striped table bordered">
@@ -126,8 +144,10 @@ class ListProductComponent extends Component {
 
                       <tbody>
                           {
-                              this.state.product.map(
-                                product =>
+                               filterProductName.map(
+                                product=>
+                              //this.state.product.map(
+                                //product =>
                                   <tr key = {product.productID}>
                                       <td>{product.productName}</td>
                                       <td>{product.productDetails}</td>

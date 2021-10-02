@@ -66,9 +66,9 @@ class ViewInventoryComponent extends Component {
                             </div>
                         </div>
                     </div>
+                 </div>
                 </div>
-                </div>
-                < Pdf targetRef={ref} filename="InventoryOneRecord.pdf">
+                < Pdf targetRef={ref} filename="InventoryReport.pdf">
                     {({ toPdf }) => <button onClick={toPdf}> Generate Report</button>}
                 </Pdf>
             

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ProductService from '../services/ProductService';
+import Pdf from 'react-to-pdf'
+
+const ref = React.createRef();
 
 class ViewProductComponent extends Component {
 
@@ -22,6 +25,9 @@ class ViewProductComponent extends Component {
 
     render() {
         return (
+            <>
+            <div className="react-pdf__Page__canvas_Single_ViewI">
+                <div className="Post" ref={ref}>
             <div>
                 <br></br>
                 <div className = "card col-md-6 offset-md-3">
@@ -54,6 +60,14 @@ class ViewProductComponent extends Component {
                     </div>
                 </div>
             </div>
+
+            </div>
+                </div>
+                < Pdf targetRef={ref} filename="ProductReport.pdf">
+                    {({ toPdf }) => <button onClick={toPdf}> Generate Report</button>}
+                </Pdf>
+            
+            </>
         );
     }
 }

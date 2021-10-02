@@ -46,9 +46,7 @@ class InventoryReport extends Component {
                                         <th>Quantity</th>
                                         <th>Re-Order Level</th>
                                         <th>Cost Price</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
+
                                     </tr>
                                 </thead>
 
@@ -75,8 +73,8 @@ class InventoryReport extends Component {
                     </div>
 
                 </div>
-                < Pdf targetRef={ref} filename="InventoryReport.pdf">
-                    {({ toPdf }) => <button className="button-report" onClick={toPdf}> Generate Report</button>}
+                < Pdf targetRef={ref} filename="InventoryListReport.pdf">
+                    {({ toPdf }) => <button className="button-report" onClick={toPdf}> Generate</button>}
                 </Pdf>
             </>
 
