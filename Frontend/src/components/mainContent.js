@@ -13,12 +13,10 @@ const MainContent = ({ item }) => {
                 <h2>{item.product_name}</h2>
                 <p>{item.description}</p>
                 <p className="cardView_price">{item.price}<span>{item.currency}</span></p>
-
-                //button 
                 <div>
-                    <button className="cardView_btn">checkout order</button>
+                    <button className="cardView_btn">add to cart</button>
                 </div>
-                
+
             </div>
         </div>
 

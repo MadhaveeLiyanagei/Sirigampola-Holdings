@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter  as Router, Switch, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
@@ -13,8 +13,13 @@ import HeaderComponent from './components/HeaderComponent';
 import SupplierOrderReport from './components/SupplierOrderReport';
 import Footer from './components/Footer';
 import mainContent from './components/mainContent';
+import Cart from './Cart/Cart';
+import data from './data/productData';
 
 function App() {
+
+  const { item } = data;
+  const [cartItem, setCartItem] = useState([]);
 
   return (
 
@@ -29,6 +34,8 @@ function App() {
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
                 <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
+                <Route path = "/cart" component = {Cart} ></Route>
+                <Route item={item} cartItem={cartItem} ></Route>
               </Switch>
             </div>
 
