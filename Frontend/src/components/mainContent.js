@@ -13,7 +13,7 @@ const MainContent = () => {
                 <h2>{item.product_name}</h2>
                 <p>{item.description}</p>
                 <p className="cardView_price">{item.price}<span>{item.currency}</span></p>
-                <div className="cardView_btn">Add to cart</div>
+                <div className="cardView_btn">checkout order</div>
             </div>
         </div>
 

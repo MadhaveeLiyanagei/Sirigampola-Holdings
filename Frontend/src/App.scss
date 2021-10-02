@@ -11,6 +11,7 @@
   $light_bg:#2b3039;
   $text:#2d343e;
   $white:#fff;
+  $green: #7CFC00;
   
   body{
     width:100%;
@@ -112,7 +113,7 @@
          p{
            font-size:20px;
            text-align: center;
-           color:rgba($white, .3);
+           color:rgba($green, .5);
            margin:8px 0;
          }
          .cardView_price{
