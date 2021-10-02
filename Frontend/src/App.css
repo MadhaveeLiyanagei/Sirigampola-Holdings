@@ -169,3 +169,10 @@
       animation: notexistent;
     animation: play 2.5s steps(5) infinite;
   }
+
+
+
+ .logo{
+   width: 50px;
+   height: 50px;
+ }
