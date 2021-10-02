@@ -2,7 +2,7 @@ const product_card = [
     {
         id: 1,
         product_name: 'Canon EOS 5D DSLR',
-        description:'SKU #101852S1 MODEL #1483C002',
+        description:'Need 01 Quantity',
         price: 849500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 5D Mark IV DSLR Camera.png"
@@ -11,7 +11,7 @@ const product_card = [
     {
         id: 2,
         product_name: 'Canon EOS 80D DSLR',
-        description:'SKU #101846S1 UPC #013803271829',
+        description:'Need 02 Quantity',
         price: 214500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 80D DSLR Camera with 18-55mm Lens.png"
@@ -20,7 +20,7 @@ const product_card = [
     {
         id: 3,
         product_name: 'Canon EOS 80D DSLR',
-        description:'SKU #101846S1 UPC #013803271829',
+        description:'Need 01 Quantity',
         price: 214500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 80D DSLR Camera with 18-135mm Lens.png"
@@ -29,7 +29,7 @@ const product_card = [
     {
         id: 4,
         product_name: 'Canon EOS 90D DSLR',
-        description:'SKU #101998S1 MODEL #3616C002',
+        description:'Need 01 Quantity',
         price: 315500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 90D DSLR Camera.png"
@@ -38,7 +38,7 @@ const product_card = [
     {
         id: 5,
         product_name: 'Canon EOS 2D DSLR',
-        description:'SKU #101997S1 UPC #013803302721',
+        description:'Need 03 Quantity',
         price: 99500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 2000D DSLR Camera.png"
@@ -47,7 +47,7 @@ const product_card = [
     {
         id: 6,
         product_name: 'Nikon D500 DSLR',
-        description:'SKU #101862S1',
+        description:'Need 01 Quantity',
         price: 198500,
         currency: "Rs",
         thumb: "./images/ProductImages/Nikon D500 DSLR Camera.png"
@@ -56,7 +56,7 @@ const product_card = [
     {
         id: 7,
         product_name: 'Canon EOS 5D DSLR',
-        description:'SKU #101852S1 MODEL #1483C002',
+        description:'Need 01 Quantity',
         price: 849500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 5D Mark IV DSLR Camera.png"
@@ -65,7 +65,7 @@ const product_card = [
     {
         id: 8,
         product_name: 'Canon EOS 80D DSLR',
-        description:'SKU #101846S1 UPC #013803271829',
+        description:'Need 01 Quantity',
         price: 214500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 80D DSLR Camera with 18-55mm Lens.png"
@@ -74,7 +74,7 @@ const product_card = [
     {
         id: 9,
         product_name: 'Canon EOS 80D DSLR',
-        description:'SKU #101846S1 UPC #013803271829',
+        description:'Need 01 Quantity',
         price: 214500,
         currency: "Rs",
         thumb: "./images/ProductImages/Canon EOS 80D DSLR Camera with 18-135mm Lens.png"
