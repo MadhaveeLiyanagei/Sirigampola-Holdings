@@ -5,15 +5,15 @@ import product_card from '../data/productData';
 const MainContent = () => {
     console.log(product_card);
     const listItems = product_card.map((item) =>
-        <div className="card" key={item.id}>
-            <div className="card_img">
+        <div className="cardView" key={item.id}>
+            <div className="cardView_img">
                 <img src={item.thumb} />
             </div>
-            <div className="header">
+            <div className="cardView_header">
                 <h2>{item.product_name}</h2>
                 <p>{item.description}</p>
-                <p className="price">{item.price}<span>{item.currency}</span></p>
-                <div className="btn">Add to cart</div>
+                <p className="cardView_price">{item.price}<span>{item.currency}</span></p>
+                <div className="cardView_btn">Add to cart</div>
             </div>
         </div>
 

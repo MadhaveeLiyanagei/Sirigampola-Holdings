@@ -21,7 +21,6 @@ function App() {
     <div>
       <Router>
           <Navbar/>
-          <HeaderComponent/>
             <div className="container">
               <Switch>
                 <Route path = "/" exact component = {Home} ></Route>
