@@ -39,11 +39,17 @@ function App() {
                           <Route path = "/view-courier/:id" component = {ViewCourierComponent}></Route> 
                           <Route path = "/view-delivery/:id" component = {ViewDeliveryComponent}></Route> 
                           <Route path = "/home" component = {Home}></Route> 
-                          <Route path = "/aboutUs" component = {AboutUs}></Route> 
+                         
                           
                     </Switch>
                     
                 </div>
+
+                <div className="container1">
+                <Switch> 
+                <Route path = "/aboutUs" component = {AboutUs}></Route> 
+                </Switch>
+                  </div>
               <Footer/>
         </Router>
     </div>
@@ -51,5 +57,3 @@ function App() {
 }
 
 export default App;
-
-
