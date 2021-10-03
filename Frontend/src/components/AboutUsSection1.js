@@ -16,13 +16,7 @@ function AboutUsSection1() {
               +<br></br>
               +<br></br>
               <p>Sirigampola Holdings</p>
-              <div className = "hero-btns">
-                  <Button className='btns' buttonStyle='btn--outline'
-                  buttonSize ='btn--large'>CONTACT US</Button>
-  
-                  <Button className='btns' buttonStyle='btn--primary'
-                  buttonSize ='btn--large'>CONTACT US<i className ='far fa-play-circle'/></Button>
-              </div>
+              
           </div>
     );
 }

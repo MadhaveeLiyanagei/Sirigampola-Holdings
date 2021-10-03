@@ -11,45 +11,46 @@ function AboutUsSection2() {
     return (
        
         <div className='cards'>
-        <h1>Check out these EPIC Destinations!</h1>
-        <div className='cards__container'>
-          <div className='cards__wrapper'>
-            <ul className='cards__items'>
-              <CardItem
-                src='images/img-9.jpg'
-                text='Explore the hidden waterfall deep inside the Amazon Jungle'
-                label='Adventure'
-                path='/services'
-              />
-              <CardItem
-                src='images/img-2.jpg'
-                text='Travel through the Islands of Bali in a Private Cruise'
-                label='Luxury'
-                path='/services'
-              />
-            </ul>
-            <ul className='cards__items'>
-              <CardItem
-                src='images/img-3.jpg'
-                text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-                label='Mystery'
-                path='/services'
-              />
-              <CardItem
-                src='images/img-4.jpg'
-                text='Experience Football on Top of the Himilayan Mountains'
-                label='Adventure'
-                path='/products'
-              />
-              <CardItem
-                src='images/img-8.jpg'
-                text='Ride through the Sahara Desert on a guided camel tour'
-                label='Adrenaline'
-                path='/sign-up'
-              />
-            </ul>
-          </div>
-        </div>
+      
+        
+            <div className="about-us__ttl ">
+                <h1>What is Sirigampola Holdings?</h1>
+            </div>
+            <div className="about-us__info">
+            <p>Sirigampola Holdings is a digital B2B marketplace aiming to be a comprehensive international trade hub for Small and Medium - sized Enterprises (SMEs) and their counterparts.
+                Empowered by our proprietary blockchain technology, Export Portal prioritizes security, transparency, cost-effectiveness, and ease-of-use. Thus, our partners can confidently trade, network, and communicate with other verified companies and experts from all over the world. With Export Portal, SMEs have an exponential growth opportunity – not just geographically, but within their verticals as well.</p>
+            </div>
+            <div className="img">
+                  <img src="./images/about-us.jpg" alt="logo" />
+                  </div>
+           <div className= "about-us__heading">
+           <div className="about-us__ttl ">
+                <p>Why Choose Sirigampola Holdings?</p>
+               </div>
+               
+            <p>We have many benefits and exclusive features to offer our users <br></br>
+                 more about why Sirigampola Holdings is the international B2B trade platform for you!</p>
+            
+               <div>
+
+               </div>
+               </div> 
+
+               <div>
+                   <table><tbody><td>
+                       <th>
+
+
+                           </th>
+                           <th>
+                               
+                           </th>
+                           
+                    </td></tbody></table>
+               </div>
+  
+  
+          
       </div>
        
     );
