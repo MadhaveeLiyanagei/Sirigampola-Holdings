@@ -200,7 +200,7 @@ class UpdateProductComponent extends Component {
                       <th>
                         <center>
                           <button
-                            className="btn_red"
+                            className="footertable"
                             onClick={this.cancel.bind(this)}
                             >
                             Cancel

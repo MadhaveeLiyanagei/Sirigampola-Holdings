@@ -26,8 +26,8 @@ function AdminNavbar() {
         <div className="navbar-container">
           <div class="footer-logo">
             <Link to="/home" className="navbar-logo" onClick={closeMobileMenu}>
-              <img class="logo" src="./images/shlogo.png" alt="" /> SIRIGAMPOLA
-              HOLDINGS
+              <img class="logo" src="./images/shlogo.png" alt="" /><b> SIRIGAMPOLA
+              HOLDINGS</b>
             </Link>
           </div>
           <div className="menu-icon" onClick={handleClick}>
@@ -72,6 +72,18 @@ function AdminNavbar() {
                 Inventory
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link
+                to="/inventory"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Delivery
+              </Link>
+            </li>
+
+
           </ul>
           {button && <Button buttonStyle="btn--outline"> SIGN UP</Button>}
         </div>
