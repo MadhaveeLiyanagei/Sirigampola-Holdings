@@ -16,6 +16,7 @@ import AddCourierDelivery from './components/AddCourierDelivery';
 
 import Home from'./pages/Home';
 import Footer from './components/Footer';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
                           <Route path = "/view-courier/:id" component = {ViewCourierComponent}></Route> 
                           <Route path = "/view-delivery/:id" component = {ViewDeliveryComponent}></Route> 
                           <Route path = "/home" component = {Home}></Route> 
+                          <Route path = "/aboutUs" component = {AboutUs}></Route> 
                           
                     </Switch>
                     

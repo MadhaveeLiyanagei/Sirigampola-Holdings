@@ -34,8 +34,8 @@ useEffect(() =>{
             </div>
             <ul className ={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                    Products
+                <Link to='/AboutUs' className='nav-links' onClick={closeMobileMenu}>
+                    About Us
                 </Link>
             </li>
             <li className='nav-item'>
