@@ -23,10 +23,14 @@ class BuyerOrderReport extends Component {
     }
 
     render() {
-        
+        var tableStyle = {
+
+            border: "0.5px solid black",
+      
+          };
         return (
             <>
-            <div>
+            <div className="rGenerate">
             <div className="Post" ref={ref}>
            
             <div className>
@@ -36,14 +40,14 @@ class BuyerOrderReport extends Component {
                 <br></br>
                 <div className="row">
                 <center>
-                    <table style={{width:700}} className="table table-striped table-bordered">
+                    <table className="report">
                         <thead>
-                            <tr>
-                                <th>User Name</th>
-                                <th>Address</th>
-                                <th>Email Address</th>
-                                <th>Contact</th>
-                                <th>Date</th>
+                            <tr style={tableStyle}>
+                                <th style={tableStyle}><center>User Name</center></th>
+                                <th style={tableStyle}><center>Address</center></th>
+                                <th style={tableStyle}><center>Email Address</center></th>
+                                <th style={tableStyle}><center>Contact</center></th>
+                                <th style={tableStyle}><center>Date</center></th>
                             </tr>
                         </thead>
 
@@ -54,11 +58,11 @@ class BuyerOrderReport extends Component {
                                 this.state.BuyerOrders.map(
                                     BuyerOrders =>
                                         <tr key={BuyerOrders.id}>
-                                            <td>{BuyerOrders.username}</td>
-                                            <td>{BuyerOrders.address}</td>
-                                            <td>{BuyerOrders.email}</td>
-                                            <td>{BuyerOrders.contact}</td>
-                                            <td>{BuyerOrders.date}</td>                                          
+                                            <td style={tableStyle}>{BuyerOrders.username}</td>
+                                            <td style={tableStyle}><center>{BuyerOrders.address}</center></td>
+                                            <td style={tableStyle}><center>{BuyerOrders.email}</center></td>
+                                            <td style={tableStyle}><center>{BuyerOrders.contact}</center></td>
+                                            <td style={tableStyle}><center>{BuyerOrders.date}</center></td>                                          
                                         </tr>
                                 )
                             }

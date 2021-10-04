@@ -113,6 +113,20 @@
 
   }
   
+  .report{
+    width:800px;
+    font-size: 14px;
+    
+
+  }
+
+  .rGenerate{
+    margin: 0 auto;
+    width: 50% !important;
+    height: 100% !important;
+
+  }
+  
   .button-update:hover {opacity: 2}
 
   .setFontSizeOne {
