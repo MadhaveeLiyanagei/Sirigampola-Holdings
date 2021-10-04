@@ -26,10 +26,7 @@ font-size: xx-large;
     object-fit: contain;
   }
 
-  .about_us_background{
-
-    /*background-image: url('/images/img-home.jpg');*/
-  }
+ 
   .about-us__info {
     margin-left: auto;
     margin-right: 100px;
@@ -97,10 +94,7 @@ font-size: xx-large;
   height: 100px;
   
 }
-.circular--square:hover {
 
- 
-}
 
 .teammatesback{
   background-color: rgb(238, 207, 174);

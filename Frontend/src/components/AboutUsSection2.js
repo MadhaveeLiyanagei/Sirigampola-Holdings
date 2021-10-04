@@ -1,10 +1,9 @@
 import React from 'react'
 import '../App.css'
-import { Button } from './Button';
 import './AboutUsSection.css';
 import './HeroSection.css';
 import './Cards.css';
-import CardItem from './CardItem';
+
 
 
 function AboutUsSection2() {
@@ -84,7 +83,7 @@ function AboutUsSection2() {
                        <tbody>
                            <tb>
                                 <th>            <br></br>
-                                     <img className="about_inventory"src="./images/about_inventory.jpg" alt="logo" />
+                                     <img className="about_inventory"src="./images/about_inventory.jpg" alt="lankawa" />
                                 </th>
 
                                 <th>
