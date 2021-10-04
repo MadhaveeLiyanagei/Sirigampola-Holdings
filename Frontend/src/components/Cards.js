@@ -19,8 +19,16 @@ function Cards() {
               src='images/product.jpg'
               text='Travel through the Islands of Bali in a Private Cruise'
               label='Product Management'
-              path='/services'
+              path='/Product'
             />
+
+            <CardItem
+              src='images/employee.png'
+              text='Travel through the Islands of Bali in a Private Cruise'
+              label='Employee Management'
+              path='/Employee'
+            />
+            
           </ul>
           <ul className='cards__items'>
             <CardItem

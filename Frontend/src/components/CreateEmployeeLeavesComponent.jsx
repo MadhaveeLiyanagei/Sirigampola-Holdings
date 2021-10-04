@@ -3,6 +3,7 @@ import EmployeeLeavesService from "../services/EmployeeLeavesService";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 toast.configure();
 export default class CreateEmployeeLeavesComponent extends Component {
   constructor(props) {

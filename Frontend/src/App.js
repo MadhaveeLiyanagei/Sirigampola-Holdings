@@ -33,7 +33,7 @@ import UpdateNoticeComponent from "./components/UpdateNoticeComponent";
 import ViewNoticesComponent from "./components/ViewNoticesComponent";
 import AdminEmployeeSideBar from "./components/AdminEmployeeSideBar";
 import EmployeeLeavesReport from "./components/EmployeeLeavesReport";
-
+import ListEmployeeComponent from "./components/ListEmployeeComponent";
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -103,6 +103,8 @@ function App() {
         <Route path="/view-inventory/:inventoryID" component={ViewInventoryComponent}></Route>
         <Route path="/update-inventory/:inventoryID" component={UpdateInventoryComponent}></Route>
         <Route path="/inventoryreport" component={InventoryReport}></Route>
+        <Route path="/Employee" component={ListEmployeeComponent} />
+        <Route path="/add-employee" component={CreateEmployeeComponent} />
         <Route path="/employeeLeaves" component={ListEmployeeLeavesComponent}/>
         <Route path="/add-employeeLeaves" component={CreateEmployeeLeavesComponent}/>
         <Route path="/update-employeeLeaves/:leaveNumber" component={UpdateEmployeeLeavesComponent}/>
