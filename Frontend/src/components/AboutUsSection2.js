@@ -113,12 +113,13 @@ function AboutUsSection2() {
                
                <div>
                </div>
-               <div>
+               <div className="teammatesback">
                    <table>
                        <tbody>
                            <tb>
                                 <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />       
                                 </th>
                                 <th> 
                                 <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
@@ -141,15 +142,23 @@ function AboutUsSection2() {
                                 <th> 
                                 <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
                                 </th>
+
+                                <th>
+
+                                </th>
+
+                                <th>
+                                    <div style={{marginLeft:"200px"}}>
+                                    <h1><b> Team mates</b></h1>
+                                    </div>
+                                </th>
+                                
 
 
                             </tb>    
                         </tbody>
                     </table>
-               </div>
-               
-  
-          
+               </div> 
       </div>
        
     );

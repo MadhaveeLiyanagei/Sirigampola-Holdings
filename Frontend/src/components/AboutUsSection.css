@@ -93,8 +93,8 @@ font-size: xx-large;
 
 .circular--square {
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   
 }
 .circular--square:hover {
@@ -102,4 +102,7 @@ font-size: xx-large;
  
 }
 
+.teammatesback{
+  background-color: rgb(238, 207, 174);
+}
 
