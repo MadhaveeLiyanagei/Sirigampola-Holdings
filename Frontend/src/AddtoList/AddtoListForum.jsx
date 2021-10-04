@@ -4,7 +4,7 @@ import CreateOrderService from '../services/CreateOrderService';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure()
+// toast.configure()
 class AddtoListForum extends Component {
 
     constructor(props){
@@ -12,14 +12,14 @@ class AddtoListForum extends Component {
 
         this.state = {
 
-            orderno: '',
-            productName: '',
-            productPrice: '',
-            quantity: '',
-            orderNoError: '',
-            productNameError: '',
-            productProceError: '',
-            quantityError: ''
+            // orderno: '',
+            // productName: '',
+            // productPrice: '',
+            // quantity: '',
+            // orderNoError: '',
+            // productNameError: '',
+            // productProceError: '',
+            // quantityError: ''
             
         }
 
@@ -27,58 +27,58 @@ class AddtoListForum extends Component {
 
     //validation start----------------------------------------------------------------------------------------------------------------------------------------
 
-    notify(){
-        toast.success('Order Added Successfully!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            })
-    }
+    // notify(){
+    //     toast.success('Order Added Successfully!', {
+    //         position: "top-center",
+    //         autoClose: 5000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: true,
+    //         draggable: true,
+    //         progress: undefined,
+    //         })
+    // }
  
-    notifyCancel(){
-        toast.error('Order Canceled Successfully!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            })
-    }
+    // notifyCancel(){
+    //     toast.error('Order Canceled Successfully!', {
+    //         position: "top-center",
+    //         autoClose: 5000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: true,
+    //         draggable: true,
+    //         progress: undefined,
+    //         })
+    // }
  
     
-     validate = () =>{
-         let orderNoError = '';
-         let productNameError = '';
-         let productProceError = '';
-         let quantityError = '';
+    //  validate = () =>{
+    //      let orderNoError = '';
+    //      let productNameError = '';
+    //      let productProceError = '';
+    //      let quantityError = '';
  
-         if(!this.state.orderno){
-            orderNoError="Order No is required";
-         }
-         if(!this.state.productName){
-            productNameError="Product Name is required";
-         }
-         if(!this.state.productPrice){
-            productProceError="Product Price is required";
-        }
-         if(!this.state.quantity){
-            quantityError="Quantity is required";
-         }
+    //      if(!this.state.orderno){
+    //         orderNoError="Order No is required";
+    //      }
+    //      if(!this.state.productName){
+    //         productNameError="Product Name is required";
+    //      }
+    //      if(!this.state.productPrice){
+    //         productProceError="Product Price is required";
+    //     }
+    //      if(!this.state.quantity){
+    //         quantityError="Quantity is required";
+    //      }
          
-         if(orderNoError||productNameError||productProceError||quantityError){
-             this.setState({orderNoError, productNameError, productProceError, quantityError});
-             return false;
-         }
+    //      if(orderNoError||productNameError||productProceError||quantityError){
+    //          this.setState({orderNoError, productNameError, productProceError, quantityError});
+    //          return false;
+    //      }
  
-         return true;
+    //      return true;
  
-     }
+    //  }
 
     //validation End ---------------------------------------------------------------------------
 
@@ -99,28 +99,28 @@ class AddtoListForum extends Component {
                                         <label>Order No:</label>
                                         <input placeholder = "Order Number" name="orderno" className="form-control" 
                                         value={this.state.orderno}/>
-                                        <div style={{fontSize: 12, color: "red"}}>{this.state.orderNoError}</div>
+                                        {/* <div style={{fontSize: 12, color: "red"}}>{this.state.orderNoError}</div> */}
                                     </div>
                                     <br/>
                                     <div className = "form-group">
-                                        <label>Product Name:</label>
+                                        <label>Seller Name:</label>
                                         <input placeholder = "Product Name" name="productName" className="form-control" 
                                         value={this.state.productName}/>
-                                        <div style={{fontSize: 12, color: "red"}}>{this.state.productNameError}</div>
+                                        {/* <div style={{fontSize: 12, color: "red"}}>{this.state.productNameError}</div> */}
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Product Price:</label>
                                         <input placeholder = "Product Price" name="productPrice" className="form-control" 
                                         value={this.state.productPrice}/>
-                                        <div style={{fontSize: 12, color: "red"}}>{this.state.productProceError}</div>
+                                        {/* <div style={{fontSize: 12, color: "red"}}>{this.state.productProceError}</div> */}
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Quantity:</label>
                                         <input placeholder = "Quantity" name="quantity" className="form-control" 
                                         value={this.state.quantity}/>
-                                        <div style={{fontSize: 12, color: "red"}}>{this.state.quantityError}</div>
+                                        {/* <div style={{fontSize: 12, color: "red"}}>{this.state.quantityError}</div> */}
                                     </div>
 
                                     
