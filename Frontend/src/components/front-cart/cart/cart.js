@@ -59,6 +59,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
                             <button 
                             className="cart-items-add"
                              onClick={()=>handleAddProduct(item)}
+                            
                              >
                                  +
                                  </button>
@@ -81,7 +82,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
         
         <div className = "cart-items-total-price-name">
             Total price
-            <div className = "cart-items-total-price">${totalPrice}</div>
+            <div className = "cart-items-total-price">LKR{totalPrice}</div>
             
             
         </div>

@@ -22,6 +22,8 @@ class CreateBuyerOrdersComponent extends Component {
             addressError:'',
             contactError:'',
             dateError:'',
+            emailvError:''
+
 
     }
         this.changeUserNameHandler = this.changeUserNameHandler.bind(this);
@@ -97,10 +99,22 @@ class CreateBuyerOrdersComponent extends Component {
  
     }
 
+    emailValidation(){
+        
+        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if(!this.state.email || regex.test(this.state.email) === false){
+            this.setState({
+                error: "Email is not valid"
+            });
+            return false;
+        }
+        return true;
+    }
+
     saveOrUpdateBuyerOrders = (e) => {
         e.preventDefault();
         let BuyerOrders = {username: this.state.username,email: this.state.email,address: this.state.address,contact: this.state.contact,date: this.state.date};
-        const isValid = this.validate();
+        const isValid = this.validate() && this.emailValidation();
         if(isValid){
         console.log('BuyerOrders =>' + JSON.stringify(BuyerOrders));
 
@@ -178,9 +192,11 @@ class CreateBuyerOrdersComponent extends Component {
                                         <div className = "form-group">
                                             <label><b>E-mail:</b>  </label>
                                             <input placeholder = "xxx@gmail.com" name ="email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,6}$" className="form-control"
+                                          
                                                 value={this.state.email} onChange={this.changeEmailHandler}/>
                                                 <br></br>
                                                  <div style={{fontSize: 12, color: "red"}}>{this.state.emailError}</div>
+                                                 <span className="text-danger">{this.state.emailvError}</span>
                                         </div>
 
                                         <div className = "form-group">

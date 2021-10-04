@@ -23,7 +23,15 @@ function Navbar({cartItems}) {
 
     window.addEventListener('resize', showButton);
 
+    function logout(e){
 
+        e.preventDefault()
+
+        window.location="/"
+
+        //this.props.history.push('/add-buyer/_add');
+
+    }
 
     return (
        
@@ -69,7 +77,7 @@ function Navbar({cartItems}) {
             </ul>
 
 
-            {button && <Button buttonStyle = 'btn--outline'onClick={closeMobileMenu}> SIGN UP</Button>}
+           {button && <Button buttonStyle = 'btn--outline' onClick={(e)=>logout(e)}>Logout</Button>}
              </div>
             
              </nav>   

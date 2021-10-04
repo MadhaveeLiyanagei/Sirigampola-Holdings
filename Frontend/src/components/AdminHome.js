@@ -7,9 +7,7 @@ import AdminNavbar from './AdminNavbar';
 
 function AdminHome(){
     return(
-        <>
-        
-            <AdminNavbar/>
+        <>      
             <HeroSection/>
             <Cards/>
         </>
