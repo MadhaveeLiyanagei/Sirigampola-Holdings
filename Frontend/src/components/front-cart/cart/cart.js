@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import SoloAlert from 'soloalert'
 
 const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartClearance}) => {
-
-    
+   
     const totalPrice = cartItems.reduce((price, item) => price + item.quantity * item.price,
     0
     )
@@ -30,6 +29,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
             localStorage.setItem("cartitems",JSON.stringify(cartItems));
             // props.history.push({pathname:"/checkout/_add", state:cartItems})
             window.location = "/checkout/_add";
+
         }
      
     }
@@ -59,6 +59,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
                             <button 
                             className="cart-items-add"
                              onClick={()=>handleAddProduct(item)}
+                             
                             
                              >
                                  +
@@ -78,8 +79,6 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
 
         </div>
 
-        
-        
         <div className = "cart-items-total-price-name">
             Total price
             <div className = "cart-items-total-price">LKR{totalPrice}</div>
