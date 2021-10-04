@@ -98,3 +98,12 @@
 
   
   .button-update:hover {opacity: 0.6} 
+
+
+  .rGenerate{
+
+    margin: 0 auto;
+    width: 50% !important;
+    height: 100% !important;
+
+  }

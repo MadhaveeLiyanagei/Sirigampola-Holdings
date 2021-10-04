@@ -3,6 +3,7 @@ import ExpenseService from '../services/ExpenseService';
 import { Button } from './Button';
 import './HeaderFinance.css';
 import SoloAlert from 'soloalert'
+import {Link } from "react-router-dom";
 
 class ListExpenseComponent extends Component {
    constructor(props) {
@@ -133,7 +134,7 @@ class ListExpenseComponent extends Component {
 
                 <h2 className="text-center">History of Expenses</h2>
                   
-                    <button className="btn btn-primary" onClick={this.addExpense}>Add Expense</button>
+                    <button className="btn btn-primary" onClick={this.addExpense}>+ New Transaction</button>
                     <br></br>
                     <div className = "form-group col-md-4">
 
@@ -161,7 +162,7 @@ class ListExpenseComponent extends Component {
                             <tbody>
                                 {
                                      filterExpense.map(
-
+                                    //ishani
                                         expense=>
                                     //this.state.expenses.map(
                                         //expense =>
@@ -173,9 +174,9 @@ class ListExpenseComponent extends Component {
                                             <td> {expense.description}</td>
                                             <td> {expense.amount}</td>
                                             <td>
-                                               <button onClick={ () => this.editExpense(expense.expenseID)} className="btn btn-success">Update </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteExpense(expense.expenseID)} className="btn btn-danger">Delete </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewExpense(expense.expenseID)} className="btn btn-warning">View </button>
+                                               <button onClick={ () => this.editExpense(expense.expenseID)} className="button-up">Update </button>
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteExpense(expense.expenseID)} className="button-dele">Delete </button>
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewExpense(expense.expenseID)} className="button-view">View </button>
                                             </td>
 
                                         </tr>
@@ -185,6 +186,8 @@ class ListExpenseComponent extends Component {
                         </table>
 
                 </div>
+
+                <Link to="/ExpenseReport"><button className="btn btn-success">Generate Report  </button> </Link>
                  </div>  
                  
             </div>

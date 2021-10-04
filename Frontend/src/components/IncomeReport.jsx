@@ -43,7 +43,7 @@ class IncomeReport extends Component {
          return ( 
             <>
 
-            <div>
+            <div className="rGenerate">
 
             <div className="Post" ref={ref}>
              
@@ -52,15 +52,9 @@ class IncomeReport extends Component {
                  <br></br>
                    <div className="container">  
                   
-                  <div class="topnav" >
-                      <a class="active" href="http://localhost:3000/Finance">Income</a>
-                      <a href="http://localhost:3000/Expense">Expense</a>
-                      <a href="#contact">Tax Rates</a>
-                      <a href="#about">Reports & Graphs</a>
-         </div> 
-       
+                   
  
-                 <h2 className="text-center">History of Assets</h2>
+                 <h2 className="text-center">Income Report</h2>
                     
                       
                      <br></br>

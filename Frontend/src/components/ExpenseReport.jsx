@@ -39,7 +39,7 @@ class ListExpenseComponent extends Component {
          return ( 
             <>
 
-            <div>
+            <div className="rGenerate">
 
             <div className="Post" ref={ref}>
 
@@ -47,15 +47,10 @@ class ListExpenseComponent extends Component {
                  <br></br>
               <div className="container">  
                   
-                  <div class="topnav" >
-                      <a href="http://localhost:3000/Finance">Income</a>
-                      <a class="active" href="http://localhost:3000/Expense">Expense</a>
-                      <a href="#contact">Tax Rates</a>
-                      <a href="#about">Reports & Graphs</a>
-         </div> 
+                   
            
  
-                 <h2 className="text-center">History of Expenses</h2>
+                 <h2 className="text-center">Expense Report</h2>
                    
                       
                      <br></br>
