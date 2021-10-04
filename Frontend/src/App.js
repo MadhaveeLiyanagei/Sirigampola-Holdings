@@ -34,7 +34,10 @@ import ViewNoticesComponent from "./components/ViewNoticesComponent";
 import AdminEmployeeSideBar from "./components/AdminEmployeeSideBar";
 import EmployeeLeavesReport from "./components/EmployeeLeavesReport";
 import ListEmployeeComponent from "./components/ListEmployeeComponent";
-
+import ListProductComponent from './components/ListProductComponent';
+import CreateProductComponent from './components/CreateProductComponent';
+import UpdateProductComponent from './components/UpdateProductComponent';
+import ViewProductComponent from './components/ViewProductComponent';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure()
@@ -83,9 +86,7 @@ function App() {
     <>
    
     <Router>
-
       <Navbar cartItems={cartItems}/>
-
       <Switch>
       {/*<Route path = '/' exact component = {Sidebar} />*/}
       {/*  <Route path = '/' exact component = {auth} />*/}
@@ -114,6 +115,11 @@ function App() {
         <Route path="/update-adNotices/:id" component={UpdateNoticeComponent}/>
         <Route path="/view-adNotices/:id"component={ViewNoticesComponent}/>
         <Route path="/leavegen" component={EmployeeLeavesReport}></Route>
+        <Route path = "/product" component = {ListProductComponent}></Route>
+        <Route path = "/add-product" component = {CreateProductComponent}></Route>  
+        <Route path = "/update-product/:productID" component = {UpdateProductComponent}></Route>
+        <Route path = "/view-product/:productID" component = {ViewProductComponent}></Route>
+
 
         {/*<Route path = "/update/:id" component = {UpdateBuyerOrdersComponent}></Route> */}
         
