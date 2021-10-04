@@ -14,18 +14,61 @@ import SupplierOrderReport from './components/SupplierOrderReport';
 import Footer from './components/Footer';
 import mainContent from './components/mainContent';
 import Cart from './Cart/Cart';
-import data from './data/productData';
+import product_card from './data/productData';
+import Routes from './Routes/Routes';
+import MainContent from './components/mainContent';
 
 function App() {
 
-  const { item } = data;
+  // const { item } = product_card;
+  // const [cartItem, setCartItem] = useState([]);
+
+  // const handleAddProduct = (product) =>{
+  //   const ProductExist = cartItem.find((item) => item.id === product.id);
+  //   if(ProductExist){
+  //     setCartItem(cartItem.map((item) => item.id === product.id ?
+  //     {...ProductExist, quantity: ProductExist.quantity+1}: item));
+  //   } else{
+  //     setCartItem([...cartItem, { ...product, quantity: 1 }]);
+  //   }
+  // };
+
+  const {productItem} = product_card;
   const [cartItem, setCartItem] = useState([]);
+
+  const handleAddProduct = (product) =>{
+    const ProductExist = cartItem.find((item) => item.id === product.id);
+    if(ProductExist){
+      setCartItem(cartItem.map((item) => item.id === product.id ?
+      {...ProductExist, quantity: ProductExist.quantity+1}: item)
+      );
+    } else{
+      setCartItem([...cartItem, {...product, quantity: 1 }]);
+    }
+  };
+
+  const handleRemoveProduct = (product) => {
+    const ProductExist = cartItem.find((item) => item.id === product.id);
+    if(ProductExist.quantity === 1){
+      setCartItem(cartItem.filter((item) => item.id !== product.id));
+    } else {
+      setCartItem(
+        cartItem.map((item) => item.id === product.id ? {...ProductExist, quantity: ProductExist.quantity - 1}
+        : item)
+      )
+    }
+  }
+
+  const handleCartClearence = () => {
+    setCartItem([]);
+  }
 
   return (
 
     <div>
       <Router>
-          <Navbar/>
+        <Navbar/>
+        <HeaderComponent cartItem={cartItem}></HeaderComponent>
             <div className="container">
               <Switch>
                 <Route path = "/" exact component = {Home} ></Route>
@@ -34,13 +77,24 @@ function App() {
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
                 <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
-                <Route path = "/cart" component = {Cart} ></Route>
-                <Route item={item} cartItem={cartItem} ></Route>
               </Switch>
             </div>
 
             <div className="product_container">
-            <Route path = "/product-home" component = {mainContent} ></Route>
+              
+            {/* <Routes productItem={productItem} cartItem={cartItem} handleAddProduct={handleAddProduct}></Routes> */}
+
+            {/* <Route path = "/product-home" component = {mainContent} exact>
+                    <MainContent productItem={productItem}  />
+            </Route> */}
+                
+                <Route path = "/product-home" component = {mainContent} exact>
+                    <MainContent productItem={productItem} handleAddProduct={handleAddProduct} />
+                </Route>
+                <Route path = "/cart" component = {Cart} exact>
+                    <Cart cartItem={cartItem} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence}/>
+                </Route>
+
             </div>
             <Footer/>
       </Router>

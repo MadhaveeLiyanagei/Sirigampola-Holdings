@@ -2,15 +2,35 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./HeaderComponent.css"
 
-const HeaderComponent = () => {
+const HeaderComponent = ({cartItem}) => {
 
     return (
         <header className="header">
         <div>
-            <h1>
-                
-            </h1>
+            <div className="header-links">
             
+            <ul>
+                <li class="header-links" style={{marginLeft:"1600px" }}>
+                    <a class="nav-link" href="/createorder">Orders</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="header-links">
+                    <a class="nav-link" href="/add-order">Add Order</a>
+                 </li>             
+            </ul>
+            <ul>
+                <li>
+                        <Link to="/cart" className="cart">
+                        <i class="fas fa-list-ul"></i>
+                        <span className="cart-page-length">
+                            {cartItem.length === 0 ? "" : cartItem.length}
+                        </span>
+                        </Link>
+                </li>
+            </ul>
+                
+            </div>
         </div>
         </header>
     )
@@ -55,4 +75,4 @@ const HeaderComponent = () => {
 //     }
 // }
 
-// export default HeaderComponent;
+ export default HeaderComponent;

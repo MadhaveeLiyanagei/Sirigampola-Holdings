@@ -156,4 +156,11 @@
       transition: 250ms;
     }
   }
+  .cart-page-length{
+    margin: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    vertical-align: super;
+    color: #fdd101;
+  }
   

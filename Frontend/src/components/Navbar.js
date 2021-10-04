@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
+import CardItem from './CardItem';
 import './Navbar.css';
 
 
@@ -36,13 +37,13 @@ useEffect(() =>{
 
             <ul className ={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
-                    <Link to='/product-home' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                         Products
                     </Link>
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/createorder' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/product-home' className='nav-links' onClick={closeMobileMenu}>
                         Orders
                     </Link>
                 </li>
@@ -54,10 +55,19 @@ useEffect(() =>{
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>
-                    <i class="fas fa-list-ul"></i>
+                    <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
+                        Company
                     </Link>
                 </li>
+
+                {/* <li className='nav-item'>
+                    <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>
+                    <i class="fas fa-list-ul"></i>
+                    <span className="cart-page-length">
+                        {CardItem.length === 0 ? "" : CardItem.length}
+                    </span>
+                    </Link>
+                </li> */}
 
                 
             </ul>
