@@ -33,7 +33,7 @@ useEffect(() =>{
             
             </div>
             <ul className ={click ? 'nav-menu active' : 'nav-menu'}>
-
+           
              
          {/*  <Link to="/home" className="navbar-logo" onClick={closeMobileMenu}>
               <img class="logo" src="./images/importLogo.png" alt="" /> SIRIGAMPOLA
