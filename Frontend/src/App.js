@@ -26,7 +26,9 @@ function App() {
 
   const handleAddProduct = (product) =>{
     const ProductExist = cartItems.find((item)=> item.id === product.id);
-    if(ProductExist){
+    
+      if(ProductExist){
+      
       setCartItems(
         cartItems.map((item) => 
         item.id === product.id 
@@ -34,10 +36,11 @@ function App() {
         : item
         )
         );
-    }else{
+      }else{
             setCartItems([...cartItems,{...product, quantity: 1}]); 
       }
     };
+  
   
   const handleRemoveProduct = (product) =>{
     const ProductExist = cartItems.find((item)=> item.id === product.id);

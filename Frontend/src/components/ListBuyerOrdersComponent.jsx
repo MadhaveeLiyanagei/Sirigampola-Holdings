@@ -171,7 +171,7 @@ class ListBuyerOrdersComponent extends Component {
                         </tbody>
                     </table>
                      
-                    <button onClick={() => this.generateReport()} className ="button-report"  > Generate Report</button>
+                    <button onClick={() => this.generateReport()} className ="btn-report"  > Monthly Report</button>
                 </div>
                 </div>
             </div>

@@ -21,33 +21,30 @@
   .button-up {
     background-color: #1b9a49;
     border: none;
-    color: white;
-    padding: 16px 32px;
+    color: #ffffff;
+    padding: 10px 18px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-
   }
-
-  
-  .button-up:hover {opacity: 2}
+  .button-up:hover {opacity: 0.6}
 
 
   
   .button-view {
-    background-color: #c2a814;
+    background-color: #e4c517;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding:  10px 18px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
-    opacity: 0.6;
+    
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -56,18 +53,18 @@
   }
 
   
-  .button-view:hover {opacity: 2}
+  .button-view:hover {opacity: 0.6}
 
   
   .button-dele {
     background-color: #ff0000;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding:  10px 18px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -76,12 +73,12 @@
   }
 
   
-  .button-dele:hover {opacity: 2}
+  .button-dele:hover {opacity: 0.6}
 
 
     
   .button-update {
-    background-color: #0d802f;
+    background-color: #07b60f;
     border: none;
     color: rgb(0, 0, 0);
     padding: 16px 32px;
@@ -98,7 +95,23 @@
 
   .button-report {
 
-    background-color: #2600ff;
+    background-color: #e7007f;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 7px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  .btn-report{
+    background-color: black;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -110,7 +123,6 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-
   }
   
   .report{
@@ -126,7 +138,7 @@
     height: 100% !important;
 
   }
-  
+
   .button-update:hover {opacity: 2}
 
   .setFontSizeOne {
@@ -140,4 +152,10 @@
   }
   .setFontSizeFour {
     font-Size: 30px;
+  }
+
+
+  .card{
+    height:100% ;
+    width: 400%;
   }

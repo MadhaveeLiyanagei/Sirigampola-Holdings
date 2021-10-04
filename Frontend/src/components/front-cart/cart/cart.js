@@ -3,15 +3,11 @@ import "./cart.css"
 import { Link } from 'react-router-dom';
 import SoloAlert from 'soloalert'
 
-
-
-
 const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartClearance}) => {
 
     
     const totalPrice = cartItems.reduce((price, item) => price + item.quantity * item.price,
     0
-   
     )
 
     function addBuyerOrders(e){
@@ -38,7 +34,6 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
      
     }
     
-
     return (
         <div className= "cart-items">
         <h2 className = "cart-items-header">Cart Items</h2>
@@ -51,9 +46,6 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
         {cartItems.length === 0 && (
         <div className="cart-items-empty">No item are added</div> 
         )}
-        
-      
-
         <div>
             {cartItems.map((item)=>(
                 <div key={item.id} className="cart-items-list">
@@ -78,7 +70,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
 
                         </div>
                         <div className= "cart-items-price">
-                            {item.quantity}*${item.price}
+                            {item.quantity}*LKR{item.price}
                              </div>
                 </div>
             ))}

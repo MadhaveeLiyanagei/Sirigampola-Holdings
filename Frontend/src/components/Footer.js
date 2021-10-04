@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className='footer-container'>
      
-      <div class='footer-links'>
+     {/* <div class='footer-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>About Us</h2>
@@ -41,14 +41,14 @@ function Footer() {
             <Link to='/'>Twitter</Link>
           </div>
         </div>
-      </div>
+  </div>*/}
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
               SIRIGAMPOLA Holdings
               <i class='fab fa-typo3' />
-            </Link>
+</Link>
           </div>
           <small class='website-rights'>SIRIGAMPOLA HOLDINGS © 2021</small>
           <div class='social-icons'>

@@ -18,7 +18,7 @@ class AthenticationService {
         return true;
     }
 
-    loggedUserId0(){
+    loggedUserId(){
         let id = sessionStorage.getItem('authenticatedUserId');
         if (id === null) return '';
         return id;

@@ -109,7 +109,7 @@ class CreateBuyerOrdersComponent extends Component {
         if(this.state.id === '_add'){
             BuyerOrdersService.CreateBuyerOrders(BuyerOrders).then(res =>{
                 this.notify();
-                this.props.history.push('/Orders');
+                this.props.history.push('/Home');
         }).catch(error=> {alert("Order Not Available")});
         }else{
             BuyerOrdersService.updateBuyerOrders(BuyerOrders, this.state.id).then(res =>{
@@ -160,46 +160,51 @@ class CreateBuyerOrdersComponent extends Component {
             }
                 <div className = "containerForm"  >
                     <div className ="row">
-                        <div className = "card col-md-6 offset-md-3 offset-md-3">
+                        <div className = "card col-md-6 offset-md-3 offset-md-3" style={{height:600}}>
                            {/* {
                                 this.getTitle()
                             }*/}
-                                <div className = "card-body" height='100%' bottom='30%'>
+                                <div className = "card-body"  >
                                     <form>
                                         <div className = "form-group">
-                                            <label> First Name </label>
+                                            <label><b> First Name: </b> </label>
                                             <input placeholder = "User Name" name ="username" className="form-control"
                                                 value={this.state.username} onChange={this.changeUserNameHandler}/>
+                                                <br></br>
 
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.userNameError}</div>
                                         </div>
                                         
                                         <div className = "form-group">
-                                            <label> E-mail </label>
+                                            <label><b>E-mail:</b>  </label>
                                             <input placeholder = "xxx@gmail.com" name ="email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,6}$" className="form-control"
                                                 value={this.state.email} onChange={this.changeEmailHandler}/>
+                                                <br></br>
                                                  <div style={{fontSize: 12, color: "red"}}>{this.state.emailError}</div>
                                         </div>
 
                                         <div className = "form-group">
-                                            <label> Address </label>
+                                            <label><b> Address:</b> </label>
                                             <input placeholder = "Address" name ="address" className="form-control"
                                                 value={this.state.address} onChange={this.changeAddressHandler}/>
+                                                <br></br>
                                                  <div style={{fontSize: 12, color: "red"}}>{this.state.addressError}</div>
                                         </div>
 
                                       
                                         <div className = "form-group">
-                                            <label> Contact Number </label>
+                                            <label> <b>Contact Number: </b></label>
                                             <input placeholder = "Contact" name ="contact" className="form-control"
                                                 value={this.state.contact} onChange={this.changeContactHandler}/>
+                                                <br></br>
                                                  <div style={{fontSize: 12, color: "red"}}>{this.state.contactError}</div>
                                         </div>
                                        
                                         <div className = "form-group">
-                                            <label> Date </label>
+                                            <label><b> Date:</b> </label>
                                             <input placeholder = "DD-MM-YY" type = "date" name ="date" className="form-control"
                                                 value={this.state.date} onChange={this.changeDateHandler}/>
+                                                <br></br>
                                                  <div style={{fontSize: 12, color: "red"}}>{this.state.dateError}</div>
                                         </div>
 

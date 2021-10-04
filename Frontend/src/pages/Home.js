@@ -20,8 +20,8 @@ function Home(){
             <HeroSection/>
             <br></br>
             <br></br>
-            <Cards/>
-            <Footer/>
+            
+           
        
         </>
 

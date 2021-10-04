@@ -17,7 +17,7 @@ const Products = ({productItems, handleAddProduct}) => {
                             <h3 className ="product-name">{productItem.name}</h3>
                         </div>
 
-                        <div className = "product-price">${productItem.price}</div>
+                        <div className = "product-price">LKR{productItem.price}</div>
 
                         
                         <div>

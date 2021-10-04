@@ -4,106 +4,48 @@ import CardItem from './CardItem';
 
 function Cards() {
   return (
-	 
-<div class= "destination">
-<div class="containerCard">
-
-    <div div class = "cardM">
-		  <div class="imgboxM">
-        <CardItem
-              src='images/Macbook.jpg'
+    <div className='cards'>
+      <h1>Check out these EPIC Destinations!</h1>
+      <div className='cards__container'>
+        <div className='cards__wrapper'>
+          <ul className='cards__items'>
+            <CardItem
+              src='images/img-9.jpg'
+              text='Explore the hidden waterfall deep inside the Amazon Jungle'
+              label='Adventure'
+              path='/services'
             />
-		    </div>
-		    <div class="contentM">
-			  <h2> Mac Book </h2>
-
-			  <p> LKR 300000
-			  </p>
-			
-		  </div>
-      </div>
-      <div class = "cardM">
-		    <div class="imgboxM">
-			  <CardItem
-              src='images/iron.jpg'
+            <CardItem
+              src='images/img-2.jpg'
+              text='Travel through the Islands of Bali in a Private Cruise'
+              label='Luxury'
+              path='/services'
             />
-		    </div>
-		  
-		  <div class="contentM">
-			  <h2>Clothing Iron </h2>
-
-			  <p></p>
-			
-		    </div>
-      </div>
-
-      <div class = "cardM">
-		    <div class="imgboxM">
-			  <CardItem
-              src='images/Spareparts.jpg'
+          </ul>
+          <ul className='cards__items'>
+            <CardItem
+              src='images/img-3.jpg'
+              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
+              label='Mystery'
+              path='/services'
             />
-		    </div>
-		  
-		  <div class="contentM">
-			  <h2> Clothing Iron </h2>
-
-			  <p></p>
-			
-		    </div>
-      </div>
-
-      <div class = "cardM">
-		    <div class="imgboxM">
-			  <CardItem
-              src='images/hp3.jpg'
+            <CardItem
+              src='images/img-4.jpg'
+              text='Experience Football on Top of the Himilayan Mountains'
+              label='Adventure'
+              path='/products'
             />
-		    </div>
-		    <div class="contentM">
-			  <h2> Beats Headphone </h2>
-
-			  <p></p>
-			
-		    </div>
-      </div>
-
-      <div class = "cardM">
-		    <div class="imgboxM">
-			  <CardItem
-              src='images/Camera.jpg'
+            <CardItem
+              src='images/img-8.jpg'
+              text='Ride through the Sahara Desert on a guided camel tour'
+              label='Adrenaline'
+              path='/sign-up'
             />
-		    </div>
-		  
-		    <div class="contentM">
-			  <h2> Camera </h2>
-
-			  <p></p>
-			
-		    </div>
+          </ul>
+        </div>
       </div>
-
-      <div class = "cardM">
-		    <div class="imgboxM">
-			  <CardItem
-              src='images/ironnew.jpg'
-            />
-		    </div>
-		  
-		    <div class="contentM">
-			  <h2> Straightening Iron </h2>
-
-			  <p></p>
-			
-		    </div>
-      </div>
-
-
-
-      </div>
-  </div>
-	 
-
+    </div>
   );
- 
 }
 
 export default Cards;
