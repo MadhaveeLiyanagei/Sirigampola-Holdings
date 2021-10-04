@@ -27,7 +27,7 @@ useEffect(() =>{
          <div className='navbar-container'>
             
             <Link to="/" className="navbar-logo" onClick = {closeMobileMenu}>
-                SIRIGAMPOLA HOLDINGS <i className="fab fa-typo3"></i>  
+            <img  style={{width:50}} class="logo" src="./images/importLogo.png" alt="" />SIRIGAMPOLA HOLDINGS  
             </Link>
             <div className = 'menu-icon' onClick= {handleClick}>
             <i className = {click ? 'fas fa-times' : 'fas fa-bars'}/>

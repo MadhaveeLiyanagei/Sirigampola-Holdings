@@ -112,6 +112,12 @@ class ListSupplierComponent extends Component {
                 20)});
             }
 
+            generateReport(){
+
+                this.props.history.push('/supplierreport');
+        
+            }
+
 
 
     render() {
@@ -189,6 +195,7 @@ class ListSupplierComponent extends Component {
                         </table>
                 
                 </div>
+                <button className="btn btn-primary" onClick={()=>this.generateReport()}>Supplier Details report</button>
                 </div>
             </div>
         );

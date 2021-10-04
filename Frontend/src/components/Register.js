@@ -12,6 +12,7 @@ function Register() {
         //this.props.history.push('/add-buyer/_add');
     }
 
+
     function addEmployee(e){
         e.preventDefault()
         window.location="/add-employee/_add"

@@ -113,6 +113,13 @@ class ListEmployeeComponent extends Component {
                 20)});
             }
 
+            generateReport(){
+
+                this.props.history.push('/employeereport');
+        
+            }
+
+
 
 
     render() {
@@ -195,6 +202,7 @@ class ListEmployeeComponent extends Component {
                         </table>
                 
                 </div>
+                <button className="btn btn-primary" onClick={()=>this.generateReport()}>Employee Details report</button>
                 </div>
             </div>
         );

@@ -111,6 +111,12 @@ class ListBuyerComponent extends Component {
                 20)});
             }
 
+            generateReport(){
+
+                this.props.history.push('/buyerreport');
+        
+            }
+
     render() {
         let filterName = this.state.buyer.filter((
 
@@ -191,6 +197,7 @@ class ListBuyerComponent extends Component {
                     </table>
 
                 </div>
+                <button className="btn btn-primary" onClick={()=>this.generateReport()}>Buyer Details report</button>
                 </div>
                 </div>
            

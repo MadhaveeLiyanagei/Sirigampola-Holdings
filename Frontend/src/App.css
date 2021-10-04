@@ -22,11 +22,11 @@
     background-color: #1b9a49;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 10px 18px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
-    opacity: 0.6;
+   /* opacity: 0.6;*/
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -35,19 +35,19 @@
   }
 
   
-  .button-up:hover {opacity: 2}
+  .button-up:hover {opacity:0.6}
 
 
   
   .button-view {
-    background-color: #c2a814;
+    background-color: #e4c517;
     border: none;
-    color: white;
-    padding: 16px 32px;
+    color: black;
+    padding: 10px 12px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -56,18 +56,18 @@
   }
 
   
-  .button-view:hover {opacity: 2}
+  .button-view:hover {opacity: 0.6}
 
   
   .button-dele {
     background-color: #ff0000;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 10px 12px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -76,10 +76,9 @@
   }
 
   
-  .button-dele:hover {opacity: 2}
+  .button-dele:hover {opacity: 0.6}
 
-
-    
+  
   .button-update {
     background-color: #0d802f;
     border: none;
@@ -98,3 +97,13 @@
 
   
   .button-update:hover {opacity: 2}
+
+  .rGenerate{
+    margin: 0 auto;
+    width:50% !important ;
+    height: 100% !important;
+  }
+
+  
+
+
