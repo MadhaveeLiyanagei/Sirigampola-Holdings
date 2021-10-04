@@ -124,8 +124,10 @@ searchProductID(event){
 
         );
 
+        
+        var subTotal = 0;
+        var totalPrice = 0;
          
-
         return ( 
             <div>
                 <br></br>
@@ -156,9 +158,9 @@ searchProductID(event){
                                         <th>Product ID</th>
                                         <th>Country code</th>
                                         <th>Pre-tax price</th>
-                                        <th>Tax rate</th>
+                                        <th>Tax rate %</th>
                                         <th>Sub total</th>
-                                        <th>VAT</th>
+                                        <th>VAT %</th>
                                         <th>Total</th>
                                       {/*  <th>Actions</th> */}
                                       {/*  <th>***********Actions************</th> */}
@@ -169,8 +171,8 @@ searchProductID(event){
                             <tbody>
                                 {
                                      filterTax.map(
-
                                         tax=>
+                                        
                                     //this.state.taxes.map(
                                        // tax =>
                                         
@@ -179,9 +181,9 @@ searchProductID(event){
                                             <td> {tax.countryCode}</td>
                                             <td> {tax.preTaxPrice}</td>
                                             <td> {tax.taxRate}</td>
-                                            <td> {tax.subTotal}</td>
+                                            <td> {subTotal =  (tax.preTaxPrice + (tax.preTaxPrice*tax.taxRate/100))}</td>
                                             <td> {tax.vat}</td>
-                                            <td> {tax.totalPrice}</td>
+                                            <td> {totalPrice = (subTotal + (subTotal*tax.vat/100))}</td>
                                             <td>
                                                <button onClick={ () => this.editTax(tax.taxID)} className="button-up">Update </button>
                                                <button style={{marginLeft: "4px"}} onClick={ () => this.deleteTax(tax.taxID)} className="button-dele">Delete </button>
@@ -190,7 +192,8 @@ searchProductID(event){
                                              
 
                                         </tr>
-                                    )
+                                    
+                                     )
                                 }
                             </tbody>
                         </table>
@@ -216,7 +219,12 @@ searchProductID(event){
 
             
         )
+
+         
     }
+
+    
+    
 }
 
 export default ListTaxComponent

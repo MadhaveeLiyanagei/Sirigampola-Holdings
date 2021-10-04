@@ -205,15 +205,15 @@ class CreateTaxComponent extends Component {
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.preTaxPriceError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Tax Rate :</label>
+                                           <label> Tax rate :</label>
                                           <input placeholder="Tax rate" name="taxRate" className="form-control" 
                                                value={this.state.taxRate} onChange={this.changeTaxRateHandler}/>
                                                <div style={{fontSize: 12, color: "red"}}>{this.state.taxRateError}</div>
                                                   
                                        </div>
                                        <div className = "form-group">
-                                           <label> Sub Total :</label>
-                                           <input placeholder="Sub Total" name="subTotal" className="form-control"
+                                           <label> Sub total :</label>
+                                           <input placeholder="Sub total" name="subTotal" className="form-control"
                                                 value={this.state.subTotal} onChange={this.changeSubTotalHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.subTotalError}</div>
                                        </div>

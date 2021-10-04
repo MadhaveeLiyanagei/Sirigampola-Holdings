@@ -56,7 +56,7 @@ class ViewTaxComponent extends Component {
 
                          
                         <div className = "row">
-                            <label> Total Price : { this.state.tax.totalPrice } </label>
+                            <label> Total price : { this.state.tax.totalPrice } </label>
                             
                         </div>
                         

@@ -180,6 +180,7 @@ class ListExpenseComponent extends Component {
                                             <td> {expense.expenseCategory}</td>
                                             <td> {expense.description}</td>
                                             <td> {expense.amount}</td>
+                                             
                                             <td>
                                                <button onClick={ () => this.editExpense(expense.expenseID)} className="button-up">Update </button>
                                                <button style={{marginLeft: "4px"}} onClick={ () => this.deleteExpense(expense.expenseID)} className="button-dele">Delete </button>
