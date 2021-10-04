@@ -19,7 +19,7 @@ function Cards() {
               src='images/product.jpg'
               text='Travel through the Islands of Bali in a Private Cruise'
               label='Product Management'
-              path='/Product'
+              path='/product'
             />
 
             <CardItem
@@ -28,7 +28,6 @@ function Cards() {
               label='Employee Management'
               path='/Employee'
             />
-            
           </ul>
           <ul className='cards__items'>
             <CardItem
@@ -47,7 +46,7 @@ function Cards() {
               src='images/Distribution.jpg'
               text='Ride through the Sahara Desert on a guided camel tour'
               label='Distribution Management'
-              path='/sign-up'
+              path='/courier'
             />
           </ul>
         </div>

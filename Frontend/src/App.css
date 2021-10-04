@@ -159,3 +159,680 @@
     height:100% ;
     width: 400%;
   }
+
+  /*-----------------------------------------------------------------------------*/
+
+
+  .button {
+    background-color: #2eafc6;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #33963a;
+    color: white;
+  }
+  
+  
+  
+  .react-pdf__Page__canvas_Single_View2 {
+    margin: 0 auto;
+    width: 65% !important;
+    height: 100% !important;
+  }
+  
+  .react-pdf__Page__canvas_Single_ViewI {
+    margin: 0 auto;
+    width: 75% !important;
+    height: 100% !important;
+  }
+  
+  .react-pdf__Page__canvas_Single_View3 {
+    margin: 0 auto;
+    width: 61% !important;
+    height: 100% !important;
+  }
+  
+  
+  
+  .button-update {
+    background-color: #0d802f;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: -1;
+    transition: 0.5s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  .button-update:hover {
+    opacity: 2;
+  }
+  
+  .react-pdf__Page__canvas {
+    margin: 0 auto;
+    width: 61% !important;
+    height: 100% !important;
+  }
+  
+  .react-pdf__Page__canvas_Single_View {
+    margin: 0 auto;
+    width: 65% !important;
+    height: 100% !important;
+  }
+  
+  .srchbr {
+    margin-left: 0%;
+  }
+  
+  .tblclm {
+    width: 80px;
+  }
+  
+  .back {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .hero-btns {
+    background-color: #f39e00;
+  }
+  
+  .invntry_tbl_header {
+    width: 100%;
+  }
+  
+  
+  
+  
+  
+  .bgclr {
+    background-color: #e2ddd6;
+    width: 100%;
+  }
+  
+  .txtclr {
+    color: rgb(7, 6, 6);
+  }
+  
+  .tabletxtclr {
+    color: rgb(46, 46, 46);
+    border: 1px;
+    width: 100%;
+  }
+  
+  .buttonNotice {
+    background-color: #f84681;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .buttonNotice:hover {
+    opacity: 2;
+    color: white;
+  }
+  
+  
+  
+  
+  
+  .btnsignup {
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #f8306c;
+    background-color: rgb(61, 61, 61);
+  }
+  
+  
+  
+  .btnsignup:hover{
+    opacity: 3;
+    color: #e2ddd6;
+  }
+  
+  .logo{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .footertable{
+    padding: 5%;
+    color: rgb(255, 255, 255);
+    width: 100%;
+  }
+  
+  .footertablerow{
+    color: rgb(255, 255, 255);
+    width: max-content;
+  }
+  
+  .footertablerow1{
+    color: rgb(255, 255, 255);
+    width: max-content;
+  }
+  
+  .container1{
+    width: 100%;
+  }
+  
+  
+  .btn_cancel_cancel {
+    background-color: #dd1d1d;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn_cancel_cancel:hover {
+    opacity: 0.6;
+    color: rgb(255, 255, 255);
+  }
+  
+  .btn_update_update {
+    background-color: #0db31b;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .btn_update_update:hover {
+    opacity: 0.6;
+    color: #ffffff;
+  }
+  
+  .btn_save {
+    background-color: #1cacff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .btn_save:hover {
+  opacity: 0.6;
+  color: white;
+  }
+  
+  .btn_single_add_component {
+    background-color: #615ac7;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn_single_add_component:hover {
+    opacity: 2;
+    color: white;
+  }
+  
+  .btn_double_add_component {
+    background-color: #615ac7;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .btn_double_add_component:hover {
+    opacity: 2;
+    color: rgb(255, 255, 255);
+  }
+  
+  
+  .btn_double_generate_nav {
+    background-color: #fa7070;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .btn_double_generate_nav:hover {
+  opacity: 2; 
+  color: white;
+  }
+  
+  .btn_listview_report_nav {
+    background-color: #fa7070;
+    /*background-color: #2eafc6;*/
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn_listview_report_nav:hover {
+    opacity: 2;
+    color: white;
+  }
+  
+  .button-up {
+    background-color: #07b60f;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button-up:hover {
+    opacity: 2;
+    color: white;
+  }
+  
+  .button-dele {
+    background-color: #ff0000;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button-dele:hover {
+    opacity: 2;
+    color: rgb(255, 255, 255);
+  }
+  
+  .button-view {
+    background-color: #ffc400;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button-view:hover {
+    opacity: 2;
+    color: white;
+  }
+  
+  
+  .button-report2 {
+    background-color: #e7007f;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 600px;
+    width: 200px;
+  }
+  .button-report2:hover{
+    opacity: 2;
+    color: white;
+  }
+  
+  .button-report {
+    background-color: #e7007f;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 1110px;
+    width: 200px;
+  
+  }
+  
+  .button-report:hover{
+    opacity: 2;
+    color: white;
+  }
+  
+  .container1{
+    width: 100%;
+    padding: 0px 30px 30px 30px;
+    background-color: rgba(233, 37, 37, 0.295);
+  }
+
+
+  /*-------------------------------------------------------------------------------*/
+
+
+  .button {
+    background-color: #2eafc6;
+    border: none;
+   
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {background-color: #33963a;
+    color: white;
+}
+
+
+  .button-up {
+    background-color: #1b9a49;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  .button-up:hover {opacity: 2}
+
+  .react-pdf__Page__canvas_Single_ViewI {
+    margin: 0 auto;
+    width: 75% !important;
+    height: 100% !important;
+  }
+
+  
+
+
+  
+  .button-view {
+    background-color: #c2a814;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  
+  .button-view:hover {opacity: 2}
+
+  
+  .button-dele {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  
+  .button-dele:hover {opacity: 2}
+
+
+    
+  .button-update {
+    background-color: #0d802f;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: -1;
+    transition: 0.5s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  
+  .button-update:hover {opacity: 2}
+
+
+
+  .button-search{
+    background-color: #1b549a;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  
+  .button-search:hover {opacity: 2}
+
+.react-pdf__Page__canvas_d {
+    margin: 0 auto;
+    width: 65% !important;
+    height: 100% !important;
+  }
+
+  .button-report {
+    background-color: #2600ff;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+
+  
+
+  .logos {
+    width:50px;
+    height: 50px;
+    margin: auto;
+    background: url('http://45.79.67.59/logo_thumb_bar.jpg');
+    background-size: cover;
+  
+  }
+  
+  @keyframes play {
+    100% { background-position: 500px; }
+  }
+  .logos:hover{
+    -webkit-animation: notexistent;
+      animation: notexistent;
+    animation: play 2.5s steps(5) infinite;
+  }
+
+
+
+ .logo{
+   width: 50px;
+   height: 50px;
+ }
+
+
+ .btn_green {
+  background-color: #365afa;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  width: 80%;
+  cursor: pointer;
+}
+
+.btn_green:hover {
+  background-color: #3f29be;
+}
+
+
+.btn_red {
+  background-color: #fa3660;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  width: 90%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn_red:hover {
+  background-color: #8a0421;
+}
+
+.invntry_tbl_header {
+  width: 100%;
+}
+
+
+.container1{
+  width: 100%;
+}

@@ -39,6 +39,15 @@ import CreateProductComponent from './components/CreateProductComponent';
 import UpdateProductComponent from './components/UpdateProductComponent';
 import ViewProductComponent from './components/ViewProductComponent';
 import 'react-toastify/dist/ReactToastify.css';
+import ListCourierComponent from './components/ListCourierComponent';
+import ListDeliveryComponent from './components/ListDeliveryComponent';
+import CreateCourierComponent from './components/CreateCourierComponent';
+import UpdateCourierComponent from './components/UpdateCourierComponent';
+import ViewCourierComponent from './components/ViewCourierComponent';
+import CreateDeliveryComponent from './components/CreateDeliveryComponent';
+import UpdateDeliveryComponent from './components/UpdateDeliveryComponent';
+import ViewDeliveryComponent from './components/ViewDeliveryComponent';
+import AddCourierDelivery from './components/AddCourierDelivery';
 
 toast.configure()
 function App() {
@@ -119,6 +128,16 @@ function App() {
         <Route path = "/add-product" component = {CreateProductComponent}></Route>  
         <Route path = "/update-product/:productID" component = {UpdateProductComponent}></Route>
         <Route path = "/view-product/:productID" component = {ViewProductComponent}></Route>
+        <Route path = "/" exact component = {ListCourierComponent}></Route>
+        <Route path = "/courier" component = {ListCourierComponent}></Route>
+        <Route path = "/delivery" component = {ListDeliveryComponent}></Route>
+        <Route path = "/add-courier" component = {CreateCourierComponent}></Route>
+        <Route path = "/add-delivery" component = {CreateDeliveryComponent}></Route>
+        <Route path = "/update-courier/:id" component = {UpdateCourierComponent}></Route> 
+        <Route path = "/courier-delivery/:id" component = {AddCourierDelivery}></Route> 
+        <Route path = "/update-delivery/:id" component = {UpdateDeliveryComponent}></Route> 
+        <Route path = "/view-courier/:id" component = {ViewCourierComponent}></Route> 
+        <Route path = "/view-delivery/:id" component = {ViewDeliveryComponent}></Route> 
 
 
         {/*<Route path = "/update/:id" component = {UpdateBuyerOrdersComponent}></Route> */}

@@ -25,6 +25,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
               });
 
         }else{
+            
             localStorage.setItem("itemPrice",totalPrice);
             localStorage.setItem("cartitems",JSON.stringify(cartItems));
             // props.history.push({pathname:"/checkout/_add", state:cartItems})
@@ -59,7 +60,7 @@ const cart= ({cartItems, handleAddProduct, handleRemoveProduct, handleCartCleara
                             <button 
                             className="cart-items-add"
                              onClick={()=>handleAddProduct(item)}
-                             
+
                             
                              >
                                  +
