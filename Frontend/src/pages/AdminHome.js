@@ -11,7 +11,7 @@ function AdminHome(){
          <AdminNavbar/>
             <HeroSection/>
             <Cards/>
-            <Footer/>
+            
 
         </>
 
