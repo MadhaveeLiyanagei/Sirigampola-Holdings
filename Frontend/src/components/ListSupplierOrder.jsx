@@ -28,7 +28,7 @@ class ListSupplierOrder extends Component {
                 <br/>
                 <div className = "row">
 
-                <table className = "table table-striped table-bordered table-hover">
+                <table className = "table table-striped table-bordered table-hover" >
                     <thead>
                     <tr class="table-dark">
                         <th style={{ textAlign: "center" }}> Supplier Name </th>
@@ -37,7 +37,7 @@ class ListSupplierOrder extends Component {
                         <th style={{ textAlign: "center" }}> Supplier Contact </th>
                         <th style={{ textAlign: "center" }}> Company Email </th>
                         <th style={{ textAlign: "center" }}> Description </th>
-                        <th style={{ textAlign: "center" }}> Actions </th>
+                        <th style={{ textAlign: "center", width: "300px"}}> Actions </th>
                     </tr>
                     </thead>
 
@@ -54,9 +54,9 @@ class ListSupplierOrder extends Component {
                                     <td>{order.companyEmail}</td>
                                     <td>{order.description}</td>
                                     <td class="table-secondary">
-                                            <button className="btn btn-info"> Update </button>
-                                            <button style={{marginLeft: "20px"}}  className="btn btn-danger"> Delete </button>
-                                            <button style={{marginLeft: "20px"}}  className="btn btn-warning"> View </button>
+                                            <button style={{marginLeft: "20px"}} className="btn btn-info"> Update </button>
+                                            <button style={{marginLeft: "20px"}} className="btn btn-danger"> Delete </button>
+                                            <button style={{marginLeft: "20px"}} className="btn btn-warning"> View </button>
                                     </td>
                                 </tr>
                             )

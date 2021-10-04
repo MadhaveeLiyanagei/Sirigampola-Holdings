@@ -8,6 +8,10 @@ class SupplierOrderService {
         return axios.get(SUPPLIER_ORDER_API_BASE_URL);
     }
 
+    addSupplierOrder(order){
+        return axios.post(SUPPLIER_ORDER_API_BASE_URL, order);
+    }
+
 }
 
 export default new SupplierOrderService()

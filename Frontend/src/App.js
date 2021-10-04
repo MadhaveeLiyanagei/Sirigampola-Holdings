@@ -17,8 +17,8 @@ import Cart from './Cart/Cart';
 import product_card from './data/productData';
 import Routes from './Routes/Routes';
 import MainContent from './components/mainContent';
-import AddtoListForum from './AddtoList/AddtoListForum';
 import ListSupplierOrder from './components/ListSupplierOrder';
+import AddSupplierComponent from './components/AddSupplierComponent';
 
 function App() {
 
@@ -79,7 +79,7 @@ function App() {
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
                 <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
-                <Route path = "/add-to-list" component = {AddtoListForum} ></Route>
+                <Route path = "/add-to-list" component = {AddSupplierComponent} ></Route>
                 <Route path = "/supplierorder" component = {ListSupplierOrder} ></Route>
               </Switch>
             </div>
