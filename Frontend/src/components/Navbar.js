@@ -37,7 +37,7 @@ useEffect(() =>{
 
             <ul className ={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
-                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/add-to-list' className='nav-links' onClick={closeMobileMenu}>
                         Products
                     </Link>
                 </li>

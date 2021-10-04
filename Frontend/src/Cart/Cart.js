@@ -60,7 +60,7 @@ const Cart = ({ cartItem, handleAddProduct, handleRemoveProduct, handleCartClear
                 </div>
 
                 <div className = "cart-checkout-page">
-                    <button className="cart-checkout-page-button" > ADD ORDER </button>
+                    <button className="cart-checkout-page-button" onClick={()=> window.location.href='/add-to-list'}> ADD ORDER </button>
                 </div>
 
             </div>
