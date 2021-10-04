@@ -17,6 +17,12 @@ import Footer from './components/Footer';
 import BuyerOrderReport from './components/BuyerOrderReport';
 import Sidebar from './components/Sidebar';
 import AdminHome from './components/AdminHome';
+import ListInventoryComponent from './components/ListInventoryComponent';
+import CreateInventoryComponent from './components/CreateInventoryComponent';
+import UpdateInventoryComponent from './components/UpdateInventoryComponent';
+import ViewInventoryComponent from './components/ViewInventoryComponent';
+import InventoryReport from './components/InventoryReport';
+
 
 
 function App() {
@@ -28,7 +34,6 @@ function App() {
     const ProductExist = cartItems.find((item)=> item.id === product.id);
     
       if(ProductExist){
-      
       setCartItems(
         cartItems.map((item) => 
         item.id === product.id 
@@ -78,6 +83,12 @@ function App() {
         {/*step 1 */}
         <Route path = "/checkout/:id" component = {CreateBuyerOrdersComponent}></Route>
         <Route path = "/view-buyerorder/:id" component = {ViewBuyerOrderComponent}></Route>
+        <Route path="/inventory" component={ListInventoryComponent}></Route>
+        <Route path="/add-inventory" component={CreateInventoryComponent}></Route>
+        <Route path="/view-inventory/:inventoryID" component={ViewInventoryComponent}></Route>
+        <Route path="/update-inventory/:inventoryID" component={UpdateInventoryComponent}></Route>
+        <Route path="/inventoryreport" component={InventoryReport}></Route>
+
         {/*<Route path = "/update/:id" component = {UpdateBuyerOrdersComponent}></Route> */}
         
         <Routes 
@@ -85,9 +96,9 @@ function App() {
         cartItems= {cartItems} 
         handleAddProduct = {handleAddProduct}
         handleRemoveProduct= {handleRemoveProduct}
-       handleCartClearance = {handleCartClearance}
+        handleCartClearance = {handleCartClearance}
         
-       />
+        />
       </Switch>
       <Footer/>
       </Router>
