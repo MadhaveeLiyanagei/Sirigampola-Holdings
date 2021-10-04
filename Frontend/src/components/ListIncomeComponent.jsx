@@ -124,12 +124,12 @@ searchTransaction(event){
 
         );
 
-       /* var totalCartPrice = 0;
+        var totalPrice = 0;
          this.state.incomes.map(
           income =>
-          totalCartPrice += income.amount, 
+          totalPrice += income.amount, 
           income => 
-          income.amount++ ) */
+          income.amount++ ) 
 
         return ( 
             <div>
@@ -139,7 +139,7 @@ searchTransaction(event){
                  <div class="topnav" >
                      <a class="active" href="http://localhost:3000/Finance">Income</a>
                      <a href="http://localhost:3000/Expense">Expense</a>
-                     <a href="#contact">Tax Rates</a>
+                     <a href="http://localhost:3000/Tax">Tax Rates</a>
                      <a href="#about">Reports & Graphs</a>
         </div> 
       
@@ -197,7 +197,22 @@ searchTransaction(event){
                                 }
                             </tbody>
                         </table>
-
+                      
+                        <div className="col-md-8"></div> 
+                      <div className="col-md-4">
+                        <div className="card card-body mt-3">
+                            <h4>Sub Total : 
+                                <span className="float-end">{totalPrice}</span>
+                            </h4>
+                            
+                            <h4>Grand Total : 
+                                <span className="float-end">{totalPrice}</span>
+                                 
+                            </h4>
+                            <hr />
+                            <Link to="/ReportGraph" className="btn btn-primary"> Summary</Link>
+                        </div>
+                        </div>  
 
                         
                                  

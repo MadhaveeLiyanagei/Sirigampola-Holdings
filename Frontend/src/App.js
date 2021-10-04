@@ -16,7 +16,9 @@ import UpdateExpenseComponent from './components/UpdateExpenseComponent';
 import ViewExpenseComponent from './components/ViewExpenseComponent';
 import IncomeReport from './components/IncomeReport';
 import ExpenseReport from './components/ExpenseReport';
-
+import ListTaxComponent from './components/ListTaxComponent';
+import CreateTaxComponent from './components/CreateTaxComponent';
+import ViewTaxComponent from './components/ViewTaxComponent';
  
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
         <Route path = '/' exact component = {AdminHome} />
         <Route path = '/Finance' component = {ListIncomeComponent} />
         <Route path = '/Expense' component = {ListExpenseComponent} /> 
+        <Route path = '/Tax' component = {ListTaxComponent} /> 
         <Route path = "/IncomeReport" component = {IncomeReport} />  
         <Route path = "/ExpenseReport" component = {ExpenseReport} />  
          
@@ -44,6 +47,11 @@ function App() {
         <Route path = '/add-expense/:expenseID' component = {CreateExpenseComponent} />  
        {/* <Route path = '/update-expense/:expenseID' component = {UpdateExpenseComponent} /> */}  
        <Route path = '/view-expense/:expenseID' component = {ViewExpenseComponent} /> 
+
+       // step 1
+        <Route path = '/add-tax/:taxID' component = {CreateTaxComponent} />  
+       {/* <Route path = '/update-tax/:taxID' component = {UpdateTaxComponent} /> */}  
+        <Route path = '/view-tax/:taxID' component = {ViewTaxComponent} />  
          
       </Switch>
       {/* <Footer/>*/}

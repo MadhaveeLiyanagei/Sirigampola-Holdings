@@ -119,6 +119,13 @@ class ListExpenseComponent extends Component {
 
         );
 
+        var totalPrice = 0;
+         this.state.expenses.map(
+          expense =>
+          totalPrice += expense.amount, 
+          expense => 
+          expense.amount++ ) 
+
         return ( 
             <div>
                 <br></br>
@@ -127,7 +134,7 @@ class ListExpenseComponent extends Component {
                  <div class="topnav" >
                      <a href="http://localhost:3000/Finance">Income</a>
                      <a class="active" href="http://localhost:3000/Expense">Expense</a>
-                     <a href="#contact">Tax Rates</a>
+                     <a href="http://localhost:3000/Tax">Tax Rates</a>
                      <a href="#about">Reports & Graphs</a>
         </div> 
           
@@ -184,6 +191,22 @@ class ListExpenseComponent extends Component {
                                 }
                             </tbody>
                         </table>
+
+                        <div className="col-md-8"></div> 
+                      <div className="col-md-4">
+                        <div className="card card-body mt-3">
+                            <h4>Sub Total : 
+                                <span className="float-end">{totalPrice}</span>
+                            </h4>
+                            
+                            <h4>Grand Total : 
+                                <span className="float-end">{totalPrice}</span>
+                                 
+                            </h4>
+                            <hr />
+                            <Link to="/ReportGraph" className="btn btn-primary"> Summary</Link>
+                        </div>
+                        </div>  
 
                 </div>
 
