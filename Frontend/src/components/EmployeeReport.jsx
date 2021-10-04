@@ -45,7 +45,8 @@ class EmployeeReport extends Component {
         return (
          <>
      
-         <div>
+         <div className="rGenerate">
+
      
                  <div className="Post" ref={ref}>
             <div>
