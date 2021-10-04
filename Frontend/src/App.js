@@ -23,8 +23,9 @@ import UpdateInventoryComponent from './components/UpdateInventoryComponent';
 import ViewInventoryComponent from './components/ViewInventoryComponent';
 import InventoryReport from './components/InventoryReport';
 
+import 'react-toastify/dist/ReactToastify.css';
 
-
+toast.configure()
 function App() {
 
   const {productItems}= data;
@@ -32,21 +33,23 @@ function App() {
 
   const handleAddProduct = (product) =>{
     const ProductExist = cartItems.find((item)=> item.id === product.id);
-    
       if(ProductExist){
-      setCartItems(
-        cartItems.map((item) => 
+        if(ProductExist.quantity>=20){
+          toast.warn('Order level exceeded!', {position: toast.POSITION.TOP_CENTER, autoClose: 2000})
+
+        }
+        else{setCartItems(       
+        cartItems.map((item) =>        
         item.id === product.id 
         ?{...ProductExist, quantity: ProductExist.quantity + 1}
         : item
         )
         );
-      }else{
+      }}
+      else{
             setCartItems([...cartItems,{...product, quantity: 1}]); 
       }
     };
-  
-  
   const handleRemoveProduct = (product) =>{
     const ProductExist = cartItems.find((item)=> item.id === product.id);
     if(ProductExist.quantity===1){
