@@ -14,6 +14,7 @@ class ListProductComponent extends Component {
     this.addProduct = this.addProduct.bind(this);
     this.editProduct = this.editProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
+    this.generateReport = this.generateReport.bind(this);
   }
 
   componentDidMount() {
@@ -81,6 +82,10 @@ class ListProductComponent extends Component {
     });
   }
 
+  generateReport() {
+    this.props.history.push("/productreport");
+  }
+
   addProduct() {
     this.props.history.push("/add-product");
   }
@@ -98,89 +103,159 @@ class ListProductComponent extends Component {
       );
     });
 
+    var tableStyle = {
+      border: "0.5px solid black",
+    };
+
     return (
       <div>
-<div className="row"><table className="srchbr">
-          <br></br>
+        <div className="row">
+          <table className="srchbr">
+            <br></br>
+            <tbody>
+              <th className="tblclm">Search : </th>
+              <th>
+                <div className="form-group col-md-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style={{ marginLeft: 0 }}
+                    placeholder="Enter Product Name"
+                    value={this.state.searchId}
+                    onChange={this.searchProductbyName.bind(this)}
+                  />
+                </div>
+              </th>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-center">
+          <u>Products</u>
+        </h2>
+        <table className="invntry_tbl_header">
           <tbody>
-            <th className="tblclm">Search : </th>
             <th>
-              <div className="form-group col-md-4">
-                <input
-                  type="text"
-                  class="form-control"
-                  style={{ marginLeft: 0 }}
-                  placeholder="Enter Product Name"
-                  value={this.state.searchId}
-                  onChange={this.searchProductbyName.bind(this)}
-                />
+              <div>
+                <button
+                  className="btn_double_add_component"
+                  onClick={this.addProduct}
+                >
+                  <b> Add Product</b>
+                </button>
+              </div>
+            </th>
+            <th>
+              <div>
+                <button
+                  className="btn_double_generate_nav"
+                  onClick={this.generateReport}
+                >
+                  <b> Generate Report</b>
+                </button>
               </div>
             </th>
           </tbody>
-        </table></div>
+          <br></br>
+          <br></br>
+        </table>
 
-        <h2 className="text-center"><u>Products</u></h2>
-        <div className="row"> <br></br>
-        
-          <button className="button" onClick={this.addProduct}>
-            Add Product
-          </button> <br></br> <br></br>
-        </div>
-
-        
-
-       
         <div className="row">
-          <table className="table table-striped table bordered">
-            <thead>
-              <tr>
-                <th>Product Name</th>
-                <th>Product Details</th>
-                <th>Selling Price</th>
-                <th>Product Image</th>
-                <th></th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {filterProductName.map((product) => (
-                //this.state.product.map(
-                //product =>
-                <tr key={product.productID}>
-                  <td>{product.productName}</td>
-                  <td>{product.productDetails}</td>
-                  <td>{product.productPrice}</td>
-                  <td>{product.productImage}</td>
-                  <td>
-                    <button
-                      onClick={() => this.editProduct(product.productID)}
-                      className="button-up"
-                    >
-                      Update
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      onClick={() => this.deleteProduct(product.productID)}
-                      className="button-dele"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      onClick={() => this.viewProduct(product.productID)}
-                      className="button-view"
-                    >
-                      View
-                    </button>
-                  </td>
+          <center>
+            <table className="tabletxtclr" style={tableStyle}>
+              <thead>
+                <tr style={tableStyle}>
+                  <th>
+                    <center>
+                      <h5>Product Name</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>Product Details</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>Selling Price</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>Product Image</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>Update</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>Delete</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>View</h5>
+                    </center>
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {filterProductName.map((product) => (
+                  //this.state.product.map(
+                  //product =>
+                  <tr key={product.productID}>
+                    <td style={tableStyle}>
+                      <center>{product.productName}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{product.productDetails}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{product.productPrice}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{product.productImage}</center>
+                    </td>
+                    <td>
+                      <center>
+                        <button
+                          onClick={() => this.editProduct(product.productID)}
+                          className="button-up"
+                        >
+                          <b>Update</b>
+                        </button>
+                      </center>
+                    </td>
+                    <td>
+                      <center>
+                        <button
+                          onClick={() => this.deleteProduct(product.productID)}
+                          className="button-dele"
+                        >
+                          <b>Delete</b>
+                        </button>
+                      </center>
+                    </td>
+                    <td>
+                      <center>
+                        <button
+                          onClick={() => this.viewProduct(product.productID)}
+                          className="button-view"
+                        >
+                          <b>View</b>
+                        </button>
+                      </center>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <br></br>
+          </center>
         </div>
       </div>
     );

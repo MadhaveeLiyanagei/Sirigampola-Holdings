@@ -73,16 +73,7 @@ function AdminNavbar() {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link
-                to="/inventory"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Delivery
-              </Link>
-            </li>
-
+           
 
           </ul>
           {button && <Button buttonStyle="btn--outline"> SIGN UP</Button>}
@@ -93,3 +84,14 @@ function AdminNavbar() {
 }
 
 export default AdminNavbar;
+
+
+/*<li className="nav-item">
+<Link
+  to="/inventory"
+  className="nav-links"
+  onClick={closeMobileMenu}
+>
+  Delivery
+</Link>
+</li>*/

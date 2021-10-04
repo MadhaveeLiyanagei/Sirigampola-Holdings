@@ -102,6 +102,11 @@ class ListInventoryComponent extends Component {
       );
     });
 
+    var tableStyle = {
+      border: "0.5px solid black",
+    };
+
+
     return (
       <div>
         <div className="row">
@@ -132,7 +137,7 @@ class ListInventoryComponent extends Component {
             <tbody>
               <th>
                 <div>
-                  <button className="buttonShana1" onClick={this.addInventory}>
+                  <button className="btn_double_add_component" onClick={this.addInventory}>
                    <b> Add Inventory</b>
                   </button>
                 </div>
@@ -140,7 +145,7 @@ class ListInventoryComponent extends Component {
               <th>
                 <div>
                   <button
-                    className="buttonShana2"
+                    className="btn_double_generate_nav"
                     onClick={this.generateReport}
                   >
                    <b> Generate Report</b>
@@ -149,18 +154,22 @@ class ListInventoryComponent extends Component {
               </th>
             </tbody><br></br><br></br>
           </table>
+
+
+
           <div className="row">
-            <table className="table table-striped table bordered">
+            <center>
+            <table className="tabletxtclr">
               <thead>
-                <tr>
-                  <th>Product ID</th>
-                  <th>Product Name</th>
-                  <th>Quantity</th>
-                  <th>Re-Order Level</th>
-                  <th>Cost Price</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
+                <tr style={tableStyle}>
+                  <th><center><h5>Product ID</h5></center></th>
+                  <th><center><h5>Product Name</h5></center></th>
+                  <th><center><h5>Quantity</h5></center></th>
+                  <th><center><h5>Re-Order Level</h5></center></th>
+                  <th><center><h5>Cost Price</h5></center></th>
+                  <th><center><h5>Update</h5></center></th>
+                  <th><center><h5>Delete</h5></center></th>
+                  <th><center><h5>View</h5></center></th>
                 </tr>
               </thead>
 
@@ -168,46 +177,48 @@ class ListInventoryComponent extends Component {
                 {filterProductName.map((inventory) => (
                   //this.state.inventory.map(
                   //inventory =>
-                  <tr key={inventory.inventoryID}>
-                    <td>{inventory.productID}</td>
-                    <td>{inventory.productName}</td>
-                    <td>{inventory.quantity}</td>
-                    <td>{inventory.reOrder}</td>
-                    <td>{inventory.costPrice}</td>
-                    <td>
+                  <tr style={tableStyle} key={inventory.inventoryID}>
+                    <td style={tableStyle}><center>{inventory.productID}</center></td>
+                    <td style={tableStyle}><center>{inventory.productName}</center></td>
+                    <td style={tableStyle}><center>{inventory.quantity}</center></td>
+                    <td style={tableStyle}><center>{inventory.reOrder}</center></td>
+                    <td style={tableStyle}><center>{inventory.costPrice}</center></td>
+                    <td><center>
                       <button
                         onClick={() =>
                           this.editInventory(inventory.inventoryID)
                         }
                         className="button-up"
                       >
-                        Update
-                      </button>
+                        <b>Update</b>
+                      </button></center>
                     </td>
-                    <td>
+                    <td><center>
                       <button
                         onClick={() =>
                           this.deleteInventory(inventory.inventoryID)
                         }
                         className="button-dele"
                       >
-                        Delete
-                      </button>
+                        <b>Delete</b>
+                      </button></center>
                     </td>
-                    <td>
+                    <td><center>
                       <button
                         onClick={() =>
                           this.viewInventory(inventory.inventoryID)
                         }
                         className="button-view"
                       >
-                        View
-                      </button>
+                       <b> View</b>
+                      </button></center>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            <br></br>
+            </center>
           </div>
         </div>
       </div>

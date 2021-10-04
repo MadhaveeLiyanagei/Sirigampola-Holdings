@@ -23,8 +23,8 @@ class ListProductComponent extends Component {
     return (
       <>
         <div className="Post" ref={ref}>
-          <div>
-            <h2 className="text-center">Products</h2>
+          <div><br></br>
+            <h2 className="text-center"><b><u>Products</u></b></h2>
             <br></br>
             <div className="row">
               <table className="table table-striped table bordered">
@@ -55,7 +55,7 @@ class ListProductComponent extends Component {
           {({ toPdf }) => (
             <button className="button-report" onClick={toPdf}>
               {" "}
-              Generate Report
+             <b> Generate Report</b>
             </button>
           )}
         </Pdf>

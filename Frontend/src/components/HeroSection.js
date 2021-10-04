@@ -8,7 +8,7 @@ function HeroSection() {
   return (
     <div className="hero-container">
       <video src="/videos/home.mp4" autoPlay loop muted />
-      <h1>WELCOME</h1>
+      <h1>WELCOME TO WONDERLAND!!!</h1>
       <table>
         <tbody>
           <th>

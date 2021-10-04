@@ -34,8 +34,6 @@ import InventoryReport from "./components/InventoryReport";
 function App() {
   return (
     <div>
-             
-
       <Router>
         <AdminNavbar />
         <div className="container">
@@ -102,7 +100,7 @@ function App() {
         </div>
         <Footer />
       </Router>
-    </div>  
+    </div>
   );
 }
 

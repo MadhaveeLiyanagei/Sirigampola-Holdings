@@ -136,7 +136,10 @@ export default class ListEmployeeLeavesComponent extends Component {
             <br></br>
           </h2>
 
-          <button className="buttongen1" onClick={this.generateLeavesReport}>
+          <button
+            className="btn_listview_report_nav"
+            onClick={this.generateLeavesReport}
+          >
             <b>Generate Report</b>
           </button>
           <center>
@@ -208,34 +211,42 @@ export default class ListEmployeeLeavesComponent extends Component {
                       <center>{employeeLeaves.status}</center>
                     </td>
                     <td>
-                      <button
-                        onClick={() =>
-                          this.editEmployeeLeaves(employeeLeaves.leaveNumber)
-                        }
-                        className="button-up"
-                      >
-                        <b> Update</b>
-                      </button>
+                      <center>
+                        <button
+                          onClick={() =>
+                            this.editEmployeeLeaves(employeeLeaves.leaveNumber)
+                          }
+                          className="button-up"
+                        >
+                          <b> Update</b>
+                        </button>
+                      </center>
                     </td>
                     <td>
-                      <button
-                        onClick={() =>
-                          this.deleteEmployeeLeaves(employeeLeaves.leaveNumber)
-                        }
-                        className="button-dele"
-                      >
-                        <b> Delete</b>
-                      </button>
+                      <center>
+                        <button
+                          onClick={() =>
+                            this.deleteEmployeeLeaves(
+                              employeeLeaves.leaveNumber
+                            )
+                          }
+                          className="button-dele"
+                        >
+                          <b> Delete</b>
+                        </button>
+                      </center>
                     </td>
                     <td>
-                      <button
-                        onClick={() =>
-                          this.viewEmployeeLeaves(employeeLeaves.leaveNumber)
-                        }
-                        className="button-view "
-                      >
-                        <b> View</b>
-                      </button>
+                      <center>
+                        <button
+                          onClick={() =>
+                            this.viewEmployeeLeaves(employeeLeaves.leaveNumber)
+                          }
+                          className="button-view "
+                        >
+                          <b> View</b>
+                        </button>
+                      </center>
                     </td>
                   </tr>
                 ))}

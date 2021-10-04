@@ -29,7 +29,10 @@ class ViewProductComponent extends Component {
             <div>
               <br></br>
               <div className="card col-md-6 offset-md-3">
-                <h3 className="text-center"> <u>View Product Details</u></h3>
+                <h3 className="text-center">
+                  {" "}
+                  <u>View Product Details</u>
+                </h3>
                 <div className="card-body">
                   <div className="row">
                     <label>
@@ -69,7 +72,12 @@ class ViewProductComponent extends Component {
           </div>
         </div>
         <Pdf targetRef={ref} filename="ProductReport.pdf">
-          {({ toPdf }) => <button  className="button-report" onClick={toPdf}> Generate Report</button>}
+          {({ toPdf }) => (
+            <button className="button-report" onClick={toPdf}>
+              {" "}
+              Generate Report
+            </button>
+          )}
         </Pdf>
       </>
     );

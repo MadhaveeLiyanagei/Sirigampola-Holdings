@@ -242,20 +242,20 @@ class UpdateInventoryComponent extends Component {
                       <th>
                         <center>
                           <button
-                            className="btn_blue"
+                            className="btn_update_update"
                             onClick={this.updateInventory}
                           >
-                            Update
+                            <b>Update</b>
                           </button>
                         </center>
                       </th>
                       <th>
                         <center>
                           <button
-                            className="btn_red"
+                            className="btn_cancel_cancel"
                             onClick={this.cancel.bind(this)}
                           >
-                            Cancel
+                            <b>Cancel</b>
                           </button>
                         </center>
                       </th>
