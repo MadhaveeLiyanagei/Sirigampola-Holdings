@@ -1,37 +1,34 @@
 import React, { Component } from "react";
-import ProductService from "../services/ProductService";
+import EmployeeLeavesService from "../services/EmployeeLeavesService";
+import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
 import SoloAlert from "soloalert";
-
-class ListProductComponent extends Component {
+export default class ListEmployeeLeavesComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      product: [],
+      employeeLeaves: [],
       searchId: "",
     };
 
-    this.addProduct = this.addProduct.bind(this);
-    this.editProduct = this.editProduct.bind(this);
-    this.deleteProduct = this.deleteProduct.bind(this);
-    this.generateReport = this.generateReport.bind(this);
+    this.generateLeavesReport = this.generateLeavesReport.bind(this);
+    this.editEmployeeLeaves = this.editEmployeeLeaves.bind(this);
+    this.deleteEmployeeLeaves = this.deleteEmployeeLeaves.bind(this);
   }
 
-  componentDidMount() {
-    ProductService.getProduct().then((res) => {
-      this.setState({ product: res.data });
-    });
+  viewEmployeeLeaves(leaveNumber) {
+    this.props.history.push(`/view-employeeLeaves/${leaveNumber}`);
   }
 
-  viewProduct(productID) {
-    this.props.history.push(`/view-product/${productID}`);
+  editEmployeeLeaves(leaveNumber) {
+    this.props.history.push(`/update-employeeLeaves/${leaveNumber}`);
   }
 
-  editProduct(productID) {
-    this.props.history.push(`/update-product/${productID}`);
+  generateLeavesReport() {
+    this.props.history.push(`/leavegen`);
   }
 
-  deleteProduct(productID) {
+  deleteEmployeeLeaves(leaveNumber) {
     SoloAlert.confirm({
       title: "Confirm Delete",
       body: "Are you sure",
@@ -39,32 +36,32 @@ class ListProductComponent extends Component {
       useTransparency: true,
       onOk: async function () {
         try {
-          ProductService.deleteProduct(productID);
+          EmployeeLeavesService.deleteEmployeeLeaves(leaveNumber);
           await this.setState({
-            product: this.state.product.filter(
-              (product) => product.productID !== productID
+            employeeLeaves: this.state.employeeLeaves.filter(
+              (employeeLeaves) => employeeLeaves.leaveNumber !== leaveNumber
             ),
           });
 
           SoloAlert.alert({
             title: "Welcome!",
-            body: "Deletion is successful",
+            body: "Deletion successful",
             icon: "success",
             theme: "dark",
             useTransparency: true,
             onOk: function () {
-              window.location = "/product";
+              window.location = "/employeeLeaves";
             },
           });
         } catch (err) {
           SoloAlert.alert({
             title: "Welcome!",
-            body: "Deletion is successful",
+            body: "Deletion successful",
             icon: "success",
             theme: "dark",
             useTransparency: true,
             onOk: function () {
-              window.location = "/product";
+              window.location = "/employeeLeaves";
             },
           });
         }
@@ -82,34 +79,36 @@ class ListProductComponent extends Component {
     });
   }
 
-  generateReport() {
-    this.props.history.push("/productreport");
+  componentDidMount() {
+    EmployeeLeavesService.getEmployeeLeaves().then((res) => {
+      this.setState({ employeeLeaves: res.data });
+    });
   }
 
-  addProduct() {
-    this.props.history.push("/add-product");
-  }
-
-  searchProductbyName(event) {
+  searchLeavebyName(event) {
     this.setState({ searchId: event.target.value.substr(0, 20) });
   }
 
   render() {
-    let filterProductName = this.state.product.filter((product) => {
-      return (
-        product.productName
-          .toLowerCase()
-          .indexOf(this.state.searchId.toLowerCase()) !== -1
-      );
-    });
+    let filterEmployeeID = this.state.employeeLeaves.filter(
+      (employeeLeaves) => {
+        return (
+          employeeLeaves.employeeID
+            .toLowerCase()
+            .indexOf(this.state.searchId.toLowerCase()) !== -1
+        );
+      }
+    );
 
     var tableStyle = {
       border: "0.5px solid black",
     };
-
     return (
       <div>
         <div className="row">
+          <>
+            <AdminEmployeeSideBar />
+          </>
           <table className="srchbr">
             <br></br>
             <tbody>
@@ -120,69 +119,56 @@ class ListProductComponent extends Component {
                     type="text"
                     class="form-control"
                     style={{ marginLeft: 0 }}
-                    placeholder="Enter Product Name"
+                    placeholder="Enter employee ID"
                     value={this.state.searchId}
-                    onChange={this.searchProductbyName.bind(this)}
+                    onChange={this.searchLeavebyName.bind(this)}
                   />
                 </div>
               </th>
             </tbody>
           </table>
-        </div>
 
-        <h2 className="text-center">
-          <u>Products</u>
-        </h2>
-        <table className="invntry_tbl_header">
-          <tbody>
-            <th>
-              <div>
-                <button
-                  className="btn_double_add_component"
-                  onClick={this.addProduct}
-                >
-                  <b> Add Product</b>
-                </button>
-              </div>
-            </th>
-            <th>
-              <div>
-                <button
-                  className="btn_double_generate_nav"
-                  onClick={this.generateReport}
-                >
-                  <b> Generate Report</b>
-                </button>
-              </div>
-            </th>
-          </tbody>
-          <br></br>
-          <br></br>
-        </table>
+          <h2 className="text-center">
+            <br></br>
+            <u>Employee Leaves</u>
+            <br></br>
+            <br></br>
+          </h2>
 
-        <div className="row">
+          <button
+            className="btn_listview_report_nav"
+            onClick={this.generateLeavesReport}
+          >
+            <b>Generate Report</b>
+          </button>
           <center>
+            <br></br>
             <table className="tabletxtclr" style={tableStyle}>
               <thead>
                 <tr style={tableStyle}>
                   <th>
                     <center>
-                      <h5>Product Name</h5>
+                      <h5>Employee ID</h5>
                     </center>
                   </th>
                   <th>
                     <center>
-                      <h5>Product Details</h5>
+                      <h5>Admin ID</h5>
                     </center>
                   </th>
                   <th>
                     <center>
-                      <h5>Selling Price</h5>
+                      <h5>Date</h5>
                     </center>
                   </th>
                   <th>
                     <center>
-                      <h5>Product Image</h5>
+                      <h5>Reason</h5>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <h5>Status</h5>
                     </center>
                   </th>
                   <th>
@@ -204,49 +190,60 @@ class ListProductComponent extends Component {
               </thead>
 
               <tbody>
-                {filterProductName.map((product) => (
-                  //this.state.product.map(
-                  //product =>
-                  <tr key={product.productID}>
+                {filterEmployeeID.map((employeeLeaves) => (
+                  //this.state.employeeLeaves.map(
+                  //employeeLeaves =>
+                  <tr key={employeeLeaves.leaveNumber}>
                     <td style={tableStyle}>
-                      <center>{product.productName}</center>
+                      <center>{employeeLeaves.employeeID}</center>
                     </td>
                     <td style={tableStyle}>
-                      <center>{product.productDetails}</center>
+                      <center>{employeeLeaves.adminID}</center>
                     </td>
                     <td style={tableStyle}>
-                      <center>{product.productPrice}</center>
+                      <center>{employeeLeaves.date}</center>
                     </td>
                     <td style={tableStyle}>
-                      <center>{product.productImage}</center>
+                      <center>{employeeLeaves.reason}</center>
+                    </td>
+                    <td style={tableStyle}>
+                      <center>{employeeLeaves.status}</center>
                     </td>
                     <td>
                       <center>
                         <button
-                          onClick={() => this.editProduct(product.productID)}
+                          onClick={() =>
+                            this.editEmployeeLeaves(employeeLeaves.leaveNumber)
+                          }
                           className="button-up"
                         >
-                          <b>Update</b>
+                          <b> Update</b>
                         </button>
                       </center>
                     </td>
                     <td>
                       <center>
                         <button
-                          onClick={() => this.deleteProduct(product.productID)}
+                          onClick={() =>
+                            this.deleteEmployeeLeaves(
+                              employeeLeaves.leaveNumber
+                            )
+                          }
                           className="button-dele"
                         >
-                          <b>Delete</b>
+                          <b> Delete</b>
                         </button>
                       </center>
                     </td>
                     <td>
                       <center>
                         <button
-                          onClick={() => this.viewProduct(product.productID)}
-                          className="button-view"
+                          onClick={() =>
+                            this.viewEmployeeLeaves(employeeLeaves.leaveNumber)
+                          }
+                          className="button-view "
                         >
-                          <b>View</b>
+                          <b> View</b>
                         </button>
                       </center>
                     </td>
@@ -261,5 +258,3 @@ class ListProductComponent extends Component {
     );
   }
 }
-
-export default ListProductComponent;

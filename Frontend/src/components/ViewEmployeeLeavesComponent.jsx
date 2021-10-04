@@ -1,77 +1,86 @@
 import React, { Component } from "react";
-import ProductService from "../services/ProductService";
+import EmployeeLeavesService from "../services/EmployeeLeavesService";
+import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
 
-class ViewProductComponent extends Component {
+/*View all the details of a single record*/
+
+class ViewEmployeeLeavesComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      productID: this.props.match.params.productID,
+      leaveNumber: this.props.match.params.leaveNumber,
 
-      product: [],
+      employeeLeaves: [],
     };
   }
 
   componentDidMount() {
-    ProductService.getProductByID(this.state.productID).then((res) => {
-      this.setState({ product: res.data });
+    EmployeeLeavesService.getEmployeeLeavesByLeaveNumber(
+      this.state.leaveNumber
+    ).then((res) => {
+      this.setState({ employeeLeaves: res.data });
     });
   }
 
   render() {
     return (
       <>
-        <div className="react-pdf__Page__canvas_Single_View2">
-          <div className="Post" ref={ref}>
-            <div>
+        <div>
+          <div className="row">
+            <>
+              <AdminEmployeeSideBar />
+            </>
+          </div>
+          <div className="react-pdf__Page__canvas_Single_View">
+            <div className="Post" ref={ref}>
               <br></br>
               <div className="card col-md-6 offset-md-3">
                 <h3 className="text-center">
                   {" "}
-                  <u>View Product Details</u>
+                  <u>View Employee leave Details </u>
                 </h3>
                 <div className="card-body">
                   <div className="row">
                     <label>
-                      <b>Product Name:</b>{" "}
+                      <b>Employee ID:</b>{" "}
                     </label>
-                    <div>{this.state.product.productName}</div>
+                    <div>{this.state.employeeLeaves.employeeID}</div>
                   </div>
                   <br></br>
                   <br></br>
                   <div className="row">
                     <label>
-                      <b>Product Details: </b>
+                      <b>Date: </b>
                     </label>
-                    <div>{this.state.product.productDetails}</div>
+                    <div>{this.state.employeeLeaves.date}</div>
                   </div>
                   <br></br>
                   <br></br>
                   <div className="row">
                     <label>
-                      <b>Image: </b>
+                      <b>Reason: </b>
                     </label>
-                    <div>{this.state.product.productImage}</div>
+                    <div>{this.state.employeeLeaves.reason}</div>
                   </div>
                   <br></br>
                   <br></br>
                   <div className="row">
                     <label>
-                      <b>Price: </b>
+                      <b>Status:</b>
                     </label>
-                    <div>{this.state.product.productPrice}</div>
+                    <div>{this.state.employeeLeaves.status}</div>
                   </div>
-                  <br></br>
-                  <br></br>
                 </div>
               </div>
+              <br></br>
             </div>
           </div>
         </div>
-        <Pdf targetRef={ref} filename="ProductReport.pdf">
+        <Pdf targetRef={ref} filename="Employee Leave.pdf">
           {({ toPdf }) => (
             <button className="button-report" onClick={toPdf}>
               {" "}
@@ -84,4 +93,4 @@ class ViewProductComponent extends Component {
   }
 }
 
-export default ViewProductComponent;
+export default ViewEmployeeLeavesComponent;
