@@ -90,3 +90,16 @@ font-size: xx-large;
 
   color: rgb(253, 139, 32);
 }
+
+.circular--square {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  
+}
+.circular--square:hover {
+
+ 
+}
+
+

@@ -60,8 +60,9 @@ function AboutUsSection2() {
                            </th>
                         
                            <th>
+                               
                           
-                           <img className="aboutusimgsecurity"src="./images/about_us_inventory.jpg" alt="logo" />
+                           <img className="aboutusimgsecurity" src="./images/about_us_inventory.jpg" alt="logo" />
                             
                            </th>
                            
@@ -77,6 +78,8 @@ function AboutUsSection2() {
                </div>
 
                <div>
+               <br></br>
+               <br></br>
                    <table>
                        <tbody>
                            <tb>
@@ -86,12 +89,12 @@ function AboutUsSection2() {
 
                                 <th>
                                 <br></br>
-                                <img className="securityimg" src="./images/security.png" alt="logo" />
+                                <img className="securityimg" src="./images/merit.png" alt="logo" />
                            <h2><b className="bold_color" >1+</b> years</h2>
                     <p>Responding to an industry need, Export Portal started working 6 years ago to provide SMEs with a new, expedited, and secure way to trade internationally.</p>
 
         <br></br>
-        <img className="securityimg" src="./images/security.png" alt="logo" />
+        <img className="securityimg" src="./images/sri_lanka.png" alt="logo" />
                            <h2><b className="bold_color" >Island</b>-Wide</h2>
                     <p>We have a truly global presence, with users in 54 countries and growing. With our international coverage, we can provide service to buyers, sellers, manufacturers, and freight forwarders all over.</p>
 
@@ -100,6 +103,46 @@ function AboutUsSection2() {
 
 
                                 </th>
+                            </tb>    
+                        </tbody>
+                    </table>
+               </div>
+
+        <br></br>
+        <br></br>
+               
+               <div>
+               </div>
+               <div>
+                   <table>
+                       <tbody>
+                           <tb>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+                                <th> 
+                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                </th>
+
+
                             </tb>    
                         </tbody>
                     </table>
