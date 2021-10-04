@@ -37,7 +37,7 @@ useEffect(() =>{
 
             <ul className ={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
-                    <Link to='/add-to-list' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                         Products
                     </Link>
                 </li>
@@ -49,7 +49,7 @@ useEffect(() =>{
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/about company' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/supplierorder' className='nav-links' onClick={closeMobileMenu}>
                         About
                     </Link>
                 </li>
