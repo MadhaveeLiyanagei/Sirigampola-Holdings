@@ -22,6 +22,18 @@ import CreateInventoryComponent from './components/CreateInventoryComponent';
 import UpdateInventoryComponent from './components/UpdateInventoryComponent';
 import ViewInventoryComponent from './components/ViewInventoryComponent';
 import InventoryReport from './components/InventoryReport';
+import CreateEmployeeComponent from "./components/CreateEmployeeComponent";
+import ListEmployeeLeavesComponent from "./components/ListEmployeeLeavesComponent";
+import CreateEmployeeLeavesComponent from "./components/CreateEmployeeLeavesComponent";
+import UpdateEmployeeLeavesComponent from "./components/UpdateEmployeeLeavesComponent";
+import ViewEmployeeLeavesComponent from "./components/ViewEmployeeLeavesComponent";
+import ListNoticesComponent from "./components/ListNoticesComponent";
+import CreateNoticesComponent from "./components/CreateNoticesComponent";
+import UpdateNoticeComponent from "./components/UpdateNoticeComponent";
+import ViewNoticesComponent from "./components/ViewNoticesComponent";
+import AdminEmployeeSideBar from "./components/AdminEmployeeSideBar";
+import EmployeeLeavesReport from "./components/EmployeeLeavesReport";
+
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -91,6 +103,15 @@ function App() {
         <Route path="/view-inventory/:inventoryID" component={ViewInventoryComponent}></Route>
         <Route path="/update-inventory/:inventoryID" component={UpdateInventoryComponent}></Route>
         <Route path="/inventoryreport" component={InventoryReport}></Route>
+        <Route path="/employeeLeaves" component={ListEmployeeLeavesComponent}/>
+        <Route path="/add-employeeLeaves" component={CreateEmployeeLeavesComponent}/>
+        <Route path="/update-employeeLeaves/:leaveNumber" component={UpdateEmployeeLeavesComponent}/>
+        <Route path="/view-employeeLeaves/:leaveNumber" component={ViewEmployeeLeavesComponent}/>
+        <Route path="/adNotices" component={ListNoticesComponent} />
+        <Route path="/add-adNotices" component={CreateNoticesComponent} />
+        <Route path="/update-adNotices/:id" component={UpdateNoticeComponent}/>
+        <Route path="/view-adNotices/:id"component={ViewNoticesComponent}/>
+        <Route path="/leavegen" component={EmployeeLeavesReport}></Route>
 
         {/*<Route path = "/update/:id" component = {UpdateBuyerOrdersComponent}></Route> */}
         
