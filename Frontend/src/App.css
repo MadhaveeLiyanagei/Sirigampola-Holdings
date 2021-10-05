@@ -107,3 +107,14 @@
     height: 100% !important;
 
   }
+
+#outer
+{
+    width:100%;
+     
+    margin: 4px 2px;
+}
+.inner
+{
+    display: inline-block;
+}

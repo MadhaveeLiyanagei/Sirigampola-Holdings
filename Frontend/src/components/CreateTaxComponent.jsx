@@ -15,16 +15,16 @@ class CreateTaxComponent extends Component {
             countryCode: '',
             preTaxPrice: '',
             taxRate: '',
-            subTotal: '',
+             
             vat: '',
-            totalPrice: '',
+             
             productIDError: '',
             countryCodeError: '',
             preTaxPriceError: '',
             taxRateError: '',
-            subTotalError: '',
+             
             vatError: '',
-            totalPriceError: '',
+             
 
         }
         
@@ -47,9 +47,9 @@ class CreateTaxComponent extends Component {
                     countryCode: tax.countryCode, 
                     preTaxPrice: tax.preTaxPrice, 
                     taxRate: tax.taxRate, 
-                    subTotal: tax.subTotal, 
+                    
                     vat: tax.vat,
-                    totalPrice: tax.totalPrice
+                     
                 });
             });
         }  
@@ -73,7 +73,7 @@ class CreateTaxComponent extends Component {
         let countryCodeError='';
         let preTaxPriceError='';
         let taxRateError='';
-        let subTotalError='';
+         
         let vatError='';
         let totalPriceError='';
 
@@ -94,22 +94,17 @@ class CreateTaxComponent extends Component {
             taxRateError = "Please fill out this field";
         }
 
-        if(!this.state.subTotal){
-            subTotalError = "Please fill out this field";
-        }
+         
 
         if(!this.state.vat){
             vatError = "Please fill out this field";
         }
 
-        if(!this.state.totalPrice){
-            totalPriceError = "Please fill out this field";
-        }
-
          
-        if(productIDError || countryCodeError || preTaxPriceError || taxRateError || subTotalError || vatError || totalPriceError){
+         
+        if(productIDError || countryCodeError || preTaxPriceError || taxRateError ||  vatError ){
 
-            this.setState({productIDError,countryCodeError,preTaxPriceError,taxRateError,subTotalError,vatError,totalPriceError});
+            this.setState({productIDError,countryCodeError,preTaxPriceError,taxRateError, vatError});
 
             return false;
 
@@ -119,7 +114,7 @@ class CreateTaxComponent extends Component {
 
     saveOrdUpdateTax = (e) => {
         e.preventDefault();
-        let tax = {productID: this.state.productID, countryCode: this.state.countryCode, preTaxPrice: this.state.preTaxPrice, taxRate: this.state.taxRate, subTotal: this.state.subTotal, vat: this.state.vat, totalPrice: this.state.totalPrice};
+        let tax = {productID: this.state.productID, countryCode: this.state.countryCode, preTaxPrice: this.state.preTaxPrice, taxRate: this.state.taxRate, vat: this.state.vat};
         const isValid = this.validate();
         if(isValid){
         console.log('tax => ' + JSON.stringify(tax));
@@ -151,15 +146,11 @@ class CreateTaxComponent extends Component {
     changeTaxRateHandler= (event) => {
         this.setState({taxRate: event.target.value});
     }
-    changeSubTotalHandler= (event) => {
-        this.setState({subTotal: event.target.value});
-    }
+     
     changeVatHandler= (event) => {
         this.setState({vat: event.target.value});
     }
-    changeTotalPriceHandler= (event) => {
-        this.setState({totalPrice: event.target.value});
-    }
+     
 
     cancel(){
         this.props.history.push('/Tax');
@@ -211,12 +202,7 @@ class CreateTaxComponent extends Component {
                                                <div style={{fontSize: 12, color: "red"}}>{this.state.taxRateError}</div>
                                                   
                                        </div>
-                                       <div className = "form-group">
-                                           <label> Sub total :</label>
-                                           <input placeholder="Sub total" name="subTotal" className="form-control"
-                                                value={this.state.subTotal} onChange={this.changeSubTotalHandler}/>
-                                                <div style={{fontSize: 12, color: "red"}}>{this.state.subTotalError}</div>
-                                       </div>
+                                        
                                        <div className = "form-group">
                                            <label> VAT :</label>
                                            <input placeholder="VAT" name="vat" className="form-control"
@@ -224,12 +210,7 @@ class CreateTaxComponent extends Component {
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.vatError}</div>
             
                                        </div>
-                                       <div className = "form-group">
-                                           <label> Total price :</label>
-                                           <input placeholder="Total price" name="totalPrice" className="form-control"
-                                                value={this.state.totalPrice} onChange={this.changeTotalPriceHandler}/>
-                                                <div style={{fontSize: 12, color: "red"}}>{this.state.totalPriceError}</div>
-                                       </div>
+                                        
                                         <br></br>
                                        <button className="btn btn-success" onClick={this.saveOrUpdateTax}>Save</button>
                                        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>

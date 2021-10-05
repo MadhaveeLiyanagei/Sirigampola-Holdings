@@ -142,13 +142,13 @@ searchProductID(event){
       
 
                 <h2 className="text-center">Tax Table</h2>
-                   
-                    <button className="btn btn-primary" onClick={this.addTax}>+ New Tax</button>
-                    <br></br>
+                     <div id="outer">
+                     <div class="inner">  <button className="btn btn-primary" style={{marginRight:"2px"}} onClick={this.addTax}>+ New Tax</button> </div>
+                     <div class="inner">  <input type="text" class="form-control" style={{marginLeft:"30px"}} placeholder="Search ProductID" value={this.state.searchId} onChange={this.searchProductID.bind(this)}/></div>
+                     </div>
                     <div className = "form-group col-md-4">
 
-                    <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search ProductID" value={this.state.searchId} onChange={this.searchProductID.bind(this)}/>
-
+                     
                     </div>
                 <div className ="row">
                         <table className = "table table-striped table-bordered">
