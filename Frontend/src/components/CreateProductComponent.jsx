@@ -158,7 +158,7 @@ class CreateProductComponent extends Component {
 
                   <div className="form-group">
                     <label>
-                        {/*imageuploding*/}
+                        
                       <b>Product Image:</b>{" "}
                     </label>
                     <input type="file" name="productImage" className="form-control" value={this.state.productImage} onChange={this.changeProductImageHandler} accept="image/png, image/jpeg" />
