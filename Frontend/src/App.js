@@ -28,6 +28,12 @@ import CreateProductComponent from './components/CreateProductComponent';
 import UpdateProductComponent from './components/UpdateProductComponent';
 import ViewProductComponent from './components/ViewProductComponent';
  
+import ListInventoryComponent from './components/ListInventoryComponent';
+import CreateInventoryComponent from './components/CreateInventoryComponent';
+import UpdateInventoryComponent from './components/UpdateInventoryComponent';
+import ViewInventoryComponent from './components/ViewInventoryComponent';
+import InventoryReport from './components/InventoryReport';
+
 function App() {
   return (
       
@@ -67,6 +73,12 @@ function App() {
         <Route path = "/add-product" component = {CreateProductComponent}></Route>  
         <Route path = "/update-product/:productID" component = {UpdateProductComponent}></Route>
         <Route path = "/view-product/:productID" component = {ViewProductComponent}></Route>
+
+        <Route path="/inventory" component={ListInventoryComponent}></Route>
+        <Route path="/add-inventory" component={CreateInventoryComponent}></Route>
+        <Route path="/view-inventory/:inventoryID" component={ViewInventoryComponent}></Route>
+        <Route path="/update-inventory/:inventoryID" component={UpdateInventoryComponent}></Route>
+        <Route path="/inventoryreport" component={InventoryReport}></Route>
          
       </Switch>
        <Footer/>

@@ -13,7 +13,7 @@ function Cards() {
               src='images/inventory.jpg'
               text='Explore the hidden waterfall deep inside the Amazon Jungle'
               label='Inventory Management'
-              path='/services'
+              path='/inventory'
             />
             <CardItem
               src='images/product.jpg'
