@@ -139,7 +139,7 @@ class ListBuyerComponent extends Component {
                 <div class="topnav" >
                      <a class="active" href="http://localhost:3000/profile">Buyer</a>
                      <a class="active" href="http://localhost:3000/Employee">Employee</a>
-                     <a class="active" href="http://localhost:3000/Su pplier">Supplier</a>
+                     <a class="active" href="http://localhost:3000/Supplier">Supplier</a>
   
                     
         </div>

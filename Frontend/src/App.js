@@ -22,6 +22,7 @@ import SupplierReport from './components/SupplierReport';
 import Login from './components/Login/Login';
 import AdminHome from './pages/AdminHome';
 import Register from './components/Register';
+import Welcomepage from './pages/Welcomepage';
 
 
 
@@ -34,7 +35,8 @@ function App() {
    
      
       <Switch> 
-        <Route path = '/' exact component = {Login} />
+         <Route path = '/' exact component = {Welcomepage} />
+        <Route path = '/login'  component = {Login} />
         <Route path = '/Home'  component = {Home} />
         <Route path = '/AdminHome'  component = {AdminHome} />  
 

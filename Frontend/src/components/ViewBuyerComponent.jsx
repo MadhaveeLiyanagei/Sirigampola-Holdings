@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BuyerService from '../services/BuyerService';
+import AdminNavbar from './AdminNavbar';
 
 class ViewBuyerComponent extends Component {
         constructor(props){
@@ -22,6 +23,7 @@ class ViewBuyerComponent extends Component {
     render() {
         return (
             <div>
+                <AdminNavbar/>
                 <br></br>
                 <div className = "card col-md-6 offset-md-3"  style ={{height:550}}>
                 <br></br>

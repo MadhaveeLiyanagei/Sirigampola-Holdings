@@ -145,7 +145,7 @@ class ListSupplierComponent extends Component {
 
                     <h2 className="text-center">Supplier List</h2>
                    
-               <button className="btn btn-primary" onClick={this.addSupplier}>Add Supplier</button> 
+              {/*<button className="btn btn-primary" onClick={this.addSupplier}>Add Supplier</button>*/} 
                <div className = "form-group col-md-4">
 
                <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Supplier Name" value={this.state.searchId} onChange={this.searchSupplierName.bind(this)}/>
