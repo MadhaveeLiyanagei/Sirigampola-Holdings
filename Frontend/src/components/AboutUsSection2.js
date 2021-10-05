@@ -4,8 +4,6 @@ import './AboutUsSection.css';
 import './HeroSection.css';
 import './Cards.css';
 
-
-
 function AboutUsSection2() {
     return (
        

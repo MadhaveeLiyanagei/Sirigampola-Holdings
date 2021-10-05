@@ -26,7 +26,6 @@ class AddCourierDeliveryComponent extends Component {
            this.changePhoneHandler = this.changePhoneHandler.bind(this);
            this.updateDelivery =this.updateDelivery.bind(this);
 
-
         }
 
         notify() {

@@ -182,7 +182,7 @@ class CreateBuyerOrdersComponent extends Component {
 
 
     cancel() {
-        this.props.history.push('/Orders');
+        this.props.history.push('/Home');
     }
 
     getTitle() {
