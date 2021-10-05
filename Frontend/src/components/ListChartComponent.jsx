@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import IncomeService from '../services/IncomeService';
-import { Button } from './Button';
 import './HeaderFinance.css';
 import SoloAlert from 'soloalert'
 import {Link } from "react-router-dom";
 
 
-class ListIncomeComponent extends Component {
+class ListTaxComponent extends Component {
    constructor(props) {
        super(props)
 
@@ -15,85 +14,8 @@ class ListIncomeComponent extends Component {
               searchId:''
                
        }
-       this.addIncome = this.addIncome.bind(this);
-       this.editIncome = this.editIncome.bind(this);
-       this.deleteIncome = this.deleteIncome.bind(this);
+        
        }
-
-
-       deleteIncome(incomeID) {
-           
-        SoloAlert.confirm({
-
-            title: "Confirm Delete",
-            body: "Are you sure ?",
-            theme: "dark",
-            useTransparency: true,
-            onOk: async function () {
-
-                try {
-                    IncomeService.deleteIncome(incomeID)
-                   await this.setState({
-                        incomes: this.state.incomes.filter(income => income.incomeID !== incomeID)
-                    });
-
-
-                    SoloAlert.alert({
-                        title: "Welcome!",
-                        body: "Deletion is successful",
-                        icon: "success",
-                        theme: "dark",
-                        useTransparency: true,
-                        onOk: function () {
-                            window.location = "/Finance"
-                        },
-
-                    });
-
-                } catch (err) {
-                    SoloAlert.alert({
-                        title: "Welcome!",
-                        body: "Deletion is successful",
-                        icon: "success",
-                        theme: "dark",
-                        useTransparency: true,
-                        onOk: function () {
-                            window.location = "/Finance"
-                        },
-
-                    });
-                }
-            },
-            onCancel: function () {
-                SoloAlert.alert({
-                    title: "Oops!",
-                    body: "You canceled delete request",
-                    icon: "warning",
-                    theme: "dark",
-                    useTransparency: true,
-                    onOk: function () {
-
-                    },
-
-                });
-            },
-
-        })
-
-    }
-
-    viewIncome(incomeID){
-        this.props.history.push(`/view-income/${incomeID}`);
-    }
-
-    editIncome(incomeID){
-        this.props.history.push(`/add-income/${incomeID}`);
-    }
-
-    addIncome(){
-        this.props.history.push('/add-income/-1');
-    }
-
 
     componentDidMount(){
         IncomeService.getIncomes().then((res) => {
@@ -101,13 +23,7 @@ class ListIncomeComponent extends Component {
         });
 }
 
-searchTransaction(event){
-
-    this.setState({ searchId: event.target.value.substr(0,
-
-        20)});
-
-    }
+ 
 
 
     render() {
@@ -137,20 +53,20 @@ searchTransaction(event){
                   <div className="container">  
                  
                  <div class="topnav" >
-                     <a class="active" href="http://localhost:3000/Finance">Income</a>
+                     <a href="http://localhost:3000/Finance">Income</a>
                      <a href="http://localhost:3000/Expense">Expense</a>
                      <a href="http://localhost:3000/Tax">Tax Rates</a>
-                     <a href="http://localhost:3000/Chart">Reports & Graphs</a>
+                     <a class="active" href="http://localhost:3000/Chart">Reports & Graphs</a>
         </div> 
       
 
-                <h2 className="text-center">History of Assets</h2>
+                <h2 className="text-center">Reports & Charts</h2>
                    
-                    <button className="btn btn-primary" onClick={this.addIncome}>+ New Transaction</button>
+                     
                     <br></br>
                     <div className = "form-group col-md-4">
 
-                    <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search Transaction" value={this.state.searchId} onChange={this.searchTransaction.bind(this)}/>
+                      
 
                     </div>
                 <div className ="row">
@@ -164,9 +80,8 @@ searchTransaction(event){
                                         <th>Category</th>
                                         <th>Description</th>
                                         <th>Amount</th>
-                                      {/*  <th>Actions</th> */}
-                                      {/*  <th>***********Actions************</th> */}
-                                         <th>Actions : Update / Delete / View</th> 
+                                      
+                                          
                                     </tr>
                             </thead>
 
@@ -185,13 +100,7 @@ searchTransaction(event){
                                             <td> {income.incomeCategory}</td>
                                             <td> {income.description}</td>
                                             <td> {income.amount}</td>
-                                            <td>
-                                               <button onClick={ () => this.editIncome(income.incomeID)} className="button-up">Update </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteIncome(income.incomeID)} className="button-dele">Delete </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewIncome(income.incomeID)} className="button-view">View </button>
-                                            </td>
                                              
-
                                         </tr>
                                     )
                                 }
@@ -236,4 +145,4 @@ searchTransaction(event){
     }
 }
 
-export default ListIncomeComponent
+export default ListTaxComponent

@@ -135,7 +135,7 @@ class ListExpenseComponent extends Component {
                      <a href="http://localhost:3000/Finance">Income</a>
                      <a class="active" href="http://localhost:3000/Expense">Expense</a>
                      <a href="http://localhost:3000/Tax">Tax Rates</a>
-                     <a href="#about">Reports & Graphs</a>
+                     <a href="http://localhost:3000/Chart">Reports & Graphs</a>
         </div> 
           
 

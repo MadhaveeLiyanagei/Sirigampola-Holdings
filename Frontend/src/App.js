@@ -20,6 +20,7 @@ import ListTaxComponent from './components/ListTaxComponent';
 import CreateTaxComponent from './components/CreateTaxComponent';
 import ViewTaxComponent from './components/ViewTaxComponent';
 import TaxReport from './components/TaxReport';
+import ListChartComponent from './components/ListChartComponent';
  
 function App() {
   return (
@@ -38,7 +39,8 @@ function App() {
         <Route path = '/Tax' component = {ListTaxComponent} /> 
         <Route path = "/IncomeReport" component = {IncomeReport} />  
         <Route path = "/ExpenseReport" component = {ExpenseReport} />  
-        <Route path = "/TaxReport" component = {TaxReport} />  
+        <Route path = "/TaxReport" component = {TaxReport} /> 
+        <Route path = "/Chart" component = {ListChartComponent} />   
          
         // step 1
         <Route path = '/add-income/:incomeID' component = {CreateIncomeComponent} />  
