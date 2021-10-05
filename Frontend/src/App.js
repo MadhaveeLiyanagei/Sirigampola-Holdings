@@ -5,11 +5,11 @@ import { BrowserRouter  as Router, Switch, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './App.css';
 import AdminHome from './pages/AdminHome';
+
 import ListIncomeComponent from './components/ListIncomeComponent';
 import CreateIncomeComponent from './components/CreateIncomeComponent';
 import UpdateIncomeComponent from './components/UpdateIncomeComponent';
 import ViewIncomeComponent from './components/ViewIncomeComponent';
-
 import ListExpenseComponent from './components/ListExpenseComponent';
 import CreateExpenseComponent from './components/CreateExpenseComponent';
 import UpdateExpenseComponent from './components/UpdateExpenseComponent';
@@ -22,6 +22,11 @@ import ViewTaxComponent from './components/ViewTaxComponent';
 import TaxReport from './components/TaxReport';
 import ListChartComponent from './components/ListChartComponent';
 import ChartReport from './components/ChartReport';
+
+import ListProductComponent from './components/ListProductComponent';
+import CreateProductComponent from './components/CreateProductComponent';
+import UpdateProductComponent from './components/UpdateProductComponent';
+import ViewProductComponent from './components/ViewProductComponent';
  
 function App() {
   return (
@@ -44,21 +49,24 @@ function App() {
         <Route path = "/TaxReport" component = {TaxReport} /> 
         <Route path = "/ChartReport" component = {ChartReport} /> 
            
-         
-        // step 1
         <Route path = '/add-income/:incomeID' component = {CreateIncomeComponent} />  
        {/* <Route path = '/update-income/:incomeID' component = {UpdateIncomeComponent} /> */}  
        <Route path = '/view-income/:incomeID' component = {ViewIncomeComponent} /> 
 
-       // step 1
+        
         <Route path = '/add-expense/:expenseID' component = {CreateExpenseComponent} />  
        {/* <Route path = '/update-expense/:expenseID' component = {UpdateExpenseComponent} /> */}  
        <Route path = '/view-expense/:expenseID' component = {ViewExpenseComponent} /> 
 
-       // step 1
+        
         <Route path = '/add-tax/:taxID' component = {CreateTaxComponent} />  
        {/* <Route path = '/update-tax/:taxID' component = {UpdateTaxComponent} /> */}  
         <Route path = '/view-tax/:taxID' component = {ViewTaxComponent} />  
+
+        <Route path = "/product" component = {ListProductComponent}></Route>
+        <Route path = "/add-product" component = {CreateProductComponent}></Route>  
+        <Route path = "/update-product/:productID" component = {UpdateProductComponent}></Route>
+        <Route path = "/view-product/:productID" component = {ViewProductComponent}></Route>
          
       </Switch>
       {/* <Footer/>*/}

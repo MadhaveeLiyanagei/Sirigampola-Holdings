@@ -138,6 +138,8 @@ class CreateIncomeComponent extends Component {
         this.setState({amount: event.target.value});
     }
 
+     
+
     cancel(){
         this.props.history.push('/Finance');
     }
@@ -194,10 +196,17 @@ class CreateIncomeComponent extends Component {
                                        </div>
                                        <div className = "form-group">
                                            <label> Amount :</label>
-                                           <input placeholder="Amount" name="amount" className="form-control"
-                                                value={this.state.amount} onChange={this.changeAmountHandler}/>
+                                           <input type="number"placeholder="Amount" name="amount" className="form-control"
+                                                value={this.state.amount} onChange={this.changeAmountHandler} />
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.amountError}</div>
+                                                
                                        </div>
+
+                                       
+                                        
+                                         
+                                        
+
                                         <br></br>
                                        <button className="btn btn-success" onClick={this.saveOrUpdateIncome}>Save</button>
                                        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>

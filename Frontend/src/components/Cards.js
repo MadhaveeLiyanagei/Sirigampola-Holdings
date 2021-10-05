@@ -19,7 +19,7 @@ function Cards() {
               src='images/product.jpg'
               text='Travel through the Islands of Bali in a Private Cruise'
               label='Product Management'
-              path='/services'
+              path='/product'
             />
 
             <CardItem
