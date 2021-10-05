@@ -143,7 +143,7 @@ class ListBuyerComponent extends Component {
         </div>
                 <h2 className="text-center">Buyer List</h2>
     
-                    <button className="btn btn-primary" onClick={this.addBuyer}>Add Buyer</button>
+                    {/*<button className="btn btn-primary" onClick={this.addBuyer}>Add Buyer</button>*/}
 
                     <div className = "form-group col-md-4">
 

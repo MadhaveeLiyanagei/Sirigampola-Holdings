@@ -174,29 +174,39 @@ class CreateSupplierComponent extends Component {
                                       <label> company Name: </label> 
                                       <input placeholder="Name" name="suppliername" className="form-control"
                                          value = {this.state.suppliername} onChange={this.ChangenameHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.suppliernameError }</div>
+                                        
                                         
                                    </div>
                                    <div className = "form-group">
                                       <label>Email: </label> 
                                       <input placeholder="email" name="supplieremail" className="form-control"
                                          value = {this.state.supplieremail} onChange={this.ChangeemailHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplieremailError }</div>
+                                        
                                      </div>   
                                      <div className = "form-group">
                                       <label> Company Phone number: </label> 
                                       <input placeholder="phone number" name="supplierphone" className="form-control"
                                          value = {this.state.supplierphone} onChange={this.ChangephoneHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplierphoneError }</div>
+                                        
                                          
                                    </div> 
                                    <div className = "form-group">
                                       <label>User Name: </label> 
                                       <input placeholder="User Name" name="supplierusername" className="form-control"
                                          value = {this.state.supplierusername} onChange={this.ChangeuserNameHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplierusernameError }</div>
+                                        
                                          
                                    </div>  
                                    <div className = "form-group">
                                       <label>Password: </label> 
                                       <input placeholder="Password" name="suppliyerpassword" className="form-control"
                                          value = {this.state.supplierpassword} onChange={this.ChangepasswordHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplierpasswordError }</div>
+                                        
                                          
                                    </div>
 
@@ -204,6 +214,8 @@ class CreateSupplierComponent extends Component {
                                       <label> company Address: </label> 
                                       <input placeholder="Address" name="supplieraddress" className="form-control"
                                          value = {this.state.supplieraddress} onChange={this.ChangeaddressHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplieraddressError }</div>
+                                        
                                         
                                    </div>  
 

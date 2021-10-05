@@ -174,18 +174,21 @@ class CreateEmployeeComponent extends Component {
                                       <label>Name: </label> 
                                       <input placeholder="Name" name="employeename" className="form-control"
                                          value = {this.state.employeename} onChange={this.ChangenameHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.employeenameError }</div>
                                         
                                    </div>
                                    <div className = "form-group">
                                       <label>Email: </label> 
                                       <input placeholder="email" name="employeeemail" className="form-control"
                                          value = {this.state.employeeemail} onChange={this.ChangeemailHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.employeeemailError }</div>
                                      </div>
 
                                      <div className = "form-group">
                                       <label>Phone number: </label> 
                                       <input placeholder="phone number" name="employeephone" className="form-control"
                                          value = {this.state.employeephone} onChange={this.ChangephoneHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.employeephoneError }</div>
                                          
                                    </div> 
 
@@ -193,12 +196,14 @@ class CreateEmployeeComponent extends Component {
                                       <label>User Name: </label> 
                                       <input placeholder="User Name" name="employeeusername" className="form-control"
                                          value = {this.state.employeeusername} onChange={this.ChangeuserNameHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.employeeusernameError}</div>
                                          
                                    </div> 
                                    <div className = "form-group">
                                       <label>Password: </label> 
                                       <input placeholder="Password" name="employeepassword" className="form-control"
                                          value = {this.state.employeepassword} onChange={this.ChangepasswordHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.employeepasswordError }</div>
                                          
                                    </div>
 
@@ -206,11 +211,13 @@ class CreateEmployeeComponent extends Component {
                                       <label>Address: </label> 
                                       <input placeholder="Address" name="employeeaddress" className="form-control"
                                          value = {this.state.employeeaddress} onChange={this.ChangeaddressHandler}/>
+                                         <div style={{fontSize: 12, color: "red"}}>{this.state.employeeaddressError}</div>
                                         
                                    </div>
                                    <br></br>
                                    <button className="btn btn-success" onClick={this.saveOrupdateEmployee}>Save</button>
                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
+                                
 
                     </form>
                        </div>

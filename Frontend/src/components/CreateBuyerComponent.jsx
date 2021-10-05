@@ -111,7 +111,7 @@ class CreateBuyerComponent extends Component {
                if(this.state.id === '_add'){
                 BuyerService.createBuyer(buyer).then(res =>{
                     this.notify();
-                    this.props.history.push('/profile');
+                    this.props.history.push('/Home');
  
                 }).catch(error=> {alert("This profile is  not Available")});
                 
