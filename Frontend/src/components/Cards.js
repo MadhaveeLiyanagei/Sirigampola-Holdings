@@ -5,40 +5,47 @@ import CardItem from './CardItem';
 function Cards() {
   return (
     <div className='cards'>
-      <h1>Check out these EPIC Destinations!</h1>
+      <h1>Admin Panel</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
               src='images/inventory.jpg'
               text='Explore the hidden waterfall deep inside the Amazon Jungle'
-              label='Inventory'
+              label='Inventory Management'
               path='/services'
             />
             <CardItem
-              src='images/img-2.jpg'
+              src='images/product.jpg'
               text='Travel through the Islands of Bali in a Private Cruise'
-              label='Luxury'
+              label='Product Management'
+              path='/services'
+            />
+
+            <CardItem
+              src='images/employee.jpg'
+              text='Travel through the Islands of Bali in a Private Cruise'
+              label='Employee Management'
               path='/services'
             />
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-3.jpg'
+              src='images/order.jpg'
               text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-              label='Mystery'
+              label='Order Management'
               path='/services'
             />
             <CardItem
-              src='images/img-4.jpg'
+              src='images/finance.jpg'
               text='Experience Football on Top of the Himilayan Mountains'
-              label='Adventure'
-              path='/products'
+              label='Finance Management'
+              path='/Finance'
             />
             <CardItem
-              src='images/img-8.jpg'
+              src='images/distribution.jpg'
               text='Ride through the Sahara Desert on a guided camel tour'
-              label='Adrenaline'
+              label='Distribution Management'
               path='/sign-up'
             />
           </ul>
