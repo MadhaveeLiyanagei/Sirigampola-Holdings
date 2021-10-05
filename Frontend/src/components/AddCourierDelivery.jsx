@@ -50,10 +50,8 @@ class AddCourierDeliveryComponent extends Component {
                 order_phone_number: delivery.order_phone_number,
                 order_courier_name: delivery.order_courier_name,
 
-
             });
         });
-
                       }
 
                       updateDelivery = (e) => {
@@ -65,7 +63,6 @@ class AddCourierDeliveryComponent extends Component {
                             this.notify();
                         this.props.history.push('/delivery');
                         });
-
 
        }
 

@@ -78,7 +78,6 @@ class ListBuyerOrdersComponent extends Component {
 
         })
 
-
     }
 
     viewBuyerOrder(id) {
@@ -171,7 +170,7 @@ class ListBuyerOrdersComponent extends Component {
                         </tbody>
                     </table>
                      
-                    <button onClick={() => this.generateReport()} className ="btn-report"  > Monthly Report</button>
+                    <button onClick={() => this.generateReport()} className ="btn-report"  >Generate Report</button>
                 </div>
                 </div>
             </div>

@@ -22,7 +22,8 @@ class CreateBuyerOrdersComponent extends Component {
             addressError: '',
             contactError: '',
             dateError: '',
-            emailvError: ''
+            emailvError: '',
+            contactvError:''
 
 
         }
@@ -113,10 +114,33 @@ class CreateBuyerOrdersComponent extends Component {
         return true;
     }
 
+    contactNumberValidation(){
+        if(this.state.contact.length>10 || this.state.contact.length<10){
+            this.setState({
+                contactvError: "You should enter a valid Contact Number!"
+            });
+            return false;
+        }
+        return true;
+    }
+   
+    
+    /*nameValidation(){
+        const regex = /^(A-Za-z)$/i;
+        if (!this.state.username || regex.test(this.state.username) === false) {
+            this.setState({
+                namevError: "You cannot Enter only numbers!"
+            });
+            return false;
+        }
+        return true;
+    }*/
+
+
     saveOrUpdateBuyerOrders = (e) => {
         e.preventDefault();
         let BuyerOrders = { username: this.state.username, email: this.state.email, address: this.state.address, contact: this.state.contact, date: this.state.date };
-        const isValid = this.validate() && this.emailValidation();
+        const isValid = this.validate() && this.emailValidation() && this.contactNumberValidation() ;
         if (isValid) {
             console.log('BuyerOrders =>' + JSON.stringify(BuyerOrders));
 
@@ -145,7 +169,7 @@ class CreateBuyerOrdersComponent extends Component {
     }
 
     changeAddressHandler = (event) => {
-        this.setState({ address: event.target.value });
+        this.setState({ address: event.target.value});
     }
 
     changeContactHandler = (event) => {
@@ -155,6 +179,7 @@ class CreateBuyerOrdersComponent extends Component {
     changeDateHandler = (event) => {
         this.setState({ date: event.target.value });
     }
+
 
     cancel() {
         this.props.history.push('/Orders');
@@ -184,9 +209,10 @@ class CreateBuyerOrdersComponent extends Component {
                                 <form>
                                     <div className="form-group">
                                         <label><b> First Name: </b> </label>
-                                        <input placeholder="User Name" name="username" className="form-control"
+                                        <input placeholder="User Name" name="username"  className="form-control"
                                             value={this.state.username} onChange={this.changeUserNameHandler} />
                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.userNameError}</div>
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.namevError}</div>
                                         <br></br>
                                     </div>
 
@@ -215,6 +241,7 @@ class CreateBuyerOrdersComponent extends Component {
                                         <input placeholder="Contact" name="contact" className="form-control"
                                             value={this.state.contact} onChange={this.changeContactHandler} />                                       
                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.contactError}</div>
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.contactvError}</div> 
                                         <br></br>
                                     </div>
 

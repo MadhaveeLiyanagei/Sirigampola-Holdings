@@ -128,19 +128,16 @@
   .report{
     width:800px;
     font-size: 14px;
-    
-
   }
 
   .rGenerate{
     margin: 0 auto;
-    width: 50% !important;
+    width: 55% !important;
     height: 100% !important;
-
   }
 
   .button-update:hover {opacity: 2}
-
+  
   .setFontSizeOne {
     font-Size: 15px; 
   }
@@ -153,8 +150,6 @@
   .setFontSizeFour {
     font-Size: 30px;
   }
-
-
   .card{
     height:100% ;
     width: 400%;
@@ -257,10 +252,6 @@
   .invntry_tbl_header {
     width: 100%;
   }
-  
-  
-  
-  
   
   .bgclr {
     background-color: #e2ddd6;

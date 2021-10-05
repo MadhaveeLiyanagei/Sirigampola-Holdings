@@ -53,6 +53,7 @@ class Login extends Component {
                     }
                 }
             )
+
     }
 
     
@@ -70,7 +71,6 @@ class Login extends Component {
                     <Form.Label style={{fontWeight:"bold", fontSize:30, paddingBottom:20}}>LOGIN</Form.Label>
                     {this.state.hasLoginFailed && <Alert variant="danger">Invalid credentials</Alert>}
                     
-
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>User ID</Form.Label>
                         <Form.Control type="text" placeholder="User ID" name="userId" value={this.state.userId} onChange={this.handleChange} />

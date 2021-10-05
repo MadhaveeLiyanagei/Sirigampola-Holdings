@@ -43,11 +43,11 @@ class BuyerOrderReport extends Component {
                     <table className="report">
                         <thead>
                             <tr style={tableStyle}>
-                                <th style={tableStyle}><center>User Name</center></th>
-                                <th style={tableStyle}><center>Address</center></th>
-                                <th style={tableStyle}><center>Email Address</center></th>
-                                <th style={tableStyle}><center>Contact</center></th>
-                                <th style={tableStyle}><center>Date</center></th>
+                                <th style={tableStyle}>User Name</th>
+                                <th style={tableStyle}>Address</th>
+                                <th style={tableStyle}>Email Address</th>
+                                <th style={tableStyle}>Contact</th>
+                                <th style={tableStyle}>Date</th>
                             </tr>
                         </thead>
 
@@ -59,10 +59,10 @@ class BuyerOrderReport extends Component {
                                     BuyerOrders =>
                                         <tr key={BuyerOrders.id}>
                                             <td style={tableStyle}>{BuyerOrders.username}</td>
-                                            <td style={tableStyle}><center>{BuyerOrders.address}</center></td>
-                                            <td style={tableStyle}><center>{BuyerOrders.email}</center></td>
-                                            <td style={tableStyle}><center>{BuyerOrders.contact}</center></td>
-                                            <td style={tableStyle}><center>{BuyerOrders.date}</center></td>                                          
+                                            <td style={tableStyle}>{BuyerOrders.address}</td>
+                                            <td style={tableStyle}>{BuyerOrders.email}</td>
+                                            <td style={tableStyle}>{BuyerOrders.contact}</td>
+                                            <td style={tableStyle}>{BuyerOrders.date}</td>                                          
                                         </tr>
                                 )
                             }
