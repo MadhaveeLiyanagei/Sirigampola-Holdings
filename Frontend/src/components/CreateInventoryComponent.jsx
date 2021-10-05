@@ -227,7 +227,7 @@ class CreateInventoryComponent extends Component {
                       <th>
                         <center>
                           <button
-                            className="btn btn-success"
+                            className="btn_save"
                             onClick={this.saveInventory}
                           >
                             <b>Save</b>
@@ -237,7 +237,7 @@ class CreateInventoryComponent extends Component {
                       <th>
                         <center>
                           <button
-                            className="btn btn-danger"
+                            className="btn_cancel_cancel"
                             onClick={this.cancel.bind(this)}
                           >
                            <b> Cancel</b>

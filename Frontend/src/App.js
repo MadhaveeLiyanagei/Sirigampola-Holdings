@@ -49,6 +49,7 @@ import UpdateDeliveryComponent from './components/UpdateDeliveryComponent';
 import ViewDeliveryComponent from './components/ViewDeliveryComponent';
 import AddCourierDelivery from './components/AddCourierDelivery';
 
+
 toast.configure()
 function App() {
 
@@ -60,7 +61,7 @@ function App() {
       if(ProductExist){
         if(ProductExist.quantity>=20){
           toast.warn('Order level exceeded!', {position: toast.POSITION.TOP_CENTER, autoClose: 2000})
-
+          
         }
         else{setCartItems(       
         cartItems.map((item) =>        
@@ -74,6 +75,7 @@ function App() {
             setCartItems([...cartItems,{...product, quantity: 1}]); 
       }
     };
+
   const handleRemoveProduct = (product) =>{
     const ProductExist = cartItems.find((item)=> item.id === product.id);
     if(ProductExist.quantity===1){

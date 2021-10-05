@@ -836,3 +836,47 @@
 .container1{
   width: 100%;
 }
+
+.btn_save {
+  background-color: #1cacff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.9;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn_save:hover {
+  opacity: 0.6;
+  color: white;
+  }
+
+
+.btn_cancel_cancel {
+    background-color: #dd1d1d;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn_cancel_cancel:hover {
+    opacity: 0.6;
+    color: rgb(255, 255, 255);
+  }
+  
