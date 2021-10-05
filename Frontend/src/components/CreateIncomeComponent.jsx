@@ -166,37 +166,37 @@ class CreateIncomeComponent extends Component {
                                <div className="card-body">
                                    <form>
                                        <div className = "form-group">
-                                           <label> Transaction :</label>
+                                           <label><b> Transaction :</b></label>
                                            <input placeholder="Transaction" name="transaction" className="form-control"
                                                 value={this.state.transaction} onChange={this.changeTransactionHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.transactionError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Payment From :</label>
+                                           <label> <b>Payment From :</b></label>
                                            <input placeholder="Payment From" name="paymentFrom" className="form-control"
                                                 value={this.state.paymentFrom} onChange={this.changePaymentFromHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.paymentFromError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Date :</label>
+                                           <label><b>Date :</b></label>
                                            <input placeholder="Date" name="date" type="date" className="form-control"
                                                 value={this.state.date} onChange={this.changeDateHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.dateError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Income Category :</label>
+                                           <label> <b>Income Category :</b></label>
                                           <input placeholder="Income Category" name="incomeCategory" className="form-control" 
                                                value={this.state.incomeCategory} onChange={this.changeIncomeCategoryHandler}/>
                                                   
                                        </div>
                                        <div className = "form-group">
-                                           <label> Description :</label>
+                                           <label> <b>Description :</b></label>
                                            <input placeholder="Description" name="description" className="form-control"
                                                 value={this.state.description} onChange={this.changeDescriptionHandler}/>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Amount :</label>
-                                           <input type="number"placeholder="Amount" name="amount" className="form-control"
+                                           <label> <b> Amount :</b></label>
+                                           <input type="number" placeholder="Amount" name="amount" className="form-control"
                                                 value={this.state.amount} onChange={this.changeAmountHandler} />
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.amountError}</div>
                                                 

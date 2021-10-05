@@ -22,6 +22,10 @@ class CreateTaxComponent extends Component {
             countryCodeError: '',
             preTaxPriceError: '',
             taxRateError: '',
+            taxRatevError: '',
+            vatvError: '',
+            
+            
              
             vatError: '',
              
@@ -112,10 +116,37 @@ class CreateTaxComponent extends Component {
         return true;
     }
 
+    TaxRateValidation(){
+       {/* if(this.state.taxRate.length>2 || this.state.taxRate!="100"){
+            this.setState({taxRatevError: "You should enter a valid Percentage!"});
+            return false;
+        }
+        return true;
+    } */}
+
+       if(this.state.taxRate.length<=2 || this.state.taxRate=="100"){
+        return true;
+         }
+         else {
+         this.setState({taxRatevError: "You should enter a valid Percentage!"});
+        return false; }
+
+        }
+
+        VatValidation(){
+            if(this.state.vat.length<=2 || this.state.vat=="100"){
+             return true;
+              }
+              else {
+              this.setState({vatvError: "You should enter a valid Percentage!"});
+             return false; }
+     
+             }
+
     saveOrdUpdateTax = (e) => {
         e.preventDefault();
         let tax = {productID: this.state.productID, countryCode: this.state.countryCode, preTaxPrice: this.state.preTaxPrice, taxRate: this.state.taxRate, vat: this.state.vat};
-        const isValid = this.validate();
+        const isValid = this.validate() && this.TaxRateValidation() && this.VatValidation();
         if(isValid){
         console.log('tax => ' + JSON.stringify(tax));
 
@@ -146,6 +177,10 @@ class CreateTaxComponent extends Component {
     changeTaxRateHandler= (event) => {
         this.setState({taxRate: event.target.value});
     }
+
+     
+
+
      
     changeVatHandler= (event) => {
         this.setState({vat: event.target.value});
@@ -178,36 +213,40 @@ class CreateTaxComponent extends Component {
                                <div className="card-body">
                                    <form>
                                        <div className = "form-group">
-                                           <label> Product ID :</label>
+                                           <label> <b>Product ID :</b></label>
                                            <input placeholder="Product ID" name="productID" className="form-control"
                                                 value={this.state.productID} onChange={this.changeProductIDHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.productIDError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Country code :</label>
+                                           <label> <b>Country code :</b></label>
                                            <input placeholder="Country code" name="countryCode" className="form-control"
                                                 value={this.state.countryCode} onChange={this.changeCountryCodeHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.countryCodeError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Pre Tax price :</label>
-                                           <input placeholder="pre-tax price" name="preTaxPrice"  className="form-control"
+                                           <label> <b>Pre Tax price :</b></label>
+                                           <input  type="number" placeholder="pre-tax price" name="preTaxPrice"  className="form-control"
                                                 value={this.state.preTaxPrice} onChange={this.changePreTaxPriceHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.preTaxPriceError}</div>
                                        </div>
                                        <div className = "form-group">
-                                           <label> Tax rate :</label>
+                                           <label> <b> Tax rate : </b></label>
                                           <input placeholder="Tax rate" name="taxRate" className="form-control" 
                                                value={this.state.taxRate} onChange={this.changeTaxRateHandler}/>
                                                <div style={{fontSize: 12, color: "red"}}>{this.state.taxRateError}</div>
+                                               <div style={{ fontSize: 12, color: "red" }}>{this.state.taxRatevError}</div> 
                                                   
                                        </div>
+
+                                       
                                         
                                        <div className = "form-group">
-                                           <label> VAT :</label>
+                                           <label> <b>VAT :</b></label>
                                            <input placeholder="VAT" name="vat" className="form-control"
                                                 value={this.state.vat} onChange={this.changeVatHandler}/>
                                                 <div style={{fontSize: 12, color: "red"}}>{this.state.vatError}</div>
+                                                <div style={{ fontSize: 12, color: "red" }}>{this.state.vatvError}</div> 
             
                                        </div>
                                         

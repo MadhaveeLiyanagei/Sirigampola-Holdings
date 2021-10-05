@@ -35,7 +35,7 @@
  
 
 
-  .button-up {
+  .button-upp {
     background-color: #1b9a49;
     border: none;
     color: white; 
@@ -52,11 +52,11 @@
   }
 
 
-  .button-up:hover {opacity: 0.6} 
+  .button-upp:hover {opacity: 0.6} 
 
 
   
-  .button-view {
+  .button-vieww {
     background-color: #e4c517;
     border: none;
     color: black;
@@ -73,10 +73,10 @@
   }
 
   
-   .button-view:hover {opacity: 0.6} 
+   .button-vieww:hover {opacity: 0.6} 
 
   
-  .button-dele {
+  .button-delee {
     background-color: #ff0000;
     border: none;
     color: white;
@@ -93,13 +93,9 @@
   }
 
   
-  .button-dele:hover {opacity: 0.6} 
+  .button-delee:hover {opacity: 0.6} 
 
-
-    
-   
-
-
+  
   .rGenerate{
 
     margin: 0 auto;

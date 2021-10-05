@@ -26,31 +26,36 @@ class ViewIncomeComponent extends Component {
             <div>
                 <br></br>
                 <br></br>
-                <div className = "card col-md-6 offset-md-3">
+                <div className = "card col-md-6 offset-md-3" style={{backgroundColor:"#afeeee"}}>
                     <h3 className = "text-center"> View Income Details</h3>
                     <div className = "card-body">
                         <div className = "row">
-                            <label> Transaction :   { this.state.income.transaction }</label> 
+                            <label> <b>Transaction : </b>  { this.state.income.transaction }</label> 
 
                         </div>
+                        <br></br>
                         <div className = "row">
-                            <label> Payment From :  { this.state.income.paymentFrom }</label> 
+                            <label> <b>Payment From : </b> { this.state.income.paymentFrom }</label> 
 
                         </div>
+                        <br></br>
                         <div className = "row">
-                            <label> Date :   { this.state.income.date } </label>
+                            <label> <b>Date : </b>   { this.state.income.date } </label>
                 
                         </div>
+                        <br></br>
                         <div className = "row">
-                            <label> Income Category : { this.state.income.incomeCategory } </label>
+                            <label> <b>Income Category : </b> { this.state.income.incomeCategory } </label>
                              
                         </div>
+                        <br></br>
                         <div className = "row">
-                            <label> Description : { this.state.income.description } </label>
+                            <label> <b>Description : </b> { this.state.income.description } </label>
                              
                         </div>
+                        <br></br>
                         <div className = "row">
-                            <label> Amount : { this.state.income.amount } </label>
+                            <label> <b> Amount :</b> { this.state.income.amount } </label>
                             
                         </div>
                         

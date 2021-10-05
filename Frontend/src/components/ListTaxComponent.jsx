@@ -17,70 +17,11 @@ class ListTaxComponent extends Component {
        }
        this.addTax = this.addTax.bind(this);
        this.editTax = this.editTax.bind(this);
-       this.deleteTax = this.deleteTax.bind(this);
+        
        }
 
 
-       deleteTax(taxID) {
-           
-        SoloAlert.confirm({
-
-            title: "Confirm Delete",
-            body: "Are you sure ?",
-            theme: "dark",
-            useTransparency: true,
-            onOk: async function () {
-
-                try {
-                    TaxService.deleteTax(taxID)
-                   await this.setState({
-                        taxes: this.state.taxes.filter(tax => tax.taxID !== taxID)
-                    });
-
-
-                    SoloAlert.alert({
-                        title: "Welcome!",
-                        body: "Deletion is successful",
-                        icon: "success",
-                        theme: "dark",
-                        useTransparency: true,
-                        onOk: function () {
-                            window.location = "/Tax"
-                        },
-
-                    });
-
-                } catch (err) {
-                    SoloAlert.alert({
-                        title: "Welcome!",
-                        body: "Deletion is successful",
-                        icon: "success",
-                        theme: "dark",
-                        useTransparency: true,
-                        onOk: function () {
-                            window.location = "/Tax"
-                        },
-
-                    });
-                }
-            },
-            onCancel: function () {
-                SoloAlert.alert({
-                    title: "Oops!",
-                    body: "You canceled delete request",
-                    icon: "warning",
-                    theme: "dark",
-                    useTransparency: true,
-                    onOk: function () {
-
-                    },
-
-                });
-            },
-
-        })
-
-    }
+        
 
     viewTax(taxID){
         this.props.history.push(`/view-tax/${taxID}`);
@@ -151,7 +92,7 @@ searchProductID(event){
                      
                     </div>
                 <div className ="row">
-                        <table className = "table table-striped table-bordered">
+                        <table className = "table table-striped table-bordered" style={{backgroundColor:"#f2f2f2"}}>
 
                             <thead>
                                     <tr>
@@ -185,9 +126,9 @@ searchProductID(event){
                                             <td> {tax.vat}</td>
                                             <td> {totalPrice = (subTotal + (subTotal*tax.vat/100))}</td>
                                             <td>
-                                               <button onClick={ () => this.editTax(tax.taxID)} className="button-up">Update </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteTax(tax.taxID)} className="button-dele">Delete </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewTax(tax.taxID)} className="button-view">View </button>
+                                               <button onClick={ () => this.editTax(tax.taxID)} className="button-upp">Update </button>
+                                    
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewTax(tax.taxID)} className="button-vieww">View </button>
                                             </td>
                                              
 
@@ -204,7 +145,7 @@ searchProductID(event){
                                  
 
                 </div>
-                 <Link to="/TaxReport"><button className="buttonG">Generate Report  </button> </Link>
+                  
 
                    
                 </div>  

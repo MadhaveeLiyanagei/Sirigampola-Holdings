@@ -156,7 +156,7 @@ searchTransaction(event){
                     <div className = "form-group col-md-4">
                     </div>
                 <div className ="row">
-                        <table className = "table table-striped table-bordered">
+                        <table className = "table table-striped table-bordered" style={{backgroundColor:"#f2f2f2"}}>
 
                             <thead>
                                     <tr>
@@ -188,9 +188,9 @@ searchTransaction(event){
                                             <td> {income.description}</td>
                                             <td> {income.amount}</td>
                                             <td>
-                                               <button onClick={ () => this.editIncome(income.incomeID)} className="button-up">Update </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteIncome(income.incomeID)} className="button-dele">Delete </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewIncome(income.incomeID)} className="button-view">View </button>
+                                               <button onClick={ () => this.editIncome(income.incomeID)} className="button-upp">Update </button>
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteIncome(income.incomeID)} className="button-delee">Delete </button>
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewIncome(income.incomeID)} className="button-vieww">View </button>
                                             </td>
                                              
 
@@ -202,7 +202,7 @@ searchTransaction(event){
                       
                         <div className="col-md-8"></div> 
                       <div className="col-md-4">
-                        <div className="card card-body mt-3">
+                        <div className="card card-body mt-3" style={{backgroundColor:"#c0c0c0"}}>
                             <h4>Sub Total : 
                                 <span className="float-end">{totalPrice}</span>
                             </h4>

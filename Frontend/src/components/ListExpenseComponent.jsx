@@ -149,7 +149,7 @@ class ListExpenseComponent extends Component {
                     </div>
                 
                 <div className ="row">
-                        <table className = "table table-striped table-bordered">
+                        <table className = "table table-striped table-bordered" style={{backgroundColor:"#f2f2f2"}}>
 
                             <thead>
                                     <tr>
@@ -181,9 +181,9 @@ class ListExpenseComponent extends Component {
                                             <td> {expense.amount}</td>
                                              
                                             <td>
-                                               <button onClick={ () => this.editExpense(expense.expenseID)} className="button-up">Update </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteExpense(expense.expenseID)} className="button-dele">Delete </button>
-                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewExpense(expense.expenseID)} className="button-view">View </button>
+                                               <button onClick={ () => this.editExpense(expense.expenseID)} className="button-upp">Update </button>
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.deleteExpense(expense.expenseID)} className="button-delee">Delete </button>
+                                               <button style={{marginLeft: "4px"}} onClick={ () => this.viewExpense(expense.expenseID)} className="button-vieww">View </button>
                                             </td>
 
                                         </tr>
@@ -194,7 +194,7 @@ class ListExpenseComponent extends Component {
 
                         <div className="col-md-8"></div> 
                       <div className="col-md-4">
-                        <div className="card card-body mt-3">
+                        <div className="card card-body mt-3" style={{backgroundColor:"#c0c0c0"}}>
                             <h4>Sub Total : 
                                 <span className="float-end">{totalPrice}</span>
                             </h4>
