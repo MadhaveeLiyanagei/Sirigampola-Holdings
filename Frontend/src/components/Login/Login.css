@@ -1,0 +1,16 @@
+.form {
+    /* position: fixed; */
+    left: 30%;
+    right: 30%;
+    top: 24%;
+    bottom: 30%;
+}
+
+.form Form {
+    display: grid;
+}
+
+.form Label {
+    color: black;
+    font-weight: 600;
+}

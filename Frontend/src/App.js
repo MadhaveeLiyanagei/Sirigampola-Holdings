@@ -20,6 +20,7 @@ import MainContent from './components/mainContent';
 import ListSupplierOrder from './components/ListSupplierOrder';
 import AddSupplierComponent from './components/AddSupplierComponent';
 import ViewSupplierOrderComponent from './components/ViewSupplierOrderComponent';
+import Login from './components/Login/Login';
 
 function App() {
 
@@ -74,7 +75,8 @@ function App() {
         <HeaderComponent cartItem={cartItem}></HeaderComponent>
             <div className="container">
               <Switch>
-                <Route path = "/" exact component = {Home} ></Route>
+              <Route path = "/" exact component = {Login} ></Route>
+                <Route path = "/Home" component = {Home} ></Route>
                 <Route path = "/createorder" component = {ListCreateOrder} ></Route>
                 <Route path = "/add-order" component = {AddOrderComponent} ></Route>
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
