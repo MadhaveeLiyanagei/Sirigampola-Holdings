@@ -13,11 +13,11 @@ function Register() {
     }
 
 
-    function addEmployee(e){
+    /*function addEmployee(e){
         e.preventDefault()
         window.location="/add-employee/_add"
         //this.props.history.push('/add-employee/_add');
-    }
+    }*/
 
     function addSupplier(e){
         e.preventDefault()
@@ -40,8 +40,8 @@ function Register() {
 
 
                 {/*<Button className='btns' buttonStyle='btn--primary'
-                buttonSize ='btn--large'> AS A SUPPLIER<i className ='far fa-play-circle'/></Button>*/}
-                <button className="btn btn-primary" onClick={(e)=>addEmployee(e)}>AS A EMPLOYEE</button> 
+                buttonSize ='btn--large'> AS A SUPPLIER<i className ='far fa-play-circle'/></Button>
+            <button className="btn btn-primary" onClick={(e)=>addEmployee(e)}>AS A EMPLOYEE</button> */}
 
                 {/*<Button className='btns' buttonStyle='btn--primary'
                 buttonSize ='btn--large'> AS A EMPLOYEE<i className ='far fa-play-circle'/></Button>*/}
