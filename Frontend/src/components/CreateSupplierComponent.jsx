@@ -110,7 +110,7 @@ class CreateSupplierComponent extends Component {
            if(this.state.supplierid === '_add'){
                 SupplierService.createSupplier(supplier).then(res =>{
                     this.notify();
-                    this.props.history.push('/Supplier');
+                    this.props.history.push('/Home');
                 }).catch(error=> {alert("This profile is  not Available")});
                 
                 
