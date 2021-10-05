@@ -11,7 +11,7 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-            <img  style={{width:50}} class="logo" src="./images/importLogo.png" alt="" />SIRIGAMPOLA Holdings
+            <img  style={{width:50}} class="logo" src="./images/importLogo.png" alt="" />SIRIGAMPOLA HOLDINGS
               
             </Link>
           </div>

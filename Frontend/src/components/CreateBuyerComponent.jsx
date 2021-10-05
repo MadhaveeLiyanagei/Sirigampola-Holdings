@@ -3,6 +3,7 @@ import BuyerService from '../services/BuyerService';
 import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify';
 
+
 toast.configure()
 class CreateBuyerComponent extends Component {
            constructor(props){
@@ -176,7 +177,7 @@ class CreateBuyerComponent extends Component {
             this.setState({address: event.target.value});    
         }
         cancel(){
-            this.props.history.push('/profile');
+            this.props.history.push('/');
         }
 
         getTitle(){

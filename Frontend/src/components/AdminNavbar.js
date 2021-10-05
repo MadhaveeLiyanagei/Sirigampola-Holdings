@@ -73,7 +73,7 @@ useEffect(() =>{
         
  
             </ul>
-            {button && <Button buttonStyle = 'btn--outline' onClick={(e)=>logout(e)}>Logout</Button>}
+            {button && <Button className="btn btn-light"  onClick={(e)=>logout(e)}>Logout</Button>}
              </div>
             
              </nav>   

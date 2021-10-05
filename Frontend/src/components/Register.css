@@ -65,8 +65,15 @@ video {
     }
   
     .btn {
-      width: 100%;
-    }
+      cursor: pointer;
+      border: 1px solid #FFDE2B;
+      background-color: transparent;
+      height: 50px;
+      width: 200px;
+      color: #fff;
+      font-size: 1.5em;
+      box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   }
+}
   
  

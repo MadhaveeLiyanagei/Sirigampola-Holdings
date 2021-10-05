@@ -41,7 +41,7 @@ function App() {
         <Route path = '/Welcomepage'  component = {AdminHome} />
         <Route path = '/Home'  component = {Home} />
         <Route path = '/AdminHome'  component = {AdminHome} />  
-
+        <Route path = '/Welcomepage'  component = {Welcomepage} />
         <Route path = '/Register'  component = {Register} />  
 
 

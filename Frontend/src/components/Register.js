@@ -36,7 +36,7 @@ function Register() {
                {/* <Button className='btns' buttonStyle='btn--outline'
                 buttonSize ='btn--large'> AS A BUYER</Button>*/}
 
-                 <button className="btn btn-primary" onClick={(e)=>addBuyer(e)}>AS A BUYER</button>
+                 <button className="btn btn-dark" onClick={(e)=>addBuyer(e)}>AS A BUYER</button>
 
 
                 {/*<Button className='btns' buttonStyle='btn--primary'
@@ -45,7 +45,7 @@ function Register() {
 
                 {/*<Button className='btns' buttonStyle='btn--primary'
                 buttonSize ='btn--large'> AS A EMPLOYEE<i className ='far fa-play-circle'/></Button>*/}
-                <button className="btn btn-primary" onClick={(e)=>addSupplier(e)}>AS A SUPPLIER</button> 
+                <button className="btn btn-dark" onClick={(e)=>addSupplier(e)}>AS A SUPPLIER</button> 
             </div>
         </div>
     );

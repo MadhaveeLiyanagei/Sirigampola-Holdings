@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import BuyerService from '../services/BuyerService';
 import AdminNavbar from './AdminNavbar';
 
+import './HeaderUser.css';
+
 class ViewBuyerComponent extends Component {
         constructor(props){
             super(props)
@@ -24,6 +26,13 @@ class ViewBuyerComponent extends Component {
         return (
             <div>
                 <AdminNavbar/>
+                <div class="topnav" >
+                     <a class="active" href="http://localhost:3000/profile">Buyer</a>
+                     <a class="active" href="http://localhost:3000/Employee">Employee</a>
+                     <a class="active" href="http://localhost:3000/Supplier">Supplier</a>
+  
+                    
+        </div>
                 <br></br>
                 <div className = "card col-md-6 offset-md-3"  style ={{height:550}}>
                 <br></br>

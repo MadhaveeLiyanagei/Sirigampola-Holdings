@@ -65,10 +65,10 @@ useEffect(() =>{
                 </Link>
             </li>
 
-        
+           
  
             </ul>
-            {button && <Button buttonStyle = 'btn--outline' onClick={(e)=>logout(e)}>Logout</Button>}
+             <Button className='nav-links'  onClick={(e)=>logout(e)}>Logout</Button>
              </div>
             
              </nav>   

@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify';
 import SoloAlert from 'soloalert';
 
+
 toast.configure()
 
 class CreateSupplierComponent extends Component {
@@ -178,7 +179,7 @@ class CreateSupplierComponent extends Component {
             this.setState({supplieraddress: event.target.value});    
         }
         cancel(){
-            this.props.history.push('/Supplier');
+            this.props.history.push('/');
         }
 
         getTitle(){
