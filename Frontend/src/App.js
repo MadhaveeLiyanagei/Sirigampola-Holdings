@@ -19,6 +19,7 @@ import Routes from './Routes/Routes';
 import MainContent from './components/mainContent';
 import ListSupplierOrder from './components/ListSupplierOrder';
 import AddSupplierComponent from './components/AddSupplierComponent';
+import ViewSupplierOrderComponent from './components/ViewSupplierOrderComponent';
 
 function App() {
 
@@ -79,8 +80,11 @@ function App() {
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>
                 <Route path = "/view-order/:id" component = {ViewOrderComponent} ></Route>
                 <Route path = "/report-order" component = {SupplierOrderReport} ></Route>
+
+                {/* Supplier Order */}
                 <Route path = "/add-to-list" component = {AddSupplierComponent} ></Route>
                 <Route path = "/supplierorder" component = {ListSupplierOrder} ></Route>
+                <Route path = "/view-supplier-order/:id" component = {ViewSupplierOrderComponent} ></Route>
               </Switch>
             </div>
 

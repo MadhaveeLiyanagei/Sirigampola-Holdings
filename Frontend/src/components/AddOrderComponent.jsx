@@ -121,6 +121,7 @@ class AddOrderComponent extends Component {
     } 
 
     cancel(){
+        this.notifyCancel();
         this.props.history.push('/createorder');
     }
 

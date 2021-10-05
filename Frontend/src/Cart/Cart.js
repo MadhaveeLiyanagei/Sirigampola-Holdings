@@ -1,9 +1,37 @@
 import React from "react";
 import "./Cart.css";
+import { Link } from 'react-router-dom';
+import SoloAlert from 'soloalert'
 
 const Cart = ({ cartItem, handleAddProduct, handleRemoveProduct, handleCartClearence }) => {
 
     const totalPrice = cartItem.reduce((price,item) => price + item.quantity * item.price, 0);
+
+    function addBuyerOrders(e){
+        e.preventDefault()
+
+        if(!totalPrice){
+            SoloAlert.alert({
+                title: "Oops!",
+                body: "No Items are added",
+                icon: "warning",
+                theme: "dark",
+                useTransparency: true,
+                onOk: function () {
+                },
+  
+              });
+
+        }else{
+
+            localStorage.setItem("itemPrice",totalPrice);
+            localStorage.setItem("cartitems",JSON.stringify(cartItem));
+            // props.history.push({pathname:"/checkout/_add", state:cartItems})
+            window.location = "/add-to-list";
+
+        }
+     
+    }
 
     return(
         <div>
@@ -58,9 +86,9 @@ const Cart = ({ cartItem, handleAddProduct, handleRemoveProduct, handleCartClear
                     Total Price &nbsp;
                     <div className = "cart-page-total-price" style={{color:"white"}}>  Rs: {totalPrice}</div>
                 </div>
-
+                {/* onClick={()=> window.location.href='/add-to-list' */}
                 <div className = "cart-checkout-page">
-                    <button className="cart-checkout-page-button" onClick={()=> window.location.href='/add-to-list'}> ADD ORDER </button>
+                    <button className="cart-checkout-page-button" onClick={(e)=>addBuyerOrders(e)}> ADD ORDER </button>
                 </div>
 
             </div>

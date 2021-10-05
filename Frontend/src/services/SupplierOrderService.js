@@ -12,6 +12,15 @@ class SupplierOrderService {
         return axios.post(SUPPLIER_ORDER_API_BASE_URL, order);
     }
 
+    getSupplierOrderById(orderID)
+    {
+        return axios.get(SUPPLIER_ORDER_API_BASE_URL + '/' + orderID);
+    }
+
+    deleteSupplierOrder(orderID){
+        return axios.delete(SUPPLIER_ORDER_API_BASE_URL + '/' + orderID);
+    }
+
 }
 
 export default new SupplierOrderService()

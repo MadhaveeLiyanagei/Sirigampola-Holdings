@@ -10,7 +10,21 @@ class ListSupplierOrder extends Component {
             supplierorder: []
             
         }
+
+        this.deleteOrder = this.deleteOrder.bind(this);
     } 
+
+    deleteOrder(id)
+    {
+        SupplierOrderService.deleteSupplierOrder(id).then( res => {
+            this.setState({supplierorder: this.state.supplierorder.filter(order => order.id !== id)});
+
+        });
+    }
+
+    viewOrder(id){
+        this.props.history.push(`/view-supplier-order/${id}`);
+    }
 
     componentDidMount(){
         SupplierOrderService.getSupplierOrder().then((res) => {
@@ -55,8 +69,8 @@ class ListSupplierOrder extends Component {
                                     <td>{order.description}</td>
                                     <td class="table-secondary">
                                             <button style={{marginLeft: "20px"}} className="btn btn-info"> Update </button>
-                                            <button style={{marginLeft: "20px"}} className="btn btn-danger"> Delete </button>
-                                            <button style={{marginLeft: "20px"}} className="btn btn-warning"> View </button>
+                                            <button style={{marginLeft: "20px"}} onClick = { () => this.deleteOrder(order.id)} className="btn btn-danger"> Delete </button>
+                                            <button style={{marginLeft: "20px"}} onClick = { () => this.viewOrder(order.id)} className="btn btn-warning"> View </button>
                                     </td>
                                 </tr>
                             )
