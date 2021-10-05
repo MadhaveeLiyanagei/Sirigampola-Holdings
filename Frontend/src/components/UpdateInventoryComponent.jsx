@@ -134,7 +134,7 @@ class UpdateInventoryComponent extends Component {
   };
 
   changeProductIDHandler = (event) => {
-    this.setState({ productID: event.target.value });
+    this.setState({ productID: event.target.value.replace(/\D/g, "" ) });
   };
 
   changeProductNameHandler = (event) => {
@@ -142,15 +142,15 @@ class UpdateInventoryComponent extends Component {
   };
 
   changeQuantityHandler = (event) => {
-    this.setState({ quantity: event.target.value });
+    this.setState({ quantity: event.target.value.replace(/\D/g, "" ) });
   };
 
   changeReOrderHandler = (event) => {
-    this.setState({ reOrder: event.target.value });
+    this.setState({ reOrder: event.target.value.replace(/\D/g, "" ) });
   };
 
   changeCostPriceHandler = (event) => {
-    this.setState({ costPrice: event.target.value });
+    this.setState({ costPrice: event.target.value.replace(/\D/g, "" ) });
   };
 
   cancel() {
@@ -176,10 +176,11 @@ class UpdateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.productID}
                       onChange={this.changeProductIDHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.productIDError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -190,10 +191,11 @@ class UpdateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.productName}
                       onChange={this.changeProductNameHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.productNameError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -204,10 +206,11 @@ class UpdateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.quantity}
                       onChange={this.changeQuantityHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.quantityError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -218,10 +221,11 @@ class UpdateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.reOrder}
                       onChange={this.changeReOrderHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.reOrderError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -232,10 +236,11 @@ class UpdateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.costPrice}
                       onChange={this.changeCostPriceHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.costPriceError}{" "}
                     </div>
+                    <br></br>
                   </div><br></br>
                   <table className="invntry_tbl_header">
                     <tbody>

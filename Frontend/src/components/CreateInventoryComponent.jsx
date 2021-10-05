@@ -21,6 +21,7 @@ class CreateInventoryComponent extends Component {
       quantityError: "",
       reOrderError: "",
       costPriceError: "",
+      quantityStringError: ""
     };
 
     this.changeProductIDHandler = this.changeProductIDHandler.bind(this);
@@ -59,6 +60,7 @@ class CreateInventoryComponent extends Component {
     let quantityError = "";
     let reOrderError = "";
     let costPriceError = "";
+    let quantityStringError = ""
 
     if (!this.state.productID) {
       productIDError = "Product ID is required";
@@ -75,12 +77,16 @@ class CreateInventoryComponent extends Component {
     if (!this.state.costPrice) {
       costPriceError = "Cost Price is required";
     }
+    {/*if (this.state.quantityStringError.includes("abc")){
+      quantityStringError = "Quantity should be numeric characters";
+    }*/}
     if (
       productIDError ||
       productNameError ||
       quantityError ||
       reOrderError ||
-      costPriceError
+      costPriceError ||
+      quantityStringError
     ) {
       this.setState({
         productIDError,
@@ -88,6 +94,7 @@ class CreateInventoryComponent extends Component {
         quantityError,
         reOrderError,
         costPriceError,
+        quantityStringError
       });
       return false;
     }
@@ -119,7 +126,7 @@ class CreateInventoryComponent extends Component {
   };
 
   changeProductIDHandler = (event) => {
-    this.setState({ productID: event.target.value });
+    this.setState({ productID: event.target.value.replace(/\D/g, "" ) });
   };
 
   changeProductNameHandler = (event) => {
@@ -127,15 +134,15 @@ class CreateInventoryComponent extends Component {
   };
 
   changeQuantityHandler = (event) => {
-    this.setState({ quantity: event.target.value });
+    this.setState({ quantity: event.target.value.replace(/\D/g, "" ) });
   };
 
   changeReOrderHandler = (event) => {
-    this.setState({ reOrder: event.target.value });
+    this.setState({ reOrder: event.target.value.replace(/\D/g, "" ) });
   };
 
   changeCostPriceHandler = (event) => {
-    this.setState({ costPrice: event.target.value });
+    this.setState({ costPrice: event.target.value.replace(/\D/g, "" ) });
   };
 
   cancel() {
@@ -160,10 +167,11 @@ class CreateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.productID}
                       onChange={this.changeProductIDHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.productIDError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -174,10 +182,11 @@ class CreateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.productName}
                       onChange={this.changeProductNameHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.productNameError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -188,10 +197,12 @@ class CreateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.quantity}
                       onChange={this.changeQuantityHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.quantityError}{" "}
                     </div>
+                    
+                    <br></br>
                   </div>
 
                   <div className="form-group">
@@ -202,10 +213,11 @@ class CreateInventoryComponent extends Component {
                       className="form-control"
                       value={this.state.reOrder}
                       onChange={this.changeReOrderHandler}
-                    /><br></br>
+                    />
                     <div style={{ fontSize: 12, color: "red" }}>
                       {this.state.reOrderError}{" "}
                     </div>
+                    <br></br>
                   </div>
 
                   <div className="form-group">

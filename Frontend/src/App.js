@@ -24,6 +24,8 @@ import CreateNoticesComponent from "./components/CreateNoticesComponent";
 import UpdateNoticeComponent from "./components/UpdateNoticeComponent";
 import ViewNoticesComponent from "./components/ViewNoticesComponent";
 import EmployeeLeavesReport from './components/EmployeeLeavesReport';
+import Login from './components/Login/Login';
+import AdminHome from './pages/AdminHome';
 
 
 function App() {
@@ -34,7 +36,9 @@ function App() {
         <AdminNavbar/>
         <div className="container">
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route path = '/' exact component = {Login} />
+            <Route path='/adminHome' component={AdminHome} />
+            <Route path='/home' component={Home} />
             <Route path="/inventory" component={ListInventoryComponent}></Route>
             <Route path="/add-inventory" component={CreateInventoryComponent}></Route>
             <Route path="/view-inventory/:inventoryID" component={ViewInventoryComponent}></Route>
