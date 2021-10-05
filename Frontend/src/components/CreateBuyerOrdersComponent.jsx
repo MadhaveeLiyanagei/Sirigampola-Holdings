@@ -125,7 +125,7 @@ class CreateBuyerOrdersComponent extends Component {
     }
    
     
-    /*nameValidation(){
+   /* nameValidation(){
         const regex = /^(A-Za-z)$/i;
         if (!this.state.username || regex.test(this.state.username) === false) {
             this.setState({

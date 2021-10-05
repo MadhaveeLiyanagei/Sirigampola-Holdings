@@ -5,17 +5,16 @@ import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure();
 class CreateCourierComponent extends Component {
-    constructor(props) {
+    
+    constructor(props){
         super(props)
 
            this.state ={
 
-     
             name: '',
             address: '',
             phone_number: '',
             email:'',
-
 
             nameError: '',
             addressError: '',
@@ -26,14 +25,13 @@ class CreateCourierComponent extends Component {
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
            this.changeNameHandler = this.changeNameHandler.bind(this);
            this.SaveCourier =this.SaveCourier.bind(this);
-
         }
 
         notify(){
             toast.success('added successfully!', 
             {position: toast.POSITION.TOP_CENTER})
         }
-     
+
         notify1(){
             toast.error('adding cancelled', 
             {position: toast.POSITION.TOP_CENTER})
@@ -80,15 +78,8 @@ class CreateCourierComponent extends Component {
                 return false;
     
             }
-    
-    
-    
             return true;
-    
-     
-    
         }
-
 
        SaveCourier = (e) => {
             e.preventDefault();
@@ -103,14 +94,7 @@ class CreateCourierComponent extends Component {
                 this.notify();
                 this.props.history.push('/courier');
             });
-
-
         }
-
-            
-            
-
-
        }
 
         changeNameHandler= (event) => {
@@ -132,8 +116,6 @@ class CreateCourierComponent extends Component {
             this.notify1();
             this.props.history.push('/courier');
         }
-        
-
     render() {
         return (
             <div>
