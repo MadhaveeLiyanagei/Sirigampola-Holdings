@@ -91,8 +91,11 @@ class ListTaxComponent extends Component {
 
                 <h2 className="text-center">Income VS Expense</h2>
                 <br></br>
-                <h3 className="text-center">Overall Report</h3>
+
                 
+                <div style={{backgroundColor:"#c0c0c0"}}>
+                <h3 className="text-center">Overall Report</h3>
+                  <div style={{display:"flex"}} > 
                 <PieChart width={400} height={400} radius={50}>
  
                  <Pie
@@ -111,10 +114,23 @@ class ListTaxComponent extends Component {
                     {/* Display the tooltips */}
                     <Tooltip />
                     </PieChart>
+                    <div style={{marginTop:"138px",marginLeft:"58px"}} >
+                      
+                        <div className="card text-white bg-dark mb-3"  style={{width: "22rem"}}>
+                           <Link to="#" className="btn btn-danger"> Profit</Link>
+                            <h4>Income - Expense  : 
+                                <span className="float-end">{ItotalPrice-EtotalPrice}</span>
+                                 
+                            </h4>
+                            
+                             
+                        </div>
+                        </div>  
+                    </div>
 
                  <div style={{display:"flex"}} > 
                      
-                      <div className="col-md-4" style={{marginRight:"2px"}}>
+                      <div className="col-md-4" style={{marginRight:"2px",width: "32rem"}}>
                         <div className="card text-white bg-dark mb-3" style={{marginRight:"2px"}}>
                            <Link to="/Finance" className="btn btn-primary"> Income Summary</Link>
                             <h4>Total Income : 
@@ -126,9 +142,9 @@ class ListTaxComponent extends Component {
                         </div> 
 
                          
-                      <div style={{marginLeft:"44px"}}>
+                      <div style={{marginLeft:"78px"}}>
                       
-                        <div className="card text-white bg-dark mb-3" style={{width: "25rem"}}>
+                        <div className="card text-white bg-dark mb-3" style={{width: "32rem"}}>
                            <Link to="/Expense" className="btn btn-primary"> Expense Summary</Link>
                             <h4>Total  Expense  : 
                                 <span className="float-end">{EtotalPrice}</span>
@@ -139,6 +155,8 @@ class ListTaxComponent extends Component {
                         </div>
                         </div>  
 
+
+                         
                          
                
                  </div>      
@@ -151,6 +169,8 @@ class ListTaxComponent extends Component {
 
                      ]}
                     />; */}
+                    </div>
+
                     </div>
                     
                     <br></br>
