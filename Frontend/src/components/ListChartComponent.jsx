@@ -4,7 +4,9 @@ import ExpenseService from '../services/ExpenseService';
 import './HeaderFinance.css';
 import SoloAlert from 'soloalert'
 import {Link } from "react-router-dom";
+import { PieChart, Pie, Tooltip } from "recharts";
 
+ 
 
 class ListTaxComponent extends Component {
    constructor(props) {
@@ -90,14 +92,41 @@ class ListTaxComponent extends Component {
                 <h2 className="text-center">Income VS Expense</h2>
                 <br></br>
                 <h3 className="text-center">Overall Report</h3>
-                   
+                
+                 
+               
                      
-                    <br></br>
                     <div className = "form-group col-md-4">
+                     
+                    {/*<PieChart margin="4px 2px" radius={40} align="center"
+                data={[
+                   { title: 'Income', value: ItotalPrice, color: '#c71585' },
+                   { title: 'Expense', value: EtotalPrice, color: '#4682b4' },
 
-                      
+                     ]}
+                    />; */}
+
+             <PieChart width={400} height={400} radius={50}>
+ 
+               <Pie
+                   dataKey="value"
+                   isAnimationActive={true}
+                   data={[
+                   { name: "Income", value: ItotalPrice},
+                   { name: "Expense", value: EtotalPrice},
+                   ]}
+                    
+                    fill="#000080"
+                    
+                   label
+                   />
+
+                   {/* Display the tooltips */}
+                  <Tooltip />
+             </PieChart>
 
                     </div>
+
                 <div className ="row">
                         <table className = "table table-striped table-bordered">
 
@@ -236,6 +265,9 @@ class ListTaxComponent extends Component {
             
         )
     }
+
+
+    
 }
 
 export default ListTaxComponent
