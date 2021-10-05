@@ -21,7 +21,12 @@ class ViewTaxComponent extends Component {
         this.props.history.push('/Tax');
     }
 
+    
     render() {
+
+        var subTotal = 0;
+        var totalPrice = 0;
+        
         return (
             <div>
                 <br></br>
@@ -46,7 +51,7 @@ class ViewTaxComponent extends Component {
                              
                         </div>
                         <div className = "row">
-                            <label> Sub total : { this.state.tax.subTotal } </label>
+                            <label> Sub total : { subTotal=(this.state.tax.preTaxPrice + (this.state.tax.preTaxPrice*this.state.tax.taxRate/100)) } </label>
                              
                         </div>
                         <div className = "row">
@@ -56,7 +61,7 @@ class ViewTaxComponent extends Component {
 
                          
                         <div className = "row">
-                            <label> Total price : { this.state.tax.totalPrice } </label>
+                            <label> Total price : {  subTotal +  (subTotal*this.state.tax.vat/100)} </label>
                             
                         </div>
                         
