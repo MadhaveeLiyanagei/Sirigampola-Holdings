@@ -299,7 +299,7 @@ class ListTaxComponent extends Component {
 
                 </div>
 
-                <Link to="/ExpenseReport"><button className="btn btn-success">Generate Report  </button> </Link>
+                <Link to="/ChartReport"><button className="btn btn-success">Generate Report  </button> </Link>
 
                    
                 </div>  
