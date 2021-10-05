@@ -6,6 +6,7 @@ import SoloAlert from 'soloalert'
 import {Link } from "react-router-dom";
 
 
+
 class ListIncomeComponent extends Component {
    constructor(props) {
        super(props)
@@ -146,12 +147,13 @@ searchTransaction(event){
 
                 <h2 className="text-center">History of Assets</h2>
                    
-                    <button className="btn btn-primary" onClick={this.addIncome}>+ New Transaction</button>
-                    <br></br>
+                    <div id="outer">
+                    <div class="inner"> <button className="btn btn-primary" onClick={this.addIncome}>+ New Transaction</button> </div>
+                    <div class="inner"> <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search Transaction" value={this.state.searchId} onChange={this.searchTransaction.bind(this)}/> </div>
+                    </div>
+
+
                     <div className = "form-group col-md-4">
-
-                    <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search Transaction" value={this.state.searchId} onChange={this.searchTransaction.bind(this)}/>
-
                     </div>
                 <div className ="row">
                         <table className = "table table-striped table-bordered">
