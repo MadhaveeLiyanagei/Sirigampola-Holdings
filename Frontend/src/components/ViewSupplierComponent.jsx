@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SupplierService from '../services/SupplierService';
+import AdminNavbar from './AdminNavbar';
 
 class ViewSupplierComponent extends Component {
     constructor(props){
@@ -22,8 +23,9 @@ class ViewSupplierComponent extends Component {
     render() {
         return (
             <div>
+                 <AdminNavbar/>
                <br></br>
-                <div className = "card col-md-6 offset-md-3">
+                <div className = "card col-md-6 offset-md-3" style ={{height:550}}>
                 <br></br>
                     <h3 className = "text-center">View Supplier Details</h3>
                     <div className = "card-body">
