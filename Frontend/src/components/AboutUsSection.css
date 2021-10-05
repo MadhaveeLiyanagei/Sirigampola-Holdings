@@ -61,6 +61,7 @@ font-size: xx-large;
 
 
 
+
 .aboutusimgwhat{
 
   width: 600px;
@@ -181,3 +182,26 @@ font-size: xx-large;
 }'
 '
 */
+
+.aboutSpace{
+
+  width: 60px;
+}
+
+.aboutUsTrust{
+       
+  font-size: 60px;
+
+}
+
+
+.wathee{
+
+  border-style: solid;
+  border-radius: 25px;
+  padding: 20px;
+  width: 1200px;
+  margin-left: 85px;
+ 
+  
+}

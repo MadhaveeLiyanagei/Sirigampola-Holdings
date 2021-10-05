@@ -16,23 +16,22 @@ function AboutUsSection2() {
                 <h1>What is Sirigampola Holdings?</h1>
             </div>
             <div className="about-us__info">
-            <p>Sirigampola Holdings is a digital B2B marketplace aiming to be a comprehensive international trade hub for Small and Medium - sized Enterprises (SMEs) and their counterparts.
-                Empowered by our proprietary blockchain technology, Export Portal prioritizes security, transparency, cost-effectiveness, and ease-of-use. Thus, our partners can confidently trade, network, and communicate with other verified companies and experts from all over the world. With Export Portal, SMEs have an exponential growth opportunity – not just geographically, but within their verticals as well.</p>
+            <p style={{fontSize:"20px"}}> Sirigampola Holdings (PVT) Ltd which is importing and exporting Electronics, Automobile spare parts, Apparel and Cosmetic products. The company interacts with both foreign and local suppliers and buyers, as well as distributors</p>
             </div>
             <div>
                   <img className="aboutusimgwhat" src="./images/about-us.jpg" alt="logo" />
                   </div>
            <div className= "about-us__heading">
            <div className="about-us__ttl ">
-                <p>Why Choose Sirigampola Holdings?</p>
+                <h1>Why Choose Sirigampola Holdings?</h1>
                </div>
-               
-            <p>We have many benefits and exclusive features to offer our users <br></br>
-                 more about why Sirigampola Holdings is the international B2B trade platform for you!</p>
-            
-               <div>
 
-               </div>
+              
+               
+            <p style={{fontSize:"22.5px"}}>We have many benefits and exclusive features to offer our users <br></br>
+                 more about why <b>Sirigampola Holdings</b> is the international B2B trade platform for you!</p>
+                
+              
                </div> 
 
                <div>
@@ -42,21 +41,27 @@ function AboutUsSection2() {
                        <th>
                        <img className="securityimg" src="./images/security.png" alt="logo" />
                            <h2 className="bold_color">Total Security</h2>
-                    <p>We are hyper-focused on security. To maintain the utmost levels of safety, we start by verifying every user on our platform, ensuring their business is legitimate and up to date.
+                          
+                    <p style={{fontSize:"18px"}}>We are hyper-focused on security. To maintain the utmost levels of safety, we start by verifying every user on our platform, ensuring their business is legitimate and up to date.
                     Strong</p>
-
+                   
         <br></br>
 <                       img className="securityimg" src="./images/protect.png" alt="logo" />
                      <h2 className="bold_color">Strong Protection</h2>
-                    <p>Our blockchain technology is truly game-changing – never before could trade stakeholders communicate and share sensitive data so quickly and securely.</p>
+                    <p style={{fontSize:"18px"}}>Our blockchain technology is truly game-changing – never before could trade stakeholders communicate and share sensitive data so quickly and securely.</p>
         
 
         <br></br>
 <                       img className="securityimg" src="./images/box.png" alt="logo" />
                      <h2 className="bold_color">Professional Expertise</h2>
-                    <p>EP+, or Export Portal’s Expert Panel, is a collaborative effort between industry experts and the Export Portal team to provide our users with the information they need.</p>
+                    <p style={{fontSize:"18px"}}>Sirigampola Holdings, we have a brilliant staff with good qualification, we work very hard to delivery your products.</p>
 
                            </th>
+
+                           <th className="aboutSpace">
+
+                                 
+                                </th>
                         
                            <th>
                                
@@ -70,10 +75,13 @@ function AboutUsSection2() {
                 </table>
 
                     <br></br>
+                    <br></br>
+                    <div className="wathee">
                     <center>
-                    <h1>Trusted by over 10,000 Customers island-wide</h1>
+                    <h1 className="aboutUsTrust">Trusted by over 1,000 Customers <br></br>island-wide</h1>
                     </center>
                     <br></br>
+               </div>
                </div>
 
                <div>
@@ -85,17 +93,21 @@ function AboutUsSection2() {
                                 <th>            <br></br>
                                      <img className="about_inventory"src="./images/about_inventory.jpg" alt="lankawa" />
                                 </th>
+                                <th className="aboutSpace">
+
+                                 
+                                </th>
 
                                 <th>
                                 <br></br>
                                 <img className="securityimg" src="./images/merit.png" alt="logo" />
                            <h2><b className="bold_color" >1+</b> years</h2>
-                    <p>Responding to an industry need, Export Portal started working 6 years ago to provide SMEs with a new, expedited, and secure way to trade internationally.</p>
+                    <p style={{fontSize:"18px"}}>As a growing company, in 2019 Sirigampola Holdings was started working. We import number of products and items to Sri Lanka.</p>
 
         <br></br>
         <img className="securityimg" src="./images/sri_lanka.png" alt="logo" />
                            <h2><b className="bold_color" >Island</b>-Wide</h2>
-                    <p>We have a truly global presence, with users in 54 countries and growing. With our international coverage, we can provide service to buyers, sellers, manufacturers, and freight forwarders all over.</p>
+                    <p style={{fontSize:"18px"}}>Srigampola Holdings, We deliver you product with trusted courier services and we cover the whole island.</p>
 
         <br></br>
 
@@ -148,7 +160,7 @@ function AboutUsSection2() {
 
                                 <th> 
                                 <div class="container">
-                                      <img class="image" src="./images/h12.jpeg" alt="Himasha" />           
+                                      <img class="image" src="./images/h11.jpg" alt="Himasha" />           
                                  <div class="overlay">
                                        <div class="text">Himasha</div>
                                  </div>
@@ -194,7 +206,9 @@ function AboutUsSection2() {
                                 </div>   
                                         
                                 </th>
-                                
+                                <th>
+                                    <h1> Development Team</h1>
+                                </th>
 
                                
 
