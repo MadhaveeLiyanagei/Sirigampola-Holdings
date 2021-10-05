@@ -179,7 +179,7 @@ function AboutUsSection2() {
                                 <div class="container">
                                     <img class="image" src="./images/tashh.jpg" alt="Tashmi" />           
                              <div class="overlay">
-                             <div class="text">Ashan</div>
+                             <div class="text">Tashmi</div>
                                     </div>
                                     </div>         
                                 </th>
