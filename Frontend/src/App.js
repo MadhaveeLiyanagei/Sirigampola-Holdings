@@ -31,7 +31,7 @@ function App() {
         
     <>
     <Router>
-    <AdminNavbar/>
+   
      
       <Switch> 
         <Route path = '/' exact component = {Login} />

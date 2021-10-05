@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EmployeeService from '../services/EmployeeService';
 import SoloAlert from 'soloalert';
+import AdminNavbar from './AdminNavbar';
 
 import './HeaderUser.css';
 
@@ -138,7 +139,7 @@ class ListEmployeeComponent extends Component {
 
         return (
             <div>
-                
+                 <AdminNavbar/>
                  <div className="container">
                 <div class="topnav" >
                 <a class="active" href="http://localhost:3000/profile">Buyer</a>

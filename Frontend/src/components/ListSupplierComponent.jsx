@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SupplierService from '../services/SupplierService';
 import SoloAlert from 'soloalert';
+import AdminNavbar from './AdminNavbar';
 
 import './HeaderUser.css';
 
@@ -134,6 +135,7 @@ class ListSupplierComponent extends Component {
         );
         return (
             <div>
+                 <AdminNavbar/>
                  <div className="container">
                 <div class="topnav" >
                 <a class="active" href="http://localhost:3000/profile">Buyer</a>
