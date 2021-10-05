@@ -30,6 +30,8 @@ import EmployeeLeavesReport from "./components/EmployeeLeavesReport";
 import ParticleBackground from "./ParticleBackground";
 import ProductReport from "./components/ProductReport";
 import InventoryReport from "./components/InventoryReport";
+import AboutUs from "./pages/AboutUs";
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -40,7 +42,8 @@ function App() {
         <AdminNavbar />
         <div className="container">
           <Switch>
-            <Route path="/" exact component={AdminHome} />
+          
+            <Route path="/" exact component={Login} />
             <Route path="/Employee" component={ListEmployeeComponent} />
             <Route path="/add-employee" component={CreateEmployeeComponent} />
             <Route
@@ -100,9 +103,18 @@ function App() {
             <Route path="/inventoryreport" component={InventoryReport}></Route>
           </Switch>
         </div>
+        <div className="container1">
+                <Switch> 
+                <Route path = "/aboutUs" component = {AboutUs}></Route> 
+                </Switch>
+                </div>
         <Footer />
       </Router>
     </div>  
+
+          
+
+
   );
 }
 
