@@ -152,8 +152,9 @@ class ListTaxComponent extends Component {
                      ]}
                     />; */}
                     </div>
-
-
+                    
+                    <br></br>
+                    <h4>Income List </h4>
                 <div className ="row">
                         <table className = "table table-striped table-bordered">
 
@@ -221,6 +222,8 @@ class ListTaxComponent extends Component {
                     <div className = "form-group col-md-4">
                     </div>
                 
+                     
+                    <h4>Expense List </h4>
                 <div className ="row">
                         <table className = "table table-striped table-bordered">
 

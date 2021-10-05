@@ -149,7 +149,7 @@ searchTransaction(event){
                    
                     <div id="outer">
                     <div class="inner"> <button className="btn btn-primary" onClick={this.addIncome}>+ New Transaction</button> </div>
-                    <div class="inner"> <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search Transaction" value={this.state.searchId} onChange={this.searchTransaction.bind(this)}/> </div>
+                    <div class="inner" style={{marginLeft:"750px"}}> <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search Transaction" value={this.state.searchId} onChange={this.searchTransaction.bind(this)}/> </div>
                     </div>
 
 
