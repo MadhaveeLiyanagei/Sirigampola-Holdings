@@ -148,7 +148,7 @@ searchTransaction(event){
                 <h2 className="text-center">History of Assets</h2>
                    
                     <div id="outer">
-                    <div class="inner"> <button className="btn btn-primary" onClick={this.addIncome}>+ New Transaction</button> </div>
+                    <div class="inner"> <button className="buttonAdd" onClick={this.addIncome}>+ New Transaction</button> </div>
                     <div class="inner" style={{marginLeft:"750px"}}> <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Search Transaction" value={this.state.searchId} onChange={this.searchTransaction.bind(this)}/> </div>
                     </div>
 
@@ -212,7 +212,7 @@ searchTransaction(event){
                                  
                             </h4>
                             <hr />
-                            <Link to="/ReportGraph" className="btn btn-primary"> Summary</Link>
+                            <Link to="/Chart" className="btn btn-primary"> Summary</Link>
                         </div>
                         </div>  
 
@@ -220,7 +220,7 @@ searchTransaction(event){
                                  
 
                 </div>
-                 <Link to="/IncomeReport"><button className="btn btn-success">Generate Report  </button> </Link>
+                 <Link to="/IncomeReport"><button className="buttonG">Generate Report  </button> </Link>
 
                    
                 </div>  

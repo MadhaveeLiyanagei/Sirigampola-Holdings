@@ -69,7 +69,7 @@ function App() {
         <Route path = "/view-product/:productID" component = {ViewProductComponent}></Route>
          
       </Switch>
-      {/* <Footer/>*/}
+       <Footer/>
        </Router>
        </>
 </div>

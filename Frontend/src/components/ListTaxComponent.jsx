@@ -143,7 +143,7 @@ searchProductID(event){
 
                 <h2 className="text-center">Tax Table</h2>
                      <div id="outer">
-                     <div class="inner">  <button className="btn btn-primary" style={{marginRight:"2px"}} onClick={this.addTax}>+ New Tax</button> </div>
+                     <div class="inner">  <button className="buttonAdd" style={{marginRight:"2px"}} onClick={this.addTax}>+ New Tax</button> </div>
                      <div class="inner" style={{marginLeft:"750px"}}>  <input type="text" class="form-control" style={{marginLeft:"30px"}} placeholder="Search ProductID" value={this.state.searchId} onChange={this.searchProductID.bind(this)}/></div>
                      </div>
                     <div className = "form-group col-md-4">
@@ -204,7 +204,7 @@ searchProductID(event){
                                  
 
                 </div>
-                 <Link to="/TaxReport"><button className="btn btn-success">Generate Report  </button> </Link>
+                 <Link to="/TaxReport"><button className="buttonG">Generate Report  </button> </Link>
 
                    
                 </div>  
