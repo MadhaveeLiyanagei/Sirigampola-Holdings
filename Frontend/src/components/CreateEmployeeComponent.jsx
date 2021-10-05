@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify';
 import SoloAlert from 'soloalert';
 
+
 toast.configure()
 
 class CreateEmployeeComponent extends Component {
@@ -191,6 +192,7 @@ class CreateEmployeeComponent extends Component {
     render() {
         return (
             <div>
+                
                  <br></br>
                <div className = "container">
                    <div className = "row">
