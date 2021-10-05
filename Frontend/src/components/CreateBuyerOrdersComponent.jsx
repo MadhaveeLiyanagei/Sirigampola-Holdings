@@ -106,7 +106,7 @@ class CreateBuyerOrdersComponent extends Component {
         const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         if (!this.state.email || regex.test(this.state.email) === false) {
             this.setState({
-                emailvError: "Email is not valid"
+                emailvError: "You should enter a valid E-mail!"
             });
             return false;
         }
@@ -186,9 +186,7 @@ class CreateBuyerOrdersComponent extends Component {
                                         <label><b> First Name: </b> </label>
                                         <input placeholder="User Name" name="username" className="form-control"
                                             value={this.state.username} onChange={this.changeUserNameHandler} />
-                                        
-
-                                        <div style={{ fontSize: 12, color: "red" }}>{this.state.userNameError}</div>
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.userNameError}</div>
                                         <br></br>
                                     </div>
 
@@ -198,18 +196,16 @@ class CreateBuyerOrdersComponent extends Component {
 
                                             value={this.state.email} onChange={this.changeEmailHandler} />
                                        
-                                        <div style={{ fontSize: 12, color: "red" }}>{this.state.emailError}</div>
-                                        <div style={{ fontSize: 12, color: "red" }}>{this.state.emailvError}</div>
-                                        
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.emailError}</div>
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.emailvError}</div>                                        
                                         <br></br>
                                     </div>
 
                                     <div className="form-group">
                                         <label><b> Address:</b> </label>
                                         <input placeholder="Address" name="address" className="form-control"
-                                            value={this.state.address} onChange={this.changeAddressHandler} />
-                                        
-                                        <div style={{ fontSize: 12, color: "red" }}>{this.state.addressError}</div>
+                                            value={this.state.address} onChange={this.changeAddressHandler} />                                       
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.addressError}</div>
                                         <br></br>
                                     </div>
 
@@ -217,9 +213,8 @@ class CreateBuyerOrdersComponent extends Component {
                                     <div className="form-group">
                                         <label> <b>Contact Number: </b></label>
                                         <input placeholder="Contact" name="contact" className="form-control"
-                                            value={this.state.contact} onChange={this.changeContactHandler} />
-                                        
-                                        <div style={{ fontSize: 12, color: "red" }}>{this.state.contactError}</div>
+                                            value={this.state.contact} onChange={this.changeContactHandler} />                                       
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.contactError}</div>
                                         <br></br>
                                     </div>
 
@@ -228,7 +223,7 @@ class CreateBuyerOrdersComponent extends Component {
                                         <input placeholder="DD-MM-YY" type="date" name="date" className="form-control"
                                             value={this.state.date} onChange={this.changeDateHandler} />
                                        
-                                        <div style={{ fontSize: 12, color: "red" }}>{this.state.dateError}</div>
+                                        <div style={{ fontSize: 14, color: "red" }}>{this.state.dateError}</div>
                                         <br></br>
                                     </div>
 
