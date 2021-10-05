@@ -93,9 +93,55 @@ class ListTaxComponent extends Component {
                 <br></br>
                 <h3 className="text-center">Overall Report</h3>
                 
-                 
-               
+                <PieChart width={400} height={400} radius={50}>
+ 
+                 <Pie
+                     dataKey="value"
+                     isAnimationActive={true}
+                     data={[
+                     { name: "Income", value: ItotalPrice},
+                     { name: "Expense", value: EtotalPrice},
+                      ]}
+      
+                     fill="#000080"
+      
+                    label
+                     />
+
+                    {/* Display the tooltips */}
+                    <Tooltip />
+                    </PieChart>
+
+                 <div style={{display:"flex"}} > 
                      
+                      <div className="col-md-4" style={{marginRight:"2px"}}>
+                        <div className="card text-white bg-dark mb-3" style={{marginRight:"2px"}}>
+                           <Link to="/Finance" className="btn btn-primary"> Income Summary</Link>
+                            <h4>Total Income : 
+                                <span className="float-end">{ItotalPrice}</span>    
+                            </h4>
+                             
+                             
+                        </div>
+                        </div> 
+
+                         
+                      <div style={{marginLeft:"44px"}}>
+                      
+                        <div className="card text-white bg-dark mb-3" style={{width: "25rem"}}>
+                           <Link to="/Expense" className="btn btn-primary"> Expense Summary</Link>
+                            <h4>Total  Expense  : 
+                                <span className="float-end">{EtotalPrice}</span>
+                                 
+                            </h4>
+                            
+                             
+                        </div>
+                        </div>  
+
+                         
+               
+                 </div>      
                     <div className = "form-group col-md-4">
                      
                     {/*<PieChart margin="4px 2px" radius={40} align="center"
@@ -105,27 +151,8 @@ class ListTaxComponent extends Component {
 
                      ]}
                     />; */}
-
-             <PieChart width={400} height={400} radius={50}>
- 
-               <Pie
-                   dataKey="value"
-                   isAnimationActive={true}
-                   data={[
-                   { name: "Income", value: ItotalPrice},
-                   { name: "Expense", value: EtotalPrice},
-                   ]}
-                    
-                    fill="#000080"
-                    
-                   label
-                   />
-
-                   {/* Display the tooltips */}
-                  <Tooltip />
-             </PieChart>
-
                     </div>
+
 
                 <div className ="row">
                         <table className = "table table-striped table-bordered">
@@ -167,8 +194,8 @@ class ListTaxComponent extends Component {
                       
                         <div className="col-md-8"></div> 
                       <div className="col-md-4">
-                        <div className="card card-body mt-3">
-                        <Link to="/ReportGraph" className="btn btn-primary"> Income Summary</Link>
+                        <div className="card card-body mt-3" style={{backgroundColor:"#00ff7f"}}>
+                        
                         <br></br>
                             <h4>Sub Total : 
                                 <span className="float-end">{ItotalPrice}</span>
@@ -233,17 +260,17 @@ class ListTaxComponent extends Component {
 
                         <div className="col-md-8"></div> 
                       <div className="col-md-4">
-                        <div className="card card-body mt-3">
+                        <div className="card card-body mt-3" style={{backgroundColor:"#00ff7f"}}>
                             <h4>Sub Total : 
                                 <span className="float-end">{EtotalPrice}</span>
                             </h4>
                             
-                            <h4>Grand Total : 
+                            <h4>Total Expense: 
                                 <span className="float-end">{EtotalPrice}</span>
                                  
                             </h4>
                             <hr />
-                            <Link to="/ReportGraph" className="btn btn-primary"> Expense Summary</Link>
+                             
                         </div>
                         </div>  
 
