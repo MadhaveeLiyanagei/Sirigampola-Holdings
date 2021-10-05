@@ -87,6 +87,12 @@ font-size: xx-large;
 
   color: rgb(253, 139, 32);
 }
+.teammatesback{
+  background-color: rgb(238, 148, 51);
+  border-radius: 25px;
+  padding: 20px;
+ 
+}
 
 .circular--square {
   border-radius: 50%;
@@ -96,7 +102,82 @@ font-size: xx-large;
 }
 
 
-.teammatesback{
-  background-color: rgb(238, 207, 174);
+
+.container {
+  position: relative;
+  width: 50%;
 }
 
+.image {
+  
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.overlay {
+
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+ 
+
+  opacity: 0;
+  transition: .5s ease;
+  background-color:rgb(221, 138, 13);
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+/*<---------------------------------------------------------------------------------------------------------------------->*/
+/*
+.overlay1 {
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:rgb(221, 138, 13);
+}
+
+.containerpara {
+  position: relative;
+  width: 75%;
+}
+
+.containerpara:hover .overlay1 {
+  opacity: 1;
+}
+
+.textpara {
+  color: white;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}'
+'
+*/

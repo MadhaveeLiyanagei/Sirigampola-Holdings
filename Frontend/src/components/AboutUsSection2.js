@@ -117,47 +117,94 @@ function AboutUsSection2() {
                        <tbody>
                            <tb>
                                 <th> 
-
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />       
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
-                                </th>
-                                <th> 
-                                <img class="circular--square" src="./images/about_us_inventory.jpg" alt="logo" />           
+                                <div class="container">
+                                   <img class="image" src="./images/m.jpg" alt="Madhavee" />           
+                                    <div class="overlay">
+                                         <div class="text">Madhavee</div>
+                                 </div>
+                                        </div>       
                                 </th>
 
-                                <th>
 
+                                <th> 
+                                <div class="container">
+                                    <img class="image" src="./images/sr.jpg" alt="Shanali" />           
+                                    <div class="overlay">
+                                        <div class="text">Shanali</div>
+                                 </div>
+                                        </div>          
                                 </th>
 
-                                <th>
-                                    <div style={{marginLeft:"200px"}}>
-                                    <h1><b> Team mates</b></h1>
+
+                                <th> 
+                              <div class="container">
+                                    <img class="image" src="./images/a1.png" alt="Ashan" />           
+                             <div class="overlay">
+                             <div class="text">Ashan</div>
                                     </div>
+                                    </div> 
+                                </th>
+
+
+                                <th> 
+                                <div class="container">
+                                      <img class="image" src="./images/h12.jpeg" alt="Himasha" />           
+                                 <div class="overlay">
+                                       <div class="text">Himasha</div>
+                                 </div>
+                                        </div>                  
+                                </th>
+
+
+                                <th> 
+                            
+                                <div class="container">
+                                    <img class="image" src="./images/bh.jpg" alt="Bhanauka" />           
+                             <div class="overlay">
+                             <div class="text">Bhanuka</div>
+                                    </div>
+                                    </div>  
+                                </th>
+
+                                <th> 
+                                <div class="container">
+                                     <img class="image" src="./images/a2.png" alt="Avishka" />           
+                                <div class="overlay">
+                                  <div class="text">Avishka</div>
+                                    </div>
+                                </div>          
+                                </th>
+
+                                <th> 
+                                <div class="container">
+                                    <img class="image" src="./images/tashh.jpg" alt="Tashmi" />           
+                             <div class="overlay">
+                             <div class="text">Ashan</div>
+                                    </div>
+                                    </div>         
+                                </th>
+
+
+                                <th> 
+                               <div class="container">
+                                     <img class="image" src="./images/i.jpg" alt="Ishani" />           
+                                             <div class="overlay">
+                                <div class="text">Ishani</div>
+                                 </div>
+                                </div>   
+                                        
                                 </th>
                                 
 
+                               
 
                             </tb>    
                         </tbody>
                     </table>
                </div> 
+
+
+
       </div>
        
     );

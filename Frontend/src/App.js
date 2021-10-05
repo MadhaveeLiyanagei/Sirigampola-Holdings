@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/AdminNavbar';
 import { BrowserRouter  as Router, Switch, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './App.css';
@@ -13,7 +13,8 @@ import CreateDeliveryComponent from './components/CreateDeliveryComponent';
 import UpdateDeliveryComponent from './components/UpdateDeliveryComponent';
 import ViewDeliveryComponent from './components/ViewDeliveryComponent';
 import AddCourierDelivery from './components/AddCourierDelivery';
-
+import Login from './components/Login/Login';
+import AdminHome from './pages/AdminHome';
 import Home from'./pages/Home';
 import Footer from './components/Footer';
 import AboutUs from './pages/AboutUs';
@@ -27,8 +28,10 @@ function App() {
                 <div className="container">
                 
                     <Switch> 
-                          
-                          <Route path = "/" exact component = {ListCourierComponent}></Route>
+                          <Route path = "/" exact component = {Login}></Route>
+                          <Route path = "/AdminHome"  component = {AdminHome}></Route>
+                          <Route path = "/home"  component = {Home}></Route>
+                          <Route path = "/distribution" component = {ListCourierComponent}></Route>
                           <Route path = "/courier" component = {ListCourierComponent}></Route>
                           <Route path = "/delivery" component = {ListDeliveryComponent}></Route>
                           <Route path = "/add-courier" component = {CreateCourierComponent}></Route>

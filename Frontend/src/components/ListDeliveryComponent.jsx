@@ -142,13 +142,29 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
             <div>
                  <><CourierDeliveryNavbar/></>
+                 <br></br>
+                 <div className="row">
+    <table>
+        <tbody>
+            <th className="tblclm">Search : </th>
+        <th>
+        <div className = "form-group col-md-4">
+                      <input type="text" 
+                      class="form-control"
+                       style={{marginLeft:0}} 
+                      placeholder="Enter Delivery Name"
+                       value={this.state.searchId}
+                        onChange={this.searchDeliveryByName.bind(this)}/>
+            </div>
+
+        </th>
+            </tbody>
+       </table>
+       </div>
     <center>
 
             <h2 className = "text-center" >Delivery Management</h2>
     </center>
-    <div className = "form-group col-md-4">
-                      <input type="text" class="form-control" style={{marginLeft:0}} placeholder="Enter Delivery Name" value={this.state.searchId} onChange={this.searchDeliveryByName.bind(this)}/>
-            </div>
             <div className = "row">
                 <button className="button" onClick={this.addDelivery}>Add Delivery</button>
 
@@ -159,7 +175,7 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
                     <thead>
                         <tr>
                                 <th style={{width: "5%"}}>Order Id</th> 
-                                <th style={{width: "20%"}}>Order Name</th>
+                                <th style={{width: "20%"}}>Customer Name</th>
                                 <th style={{width: "20%"}}>Address</th>
                                 <th style={{width: "10%"}}>Phone Number</th>
                                 <th style={{width: "10%"}}>courier </th>
@@ -221,3 +237,8 @@ import CourierDeliveryNavbar from './CourierDeliveryNavbar';
 
  
 export default ListDeliveryComponent
+
+
+
+
+

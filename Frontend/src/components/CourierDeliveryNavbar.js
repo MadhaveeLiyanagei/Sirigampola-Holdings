@@ -17,7 +17,7 @@ function CourierDeliveryNavbar() {
         Delivery
       </NavLink>
 
-      <NavLink to="/home" activeClassName="active">
+      <NavLink to="/AdminHome" activeClassName="active">
         Leave
       </NavLink>
 
