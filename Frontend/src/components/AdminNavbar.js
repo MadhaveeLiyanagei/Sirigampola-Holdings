@@ -21,6 +21,14 @@ useEffect(() =>{
     showButton();
 }, []);
     window.addEventListener('resize', showButton);
+
+
+     function logout(e){
+        e.preventDefault()
+        window.location="/"
+        //this.props.history.push('/add-buyer/_add');
+
+     }
     return (
         <>
          <nav className="navbar">
@@ -65,7 +73,7 @@ useEffect(() =>{
         
  
             </ul>
-            {button && <Button buttonStyle = 'btn--outline'> SIGN UP</Button>}
+            {button && <Button buttonStyle = 'btn--outline' onClick={(e)=>logout(e)}>Logout</Button>}
              </div>
             
              </nav>   

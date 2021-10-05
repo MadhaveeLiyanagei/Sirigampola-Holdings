@@ -25,6 +25,9 @@ class CreateSupplierComponent extends Component {
             supplierusernameError:'',
             supplierpasswordError:'',
             supplieraddressError:'',
+            supplierremailvError: '',
+            suppliercontacvError:''
+
 
         }
         this.ChangenameHandler = this.ChangenameHandler.bind(this);
@@ -97,12 +100,41 @@ class CreateSupplierComponent extends Component {
             return true;    
          }
 
+        emailValidation() {
+            let supplierremailvError ='';
+    
+            const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            if (!this.state.supplieremail|| regex.test(this.state.supplieremail) === false) {
+                this.setState({
+                    supplierremailvError: "You should enter a valid E-mail!"
+                });
+                return false;
+            }
+            return true;
+        }
 
+        contactNumberValidation(){
+
+            if(this.state.supplierphone.length>10 || this.state.supplierphone.length<10){
+    
+                this.setState({
+    
+                    suppliercontacvError: "You should enter a valid Contact Number!"
+    
+                });
+    
+                return false;
+    
+            }
+    
+            return true;
+    
+        }
 
         saveOrupdateSuppliyer = (e) =>{
             e.preventDefault();
             let supplier = {suppliername: this.state.suppliername, supplieremail: this.state.supplieremail, supplierphone: this.state.supplierphone, supplierusername: this.state.supplierusername, supplierpassword: this.state.supplierpassword, supplieraddress: this.state.supplieraddress};
-            const isValid = this.validate();
+            const isValid = this.validate() && this.emailValidation()&& this.contactNumberValidation();
             if(isValid){
             console.log('supplier =>'+JSON.stringify(supplier));
 
@@ -183,6 +215,7 @@ class CreateSupplierComponent extends Component {
                                       <input placeholder="email" name="supplieremail" className="form-control"
                                          value = {this.state.supplieremail} onChange={this.ChangeemailHandler}/>
                                          <div style={{fontSize: 12, color: "red"}}>{this.state.supplieremailError }</div>
+                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.supplierremailvError}</div>  
                                         
                                      </div>   
                                      <div className = "form-group">
@@ -190,6 +223,7 @@ class CreateSupplierComponent extends Component {
                                       <input placeholder="phone number" name="supplierphone" className="form-control"
                                          value = {this.state.supplierphone} onChange={this.ChangephoneHandler}/>
                                          <div style={{fontSize: 12, color: "red"}}>{this.state.supplierphoneError }</div>
+                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.suppliercontacvError}</div>
                                         
                                          
                                    </div> 

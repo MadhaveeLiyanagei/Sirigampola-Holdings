@@ -25,6 +25,8 @@ class CreateEmployeeComponent extends Component {
             employeeusernameError:'',
             employeepasswordError:'',
             employeeaddressError:'',
+            employeeemailvError: '',
+            employeecontacvError:''
 
 
          }
@@ -99,14 +101,42 @@ class CreateEmployeeComponent extends Component {
             return true;    
          }
 
+        emailValidation() {
+            let employeeemailvError='';
+    
+            const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            if (!this.state.employeeemail || regex.test(this.state.employeeemail) === false) {
+                this.setState({
+                    employeeemailvError: "You should enter a valid E-mail!"
+                });
+                return false;
+            }
+            return true;
+        }
 
+        contactNumberValidation(){
 
+            if(this.state.employeephone.length>10 || this.state.employeephone.length<10){
+    
+                this.setState({
+    
+                    employeecontacvError: "You should enter a valid Contact Number!"
+    
+                });
+    
+                return false;
+    
+            }
+    
+            return true;
+    
+        }
         
 
         saveOrupdateEmployee = (e) =>{
             e.preventDefault();
             let employee = {employeename: this.state.employeeusername, employeeemail: this.state.employeeemail, employeephone: this.state.employeephone, employeeusername: this.state.employeeusername, employeepassword: this.state.employeepassword, employeeaddress: this.state.employeeaddress};
-            const isValid = this.validate();
+            const isValid = this.validate()&& this.emailValidation() && this.contactNumberValidation();
             if(isValid){
             console.log('employee =>'+JSON.stringify(employee));
 
@@ -182,6 +212,7 @@ class CreateEmployeeComponent extends Component {
                                       <input placeholder="email" name="employeeemail" className="form-control"
                                          value = {this.state.employeeemail} onChange={this.ChangeemailHandler}/>
                                          <div style={{fontSize: 12, color: "red"}}>{this.state.employeeemailError }</div>
+                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.employeeemailvError}</div>    
                                      </div>
 
                                      <div className = "form-group">
@@ -189,6 +220,7 @@ class CreateEmployeeComponent extends Component {
                                       <input placeholder="phone number" name="employeephone" className="form-control"
                                          value = {this.state.employeephone} onChange={this.ChangephoneHandler}/>
                                          <div style={{fontSize: 12, color: "red"}}>{this.state.employeephoneError }</div>
+                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.employeecontacvError}</div>
                                          
                                    </div> 
 

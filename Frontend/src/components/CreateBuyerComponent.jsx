@@ -19,9 +19,11 @@ class CreateBuyerComponent extends Component {
                        nameError: '',
                        emailError: '',
                        PhoneError: '',
-                       userName: '',
+                       userNameError: '',
                        passwordError:'',
                        addressError: '',
+                       buyeremailvError: '',
+                       buyercontacvError:''
                }
                this.ChangenameHandler = this.ChangenameHandler.bind(this);
                this. saveOrupdateBuyer = this. saveOrupdateBuyer.bind(this);
@@ -96,6 +98,36 @@ class CreateBuyerComponent extends Component {
             return true;    
          }
 
+        emailValidation() {
+            let buyeremailvError='';
+    
+            const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            if (!this.state.email || regex.test(this.state.email) === false) {
+                this.setState({
+                    buyeremailvError: "You should enter a valid E-mail!"
+                });
+                return false;
+            }
+            return true;
+        }
+        
+        contactNumberValidation(){
+
+            if(this.state.phone.length>10 || this.state.phone.length<10){
+    
+                this.setState({
+    
+                    buyercontacvError: "You should enter a valid Contact Number!"
+    
+                });
+    
+                return false;
+    
+            }
+    
+            return true;
+    
+        }
 
   
 
@@ -103,7 +135,7 @@ class CreateBuyerComponent extends Component {
                e.preventDefault();
 
                let buyer = {name: this.state.name, email: this.state.email, phone: this.state.phone, userName: this.state.userName, password: this.state.password, address: this.state.address};
-               const isValid = this.validate();
+               const isValid = this.validate() && this.emailValidation() && this.contactNumberValidation();
                if(isValid){
                console.log('buyer =>'+JSON.stringify(buyer));
                 
@@ -175,9 +207,10 @@ class CreateBuyerComponent extends Component {
                                    </div>
                                    <div className = "form-group">
                                       <label>Email: </label> 
-                                      <input placeholder="email" name="email" className="form-control"
+                                      <input placeholder="xxx@gmail.com" name="email" className="form-control"
                                          value = {this.state.email} onChange={this.ChangeemailHandler}/>
                                          <div style={{fontSize: 12, color: "red"}}>{this.state.emailError}</div>
+                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.buyeremailvError}</div>                                        
 
                                    </div>
                                    <div className = "form-group">
@@ -185,6 +218,7 @@ class CreateBuyerComponent extends Component {
                                       <input placeholder="phone number" name="phone" className="form-control"
                                          value = {this.state.phone} onChange={this.ChangephoneHandler}/>
                                          <div style={{fontSize: 12, color: "red"}}>{this.state.PhoneError}</div>
+                                         <div style={{ fontSize: 14, color: "red" }}>{this.state.buyercontacvError}</div>
                                    </div>
                                    <div className = "form-group">
                                       <label>User Name: </label> 

@@ -37,6 +37,8 @@ function App() {
       <Switch> 
          <Route path = '/' exact component = {Welcomepage} />
         <Route path = '/login'  component = {Login} />
+        <Route path = '/Welcomepage'  component = {Home} />
+        <Route path = '/Welcomepage'  component = {AdminHome} />
         <Route path = '/Home'  component = {Home} />
         <Route path = '/AdminHome'  component = {AdminHome} />  
 
