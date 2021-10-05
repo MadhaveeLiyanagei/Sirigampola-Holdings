@@ -1,11 +1,11 @@
 import React, {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import CardItem from './CardItem';
 import './Navbar.css';
+import "./HeaderComponent.css"
 
 
-function Navbar() {
+function Navbar({cartItem}) {
     const [click,setClick]=useState(false);
     const [button, setButton] = useState(true)
     const handleClick = () => setClick(!click);
@@ -18,10 +18,19 @@ function Navbar() {
             setButton(true);
         }
     };
-useEffect(() =>{
-    showButton();
-}, []);
+        useEffect(() =>{
+            showButton();
+        }, []);
     window.addEventListener('resize', showButton);
+
+
+    function logout(e){
+
+        e.preventDefault()
+        window.location="/"
+
+    }
+    
     return (
         <>
          <nav className="navbar">
@@ -50,16 +59,16 @@ useEffect(() =>{
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/supplierorder' className='nav-links' onClick={closeMobileMenu}>
-                        About
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                        Profile
                     </Link>
                 </li>
 
-                <li className='nav-item'>
-                    <Link to='/add-to-list' className='nav-links' onClick={closeMobileMenu}>
+                {/* <li className='nav-item'>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                         Company
                     </Link>
-                </li>
+                </li> */}
 
                 {/* <li className='nav-item'>
                     <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>
@@ -70,10 +79,19 @@ useEffect(() =>{
                     </Link>
                 </li> */}
 
+                <li>
+                        <Link to="/cart" className="cart">
+                        <i class="fas fa-list-ul"></i>
+                        <span className="cart-page-length">
+                            {cartItem.length === 0 ? "" : cartItem.length}
+                        </span>
+                        </Link>
+                </li>
+
                 
             </ul>
             
-            {button && <Button buttonStyle = 'btn--outline'> SIGN UP</Button>}
+            {button && <Button buttonStyle = 'btn--outline' onClick={(e)=>logout(e)}>Logout</Button>}
              </div>
             
              </nav>   

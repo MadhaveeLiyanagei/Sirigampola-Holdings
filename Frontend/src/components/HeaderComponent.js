@@ -10,16 +10,11 @@ const HeaderComponent = ({cartItem}) => {
             <div className="header-links">
             
             <ul>
-                <li class="header-links" style={{marginLeft:"1600px" }}>
-                    <a class="nav-link" href="/createorder">Orders</a>
+                <li class="header-links" style={{marginLeft:"1100px" }}>
+                    <a class="nav-link" href="/createorder">Admin Orders</a>
                 </li>
             </ul>
-            <ul>
-                <li class="header-links">
-                    <a class="nav-link" href="/add-order">Add Order</a>
-                 </li>             
-            </ul>
-            <ul>
+            {/* <ul>
                 <li>
                         <Link to="/cart" className="cart">
                         <i class="fas fa-list-ul"></i>
@@ -28,7 +23,7 @@ const HeaderComponent = ({cartItem}) => {
                         </span>
                         </Link>
                 </li>
-            </ul>
+            </ul> */}
                 
             </div>
         </div>

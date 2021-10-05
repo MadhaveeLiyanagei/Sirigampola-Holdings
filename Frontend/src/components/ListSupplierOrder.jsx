@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SupplierOrderService from '../services/SupplierOrderService';
+import HeaderComponent from './HeaderComponent';
 
 class ListSupplierOrder extends Component {
 
@@ -35,6 +36,7 @@ class ListSupplierOrder extends Component {
     render() {
         return (
             <div>
+                <HeaderComponent/>
                 <div className = "row" style={{marginTop:"100px" }}></div>
 
                 <h2 className="text-center">SUPPLIER ORDERS</h2>
@@ -51,7 +53,7 @@ class ListSupplierOrder extends Component {
                         <th style={{ textAlign: "center" }}> Supplier Contact </th>
                         <th style={{ textAlign: "center" }}> Company Email </th>
                         <th style={{ textAlign: "center" }}> Description </th>
-                        <th style={{ textAlign: "center", width: "300px"}}> Actions </th>
+                        <th style={{ textAlign: "center", width: "200px"}}> Actions </th>
                     </tr>
                     </thead>
 
@@ -68,9 +70,8 @@ class ListSupplierOrder extends Component {
                                     <td>{order.companyEmail}</td>
                                     <td>{order.description}</td>
                                     <td class="table-secondary">
-                                            <button style={{marginLeft: "20px"}} className="btn btn-info"> Update </button>
-                                            <button style={{marginLeft: "20px"}} onClick = { () => this.deleteOrder(order.id)} className="btn btn-danger"> Delete </button>
                                             <button style={{marginLeft: "20px"}} onClick = { () => this.viewOrder(order.id)} className="btn btn-warning"> View </button>
+                                            <button style={{marginLeft: "20px"}} onClick = { () => this.deleteOrder(order.id)} className="btn btn-danger"> Delete </button> 
                                     </td>
                                 </tr>
                             )

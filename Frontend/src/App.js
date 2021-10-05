@@ -21,6 +21,7 @@ import ListSupplierOrder from './components/ListSupplierOrder';
 import AddSupplierComponent from './components/AddSupplierComponent';
 import ViewSupplierOrderComponent from './components/ViewSupplierOrderComponent';
 import Login from './components/Login/Login';
+import AdminHome from './components/AdminHome';
 
 function App() {
 
@@ -71,12 +72,13 @@ function App() {
 
     <div>
       <Router>
-        <Navbar/>
-        <HeaderComponent cartItem={cartItem}></HeaderComponent>
+        <Navbar cartItem={cartItem}/>
+        {/* <HeaderComponent cartItem={cartItem}></HeaderComponent> */}
             <div className="container">
               <Switch>
               <Route path = "/" exact component = {Login} ></Route>
                 <Route path = "/Home" component = {Home} ></Route>
+                <Route path = "/AdminHome" component = {AdminHome} ></Route>
                 <Route path = "/createorder" component = {ListCreateOrder} ></Route>
                 <Route path = "/add-order" component = {AddOrderComponent} ></Route>
                 <Route path = "/update-order/:id" component = {UpdateOrderComponent} ></Route>

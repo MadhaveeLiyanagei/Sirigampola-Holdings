@@ -117,7 +117,8 @@ class AddSupplierComponent extends Component {
 
             SupplierOrderService.addSupplierOrder(order).then(res =>{
                     this.notify();
-                    this.props.history.push('/supplierorder');
+                    // this.props.history.push('/supplierorder');
+                    this.props.history.push('/Home');
             });
         }
     }
@@ -168,36 +169,42 @@ class AddSupplierComponent extends Component {
                                         <label>Supplier Name:</label>
                                         <input placeholder = "Supplier Name" name="supplierName" className="form-control" 
                                         value={this.state.supplierName} onChange={this.changeSupplierNameHandler}/>
+                                        <div style={{fontSize: 12, color: "red"}}>{this.state.supplierNameError}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Company Name:</label>
                                         <input placeholder = "Company Name" name="companyName" className="form-control" 
                                         value={this.state.companyName} onChange={this.changeCompanyNameHandler}/>
+                                        <div style={{fontSize: 12, color: "red"}}>{this.state.companyNameError}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Company Address:</label>
                                         <input placeholder = "Company Address" name="companyAddress" className="form-control" 
                                         value={this.state.companyAddress} onChange={this.changeCompanyAddressHandler}/>
+                                        <div style={{fontSize: 12, color: "red"}}>{this.state.companyAddressError}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Supplier Contact:</label>
                                         <input placeholder = "Supplier Contact" name="supplierContact" className="form-control" 
                                         value={this.state.supplierContact} onChange={this.changeSupplierContactHandler}/>
+                                        <div style={{fontSize: 12, color: "red"}}>{this.state.supplierContactError}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Company Email:</label>
                                         <input placeholder = "Company Email" name="companyEmail" className="form-control" 
                                         value={this.state.companyEmail} onChange={this.changeCompanyEmailHandler}/>
+                                        <div style={{fontSize: 12, color: "red"}}>{this.state.companyEmailError}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Description:</label>
                                         <input placeholder = "Description" name="description" className="form-control" style={{height: "100px"}}
                                         value={this.state.description} onChange={this.changeDescriptionHandler}/>
+                                        <div style={{fontSize: 12, color: "red"}}>{this.state.descriptionError}</div>
                                     </div>
 
                                     
