@@ -67,7 +67,7 @@ class ViewTaxComponent extends Component {
                         
                         
                         <br></br>
-                        <button className="btn btn-info" style={{marginLeft: "4px"}}>Generate Report </button>
+                         
                     <button className="btn btn-danger" style={{marginLeft: "4px"}} onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Back</button>
                     </div>
                      
