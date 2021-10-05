@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import IncomeService from '../services/IncomeService';
+import ExpenseService from '../services/ExpenseService';
 import './HeaderFinance.css';
 import SoloAlert from 'soloalert'
 import {Link } from "react-router-dom";
@@ -11,7 +12,9 @@ class ListTaxComponent extends Component {
 
        this.state = {
               incomes: [],
-              searchId:''
+              searchId:'',
+              expenses: []
+               
                
        }
         
@@ -21,6 +24,10 @@ class ListTaxComponent extends Component {
         IncomeService.getIncomes().then((res) => {
                 this.setState({ incomes: res.data});
         });
+        ExpenseService.getExpenses().then((res) => {
+            this.setState({ expenses: res.data});
+    });
+         
 }
 
  
@@ -40,12 +47,32 @@ class ListTaxComponent extends Component {
 
         );
 
-        var totalPrice = 0;
+        var ItotalPrice = 0;
          this.state.incomes.map(
           income =>
-          totalPrice += income.amount, 
+          ItotalPrice += income.amount, 
           income => 
           income.amount++ ) 
+
+        
+          let filterExpense = this.state.expenses.filter((
+
+            expenses)=>{
+
+                return expenses.transaction.toLowerCase().indexOf(this.state.searchId.toLowerCase())!==-1;
+
+                    
+
+            }
+
+        );
+
+        var EtotalPrice = 0;
+         this.state.expenses.map(
+          expense =>
+          EtotalPrice += expense.amount, 
+          expense => 
+          expense.amount++ ) 
 
         return ( 
             <div>
@@ -60,7 +87,9 @@ class ListTaxComponent extends Component {
         </div> 
       
 
-                <h2 className="text-center">Reports & Charts</h2>
+                <h2 className="text-center">Income VS Expense</h2>
+                <br></br>
+                <h3 className="text-center">Overall Report</h3>
                    
                      
                     <br></br>
@@ -110,16 +139,18 @@ class ListTaxComponent extends Component {
                         <div className="col-md-8"></div> 
                       <div className="col-md-4">
                         <div className="card card-body mt-3">
+                        <Link to="/ReportGraph" className="btn btn-primary"> Income Summary</Link>
+                        <br></br>
                             <h4>Sub Total : 
-                                <span className="float-end">{totalPrice}</span>
+                                <span className="float-end">{ItotalPrice}</span>
                             </h4>
                             
-                            <h4>Grand Total : 
-                                <span className="float-end">{totalPrice}</span>
+                            <h4>Total Income : 
+                                <span className="float-end">{ItotalPrice}</span>
                                  
                             </h4>
                             <hr />
-                            <Link to="/ReportGraph" className="btn btn-primary"> Summary</Link>
+                             
                         </div>
                         </div>  
 
@@ -127,7 +158,69 @@ class ListTaxComponent extends Component {
                                  
 
                 </div>
-                 <Link to="/IncomeReport"><button className="btn btn-success">Generate Report  </button> </Link>
+                  
+
+
+                 <br></br>
+                    <div className = "form-group col-md-4">
+                    </div>
+                
+                <div className ="row">
+                        <table className = "table table-striped table-bordered">
+
+                            <thead>
+                                    <tr>
+                                        <th>Transaction</th>
+                                        <th>Payment To</th>
+                                        <th>Date</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                       
+                                            
+                                    </tr>
+                            </thead>
+
+                            <tbody>
+                                {
+                                     filterExpense.map(
+                                    //ishani
+                                        expense=>
+                                    //this.state.expenses.map(
+                                        //expense =>
+                                        <tr key = {expense.expenseID}>
+                                            <td> {expense.transaction}</td>
+                                            <td> {expense.paymentTo}</td>
+                                            <td> {expense.date}</td>
+                                            <td> {expense.expenseCategory}</td>
+                                            <td> {expense.description}</td>
+                                            <td> {expense.amount}</td>
+                                             
+                                        </tr>
+                                    )
+                                }
+                            </tbody>
+                        </table>
+
+                        <div className="col-md-8"></div> 
+                      <div className="col-md-4">
+                        <div className="card card-body mt-3">
+                            <h4>Sub Total : 
+                                <span className="float-end">{EtotalPrice}</span>
+                            </h4>
+                            
+                            <h4>Grand Total : 
+                                <span className="float-end">{EtotalPrice}</span>
+                                 
+                            </h4>
+                            <hr />
+                            <Link to="/ReportGraph" className="btn btn-primary"> Expense Summary</Link>
+                        </div>
+                        </div>  
+
+                </div>
+
+                <Link to="/ExpenseReport"><button className="btn btn-success">Generate Report  </button> </Link>
 
                    
                 </div>  
