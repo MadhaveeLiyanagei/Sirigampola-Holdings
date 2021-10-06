@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NoticesService from "../services/NoticesService";
 import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
 import SoloAlert from "soloalert";
+import AdminNavbar from "./AdminNavbar";
 
 class ListNoticesComponent extends Component {
   constructor(props) {
@@ -90,7 +91,8 @@ class ListNoticesComponent extends Component {
     return (
       <div>
         <div className="row">
-          <>
+        <>
+            <AdminNavbar />
             <AdminEmployeeSideBar />
           </>
           <h2 className="text-center">

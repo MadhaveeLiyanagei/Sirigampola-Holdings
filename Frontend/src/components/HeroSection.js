@@ -8,12 +8,12 @@ function HeroSection() {
   return (
     <div className="hero-container">
       <video src="/videos/home.mp4" autoPlay loop muted />
-      <h1>WELCOME TO WONDERLAND!!!</h1>
+      <h1>WELCOME!!!</h1>
       <table>
         <tbody>
           <th>
             <div className="hero-btns">
-              <Button
+             {/* <Button
                 className="btns"
                 buttonStyle="btn--outline"
                 buttonSize="btn--large"
@@ -32,7 +32,7 @@ function HeroSection() {
               >
                 CONTACT US
                 <i className="far fa-play-circle" />
-              </Button>
+             </Button>*/}
             </div>
           </th>
         </tbody>

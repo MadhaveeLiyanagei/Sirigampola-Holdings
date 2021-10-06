@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProductService from "../services/ProductService";
 import SoloAlert from "soloalert";
+import AdminNavbar from "./AdminNavbar";
 
 class ListProductComponent extends Component {
   constructor(props) {
@@ -109,6 +110,9 @@ class ListProductComponent extends Component {
 
     return (
       <div>
+         <>
+            <AdminNavbar />
+          </>
         <div className="row">
           <table className="srchbr">
             <br></br>

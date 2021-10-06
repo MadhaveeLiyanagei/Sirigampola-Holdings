@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import EmployeeLeavesService from "../services/EmployeeLeavesService";
 import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
 import Pdf from "react-to-pdf";
+import AdminNavbar from "./AdminNavbar";
 
 const ref = React.createRef();
 
@@ -31,10 +32,11 @@ class ViewEmployeeLeavesComponent extends Component {
       <>
         <div>
           <div className="row">
-            <>
-              <AdminEmployeeSideBar />
-            </>
-          </div>
+          <>
+            <AdminNavbar />
+            <AdminEmployeeSideBar />
+          </>
+          </div><br></br><br></br><br></br><br></br><br></br><br></br>
           <div className="react-pdf__Page__canvas_Single_View">
             <div className="Post" ref={ref}>
               <br></br>
@@ -87,7 +89,7 @@ class ViewEmployeeLeavesComponent extends Component {
               Generate Report
             </button>
           )}
-        </Pdf>
+        </Pdf><br></br><br></br><br></br><br></br>
       </>
     );
   }

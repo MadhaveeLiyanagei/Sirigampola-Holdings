@@ -1,13 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AdminSideBarData } from "./AdminSideBarData";
 import "./AdminEmployeeSideBar.css";
 
-
+/*implementation of AdminEmployeeSideBar*/
 function AdminEmployeeSideBar() {
   return (
-
-    
     <div class="topnav">
       <NavLink to="/Employee" activeClassName="active">
         Employees

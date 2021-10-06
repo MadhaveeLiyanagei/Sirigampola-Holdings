@@ -25,7 +25,7 @@ function AdminNavbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <div class="footer-logo">
-            <Link to="/home" className="navbar-logo" onClick={closeMobileMenu}>
+            <Link to="/adminHome" className="navbar-logo" onClick={closeMobileMenu}>
               <img class="logo" src="./images/shlogo.png" alt="" /><b> SIRIGAMPOLA
               HOLDINGS</b>
             </Link>

@@ -1,7 +1,6 @@
 import React from "react";
 import AdminNavbar from "./components/AdminNavbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ReactDOM from "react-dom";
 import "./App.css";
 //import './AdminEmployeeSideBar.css';
 //import {BrowserRouter as Router, Route, Switch}from 'react-router-dom';
@@ -17,7 +16,6 @@ import ListNoticesComponent from "./components/ListNoticesComponent";
 import CreateNoticesComponent from "./components/CreateNoticesComponent";
 import UpdateNoticeComponent from "./components/UpdateNoticeComponent";
 import ViewNoticesComponent from "./components/ViewNoticesComponent";
-import AdminEmployeeSideBar from "./components/AdminEmployeeSideBar";
 import ListInventoryComponent from "./components/ListInventoryComponent";
 import CreateInventoryComponent from "./components/CreateInventoryComponent";
 import UpdateInventoryComponent from "./components/UpdateInventoryComponent";
@@ -27,18 +25,26 @@ import CreateProductComponent from "./components/CreateProductComponent";
 import UpdateProductComponent from "./components/UpdateProductComponent";
 import ViewProductComponent from "./components/ViewProductComponent";
 import EmployeeLeavesReport from "./components/EmployeeLeavesReport";
-import ParticleBackground from "./ParticleBackground";
 import ProductReport from "./components/ProductReport";
 import InventoryReport from "./components/InventoryReport";
+import UpdateEmployeeComponent from "./components/UpdateEmployeeComponent";
+import ViewEmployeeComponent from "./components/ViewEmployeeComponent";
+import Login from "./components/Login/Login";
+import Home  from "./pages/Home";
+import EmployeeViewNoticeComponent from "./components/EmployeeViewNoticeComponent";
+import EmployeeViewSingleNoticeComponent from "./components/EmployeeViewNoticeComponent";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
     <div>
       <Router>
-        <AdminNavbar />
+        
         <div className="container">
           <Switch>
-            <Route path="/" exact component={AdminHome} />
+            <Route path="/" exact component={Login} />
+            <Route path="/adminHome"  component={AdminHome} />
+            <Route path="/home"  component={Home} />
             <Route path="/Employee" component={ListEmployeeComponent} />
             <Route path="/add-employee" component={CreateEmployeeComponent} />
             <Route
@@ -96,11 +102,40 @@ function App() {
             ></Route>
             <Route path="/leavegen" component={EmployeeLeavesReport}></Route>
             <Route path="/inventoryreport" component={InventoryReport}></Route>
+
+            <Route path = '/Employee'  component = {ListEmployeeComponent}/>
+
+           {/* <Route path = '/employeereport'  component = {EmployeeReport}/>*/}
+
+            <Route path = "/add-employee"  component = {CreateEmployeeComponent}/>
+          
+            <Route path = '/update-employee/:employeeid'  component = {UpdateEmployeeComponent}/>
+            <Route
+              path="/view-employee/:employeeid"
+              component={ViewEmployeeComponent}
+            ></Route>
+            <Route
+              path="/employeeViewNotice"
+              component={EmployeeViewNoticeComponent}
+            ></Route>
+
+           
+
+
           </Switch>
         </div>
+
+
+<div className="container1"><Switch><Route
+              path="/aboutUs"
+              component={AboutUs}
+            ></Route></Switch></div>
+
+
         <Footer />
       </Router>
     </div>
+
   );
 }
 

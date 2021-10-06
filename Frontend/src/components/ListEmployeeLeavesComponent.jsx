@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import EmployeeLeavesService from "../services/EmployeeLeavesService";
 import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
 import SoloAlert from "soloalert";
-import ParticleBackground from "../ParticleBackground";
+import AdminNavbar from "./AdminNavbar";
+
 export default class ListEmployeeLeavesComponent extends Component {
   constructor(props) {
     super(props);
@@ -108,6 +109,7 @@ export default class ListEmployeeLeavesComponent extends Component {
       <div>
         <div className="row">
           <>
+            <AdminNavbar />
             <AdminEmployeeSideBar />
           </>
           <table className="srchbr">

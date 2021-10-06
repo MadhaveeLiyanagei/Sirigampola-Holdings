@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ProductService from "../services/ProductService";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminNavbar from "./AdminNavbar";
 
 toast.configure();
 
@@ -127,6 +128,9 @@ class UpdateProductComponent extends Component {
   render() {
     return (
       <div>
+         <>
+            <AdminNavbar />
+          </>
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">

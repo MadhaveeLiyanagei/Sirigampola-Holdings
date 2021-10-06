@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import EmployeeLeavesService from "../services/EmployeeLeavesService";
 import Pdf from "react-to-pdf";
 import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
+import AdminNavbar from "./AdminNavbar";
 
 const ref = React.createRef();
 
-export default class ListEmployeeLeavesComponent extends Component {
+export default class EmployeeLeavesReport extends Component {
   constructor(props) {
     super(props);
 
@@ -28,7 +29,8 @@ export default class ListEmployeeLeavesComponent extends Component {
     return (
       <>
         <div className="row">
-          <>
+        <>
+            <AdminNavbar />
             <AdminEmployeeSideBar />
           </>
         </div>

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import EmployeeLeavesService from "../services/EmployeeLeavesService";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import EmployeeNavBar from './EmployeeNavBar';
+
 
 toast.configure();
 export default class CreateEmployeeLeavesComponent extends Component {
@@ -24,6 +26,8 @@ export default class CreateEmployeeLeavesComponent extends Component {
     this.saveEmployeeLeaves = this.saveEmployeeLeaves.bind(this);
   }
 
+
+  /*Add toast messages*/
   notify() {
     toast.success("Leave successfully added!", {
       position: toast.POSITION.TOP_CENTER,
@@ -35,6 +39,8 @@ export default class CreateEmployeeLeavesComponent extends Component {
       position: toast.POSITION.TOP_CENTER,
     });
   }
+
+  /*Validations*/
   validate = () => {
     let employeeIDError = "";
     let dateError = "";
@@ -58,6 +64,7 @@ export default class CreateEmployeeLeavesComponent extends Component {
     return true;
   };
 
+/*Database connection*/
   saveEmployeeLeaves = (e) => {
     e.preventDefault();
 
@@ -73,7 +80,7 @@ export default class CreateEmployeeLeavesComponent extends Component {
 
       EmployeeLeavesService.createEmployeeLeaves(employeeLeaves).then((res) => {
         this.notify();
-        this.props.history.push("/");
+        this.props.history.push("/home");
       });
     }
   };
@@ -92,12 +99,15 @@ export default class CreateEmployeeLeavesComponent extends Component {
 
   cancel() {
     this.notify();
-    this.props.history.push("/");
+    this.props.history.push("/home");
   }
 
   render() {
     return (
       <div>
+         <>
+            <EmployeeNavBar />
+          </>
         <div className="container">
           <div className="row">
             <div className="card col-md-6 offset-md-3 offset-md-3">
@@ -165,20 +175,20 @@ export default class CreateEmployeeLeavesComponent extends Component {
                       <th>
                         <center>
                           <button
-                            className="btn_green"
-                            onClick={this.saveNotice}
+                            className="btn_save"
+                            onClick={this.saveEmployeeLeaves}
                           >
-                            Save
+                            <b>Save</b>
                           </button>
                         </center>
                       </th>
                       <th>
                         <center>
                           <button
-                            className="btn_red"
+                            className="btn_cancel_cancel"
                             onClick={this.cancel.bind(this)}
                           >
-                            Cancel
+                            <b>Cancel</b>
                           </button>
                         </center>
                       </th>

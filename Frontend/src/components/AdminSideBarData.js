@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import HotelIcon from '@material-ui/icons/Hotel';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
@@ -21,4 +21,4 @@ export const AdminSideBarData = [
         link: "/adNotices"
     }
 
-]
+]*/

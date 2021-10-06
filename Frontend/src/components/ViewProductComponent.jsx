@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProductService from "../services/ProductService";
 import Pdf from "react-to-pdf";
+import AdminNavbar from "./AdminNavbar";
 
 const ref = React.createRef();
 
@@ -24,6 +25,9 @@ class ViewProductComponent extends Component {
   render() {
     return (
       <>
+       <>
+            <AdminNavbar />
+          </>
         <div className="react-pdf__Page__canvas_Single_View2">
           <div className="Post" ref={ref}>
             <div>

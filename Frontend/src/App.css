@@ -401,7 +401,7 @@ color: white;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  margin-left: 600px;
+  margin-left: 72%;
   width: 200px;
 }
 .button-report2:hover{
@@ -422,7 +422,7 @@ color: white;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  margin-left: 1110px;
+  margin-left: 83%;
   width: 200px;
 
 }
@@ -434,6 +434,5 @@ color: white;
 
 .container1{
   width: 100%;
-  padding: 0px 30px 30px 30px;
-  background-color: rgba(233, 37, 37, 0.295);
+  background-color: rgba(0, 0, 0, 0.671);
 }

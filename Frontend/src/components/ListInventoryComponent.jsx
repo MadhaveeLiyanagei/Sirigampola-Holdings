@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InventoryService from "../services/InventoryService";
 import SoloAlert from "soloalert";
+import AdminNavbar from "./AdminNavbar";
 
 class ListInventoryComponent extends Component {
   constructor(props) {
@@ -109,6 +110,9 @@ class ListInventoryComponent extends Component {
 
     return (
       <div>
+         <>
+            <AdminNavbar />
+          </>
         <div className="row">
           <table className="srchbr">
             <br></br>

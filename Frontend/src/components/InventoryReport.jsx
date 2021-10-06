@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InventoryService from "../services/InventoryService";
 import Pdf from "react-to-pdf";
+import AdminNavbar from "./AdminNavbar";
 
 const ref = React.createRef();
 
@@ -22,6 +23,9 @@ class InventoryReport extends Component {
   render() {
     return (
       <>
+       <>
+            <AdminNavbar />
+          </>
 <div className="react-pdf__Page__canvas_Single_View3">
         <div className="Post" ref={ref}>
           <div style={{ marginLeft: 20 }}><br></br><br></br>

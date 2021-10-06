@@ -3,6 +3,7 @@ import EmployeeLeavesService from "../services/EmployeeLeavesService";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
+import AdminNavbar from "./AdminNavbar";
 
 class UpdateEmployeeLeavesComponent extends Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class UpdateEmployeeLeavesComponent extends Component {
       date: "",
       reason: "",
       status: "",
+      statusError: "",
+      adminIDError: "",
       isInEditMode: true,
     };
 
@@ -39,6 +42,28 @@ class UpdateEmployeeLeavesComponent extends Component {
     });
   };
 
+  validate = () => {
+    let adminIDError = "";
+    let statusError = "";
+    
+
+    if (!this.state.adminID) {
+      adminIDError = "Admin ID is required";
+    }
+    if (!this.state.status) {
+      statusError = "Status is required";
+    }
+    
+    
+
+    if (adminIDError || statusError ) {
+      this.setState({ adminIDError, statusError});
+      return false;
+    }
+
+    return true;
+  };
+
   componentDidMount() {
     EmployeeLeavesService.getEmployeeLeavesByLeaveNumber(
       this.state.leaveNumber
@@ -61,17 +86,17 @@ class UpdateEmployeeLeavesComponent extends Component {
       adminID: this.state.adminID,
       status: this.state.status,
     };
-
-    console.log("employeeLeaves => " + JSON.stringify(employeeLeaves));
-
-    EmployeeLeavesService.updateEmployeeLeaves(
-      employeeLeaves,
-      this.state.leaveNumber
-    ).then((res) => {
-      this.notify();
-      this.props.history.push("/employeeLeaves");
-    });
-  };
+    const isValid = this.validate();
+    if (isValid) {
+      console.log("employeeLeaves => " + JSON.stringify(employeeLeaves));
+        EmployeeLeavesService.updateEmployeeLeaves( employeeLeaves, this.state.leaveNumber).then((res) => {
+             this.notify();
+             this.props.history.push("/employeeLeaves");
+            }
+            );
+          }
+        };
+       
 
   changeAdminIDHandler = (event) => {
     this.setState({ adminID: event.target.value });
@@ -91,9 +116,10 @@ class UpdateEmployeeLeavesComponent extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <>
-              <AdminEmployeeSideBar />
-            </>
+          <>
+            <AdminNavbar />
+            <AdminEmployeeSideBar />
+          </>
             <div className="card col-md-6 offset-md-3 offset-md-3">
               <h3 className="text-center">
                 <br></br>
@@ -127,6 +153,9 @@ class UpdateEmployeeLeavesComponent extends Component {
                       value={this.state.adminID}
                       onChange={this.changeAdminIDHandler}
                     />
+                    <div style={{ fontSize: 12, color: "red" }}>
+                      {this.state.adminIDError}{" "}
+                    </div>
                   </div>
 
                   <div className="form-group">
@@ -155,6 +184,7 @@ class UpdateEmployeeLeavesComponent extends Component {
                       value={this.state.reason}
                       onChange={this.isInEditMode}
                     />
+                    
                   </div>
 
                   <div className="form-group">
@@ -169,6 +199,9 @@ class UpdateEmployeeLeavesComponent extends Component {
                       value={this.state.status}
                       onChange={this.changeStatusHandler}
                     />
+                    <div style={{ fontSize: 12, color: "red" }}>
+                      {this.state.statusError}{" "}
+                    </div>
                   </div>
                   <br></br>
                   <br></br>

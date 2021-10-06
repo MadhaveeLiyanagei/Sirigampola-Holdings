@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProductService from "../services/ProductService";
 import Pdf from "react-to-pdf";
+import AdminNavbar from "./AdminNavbar";
 
 const ref = React.createRef();
 
@@ -22,6 +23,9 @@ class ListProductComponent extends Component {
   render() {
     return (
       <>
+       <>
+            <AdminNavbar />
+          </>
         <div className="Post" ref={ref}>
           <div><br></br>
             <h2 className="text-center"><b><u>Products</u></b></h2>

@@ -3,6 +3,7 @@ import NoticesService from "../services/NoticesService";
 import AdminEmployeeSideBar from "./AdminEmployeeSideBar";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminNavbar from "./AdminNavbar";
 
 class CreateNoticesComponent extends Component {
   constructor(props) {
@@ -70,11 +71,12 @@ class CreateNoticesComponent extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <>
-              <AdminEmployeeSideBar />
-            </>
+          <>
+            <AdminNavbar />
+            <AdminEmployeeSideBar />
+          </>
             <div className="card col-md-6 offset-md-3">
-              <h3 className="text-center">
+              <h3 className="text-center"><br></br><br></br><br></br><br></br><br></br>
                 <u>Add Notice</u>
               </h3>
               <div className="card-body">
@@ -120,7 +122,7 @@ class CreateNoticesComponent extends Component {
                       </th>
                     </tbody>
                   </table>
-                </form>
+                </form><br></br><br></br><br></br><br></br><br></br><br></br>
               </div>
             </div>
           </div>
