@@ -80,6 +80,60 @@ const product_card = {
         currency: "Rs",
         thumb: "./images/ProductImages/Nikon D780 DSLR Camera with 24-120mm Lens.png"
     },
+
+    {
+        id: 10,
+        product_name: 'Nikon 10x42 Aculon',
+        description:'Max Quantity: 02',
+        price: 20400,
+        currency: "Rs",
+        thumb: "./images/ProductImages/Nikon 10x42 Aculon A211 Binoculars.png"
+    },
+
+    {
+        id: 11,
+        product_name: 'Bushnell 10x42 Binocular',
+        description:'Max Quantity: 01',
+        price: 19000,
+        currency: "Rs",
+        thumb: "./images/ProductImages/Bushnell 10x42 H2O Roof Binocular.png"
+    },
+
+    {
+        id: 12,
+        product_name: 'Vanguard 10x42 Binoculars',
+        description:'Max Quantity: 01',
+        price: 55400,
+        currency: "Rs",
+        thumb: "./images/ProductImages/Vanguard 10x42 Endeavor-ED Binoculars.png"
+    },
+
+    {
+        id: 13,
+        product_name: 'Canon EF 24-70mm',
+        description:'Max Quantity: 02',
+        price: 15500,
+        currency: "Rs",
+        thumb: "./images/ProductImages/Canon EF 24-70mm f2.8L USM Lens.png"
+    },
+
+    {
+        id: 14,
+        product_name: 'Canon EF-S 18-55mm',
+        description:'Max Quantity: 10',
+        price: 64500,
+        currency: "Rs",
+        thumb: "./images/ProductImages/Canon EF-S 18-55mm f4-5.6 IS STM Lens.png"
+    },
+
+    {
+        id: 15,
+        product_name: 'Canon EF-S 24mm',
+        description:'Max Quantity: 08',
+        price: 32000,
+        currency: "Rs",
+        thumb: "./images/ProductImages/Canon EF-S 24mm f-2.8 STM Lens.png"
+    },
     
 
     ]

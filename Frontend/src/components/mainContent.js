@@ -7,7 +7,7 @@ const MainContent = ({productItem, handleAddProduct}) => {
     
     return (
         <div class="main_content">
-            <h3>DSLR CAMERAS</h3>
+            <h3>CAMERA EQUIPMENT</h3>
             {productItem.map((productItem) =>
             <div className="cardView" key={productItem.id}>
                 <div className="cardView_img">
