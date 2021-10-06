@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import AdminNavbar from "./components/AdminNavbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
 import "./App.css";
+import data from "./components/back-cart/Data"
 //import './AdminEmployeeSideBar.css';
 //import {BrowserRouter as Router, Route, Switch}from 'react-router-dom';
 import AdminHome from "./pages/AdminHome";
@@ -32,19 +33,66 @@ import ProductReport from "./components/ProductReport";
 import InventoryReport from "./components/InventoryReport";
 import AboutUs from "./pages/AboutUs";
 import Login from './components/Login/Login';
+import Home from "./pages/Home";
+import {toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+import { Navbar } from "react-bootstrap";
+import Routes from "./components/front-cart/Routes/Routes"
 
 function App() {
+  const {productItems}= data;
+  const [cartItems, setCartItems] =useState([]);
+
+  const handleAddProduct = (product) =>{
+    const ProductExist = cartItems.find((item)=> item.id === product.id);
+      if(ProductExist){
+        if(ProductExist.quantity>=20){
+          toast.warn('Order level exceeded!', {position: toast.POSITION.TOP_CENTER, autoClose: 2000})
+          
+        }
+        else{setCartItems(       
+        cartItems.map((item) =>        
+        item.id === product.id 
+        ?{...ProductExist, quantity: ProductExist.quantity + 1}
+        : item
+        )
+        );
+      }}
+      else{
+            setCartItems([...cartItems,{...product, quantity: 1}]); 
+      }
+    };
+
+  const handleRemoveProduct = (product) =>{
+    const ProductExist = cartItems.find((item)=> item.id === product.id);
+    if(ProductExist.quantity===1){
+              setCartItems(cartItems.filter((item)=> item.id !== product.id))
+    }else{
+      setCartItems(
+        cartItems.map((item) => 
+        item.id === product.id 
+        ? {...ProductExist, quantity: ProductExist.quantity-1} 
+        : item)
+      )
+    }
+  };
+
+  const handleCartClearance = () =>{
+    setCartItems([]);
+  };
   return (
     <div className="bgclr">
              
 
       <Router>
-        <AdminNavbar />
+        <Navbar cartItems={cartItems}/>
         <div className="container">
           <Switch>
           
             <Route path="/" exact component={Login} />
             <Route path="/Employee" component={ListEmployeeComponent} />
+
+            <Route path="/AdminHome" component={AdminHome} />
             <Route path="/add-employee" component={CreateEmployeeComponent} />
             <Route
               path="/employeeLeaves"
@@ -101,13 +149,19 @@ function App() {
             ></Route>
             <Route path="/leavegen" component={EmployeeLeavesReport}></Route>
             <Route path="/inventoryreport" component={InventoryReport}></Route>
+
+            <Routes 
+        productItems={productItems} 
+        cartItems= {cartItems} 
+        handleAddProduct = {handleAddProduct}
+        handleRemoveProduct= {handleRemoveProduct}
+        handleCartClearance = {handleCartClearance}
+        
+        />
           </Switch>
+
+
         </div>
-        <div className="container1">
-                <Switch> 
-                <Route path = "/aboutUs" component = {AboutUs}></Route> 
-                </Switch>
-                </div>
         <Footer />
       </Router>
     </div>  

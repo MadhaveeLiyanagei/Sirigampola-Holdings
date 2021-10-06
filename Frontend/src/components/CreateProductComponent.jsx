@@ -116,7 +116,7 @@ class CreateProductComponent extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="card col-md-6 offset-md-3 offset-md-3">
+            <div className="card col-md-6 offset-md-3 offset-md-3" style={{height:"560px"}}>
               <h3 className="text-center"><br></br>
                 <u>Add Product</u>
               </h3>
