@@ -21,6 +21,8 @@ class CreateCourierComponent extends Component {
             addressError: '',
             phone_numberError: '',
             emailError:'',
+            emailvError: '',
+            contactvError:''
 
            }
            this.changeAddressHandler = this.changeAddressHandler.bind(this);
@@ -88,13 +90,36 @@ class CreateCourierComponent extends Component {
      
     
         }
+        emailValidation() {
+            let emailvError='';
+    
+            const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            if (!this.state.email || regex.test(this.state.email) === false) {
+                this.setState({
+                    emailvError: "You should enter a valid E-mail!"
+                });
+                return false;
+            }
+            return true;
+        }
+
+        contactNumberValidation(){
+            if(this.state.phone_number.length>10 || this.state.phone_number.length<10){
+                this.setState({
+                    contactvError: "You should enter a valid Contact Number!"
+                });
+                return false;
+            }
+            return true;
+        }
+       
 
 
        SaveCourier = (e) => {
             e.preventDefault();
             let courier = {name: this.state.name, address: this.state.address, phone_number: this.state.phone_number, email: this.state.email};
 
-            const isValid = this.validate();
+            const isValid = this.validate()  && this.emailValidation() && this.contactNumberValidation();
             if(isValid){
             console.log('courier => ' + JSON.stringify(courier));
 
@@ -149,6 +174,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Courier Name" name="name" className="form-control" 
                                                 value={this.state.name} onChange={this.changeNameHandler}/>
+                                                 
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.nameError} </div>
                                         </div>
 
@@ -165,6 +191,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Phone Number" name="phone_number" className="form-control" 
                                                 value={this.state.phone_number} onChange={this.changePhoneHandler}/>
+                                                 <div style={{ fontSize: 14, color: "red" }}>{this.state.contactvError}</div> 
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.phone_numberError} </div>
                                         </div>    
                                        
@@ -173,6 +200,7 @@ class CreateCourierComponent extends Component {
                                             <br></br>
                                             <input placeholder="Email Address" name="email" className="form-control" 
                                                 value={this.state.email} onChange={this.changeEmailHandler}/>
+                                                <div style={{ fontSize: 14, color: "red" }}>{this.state.emailvError}</div>
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.emailError} </div>
                                         </div>    
                                         

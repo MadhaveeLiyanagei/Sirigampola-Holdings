@@ -1,14 +1,13 @@
 import React from 'react';
 import '../App.css'
-import HeroSection from '../components/HeroSection'
-
+import AdminPanel from '../components/AdminPanel';
 import Cards from '../components/Cards';
 
 
 function AdminHome(){
     return(
         <>
-            <HeroSection/>
+            <AdminPanel/>
             <div className="container1">
             <Cards/>
             </div>

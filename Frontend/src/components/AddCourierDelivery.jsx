@@ -20,7 +20,9 @@ class AddCourierDeliveryComponent extends Component {
             order_name: '',
             order_address: '',
             order_phone_number: '',
-            order_courier_name:''
+            order_courier_name:'',
+
+            order_courierNameError: '',
 
 
            }
@@ -43,6 +45,41 @@ class AddCourierDeliveryComponent extends Component {
           }
 
 
+          validate = () =>{
+
+            let order_courierNameError='';
+       
+           
+           
+    
+            if(!this.state.order_courier_name){
+    
+                order_courierNameError = "Please fill out this field";
+    
+            }
+    
+         
+    
+           
+          
+    
+            if(order_courierNameError ){
+    
+                this.setState({order_courierNameError});
+    
+                return false;
+    
+            }
+    
+    
+    
+            return true;
+    
+     
+    
+        }
+       
+
 
     componentDidMount(){
         DeliveryService.getDeliveryById(this.state.id).then( (res) =>{
@@ -62,13 +99,15 @@ class AddCourierDeliveryComponent extends Component {
                       updateDelivery = (e) => {
                         e.preventDefault();
                         let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number, order_courier_name: this.state.order_courier_name};
+                        const isValid = this.validate() ;
+                        if(isValid){
                         console.log('delivery => ' + JSON.stringify(delivery));
                         console.log('id => ' + JSON.stringify(this.state.id));
                         DeliveryService.updateDelivery (delivery, this.state.id).then( res => {
                             this.notify();
                         this.props.history.push('/delivery');
                         });
-
+                    }
 
        }
 
@@ -109,6 +148,7 @@ class AddCourierDeliveryComponent extends Component {
                                             <br></br>
                                             <input placeholder="Courier name" name="courier name" className="form-control" 
                                                 value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.order_courierNameError} </div>
                                         </div>   
 
 

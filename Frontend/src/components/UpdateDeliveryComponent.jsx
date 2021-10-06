@@ -20,7 +20,15 @@ class UpdateCourierDeliveryComponent extends Component {
             order_name: '',
             order_address: '',
             order_phone_number: '',
-            order_courier_name:''
+            order_courier_name:'',
+
+            order_nameError: '',
+            order_addressError: '',
+            order_phone_numberError: '',
+            order_courier_nameError:'',
+            emailvError: '',
+            contactvError:''
+            
 
 
            }
@@ -42,6 +50,65 @@ class UpdateCourierDeliveryComponent extends Component {
             toast.error("update cancelled", { position: toast.POSITION.TOP_CENTER });
           }
         
+          validate = () =>{
+
+            let order_nameError='';
+            let order_addressError = '';
+            let order_phone_numberError = '';
+           
+           
+           
+    
+            if(!this.state.order_name){
+    
+                order_nameError = "Please fill out this field";
+    
+            }
+    
+            if(!this.state.order_address){
+    
+                order_addressError = "Please fill out this field";
+    
+            }
+    
+            if(!this.state.order_phone_number){
+    
+                order_phone_numberError = "Please fill out this field";
+    
+            }
+
+           
+    
+           
+          
+    
+            if(order_nameError || order_addressError || order_phone_numberError  ){
+    
+                this.setState({order_nameError,order_addressError,order_phone_numberError});
+    
+                return false;
+    
+            }
+    
+    
+    
+            return true;
+    
+     
+    
+        }
+        
+        contactNumberValidation(){
+            if(this.state.order_phone_number.length>10 || this.state.order_phone_number.length<10){
+                this.setState({
+                    contactvError: "You should enter a valid Contact Number!"
+                });
+                return false;
+            }
+            return true;
+        }
+
+       
 
 
 
@@ -63,12 +130,17 @@ class UpdateCourierDeliveryComponent extends Component {
                       updateDelivery = (e) => {
                         e.preventDefault();
                         let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number, order_courier_name: this.state.order_courier_name};
+
+                        const isValid = this.validate() && this.contactNumberValidation();
+                        if(isValid){
                         console.log('delivery => ' + JSON.stringify(delivery));
                         console.log('id => ' + JSON.stringify(this.state.id));
                         DeliveryService.updateDelivery (delivery, this.state.id).then( res => {
                             this.notify();
                         this.props.history.push('/delivery');
                         });
+
+                    }
 
 
        }
@@ -109,6 +181,7 @@ class UpdateCourierDeliveryComponent extends Component {
                                             <br></br>
                                             <input placeholder="Courier Name" name="name" className="form-control" 
                                                 value={this.state.order_name} onChange={this.changeNameHandler}/>
+                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.order_nameError} </div>
                                         </div>
 
                                     <div className = "form-group">
@@ -116,6 +189,7 @@ class UpdateCourierDeliveryComponent extends Component {
                                             <br></br>
                                             <input placeholder="Address" name="address" className="form-control" 
                                                 value={this.state.order_address} onChange={this.changeAddressHandler}/>
+                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.order_addressError} </div>
                                         </div>    
                                        
                                         <div className = "form-group">
@@ -123,16 +197,11 @@ class UpdateCourierDeliveryComponent extends Component {
                                             <br></br>
                                             <input placeholder="Phone Number" name="phone_number" className="form-control" 
                                                 value={this.state.order_phone_number} onChange={this.changePhoneHandler}/>
+                                                  <div style={{ fontSize: 14, color: "red" }}>{this.state.contactError}</div>
+                                                <div style={{fontSize: 12, color:"red"}}>{this.state.order_phone_numberError} </div>
                                         </div>    
                                        
-                                        <div className = "form-group">
-                                            <label> Courier       : </label> 
-                                            <br></br>
-                                            <input placeholder="Courier name" name="courier name" className="form-control" 
-                                                value={this.state.order_courier_name} onChange={this.changeCourierHandler}/>
-                                        </div>   
-
-
+                                       
 
                                             <br></br>
                                             <table className="invntry_tbl_header">

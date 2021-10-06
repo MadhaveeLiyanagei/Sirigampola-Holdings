@@ -22,6 +22,8 @@ class CreateDeliveryComponent extends Component {
             order_addressError: '',
             order_phone_numberError: '',
             order_courier_nameError:'',
+            emailvError: '',
+            contactvError:''
             
 
            }
@@ -90,13 +92,24 @@ class CreateDeliveryComponent extends Component {
      
     
         }
+       
+    
+        contactNumberValidation(){
+            if(this.state.order_phone_number.length>10 || this.state.order_phone_number.length<10){
+                this.setState({
+                    contactvError: "You should enter a valid Contact Number!"
+                });
+                return false;
+            }
+            return true;
+        }
 
 
        SaveDelivery = (e) => {
             e.preventDefault();
             let delivery = {order_name: this.state.order_name, order_address: this.state.order_address, order_phone_number: this.state.order_phone_number};
 
-            const isValid = this.validate();
+            const isValid = this.validate() && this.contactNumberValidation();
             if(isValid){
             console.log('delivery => ' + JSON.stringify(delivery));
 
@@ -164,6 +177,7 @@ class CreateDeliveryComponent extends Component {
                                             <br></br>
                                             <input placeholder="Phone Number" name="phone_number" className="form-control" 
                                                 value={this.state.order_phone_number} onChange={this.changePhoneHandler}/>
+                                                  <div style={{ fontSize: 14, color: "red" }}>{this.state.contactError}</div>
                                                 <div style={{fontSize: 12, color:"red"}}>{this.state.order_phone_numberError} </div>
                                         </div>    
                                      
