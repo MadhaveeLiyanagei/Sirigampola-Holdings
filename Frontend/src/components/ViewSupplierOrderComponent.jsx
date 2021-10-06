@@ -74,15 +74,28 @@ class ViewSupplierOrderComponent extends Component {
                             </div>
                 </div>
 
-                {JSON.parse(localStorage.getItem('cartitems')).map((item) => (
-                    <div key={item.id} className="cart-items-list">
+                <h3 className="text-Right" style={{marginTop:"50px", color: "red", marginBottom:"-70px" }}><cite title="Source Title">FILLED ORDERS</cite></h3>
 
-                        <div className="cart-items-name">{item.name}</div>
-                        <div className="cart-items-name">{item.quantity}</div>
-                        <div className="cart-items-name">{item.price}</div>
+                <div className="cart-container-view">
+                {JSON.parse(localStorage.getItem('cartitems')).map((item) => (
+                    <div key={item.id}>
+
+                        <div className="view-product-name"> Product Name: </div>
+                        <div className="view-page-product-name">{item.product_name}</div>
+
+                        <div className="view-name"> Quantity: </div>
+                        <div className="span-blue">{item.quantity}</div>
+
+                        <div className="view-name"> Price(Per Unit): </div>
+                        <div className="view-page-price">Rs {item.price}</div>
                     </div>
+                    
                 ))}
-                <div className="cart-items-name">{localStorage.getItem('itemPrice')}</div>
+                </div>
+
+                <div className="cart-container-total">
+                <div className="view-page-price">TOTAL PRICE: Rs{localStorage.getItem('itemPrice')} /=</div>
+                </div>
 
                 <div className = "row" style={{marginBottom:"100px" }}></div>
                 

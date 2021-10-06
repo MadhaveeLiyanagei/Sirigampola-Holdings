@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SupplierOrderService from '../services/SupplierOrderService';
 import HeaderComponent from './HeaderComponent';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class ListSupplierOrder extends Component {
 
@@ -15,9 +17,23 @@ class ListSupplierOrder extends Component {
         this.deleteOrder = this.deleteOrder.bind(this);
     } 
 
+    //toast message
+    notify(){
+        toast.error('Order Deleted Successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
+    }
+
     deleteOrder(id)
     {
         SupplierOrderService.deleteSupplierOrder(id).then( res => {
+            this.notify();
             this.setState({supplierorder: this.state.supplierorder.filter(order => order.id !== id)});
 
         });

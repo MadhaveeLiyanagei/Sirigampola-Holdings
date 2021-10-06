@@ -16,10 +16,14 @@ class UpdateOrderComponent extends Component {
             productName: '',
             productPrice: '',
             quantity: '',
+
             orderNoError: '',
             productNameError: '',
             productProceError: '',
-            quantityError: ''
+            quantityError: '',
+
+            PriceValidation: '',
+            QuantityValidation:''
 
         }
 
@@ -45,7 +49,7 @@ class UpdateOrderComponent extends Component {
     }
  
     notifyCancel(){
-        toast.error('Order Canceled Successfully!', {
+        toast.error('Order Update Canceled!', {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -85,6 +89,30 @@ class UpdateOrderComponent extends Component {
  
      }
 
+     PriceValidation(){
+
+        const regex = /^[0-9]*$/gm;
+        if(!this.state.productPrice || regex.test(this.state.productPrice) === false){
+            this.setState({
+                PriceValidation: "Please enter a valid Price (ex: 250)"
+            });
+            return false;
+        }
+        return true;
+    }
+
+    QuantityValidation(){
+
+        const regex = /^[0-9]*$/gm;
+        if(!this.state.quantity || regex.test(this.state.quantity) === false){
+            this.setState({
+                QuantityValidation: "Please Enter a Valid Quantity"
+            });
+            return false;
+        }
+        return true;
+    }
+
     //validation End ---------------------------------------------------------------------------
 
 
@@ -104,12 +132,14 @@ class UpdateOrderComponent extends Component {
         e.preventDefault();
 
         let order = {orderno: this.state.orderno, productName: this.state.productName, productPrice: this.state.productPrice, quantity: this.state.quantity};
-        console.log('order =>' + JSON.stringify(order));
-
-        CreateOrderService.updateOrder(order, this.state.id).then( res => {
-            this.notify();
-            this.props.history.push('/createorder');
-        });
+        const isValid = this.validate() && this.PriceValidation() && this.QuantityValidation();
+        if(isValid){
+            console.log('order =>' + JSON.stringify(order));
+            CreateOrderService.updateOrder(order, this.state.id).then( res => {
+                this.notify();
+                this.props.history.push('/createorder');
+            });
+        }
     }
 
     changeOrderNoHandler = (event) =>{
@@ -129,6 +159,7 @@ class UpdateOrderComponent extends Component {
     } 
 
     cancel(){
+        this.notifyCancel();
         this.props.history.push('/createorder');
     }
 
@@ -160,12 +191,14 @@ class UpdateOrderComponent extends Component {
                                         <label>Product Price:</label>
                                         <input placeholder = "Product Price" name="productPrice" className="form-control" value={this.state.productPrice} onChange={this.changeProductPriceHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.productProceError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.PriceValidation}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
                                         <label>Quantity:</label>
                                         <input placeholder = "Quantity" name="quantity" className="form-control" value={this.state.quantity} onChange={this.changeQuantityHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.quantityError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.QuantityValidation}</div>
                                     </div>
 
                                     

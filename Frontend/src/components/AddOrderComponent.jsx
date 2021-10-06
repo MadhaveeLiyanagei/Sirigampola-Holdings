@@ -16,10 +16,14 @@ class AddOrderComponent extends Component {
             productName: '',
             productPrice: '',
             quantity: '',
+            
             orderNoError: '',
             productNameError: '',
             productProceError: '',
-            quantityError: ''
+            quantityError: '',
+
+            PriceValidation: '',
+            QuantityValidation:''
             
         }
 
@@ -88,12 +92,37 @@ class AddOrderComponent extends Component {
  
      }
 
+
+     PriceValidation(){
+
+        const regex = /^[0-9]*$/gm;
+        if(!this.state.productPrice || regex.test(this.state.productPrice) === false){
+            this.setState({
+                PriceValidation: "Please enter a valid Price (ex: 250)"
+            });
+            return false;
+        }
+        return true;
+    }
+
+    QuantityValidation(){
+
+        const regex = /^[0-9]*$/gm;
+        if(!this.state.quantity || regex.test(this.state.quantity) === false){
+            this.setState({
+                QuantityValidation: "Please Refer the amount we ask! "
+            });
+            return false;
+        }
+        return true;
+    }
+
     //validation End ---------------------------------------------------------------------------
 
     saveOrder = (e) =>{
         e.preventDefault();
         let order = {orderno: this.state.orderno, productName: this.state.productName, productPrice: this.state.productPrice, quantity: this.state.quantity};
-        const isValid = this.validate();
+        const isValid = this.validate() && this.PriceValidation() && this.QuantityValidation();
         if(isValid){
         console.log('order =>' + JSON.stringify(order));
 
@@ -158,6 +187,7 @@ class AddOrderComponent extends Component {
                                         <input placeholder = "Product Price" name="productPrice" className="form-control" 
                                         value={this.state.productPrice} onChange={this.changeProductPriceHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.productProceError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.PriceValidation}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
@@ -165,6 +195,7 @@ class AddOrderComponent extends Component {
                                         <input placeholder = "Quantity" name="quantity" className="form-control" 
                                         value={this.state.quantity} onChange={this.changeQuantityHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.quantityError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.QuantityValidation}</div>
                                     </div>
 
                                     

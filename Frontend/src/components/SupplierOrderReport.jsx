@@ -33,6 +33,7 @@ class SupplierOrderReport extends Component {
 
         return (
             <>
+            <div className = "row" style={{marginTop:"100px" }}></div>
             <div>
             <div className="Post" ref={ref}>
 
@@ -92,11 +93,13 @@ class SupplierOrderReport extends Component {
                 </div>
 
                 <div className = "row" style={{marginTop: "10px" }}>
-                    <Pdf targetRef={ref} filename="BuyerOrder.pdf">
+                    <Pdf targetRef={ref} filename="SupplierOrder.pdf">
                         {({ toPdf }) => <button  className="btn btn-dark" onClick={toPdf} > Generate Report</button>}
                     </Pdf>
                 </div>
 
+
+                <div className = "row" style={{marginBottom:"200px" }}></div>
                 </>
         );
         

@@ -11,6 +11,7 @@ class AddSupplierComponent extends Component {
 
         this.state = {
 
+            id: this.props.match.params.id,
             supplierName: '',
             companyName: '',
             companyAddress: '',
@@ -23,7 +24,10 @@ class AddSupplierComponent extends Component {
             companyAddressError: '',
             supplierContactError: '',
             companyEmailError: '',
-            descriptionError: ''
+            descriptionError: '',
+            companyEmailValidation:'',
+            supplierContactValidation:'',
+            supplierNameValidation:''
             
         }
 
@@ -104,6 +108,43 @@ class AddSupplierComponent extends Component {
  
      }
 
+     emailValidation() {
+        let companyEmailValidation='';
+
+        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if (!this.state.companyEmail || regex.test(this.state.companyEmail) === false) {
+            this.setState({
+                companyEmailValidation: "Please enter a valid E-mail!"
+            });
+            return false;
+        }
+        return true;
+    }
+
+    contactNumberValidation(){
+
+        const regex = /^([+]\d{2})?\d{10}$/;
+        if(!this.state.supplierContact || regex.test(this.state.supplierContact) === false){
+            this.setState({
+                supplierContactValidation: "Please enter a valid Contact Number!"
+            });
+            return false;
+        }
+        return true;
+    }
+
+    SupplierNameValidation(){
+
+        const regex = /^[^\s]+( [^\s]+)+$/;
+        if(!this.state.supplierName || regex.test(this.state.supplierName) === false){
+            this.setState({
+                supplierNameValidation: "Please enter a valid Name (ex:John legend)"
+            });
+            return false;
+        }
+        return true;
+    }
+
     //validation End ---------------------------------------------------------------------------
 
 
@@ -111,7 +152,7 @@ class AddSupplierComponent extends Component {
         e.preventDefault();
         let order = {supplierName: this.state.supplierName, companyName: this.state.companyName, companyAddress: this.state.companyAddress,
             supplierContact: this.state.supplierContact, companyEmail: this.state.companyEmail, description: this.state.description};
-        const isValid = this.validate();
+        const isValid = this.validate() && this.emailValidation() && this.contactNumberValidation() && this.SupplierNameValidation();
         if(isValid){
         console.log('order =>' + JSON.stringify(order));
 
@@ -170,6 +211,7 @@ class AddSupplierComponent extends Component {
                                         <input placeholder = "Supplier Name" name="supplierName" className="form-control" 
                                         value={this.state.supplierName} onChange={this.changeSupplierNameHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplierNameError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.supplierNameValidation}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
@@ -191,6 +233,7 @@ class AddSupplierComponent extends Component {
                                         <input placeholder = "Supplier Contact" name="supplierContact" className="form-control" 
                                         value={this.state.supplierContact} onChange={this.changeSupplierContactHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.supplierContactError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.supplierContactValidation}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
@@ -198,6 +241,7 @@ class AddSupplierComponent extends Component {
                                         <input placeholder = "Company Email" name="companyEmail" className="form-control" 
                                         value={this.state.companyEmail} onChange={this.changeCompanyEmailHandler}/>
                                         <div style={{fontSize: 12, color: "red"}}>{this.state.companyEmailError}</div>
+                                        <div style={{fontSize: 14, color: "red"}}>{this.state.companyEmailValidation}</div>
                                     </div>
                                     <br/>
                                     <div className = "form-group">
