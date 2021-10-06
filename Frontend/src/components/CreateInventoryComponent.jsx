@@ -21,7 +21,7 @@ class CreateInventoryComponent extends Component {
       quantityError: "",
       reOrderError: "",
       costPriceError: "",
-      quantityStringError: ""
+     
     };
 
     this.changeProductIDHandler = this.changeProductIDHandler.bind(this);
@@ -77,9 +77,7 @@ class CreateInventoryComponent extends Component {
     if (!this.state.costPrice) {
       costPriceError = "Cost Price is required";
     }
-    {/*if (this.state.quantityStringError.includes("abc")){
-      quantityStringError = "Quantity should be numeric characters";
-    }*/}
+    
     if (
       productIDError ||
       productNameError ||

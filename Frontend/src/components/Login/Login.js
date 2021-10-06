@@ -3,7 +3,7 @@ import { Form, Button, Alert, Container } from 'react-bootstrap';
 import './Login.css'
 import { Link } from 'react-router-dom';
 import AuthenticationService from '../Authentication/AuthenticationService';
-import AthenticationDataService from '../Authentication/AuthenticationDataService';
+import AuthenticationDataService from '../Authentication/AuthenticationDataService';
 
 class Login extends Component {
 
@@ -27,7 +27,7 @@ class Login extends Component {
     }
 
     loginClicked() {
-        AthenticationDataService.getUser(this.state.userId)
+        AuthenticationDataService.getUser(this.state.userId)
             .then(
                 response => {
                     if(response.data != null){
@@ -37,6 +37,10 @@ class Login extends Component {
                                 this.props.history.push("/adminHome")
                             }else if(response.data.role ==='Buyer'){
                                 this.props.history.push("/home")
+                            }else if(response.data.role ==='Supplier'){
+                                this.props.history.push("/home")
+                            }else if(response.data.role ==='Employee'){
+                                this.props.history.push("/EmployeeHome")
                             }
                             
                             this.setState({showSuccessMsg: true})

@@ -1,4 +1,4 @@
-class AthenticationService {
+class AuthenticationService {
     
     successfulLogin(userId, name, role, password){
         sessionStorage.setItem('authenticatedUserId', userId);
@@ -39,4 +39,4 @@ class AthenticationService {
 }
 
  
-export default new AthenticationService();
+export default new AuthenticationService();
